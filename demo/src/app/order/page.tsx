@@ -8,7 +8,7 @@ import _menuItem from "@/mockup/menu2.json";
 import { Menu } from "@/types/menu";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
-import ItemModal from "@/components/ItemModal";
+import ItemModal from "@/components/ui/ItemModal";
 
 const menu = _menuItem as Menu[];
 
