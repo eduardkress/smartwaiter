@@ -4,21 +4,21 @@
     "id": "App",
     "path": "",
     "children": {
-      "prod-demo-Site": {
-        "id": "prod-demo-Site",
-        "path": "prod-demo-Site",
+      "dev-demo-smartwaiter-Site": {
+        "id": "dev-demo-smartwaiter-Site",
+        "path": "dev-demo-smartwaiter-Site",
         "children": {
           "CustomResourceHandler": {
             "id": "CustomResourceHandler",
-            "path": "prod-demo-Site/CustomResourceHandler",
+            "path": "dev-demo-smartwaiter-Site/CustomResourceHandler",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "prod-demo-Site/CustomResourceHandler/ServiceRole",
+                "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "prod-demo-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
+                    "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.101.1"
@@ -26,7 +26,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/CustomResourceHandler/ServiceRole/Resource",
+                    "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -59,11 +59,11 @@
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "demo"
+                            "value": "demo-smartwaiter"
                           },
                           {
                             "key": "sst:stage",
-                            "value": "prod"
+                            "value": "dev"
                           }
                         ]
                       }
@@ -81,11 +81,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "prod-demo-Site/CustomResourceHandler/Code",
+                "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "prod-demo-Site/CustomResourceHandler/Code/Stage",
+                    "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.101.1"
@@ -93,7 +93,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "prod-demo-Site/CustomResourceHandler/Code/AssetBucket",
+                    "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.101.1"
@@ -107,13 +107,13 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "prod-demo-Site/CustomResourceHandler/Resource",
+                "path": "dev-demo-smartwaiter-Site/CustomResourceHandler/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                      "s3Key": "b947c06894c19bcca72416533508221144d26a84340c6c779d88e168ff4978e2.zip"
+                      "s3Key": "e5d348de89eec13fe36fe68de5d8d33f625307274febf782c9fa3064d5bfd0d7.zip"
                     },
                     "handler": "index.handler",
                     "memorySize": 1024,
@@ -127,11 +127,11 @@
                     "tags": [
                       {
                         "key": "sst:app",
-                        "value": "demo"
+                        "value": "demo-smartwaiter"
                       },
                       {
                         "key": "sst:stage",
-                        "value": "prod"
+                        "value": "dev"
                       }
                     ],
                     "timeout": 900
@@ -150,15 +150,15 @@
           },
           "counter": {
             "id": "counter",
-            "path": "prod-demo-Site/counter",
+            "path": "dev-demo-smartwaiter-Site/counter",
             "children": {
               "Table": {
                 "id": "Table",
-                "path": "prod-demo-Site/counter/Table",
+                "path": "dev-demo-smartwaiter-Site/counter/Table",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/counter/Table/Resource",
+                    "path": "dev-demo-smartwaiter-Site/counter/Table/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
                       "aws:cdk:cloudformation:props": {
@@ -178,15 +178,15 @@
                         "pointInTimeRecoverySpecification": {
                           "pointInTimeRecoveryEnabled": true
                         },
-                        "tableName": "prod-demo-counter",
+                        "tableName": "dev-demo-smartwaiter-counter",
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "demo"
+                            "value": "demo-smartwaiter"
                           },
                           {
                             "key": "sst:stage",
-                            "value": "prod"
+                            "value": "dev"
                           }
                         ]
                       }
@@ -198,7 +198,7 @@
                   },
                   "ScalingRole": {
                     "id": "ScalingRole",
-                    "path": "prod-demo-Site/counter/Table/ScalingRole",
+                    "path": "dev-demo-smartwaiter-Site/counter/Table/ScalingRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.101.1"
@@ -212,18 +212,18 @@
               },
               "Parameter_tableName": {
                 "id": "Parameter_tableName",
-                "path": "prod-demo-Site/counter/Parameter_tableName",
+                "path": "dev-demo-smartwaiter-Site/counter/Parameter_tableName",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/counter/Parameter_tableName/Resource",
+                    "path": "dev-demo-smartwaiter-Site/counter/Parameter_tableName/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
                       "aws:cdk:cloudformation:props": {
-                        "name": "/sst/demo/prod/Table/counter/tableName",
+                        "name": "/sst/demo-smartwaiter/dev/Table/counter/tableName",
                         "tags": {
-                          "sst:app": "demo",
-                          "sst:stage": "prod"
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "dev"
                         },
                         "type": "String",
                         "value": {
@@ -248,9 +248,9 @@
               "version": "10.2.69"
             }
           },
-          "MyCert": {
-            "id": "MyCert",
-            "path": "prod-demo-Site/MyCert",
+          "demo-certificate": {
+            "id": "demo-certificate",
+            "path": "dev-demo-smartwaiter-Site/demo-certificate",
             "constructInfo": {
               "fqn": "aws-cdk-lib.Resource",
               "version": "2.101.1"
@@ -258,75 +258,93 @@
           },
           "site": {
             "id": "site",
-            "path": "prod-demo-Site/site",
+            "path": "dev-demo-smartwaiter-Site/site",
             "children": {
-              "S3Bucket": {
-                "id": "S3Bucket",
-                "path": "prod-demo-Site/site/S3Bucket",
+              "ServerFunctionRole": {
+                "id": "ServerFunctionRole",
+                "path": "dev-demo-smartwaiter-Site/site/ServerFunctionRole",
                 "children": {
+                  "ImportServerFunctionRole": {
+                    "id": "ImportServerFunctionRole",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunctionRole/ImportServerFunctionRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  },
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/site/S3Bucket/Resource",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunctionRole/Resource",
                     "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
-                        "publicAccessBlockConfiguration": {
-                          "blockPublicAcls": true,
-                          "blockPublicPolicy": true,
-                          "ignorePublicAcls": true,
-                          "restrictPublicBuckets": true
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "AWS": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":iam::984009409855:root"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
                         },
+                        "maxSessionDuration": 43200,
                         "tags": [
                           {
-                            "key": "aws-cdk:auto-delete-objects",
-                            "value": "true"
-                          },
-                          {
                             "key": "sst:app",
-                            "value": "demo"
+                            "value": "demo-smartwaiter"
                           },
                           {
                             "key": "sst:stage",
-                            "value": "prod"
+                            "value": "dev"
                           }
                         ]
                       }
                     },
                     "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
                       "version": "2.101.1"
                     }
                   },
-                  "Policy": {
-                    "id": "Policy",
-                    "path": "prod-demo-Site/site/S3Bucket/Policy",
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunctionRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "prod-demo-Site/site/S3Bucket/Policy/Resource",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunctionRole/DefaultPolicy/Resource",
                         "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
-                            "bucket": {
-                              "Ref": "siteS3Bucket2B2851F3"
-                            },
                             "policyDocument": {
                               "Statement": [
                                 {
-                                  "Action": "s3:*",
-                                  "Condition": {
-                                    "Bool": {
-                                      "aws:SecureTransport": "false"
-                                    }
-                                  },
-                                  "Effect": "Deny",
-                                  "Principal": {
-                                    "AWS": "*"
-                                  },
+                                  "Action": "dynamodb:*",
+                                  "Effect": "Allow",
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "siteS3Bucket2B2851F3",
+                                        "counterTable2B52E878",
                                         "Arn"
                                       ]
                                     },
@@ -336,7 +354,7 @@
                                         [
                                           {
                                             "Fn::GetAtt": [
-                                              "siteS3Bucket2B2851F3",
+                                              "counterTable2B52E878",
                                               "Arn"
                                             ]
                                           },
@@ -345,153 +363,46 @@
                                       ]
                                     }
                                   ]
-                                },
-                                {
-                                  "Action": [
-                                    "s3:PutBucketPolicy",
-                                    "s3:GetBucket*",
-                                    "s3:List*",
-                                    "s3:DeleteObject*"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "AWS": {
-                                      "Fn::GetAtt": [
-                                        "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
-                                        "Arn"
-                                      ]
-                                    }
-                                  },
-                                  "Resource": [
-                                    {
-                                      "Fn::GetAtt": [
-                                        "siteS3Bucket2B2851F3",
-                                        "Arn"
-                                      ]
-                                    },
-                                    {
-                                      "Fn::Join": [
-                                        "",
-                                        [
-                                          {
-                                            "Fn::GetAtt": [
-                                              "siteS3Bucket2B2851F3",
-                                              "Arn"
-                                            ]
-                                          },
-                                          "/*"
-                                        ]
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "Action": "s3:GetObject",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "CanonicalUser": {
-                                      "Fn::GetAtt": [
-                                        "siteDistributionOrigin3S3Origin7C72BBD7",
-                                        "S3CanonicalUserId"
-                                      ]
-                                    }
-                                  },
-                                  "Resource": {
-                                    "Fn::Join": [
-                                      "",
-                                      [
-                                        {
-                                          "Fn::GetAtt": [
-                                            "siteS3Bucket2B2851F3",
-                                            "Arn"
-                                          ]
-                                        },
-                                        "/*"
-                                      ]
-                                    ]
-                                  }
                                 }
                               ],
                               "Version": "2012-10-17"
-                            }
+                            },
+                            "policyName": "siteServerFunctionRoleDefaultPolicy213DB8A5",
+                            "roles": [
+                              {
+                                "Ref": "siteServerFunctionRole1F8F4FAC"
+                              }
+                            ]
                           }
                         },
                         "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
                           "version": "2.101.1"
                         }
                       }
                     },
                     "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "AutoDeleteObjectsCustomResource": {
-                    "id": "AutoDeleteObjectsCustomResource",
-                    "path": "prod-demo-Site/site/S3Bucket/AutoDeleteObjectsCustomResource",
-                    "children": {
-                      "Default": {
-                        "id": "Default",
-                        "path": "prod-demo-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.CustomResource",
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
                       "version": "2.101.1"
                     }
                   }
                 },
                 "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_s3.Bucket",
-                  "version": "2.101.1"
-                }
-              },
-              "CloudFrontFunction": {
-                "id": "CloudFrontFunction",
-                "path": "prod-demo-Site/site/CloudFrontFunction",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/CloudFrontFunction/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::CloudFront::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "autoPublish": true,
-                        "functionCode": "\nfunction handler(event) {\n  var request = event.request;\n  request.headers[\"x-forwarded-host\"] = request.headers.host;\n  return request;\n}",
-                        "functionConfig": {
-                          "comment": "eu-central-1proddemoSitesiteCloudFrontFunction8115214D",
-                          "runtime": "cloudfront-js-1.0"
-                        },
-                        "name": "eu-central-1proddemoSitesiteCloudFrontFunction8115214D"
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_cloudfront.CfnFunction",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_cloudfront.Function",
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
                   "version": "2.101.1"
                 }
               },
               "ServerFunction": {
                 "id": "ServerFunction",
-                "path": "prod-demo-Site/site/ServerFunction",
+                "path": "dev-demo-smartwaiter-Site/site/ServerFunction",
                 "children": {
                   "AssetReplacerPolicy": {
                     "id": "AssetReplacerPolicy",
-                    "path": "prod-demo-Site/site/ServerFunction/AssetReplacerPolicy",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunction/AssetReplacerPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "prod-demo-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -540,11 +451,11 @@
                   },
                   "AssetReplacer": {
                     "id": "AssetReplacer",
-                    "path": "prod-demo-Site/site/ServerFunction/AssetReplacer",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunction/AssetReplacer",
                     "children": {
                       "Default": {
                         "id": "Default",
-                        "path": "prod-demo-Site/site/ServerFunction/AssetReplacer/Default",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/AssetReplacer/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.101.1"
@@ -558,7 +469,7 @@
                   },
                   "IServerFunctionBucket": {
                     "id": "IServerFunctionBucket",
-                    "path": "prod-demo-Site/site/ServerFunction/IServerFunctionBucket",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunction/IServerFunctionBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.101.1"
@@ -566,228 +477,11 @@
                   },
                   "ServerFunction": {
                     "id": "ServerFunction",
-                    "path": "prod-demo-Site/site/ServerFunction/ServerFunction",
+                    "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction",
                     "children": {
-                      "ServiceRole": {
-                        "id": "ServiceRole",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/ServiceRole",
-                        "children": {
-                          "ImportServiceRole": {
-                            "id": "ImportServiceRole",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/ServiceRole/ImportServiceRole",
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.101.1"
-                            }
-                          },
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                              "aws:cdk:cloudformation:props": {
-                                "assumeRolePolicyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": "sts:AssumeRole",
-                                      "Effect": "Allow",
-                                      "Principal": {
-                                        "Service": "lambda.amazonaws.com"
-                                      }
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "managedPolicyArns": [
-                                  {
-                                    "Fn::Join": [
-                                      "",
-                                      [
-                                        "arn:",
-                                        {
-                                          "Ref": "AWS::Partition"
-                                        },
-                                        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                      ]
-                                    ]
-                                  }
-                                ],
-                                "tags": [
-                                  {
-                                    "key": "sst:app",
-                                    "value": "demo"
-                                  },
-                                  {
-                                    "key": "sst:stage",
-                                    "value": "prod"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.101.1"
-                            }
-                          },
-                          "DefaultPolicy": {
-                            "id": "DefaultPolicy",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy",
-                            "children": {
-                              "Resource": {
-                                "id": "Resource",
-                                "path": "prod-demo-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource",
-                                "attributes": {
-                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                                  "aws:cdk:cloudformation:props": {
-                                    "policyDocument": {
-                                      "Statement": [
-                                        {
-                                          "Action": "dynamodb:*",
-                                          "Effect": "Allow",
-                                          "Resource": [
-                                            {
-                                              "Fn::GetAtt": [
-                                                "counterTable2B52E878",
-                                                "Arn"
-                                              ]
-                                            },
-                                            {
-                                              "Fn::Join": [
-                                                "",
-                                                [
-                                                  {
-                                                    "Fn::GetAtt": [
-                                                      "counterTable2B52E878",
-                                                      "Arn"
-                                                    ]
-                                                  },
-                                                  "/*"
-                                                ]
-                                              ]
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "Action": [
-                                            "s3:GetObject*",
-                                            "s3:GetBucket*",
-                                            "s3:List*",
-                                            "s3:DeleteObject*",
-                                            "s3:PutObject",
-                                            "s3:PutObjectLegalHold",
-                                            "s3:PutObjectRetention",
-                                            "s3:PutObjectTagging",
-                                            "s3:PutObjectVersionTagging",
-                                            "s3:Abort*"
-                                          ],
-                                          "Effect": "Allow",
-                                          "Resource": [
-                                            {
-                                              "Fn::GetAtt": [
-                                                "siteS3Bucket2B2851F3",
-                                                "Arn"
-                                              ]
-                                            },
-                                            {
-                                              "Fn::Join": [
-                                                "",
-                                                [
-                                                  {
-                                                    "Fn::GetAtt": [
-                                                      "siteS3Bucket2B2851F3",
-                                                      "Arn"
-                                                    ]
-                                                  },
-                                                  "/*"
-                                                ]
-                                              ]
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "Action": [
-                                            "sqs:SendMessage",
-                                            "sqs:GetQueueAttributes",
-                                            "sqs:GetQueueUrl"
-                                          ],
-                                          "Effect": "Allow",
-                                          "Resource": {
-                                            "Fn::GetAtt": [
-                                              "siteRevalidationQueue355EB7DA",
-                                              "Arn"
-                                            ]
-                                          }
-                                        },
-                                        {
-                                          "Action": [
-                                            "dynamodb:BatchGetItem",
-                                            "dynamodb:GetRecords",
-                                            "dynamodb:GetShardIterator",
-                                            "dynamodb:Query",
-                                            "dynamodb:GetItem",
-                                            "dynamodb:Scan",
-                                            "dynamodb:ConditionCheckItem",
-                                            "dynamodb:BatchWriteItem",
-                                            "dynamodb:PutItem",
-                                            "dynamodb:UpdateItem",
-                                            "dynamodb:DeleteItem",
-                                            "dynamodb:DescribeTable"
-                                          ],
-                                          "Effect": "Allow",
-                                          "Resource": [
-                                            {
-                                              "Fn::GetAtt": [
-                                                "siteRevalidationTable79579F77",
-                                                "Arn"
-                                              ]
-                                            },
-                                            {
-                                              "Fn::Join": [
-                                                "",
-                                                [
-                                                  {
-                                                    "Fn::GetAtt": [
-                                                      "siteRevalidationTable79579F77",
-                                                      "Arn"
-                                                    ]
-                                                  },
-                                                  "/index/*"
-                                                ]
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ],
-                                      "Version": "2012-10-17"
-                                    },
-                                    "policyName": "siteServerFunctionServiceRoleDefaultPolicy6EA49472",
-                                    "roles": [
-                                      {
-                                        "Ref": "siteServerFunctionServiceRole8328A688"
-                                      }
-                                    ]
-                                  }
-                                },
-                                "constructInfo": {
-                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                                  "version": "2.101.1"
-                                }
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.Policy",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.101.1"
-                        }
-                      },
                       "Resource": {
                         "id": "Resource",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/Resource",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
@@ -796,39 +490,24 @@
                             ],
                             "code": {
                               "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                              "s3Key": "1f122b2a8ded683753c770d1b65a790686fa38e0b7a351e87daf7dc051f2beb8.zip"
+                              "s3Key": "54cf5dadad750882329052f1dbfc398be50f7cc44d9e2ab56d164cb049bcf9f4.zip"
                             },
-                            "description": "Next.js server",
+                            "description": "Server handler placeholder",
                             "environment": {
                               "variables": {
-                                "NEXTAUTH_URL": "https://demo.smartwaiter.app",
-                                "NEXTAUTH_SECRET": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
-                                "SALT": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
-                                "CACHE_BUCKET_NAME": {
-                                  "Ref": "siteS3Bucket2B2851F3"
-                                },
-                                "CACHE_BUCKET_KEY_PREFIX": "_cache",
-                                "CACHE_BUCKET_REGION": "eu-central-1",
-                                "SST_APP": "demo",
-                                "SST_STAGE": "prod",
-                                "SST_SSM_PREFIX": "/sst/demo/prod/",
+                                "SST_APP": "demo-smartwaiter",
+                                "SST_STAGE": "dev",
+                                "SST_SSM_PREFIX": "/sst/demo-smartwaiter/dev/",
                                 "SST_Table_tableName_counter": {
                                   "Ref": "counterTable2B52E878"
-                                },
-                                "REVALIDATION_QUEUE_URL": {
-                                  "Ref": "siteRevalidationQueue355EB7DA"
-                                },
-                                "REVALIDATION_QUEUE_REGION": "eu-central-1",
-                                "CACHE_DYNAMO_TABLE": {
-                                  "Ref": "siteRevalidationTable79579F77"
                                 }
                               }
                             },
-                            "handler": "nextjssite-index.handler",
+                            "handler": "index.handler",
                             "memorySize": 1024,
                             "role": {
                               "Fn::GetAtt": [
-                                "siteServerFunctionServiceRole8328A688",
+                                "siteServerFunctionRole1F8F4FAC",
                                 "Arn"
                               ]
                             },
@@ -836,11 +515,11 @@
                             "tags": [
                               {
                                 "key": "sst:app",
-                                "value": "demo"
+                                "value": "demo-smartwaiter"
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "prod"
+                                "value": "dev"
                               }
                             ],
                             "timeout": 10
@@ -853,11 +532,11 @@
                       },
                       "LogRetention": {
                         "id": "LogRetention",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/LogRetention",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogRetention",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
+                            "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.101.1"
@@ -871,72 +550,19 @@
                       },
                       "LogGroup": {
                         "id": "LogGroup",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/LogGroup",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.101.1"
                         }
                       },
-                      "FunctionUrl": {
-                        "id": "FunctionUrl",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/FunctionUrl",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::Lambda::Url",
-                              "aws:cdk:cloudformation:props": {
-                                "authType": "NONE",
-                                "invokeMode": "BUFFERED",
-                                "targetFunctionArn": {
-                                  "Fn::GetAtt": [
-                                    "siteServerFunction6DFA6F1B",
-                                    "Arn"
-                                  ]
-                                }
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_lambda.CfnUrl",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.FunctionUrl",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "invoke-function-url": {
-                        "id": "invoke-function-url",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/invoke-function-url",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
-                          "aws:cdk:cloudformation:props": {
-                            "action": "lambda:InvokeFunctionUrl",
-                            "functionName": {
-                              "Fn::GetAtt": [
-                                "siteServerFunction6DFA6F1B",
-                                "Arn"
-                              ]
-                            },
-                            "functionUrlAuthType": "NONE",
-                            "principal": "*"
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
-                          "version": "2.101.1"
-                        }
-                      },
                       "Code": {
                         "id": "Code",
-                        "path": "prod-demo-Site/site/ServerFunction/ServerFunction/Code",
+                        "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/Code/Stage",
+                            "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
                               "version": "2.101.1"
@@ -944,7 +570,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "prod-demo-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
+                            "path": "dev-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                               "version": "2.101.1"
@@ -966,1856 +592,25 @@
                 "constructInfo": {
                   "fqn": "constructs.Construct",
                   "version": "10.2.69"
-                }
-              },
-              "ImageFunction": {
-                "id": "ImageFunction",
-                "path": "prod-demo-Site/site/ImageFunction",
-                "children": {
-                  "ServiceRole": {
-                    "id": "ServiceRole",
-                    "path": "prod-demo-Site/site/ImageFunction/ServiceRole",
-                    "children": {
-                      "ImportServiceRole": {
-                        "id": "ImportServiceRole",
-                        "path": "prod-demo-Site/site/ImageFunction/ServiceRole/ImportServiceRole",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/ImageFunction/ServiceRole/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                          "aws:cdk:cloudformation:props": {
-                            "assumeRolePolicyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": "sts:AssumeRole",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "Service": "lambda.amazonaws.com"
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
-                            },
-                            "managedPolicyArns": [
-                              {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                  ]
-                                ]
-                              }
-                            ],
-                            "tags": [
-                              {
-                                "key": "sst:app",
-                                "value": "demo"
-                              },
-                              {
-                                "key": "sst:stage",
-                                "value": "prod"
-                              }
-                            ]
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "DefaultPolicy": {
-                        "id": "DefaultPolicy",
-                        "path": "prod-demo-Site/site/ImageFunction/ServiceRole/DefaultPolicy",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                              "aws:cdk:cloudformation:props": {
-                                "policyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": "s3:GetObject",
-                                      "Effect": "Allow",
-                                      "Resource": {
-                                        "Fn::Join": [
-                                          "",
-                                          [
-                                            {
-                                              "Fn::GetAtt": [
-                                                "siteS3Bucket2B2851F3",
-                                                "Arn"
-                                              ]
-                                            },
-                                            "/*"
-                                          ]
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "policyName": "siteImageFunctionServiceRoleDefaultPolicy39F33332",
-                                "roles": [
-                                  {
-                                    "Ref": "siteImageFunctionServiceRoleAD5B95E2"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Code": {
-                    "id": "Code",
-                    "path": "prod-demo-Site/site/ImageFunction/Code",
-                    "children": {
-                      "Stage": {
-                        "id": "Stage",
-                        "path": "prod-demo-Site/site/ImageFunction/Code/Stage",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "AssetBucket": {
-                        "id": "AssetBucket",
-                        "path": "prod-demo-Site/site/ImageFunction/Code/AssetBucket",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/ImageFunction/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "architectures": [
-                          "arm64"
-                        ],
-                        "code": {
-                          "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                          "s3Key": "a513f9f756a79604cc4d1c60313e639f49f19100dfdef17c961764e0ea7aeb93.zip"
-                        },
-                        "description": "Next.js image optimizer",
-                        "environment": {
-                          "variables": {
-                            "BUCKET_NAME": {
-                              "Ref": "siteS3Bucket2B2851F3"
-                            },
-                            "BUCKET_KEY_PREFIX": "_assets"
-                          }
-                        },
-                        "handler": "index.handler",
-                        "memorySize": 1536,
-                        "role": {
-                          "Fn::GetAtt": [
-                            "siteImageFunctionServiceRoleAD5B95E2",
-                            "Arn"
-                          ]
-                        },
-                        "runtime": "nodejs18.x",
-                        "tags": [
-                          {
-                            "key": "sst:app",
-                            "value": "demo"
-                          },
-                          {
-                            "key": "sst:stage",
-                            "value": "prod"
-                          }
-                        ],
-                        "timeout": 25
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "LogRetention": {
-                    "id": "LogRetention",
-                    "path": "prod-demo-Site/site/ImageFunction/LogRetention",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/ImageFunction/LogRetention/Resource",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "LogGroup": {
-                    "id": "LogGroup",
-                    "path": "prod-demo-Site/site/ImageFunction/LogGroup",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.Resource",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "FunctionUrl": {
-                    "id": "FunctionUrl",
-                    "path": "prod-demo-Site/site/ImageFunction/FunctionUrl",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/ImageFunction/FunctionUrl/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::Lambda::Url",
-                          "aws:cdk:cloudformation:props": {
-                            "authType": "NONE",
-                            "targetFunctionArn": {
-                              "Fn::GetAtt": [
-                                "siteImageFunctionD6B403E9",
-                                "Arn"
-                              ]
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.CfnUrl",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.FunctionUrl",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "invoke-function-url": {
-                    "id": "invoke-function-url",
-                    "path": "prod-demo-Site/site/ImageFunction/invoke-function-url",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
-                      "aws:cdk:cloudformation:props": {
-                        "action": "lambda:InvokeFunctionUrl",
-                        "functionName": {
-                          "Fn::GetAtt": [
-                            "siteImageFunctionD6B403E9",
-                            "Arn"
-                          ]
-                        },
-                        "functionUrlAuthType": "NONE",
-                        "principal": "*"
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_lambda.Function",
-                  "version": "2.101.1"
-                }
-              },
-              "Asset0": {
-                "id": "Asset0",
-                "path": "prod-demo-Site/site/Asset0",
-                "children": {
-                  "Stage": {
-                    "id": "Stage",
-                    "path": "prod-demo-Site/site/Asset0/Stage",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.AssetStaging",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "AssetBucket": {
-                    "id": "AssetBucket",
-                    "path": "prod-demo-Site/site/Asset0/AssetBucket",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                  "version": "2.101.1"
-                }
-              },
-              "S3UploaderPolicy": {
-                "id": "S3UploaderPolicy",
-                "path": "prod-demo-Site/site/S3UploaderPolicy",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/S3UploaderPolicy/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                      "aws:cdk:cloudformation:props": {
-                        "policyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "lambda:InvokeFunction",
-                              "Effect": "Allow",
-                              "Resource": {
-                                "Fn::GetAtt": [
-                                  "CustomResourceHandlerE8FB56BA",
-                                  "Arn"
-                                ]
-                              }
-                            },
-                            {
-                              "Action": [
-                                "s3:ListBucket",
-                                "s3:PutObject",
-                                "s3:DeleteObject"
-                              ],
-                              "Effect": "Allow",
-                              "Resource": [
-                                {
-                                  "Fn::GetAtt": [
-                                    "siteS3Bucket2B2851F3",
-                                    "Arn"
-                                  ]
-                                },
-                                {
-                                  "Fn::Join": [
-                                    "",
-                                    [
-                                      {
-                                        "Fn::GetAtt": [
-                                          "siteS3Bucket2B2851F3",
-                                          "Arn"
-                                        ]
-                                      },
-                                      "/*"
-                                    ]
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "Action": "s3:GetObject",
-                              "Effect": "Allow",
-                              "Resource": {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":s3:::cdk-hnb659fds-assets-984009409855-eu-central-1/*"
-                                  ]
-                                ]
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "policyName": "siteS3UploaderPolicyE1EE6C9F",
-                        "roles": [
-                          {
-                            "Ref": "CustomResourceHandlerServiceRole41AEC181"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_iam.Policy",
-                  "version": "2.101.1"
-                }
-              },
-              "S3Uploader": {
-                "id": "S3Uploader",
-                "path": "prod-demo-Site/site/S3Uploader",
-                "children": {
-                  "Default": {
-                    "id": "Default",
-                    "path": "prod-demo-Site/site/S3Uploader/Default",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CustomResource",
-                  "version": "2.101.1"
-                }
-              },
-              "ServerCache": {
-                "id": "ServerCache",
-                "path": "prod-demo-Site/site/ServerCache",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/ServerCache/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::CloudFront::CachePolicy",
-                      "aws:cdk:cloudformation:props": {
-                        "cachePolicyConfig": {
-                          "name": "proddemoSitesiteServerCache0B15E754-eu-central-1",
-                          "comment": "SST server response cache policy",
-                          "minTtl": 0,
-                          "maxTtl": 31536000,
-                          "defaultTtl": 0,
-                          "parametersInCacheKeyAndForwardedToOrigin": {
-                            "cookiesConfig": {
-                              "cookieBehavior": "none"
-                            },
-                            "headersConfig": {
-                              "headerBehavior": "whitelist",
-                              "headers": [
-                                "accept",
-                                "rsc",
-                                "next-router-prefetch",
-                                "next-router-state-tree",
-                                "next-url"
-                              ]
-                            },
-                            "enableAcceptEncodingGzip": true,
-                            "enableAcceptEncodingBrotli": true,
-                            "queryStringsConfig": {
-                              "queryStringBehavior": "all"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_cloudfront.CfnCachePolicy",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_cloudfront.CachePolicy",
-                  "version": "2.101.1"
-                }
-              },
-              "ServerOriginRequestPolicy": {
-                "id": "ServerOriginRequestPolicy",
-                "path": "prod-demo-Site/site/ServerOriginRequestPolicy",
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.Resource",
-                  "version": "2.101.1"
-                }
-              },
-              "CDN": {
-                "id": "CDN",
-                "path": "prod-demo-Site/site/CDN",
-                "constructInfo": {
-                  "fqn": "constructs.Construct",
-                  "version": "10.2.69"
-                }
-              },
-              "Distribution": {
-                "id": "Distribution",
-                "path": "prod-demo-Site/site/Distribution",
-                "children": {
-                  "Origin1": {
-                    "id": "Origin1",
-                    "path": "prod-demo-Site/site/Distribution/Origin1",
-                    "constructInfo": {
-                      "fqn": "constructs.Construct",
-                      "version": "10.2.69"
-                    }
-                  },
-                  "Origin2": {
-                    "id": "Origin2",
-                    "path": "prod-demo-Site/site/Distribution/Origin2",
-                    "constructInfo": {
-                      "fqn": "constructs.Construct",
-                      "version": "10.2.69"
-                    }
-                  },
-                  "Origin3": {
-                    "id": "Origin3",
-                    "path": "prod-demo-Site/site/Distribution/Origin3",
-                    "children": {
-                      "S3Origin": {
-                        "id": "S3Origin",
-                        "path": "prod-demo-Site/site/Distribution/Origin3/S3Origin",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/Distribution/Origin3/S3Origin/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
-                              "aws:cdk:cloudformation:props": {
-                                "cloudFrontOriginAccessIdentityConfig": {
-                                  "comment": "Identity for proddemoSitesiteDistributionOrigin3F64686A3"
-                                }
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_cloudfront.CfnCloudFrontOriginAccessIdentity",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_cloudfront.OriginAccessIdentity",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "constructs.Construct",
-                      "version": "10.2.69"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/Distribution/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
-                      "aws:cdk:cloudformation:props": {
-                        "distributionConfig": {
-                          "enabled": true,
-                          "origins": [
-                            {
-                              "domainName": {
-                                "Fn::Select": [
-                                  0,
-                                  {
-                                    "Fn::Split": [
-                                      "/",
-                                      {
-                                        "Fn::Select": [
-                                          1,
-                                          {
-                                            "Fn::Split": [
-                                              "//",
-                                              {
-                                                "Fn::GetAtt": [
-                                                  "siteServerFunctionFunctionUrl1B09C490",
-                                                  "FunctionUrl"
-                                                ]
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              "id": "proddemoSitesiteDistributionOrigin12C2DDAE6",
-                              "customOriginConfig": {
-                                "originSslProtocols": [
-                                  "TLSv1.2"
-                                ],
-                                "originProtocolPolicy": "https-only",
-                                "originReadTimeout": 10
-                              }
-                            },
-                            {
-                              "domainName": {
-                                "Fn::Select": [
-                                  0,
-                                  {
-                                    "Fn::Split": [
-                                      "/",
-                                      {
-                                        "Fn::Select": [
-                                          1,
-                                          {
-                                            "Fn::Split": [
-                                              "//",
-                                              {
-                                                "Fn::GetAtt": [
-                                                  "siteImageFunctionFunctionUrl110B87E7",
-                                                  "FunctionUrl"
-                                                ]
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              "id": "proddemoSitesiteDistributionOrigin23610A477",
-                              "customOriginConfig": {
-                                "originSslProtocols": [
-                                  "TLSv1.2"
-                                ],
-                                "originProtocolPolicy": "https-only"
-                              }
-                            },
-                            {
-                              "domainName": {
-                                "Fn::GetAtt": [
-                                  "siteS3Bucket2B2851F3",
-                                  "RegionalDomainName"
-                                ]
-                              },
-                              "id": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "originPath": "/_assets",
-                              "s3OriginConfig": {
-                                "originAccessIdentity": {
-                                  "Fn::Join": [
-                                    "",
-                                    [
-                                      "origin-access-identity/cloudfront/",
-                                      {
-                                        "Ref": "siteDistributionOrigin3S3Origin7C72BBD7"
-                                      }
-                                    ]
-                                  ]
-                                }
-                              }
-                            }
-                          ],
-                          "defaultCacheBehavior": {
-                            "pathPattern": "*",
-                            "targetOriginId": "proddemoSitesiteDistributionOrigin12C2DDAE6",
-                            "allowedMethods": [
-                              "GET",
-                              "HEAD",
-                              "OPTIONS",
-                              "PUT",
-                              "PATCH",
-                              "POST",
-                              "DELETE"
-                            ],
-                            "cachedMethods": [
-                              "GET",
-                              "HEAD",
-                              "OPTIONS"
-                            ],
-                            "cachePolicyId": {
-                              "Ref": "siteServerCacheDD54ACDF"
-                            },
-                            "compress": true,
-                            "originRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
-                            "viewerProtocolPolicy": "redirect-to-https",
-                            "functionAssociations": [
-                              {
-                                "functionArn": {
-                                  "Fn::GetAtt": [
-                                    "siteCloudFrontFunctionE91DD486",
-                                    "FunctionARN"
-                                  ]
-                                },
-                                "eventType": "viewer-request"
-                              }
-                            ],
-                            "lambdaFunctionAssociations": []
-                          },
-                          "aliases": [
-                            "demo.smartwaiter.app"
-                          ],
-                          "cacheBehaviors": [
-                            {
-                              "pathPattern": "api/*",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin12C2DDAE6",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS",
-                                "PUT",
-                                "PATCH",
-                                "POST",
-                                "DELETE"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": {
-                                "Ref": "siteServerCacheDD54ACDF"
-                              },
-                              "compress": true,
-                              "originRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
-                              "viewerProtocolPolicy": "redirect-to-https",
-                              "functionAssociations": [
-                                {
-                                  "functionArn": {
-                                    "Fn::GetAtt": [
-                                      "siteCloudFrontFunctionE91DD486",
-                                      "FunctionARN"
-                                    ]
-                                  },
-                                  "eventType": "viewer-request"
-                                }
-                              ],
-                              "lambdaFunctionAssociations": []
-                            },
-                            {
-                              "pathPattern": "_next/data/*",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin12C2DDAE6",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS",
-                                "PUT",
-                                "PATCH",
-                                "POST",
-                                "DELETE"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": {
-                                "Ref": "siteServerCacheDD54ACDF"
-                              },
-                              "compress": true,
-                              "originRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
-                              "viewerProtocolPolicy": "redirect-to-https",
-                              "functionAssociations": [
-                                {
-                                  "functionArn": {
-                                    "Fn::GetAtt": [
-                                      "siteCloudFrontFunctionE91DD486",
-                                      "FunctionARN"
-                                    ]
-                                  },
-                                  "eventType": "viewer-request"
-                                }
-                              ],
-                              "lambdaFunctionAssociations": []
-                            },
-                            {
-                              "pathPattern": "_next/image*",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin23610A477",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS",
-                                "PUT",
-                                "PATCH",
-                                "POST",
-                                "DELETE"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": {
-                                "Ref": "siteServerCacheDD54ACDF"
-                              },
-                              "compress": true,
-                              "originRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
-                              "viewerProtocolPolicy": "redirect-to-https",
-                              "functionAssociations": [
-                                {
-                                  "functionArn": {
-                                    "Fn::GetAtt": [
-                                      "siteCloudFrontFunctionE91DD486",
-                                      "FunctionARN"
-                                    ]
-                                  },
-                                  "eventType": "viewer-request"
-                                }
-                              ],
-                              "lambdaFunctionAssociations": []
-                            },
-                            {
-                              "pathPattern": "BUILD_ID",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
-                              "compress": true,
-                              "viewerProtocolPolicy": "redirect-to-https"
-                            },
-                            {
-                              "pathPattern": "_next/*",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
-                              "compress": true,
-                              "viewerProtocolPolicy": "redirect-to-https"
-                            },
-                            {
-                              "pathPattern": "images/*",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
-                              "compress": true,
-                              "viewerProtocolPolicy": "redirect-to-https"
-                            },
-                            {
-                              "pathPattern": "next.svg",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
-                              "compress": true,
-                              "viewerProtocolPolicy": "redirect-to-https"
-                            },
-                            {
-                              "pathPattern": "vercel.svg",
-                              "targetOriginId": "proddemoSitesiteDistributionOrigin3F64686A3",
-                              "allowedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachedMethods": [
-                                "GET",
-                                "HEAD",
-                                "OPTIONS"
-                              ],
-                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
-                              "compress": true,
-                              "viewerProtocolPolicy": "redirect-to-https"
-                            }
-                          ],
-                          "defaultRootObject": "",
-                          "httpVersion": "http2",
-                          "ipv6Enabled": true,
-                          "viewerCertificate": {
-                            "acmCertificateArn": "arn:aws:acm:us-east-1:984009409855:certificate/0fe9ca89-945d-427b-8b38-7f81060092d6",
-                            "minimumProtocolVersion": "TLSv1.2_2021",
-                            "sslSupportMethod": "sni-only"
-                          }
-                        },
-                        "tags": [
-                          {
-                            "key": "sst:app",
-                            "value": "demo"
-                          },
-                          {
-                            "key": "sst:stage",
-                            "value": "prod"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_cloudfront.CfnDistribution",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_cloudfront.Distribution",
-                  "version": "2.101.1"
-                }
-              },
-              "ServerFunctionInvalidatorPolicy": {
-                "id": "ServerFunctionInvalidatorPolicy",
-                "path": "prod-demo-Site/site/ServerFunctionInvalidatorPolicy",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/ServerFunctionInvalidatorPolicy/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                      "aws:cdk:cloudformation:props": {
-                        "policyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "cloudfront:CreateInvalidation",
-                              "Effect": "Allow",
-                              "Resource": {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":cloudfront::984009409855:distribution/",
-                                    {
-                                      "Ref": "siteDistribution706F5265"
-                                    }
-                                  ]
-                                ]
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "policyName": "siteServerFunctionInvalidatorPolicy004B2ED1",
-                        "roles": [
-                          {
-                            "Ref": "siteServerFunctionServiceRole8328A688"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_iam.Policy",
-                  "version": "2.101.1"
-                }
-              },
-              "CloudFrontInvalidatorPolicy": {
-                "id": "CloudFrontInvalidatorPolicy",
-                "path": "prod-demo-Site/site/CloudFrontInvalidatorPolicy",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/CloudFrontInvalidatorPolicy/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                      "aws:cdk:cloudformation:props": {
-                        "policyDocument": {
-                          "Statement": [
-                            {
-                              "Action": [
-                                "cloudfront:GetInvalidation",
-                                "cloudfront:CreateInvalidation"
-                              ],
-                              "Effect": "Allow",
-                              "Resource": {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":cloudfront::984009409855:distribution/",
-                                    {
-                                      "Ref": "siteDistribution706F5265"
-                                    }
-                                  ]
-                                ]
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "policyName": "siteCloudFrontInvalidatorPolicyEE18C654",
-                        "roles": [
-                          {
-                            "Ref": "CustomResourceHandlerServiceRole41AEC181"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_iam.Policy",
-                  "version": "2.101.1"
-                }
-              },
-              "CloudFrontInvalidator": {
-                "id": "CloudFrontInvalidator",
-                "path": "prod-demo-Site/site/CloudFrontInvalidator",
-                "children": {
-                  "Default": {
-                    "id": "Default",
-                    "path": "prod-demo-Site/site/CloudFrontInvalidator/Default",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CustomResource",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationQueue": {
-                "id": "RevalidationQueue",
-                "path": "prod-demo-Site/site/RevalidationQueue",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/RevalidationQueue/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
-                      "aws:cdk:cloudformation:props": {
-                        "fifoQueue": true,
-                        "receiveMessageWaitTimeSeconds": 20,
-                        "tags": [
-                          {
-                            "key": "sst:app",
-                            "value": "demo"
-                          },
-                          {
-                            "key": "sst:stage",
-                            "value": "prod"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_sqs.CfnQueue",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_sqs.Queue",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationFunction": {
-                "id": "RevalidationFunction",
-                "path": "prod-demo-Site/site/RevalidationFunction",
-                "children": {
-                  "ServiceRole": {
-                    "id": "ServiceRole",
-                    "path": "prod-demo-Site/site/RevalidationFunction/ServiceRole",
-                    "children": {
-                      "ImportServiceRole": {
-                        "id": "ImportServiceRole",
-                        "path": "prod-demo-Site/site/RevalidationFunction/ServiceRole/ImportServiceRole",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/RevalidationFunction/ServiceRole/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                          "aws:cdk:cloudformation:props": {
-                            "assumeRolePolicyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": "sts:AssumeRole",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "Service": "lambda.amazonaws.com"
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
-                            },
-                            "managedPolicyArns": [
-                              {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                  ]
-                                ]
-                              }
-                            ],
-                            "tags": [
-                              {
-                                "key": "sst:app",
-                                "value": "demo"
-                              },
-                              {
-                                "key": "sst:stage",
-                                "value": "prod"
-                              }
-                            ]
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "DefaultPolicy": {
-                        "id": "DefaultPolicy",
-                        "path": "prod-demo-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                              "aws:cdk:cloudformation:props": {
-                                "policyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": [
-                                        "sqs:ReceiveMessage",
-                                        "sqs:ChangeMessageVisibility",
-                                        "sqs:GetQueueUrl",
-                                        "sqs:DeleteMessage",
-                                        "sqs:GetQueueAttributes"
-                                      ],
-                                      "Effect": "Allow",
-                                      "Resource": {
-                                        "Fn::GetAtt": [
-                                          "siteRevalidationQueue355EB7DA",
-                                          "Arn"
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "policyName": "siteRevalidationFunctionServiceRoleDefaultPolicy57C55CA4",
-                                "roles": [
-                                  {
-                                    "Ref": "siteRevalidationFunctionServiceRole02D71DA1"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Code": {
-                    "id": "Code",
-                    "path": "prod-demo-Site/site/RevalidationFunction/Code",
-                    "children": {
-                      "Stage": {
-                        "id": "Stage",
-                        "path": "prod-demo-Site/site/RevalidationFunction/Code/Stage",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "AssetBucket": {
-                        "id": "AssetBucket",
-                        "path": "prod-demo-Site/site/RevalidationFunction/Code/AssetBucket",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/RevalidationFunction/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "code": {
-                          "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                          "s3Key": "d2f262ab575485c80f084185501097ccb61e2c4ab97ab724a23e2361c7c7b586.zip"
-                        },
-                        "description": "Next.js revalidator",
-                        "handler": "index.handler",
-                        "role": {
-                          "Fn::GetAtt": [
-                            "siteRevalidationFunctionServiceRole02D71DA1",
-                            "Arn"
-                          ]
-                        },
-                        "runtime": "nodejs18.x",
-                        "tags": [
-                          {
-                            "key": "sst:app",
-                            "value": "demo"
-                          },
-                          {
-                            "key": "sst:stage",
-                            "value": "prod"
-                          }
-                        ],
-                        "timeout": 30
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "SqsEventSource:proddemoSitesiteRevalidationQueue3C837350": {
-                    "id": "SqsEventSource:proddemoSitesiteRevalidationQueue3C837350",
-                    "path": "prod-demo-Site/site/RevalidationFunction/SqsEventSource:proddemoSitesiteRevalidationQueue3C837350",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/RevalidationFunction/SqsEventSource:proddemoSitesiteRevalidationQueue3C837350/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::Lambda::EventSourceMapping",
-                          "aws:cdk:cloudformation:props": {
-                            "batchSize": 5,
-                            "eventSourceArn": {
-                              "Fn::GetAtt": [
-                                "siteRevalidationQueue355EB7DA",
-                                "Arn"
-                              ]
-                            },
-                            "functionName": {
-                              "Ref": "siteRevalidationFunctionEB84F6D0"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.CfnEventSourceMapping",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.EventSourceMapping",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_lambda.Function",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationTable": {
-                "id": "RevalidationTable",
-                "path": "prod-demo-Site/site/RevalidationTable",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/RevalidationTable/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::GlobalTable",
-                      "aws:cdk:cloudformation:props": {
-                        "attributeDefinitions": [
-                          {
-                            "attributeName": "tag",
-                            "attributeType": "S"
-                          },
-                          {
-                            "attributeName": "path",
-                            "attributeType": "S"
-                          },
-                          {
-                            "attributeName": "revalidatedAt",
-                            "attributeType": "N"
-                          }
-                        ],
-                        "billingMode": "PAY_PER_REQUEST",
-                        "globalSecondaryIndexes": [
-                          {
-                            "indexName": "revalidate",
-                            "keySchema": [
-                              {
-                                "attributeName": "path",
-                                "keyType": "HASH"
-                              },
-                              {
-                                "attributeName": "revalidatedAt",
-                                "keyType": "RANGE"
-                              }
-                            ],
-                            "projection": {
-                              "projectionType": "ALL"
-                            }
-                          }
-                        ],
-                        "keySchema": [
-                          {
-                            "attributeName": "tag",
-                            "keyType": "HASH"
-                          },
-                          {
-                            "attributeName": "path",
-                            "keyType": "RANGE"
-                          }
-                        ],
-                        "replicas": [
-                          {
-                            "region": "eu-central-1",
-                            "globalSecondaryIndexes": [
-                              {
-                                "indexName": "revalidate"
-                              }
-                            ],
-                            "pointInTimeRecoverySpecification": {
-                              "pointInTimeRecoveryEnabled": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnGlobalTable",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_dynamodb.TableV2",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationInsertFunction": {
-                "id": "RevalidationInsertFunction",
-                "path": "prod-demo-Site/site/RevalidationInsertFunction",
-                "children": {
-                  "ServiceRole": {
-                    "id": "ServiceRole",
-                    "path": "prod-demo-Site/site/RevalidationInsertFunction/ServiceRole",
-                    "children": {
-                      "ImportServiceRole": {
-                        "id": "ImportServiceRole",
-                        "path": "prod-demo-Site/site/RevalidationInsertFunction/ServiceRole/ImportServiceRole",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/RevalidationInsertFunction/ServiceRole/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                          "aws:cdk:cloudformation:props": {
-                            "assumeRolePolicyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": "sts:AssumeRole",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "Service": "lambda.amazonaws.com"
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
-                            },
-                            "managedPolicyArns": [
-                              {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                  ]
-                                ]
-                              }
-                            ],
-                            "tags": [
-                              {
-                                "key": "sst:app",
-                                "value": "demo"
-                              },
-                              {
-                                "key": "sst:stage",
-                                "value": "prod"
-                              }
-                            ]
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "DefaultPolicy": {
-                        "id": "DefaultPolicy",
-                        "path": "prod-demo-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                              "aws:cdk:cloudformation:props": {
-                                "policyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": [
-                                        "dynamodb:BatchWriteItem",
-                                        "dynamodb:PutItem",
-                                        "dynamodb:DescribeTable"
-                                      ],
-                                      "Effect": "Allow",
-                                      "Resource": {
-                                        "Fn::GetAtt": [
-                                          "siteRevalidationTable79579F77",
-                                          "Arn"
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "policyName": "siteRevalidationInsertFunctionServiceRoleDefaultPolicy6656C2D6",
-                                "roles": [
-                                  {
-                                    "Ref": "siteRevalidationInsertFunctionServiceRole5EAB97F1"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Code": {
-                    "id": "Code",
-                    "path": "prod-demo-Site/site/RevalidationInsertFunction/Code",
-                    "children": {
-                      "Stage": {
-                        "id": "Stage",
-                        "path": "prod-demo-Site/site/RevalidationInsertFunction/Code/Stage",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "AssetBucket": {
-                        "id": "AssetBucket",
-                        "path": "prod-demo-Site/site/RevalidationInsertFunction/Code/AssetBucket",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.101.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "prod-demo-Site/site/RevalidationInsertFunction/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "code": {
-                          "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                          "s3Key": "16d6a0b5f301bbd93494a37a7ae80323586d39749e432b0708e6458b767fe32d.zip"
-                        },
-                        "description": "Next.js revalidation data insert",
-                        "environment": {
-                          "variables": {
-                            "CACHE_DYNAMO_TABLE": {
-                              "Ref": "siteRevalidationTable79579F77"
-                            }
-                          }
-                        },
-                        "handler": "index.handler",
-                        "role": {
-                          "Fn::GetAtt": [
-                            "siteRevalidationInsertFunctionServiceRole5EAB97F1",
-                            "Arn"
-                          ]
-                        },
-                        "runtime": "nodejs18.x",
-                        "tags": [
-                          {
-                            "key": "sst:app",
-                            "value": "demo"
-                          },
-                          {
-                            "key": "sst:stage",
-                            "value": "prod"
-                          }
-                        ],
-                        "timeout": 900
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_lambda.Function",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationProvider": {
-                "id": "RevalidationProvider",
-                "path": "prod-demo-Site/site/RevalidationProvider",
-                "children": {
-                  "framework-onEvent": {
-                    "id": "framework-onEvent",
-                    "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent",
-                    "children": {
-                      "ServiceRole": {
-                        "id": "ServiceRole",
-                        "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/ServiceRole",
-                        "children": {
-                          "ImportServiceRole": {
-                            "id": "ImportServiceRole",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/ImportServiceRole",
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.101.1"
-                            }
-                          },
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                              "aws:cdk:cloudformation:props": {
-                                "assumeRolePolicyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": "sts:AssumeRole",
-                                      "Effect": "Allow",
-                                      "Principal": {
-                                        "Service": "lambda.amazonaws.com"
-                                      }
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "managedPolicyArns": [
-                                  {
-                                    "Fn::Join": [
-                                      "",
-                                      [
-                                        "arn:",
-                                        {
-                                          "Ref": "AWS::Partition"
-                                        },
-                                        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                      ]
-                                    ]
-                                  }
-                                ],
-                                "tags": [
-                                  {
-                                    "key": "sst:app",
-                                    "value": "demo"
-                                  },
-                                  {
-                                    "key": "sst:stage",
-                                    "value": "prod"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.101.1"
-                            }
-                          },
-                          "DefaultPolicy": {
-                            "id": "DefaultPolicy",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy",
-                            "children": {
-                              "Resource": {
-                                "id": "Resource",
-                                "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
-                                "attributes": {
-                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                                  "aws:cdk:cloudformation:props": {
-                                    "policyDocument": {
-                                      "Statement": [
-                                        {
-                                          "Action": "lambda:InvokeFunction",
-                                          "Effect": "Allow",
-                                          "Resource": [
-                                            {
-                                              "Fn::GetAtt": [
-                                                "siteRevalidationInsertFunction4388DE95",
-                                                "Arn"
-                                              ]
-                                            },
-                                            {
-                                              "Fn::Join": [
-                                                "",
-                                                [
-                                                  {
-                                                    "Fn::GetAtt": [
-                                                      "siteRevalidationInsertFunction4388DE95",
-                                                      "Arn"
-                                                    ]
-                                                  },
-                                                  ":*"
-                                                ]
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ],
-                                      "Version": "2012-10-17"
-                                    },
-                                    "policyName": "siteRevalidationProviderframeworkonEventServiceRoleDefaultPolicy2EE9A030",
-                                    "roles": [
-                                      {
-                                        "Ref": "siteRevalidationProviderframeworkonEventServiceRoleD8931DDF"
-                                      }
-                                    ]
-                                  }
-                                },
-                                "constructInfo": {
-                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                                  "version": "2.101.1"
-                                }
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.Policy",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "Code": {
-                        "id": "Code",
-                        "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/Code",
-                        "children": {
-                          "Stage": {
-                            "id": "Stage",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/Code/Stage",
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.AssetStaging",
-                              "version": "2.101.1"
-                            }
-                          },
-                          "AssetBucket": {
-                            "id": "AssetBucket",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/Code/AssetBucket",
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                          "aws:cdk:cloudformation:props": {
-                            "code": {
-                              "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
-                              "s3Key": "7382a0addb9f34974a1ea6c6c9b063882af874828f366f5c93b2b7b64db15c94.zip"
-                            },
-                            "description": "AWS CDK resource provider framework - onEvent (prod-demo-Site/site/RevalidationProvider)",
-                            "environment": {
-                              "variables": {
-                                "USER_ON_EVENT_FUNCTION_ARN": {
-                                  "Fn::GetAtt": [
-                                    "siteRevalidationInsertFunction4388DE95",
-                                    "Arn"
-                                  ]
-                                }
-                              }
-                            },
-                            "handler": "framework.onEvent",
-                            "role": {
-                              "Fn::GetAtt": [
-                                "siteRevalidationProviderframeworkonEventServiceRoleD8931DDF",
-                                "Arn"
-                              ]
-                            },
-                            "runtime": "nodejs18.x",
-                            "tags": [
-                              {
-                                "key": "sst:app",
-                                "value": "demo"
-                              },
-                              {
-                                "key": "sst:stage",
-                                "value": "prod"
-                              }
-                            ],
-                            "timeout": 900
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "LogRetention": {
-                        "id": "LogRetention",
-                        "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/LogRetention",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/LogRetention/Resource",
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.101.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_logs.LogRetention",
-                          "version": "2.101.1"
-                        }
-                      },
-                      "LogGroup": {
-                        "id": "LogGroup",
-                        "path": "prod-demo-Site/site/RevalidationProvider/framework-onEvent/LogGroup",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.101.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.Function",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.custom_resources.Provider",
-                  "version": "2.101.1"
-                }
-              },
-              "RevalidationResource": {
-                "id": "RevalidationResource",
-                "path": "prod-demo-Site/site/RevalidationResource",
-                "children": {
-                  "Default": {
-                    "id": "Default",
-                    "path": "prod-demo-Site/site/RevalidationResource/Default",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.101.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CustomResource",
-                  "version": "2.101.1"
                 }
               },
               "Parameter_url": {
                 "id": "Parameter_url",
-                "path": "prod-demo-Site/site/Parameter_url",
+                "path": "dev-demo-smartwaiter-Site/site/Parameter_url",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/site/Parameter_url/Resource",
+                    "path": "dev-demo-smartwaiter-Site/site/Parameter_url/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
                       "aws:cdk:cloudformation:props": {
-                        "name": "/sst/demo/prod/NextjsSite/site/url",
+                        "name": "/sst/demo-smartwaiter/dev/NextjsSite/site/url",
                         "tags": {
-                          "sst:app": "demo",
-                          "sst:stage": "prod"
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "dev"
                         },
                         "type": "String",
-                        "value": "https://demo.smartwaiter.app"
+                        "value": "localhost"
                       }
                     },
                     "constructInfo": {
@@ -2835,51 +630,17 @@
               "version": "10.2.69"
             }
           },
-          "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
-            "id": "Custom::S3AutoDeleteObjectsCustomResourceProvider",
-            "path": "prod-demo-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider",
-            "children": {
-              "Staging": {
-                "id": "Staging",
-                "path": "prod-demo-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.AssetStaging",
-                  "version": "2.101.1"
-                }
-              },
-              "Role": {
-                "id": "Role",
-                "path": "prod-demo-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.101.1"
-                }
-              },
-              "Handler": {
-                "id": "Handler",
-                "path": "prod-demo-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.101.1"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CustomResourceProvider",
-              "version": "2.101.1"
-            }
-          },
           "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
             "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
-            "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
             "children": {
               "Code": {
                 "id": "Code",
-                "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.101.1"
@@ -2887,7 +648,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.101.1"
@@ -2901,11 +662,11 @@
               },
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.101.1"
@@ -2913,7 +674,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -2946,11 +707,11 @@
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "demo"
+                            "value": "demo-smartwaiter"
                           },
                           {
                             "key": "sst:stage",
-                            "value": "prod"
+                            "value": "dev"
                           }
                         ]
                       }
@@ -2962,11 +723,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -3010,7 +771,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "prod-demo-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "path": "dev-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.101.1"
@@ -3022,17 +783,9 @@
               "version": "10.2.69"
             }
           },
-          "SSTStackOutputSiteUrl": {
-            "id": "SSTStackOutputSiteUrl",
-            "path": "prod-demo-Site/SSTStackOutputSiteUrl",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.101.1"
-            }
-          },
           "SSTStackOutputSSTMetadata": {
             "id": "SSTStackOutputSSTMetadata",
-            "path": "prod-demo-Site/SSTStackOutputSSTMetadata",
+            "path": "dev-demo-smartwaiter-Site/SSTStackOutputSSTMetadata",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.101.1"
@@ -3040,7 +793,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "prod-demo-Site/BootstrapVersion",
+            "path": "dev-demo-smartwaiter-Site/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.101.1"
@@ -3048,7 +801,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "prod-demo-Site/CheckBootstrapVersion",
+            "path": "dev-demo-smartwaiter-Site/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.101.1"

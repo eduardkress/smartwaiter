@@ -255,23 +255,7 @@
     },
     "bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
     "key": "54cf5dadad750882329052f1dbfc398be50f7cc44d9e2ab56d164cb049bcf9f4.zip",
-    "replacements": [
-     {
-      "files": "**/*.@(*js|json|html)",
-      "search": "{{ NEXTAUTH_URL }}",
-      "replace": "https://demo.smartwaiter.app"
-     },
-     {
-      "files": "**/*.@(*js|json|html)",
-      "search": "{{ NEXTAUTH_SECRET }}",
-      "replace": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF"
-     },
-     {
-      "files": "**/*.@(*js|json|html)",
-      "search": "{{ SALT }}",
-      "replace": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw"
-     }
-    ]
+    "replacements": []
    },
    "DependsOn": [
     "siteServerFunctionAssetReplacerPolicy304BF125"
@@ -292,9 +276,6 @@
     "Description": "Server handler placeholder",
     "Environment": {
      "Variables": {
-      "NEXTAUTH_URL": "https://demo.smartwaiter.app",
-      "NEXTAUTH_SECRET": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
-      "SALT": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
       "SST_APP": "demo",
       "SST_STAGE": "dev",
       "SST_SSM_PREFIX": "/sst/demo/dev/",
