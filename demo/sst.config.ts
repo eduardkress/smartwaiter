@@ -1,6 +1,7 @@
 import { SSTConfig } from "sst";
 import { Table, Config, NextjsSite } from "sst/constructs";
 import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
+//import { Config as UseConfig } from "sst/node/config";
 
 const appName = "demo";
 const domainCertArn =
@@ -29,11 +30,11 @@ export default {
       });
 
       const site = new NextjsSite(stack, "site", {
-        // environment: {
-        //   NEXTAUTH_URL: "https://demo.smartwaiter.app",
-        //   NEXTAUTH_SECRET: "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
-        //   SALT: "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
-        // },
+        environment: {
+          NEXTAUTH_URL: "https://demo.smartwaiter.app",
+          NEXTAUTH_SECRET: "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
+          SALT: "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
+        },
         customDomain: {
           isExternalDomain: true,
           domainName: appName + ".smartwaiter.app",

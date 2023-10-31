@@ -1,6 +1,6 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-import * as bcrypt from "bcrypt";
+const bcrypt = require('bcryptjs');
 
 const handler = NextAuth({
   pages: {
@@ -54,6 +54,7 @@ const handler = NextAuth({
 
         if (
           user &&
+          user.email == credentials?.email &&
           (await bcrypt.compare(credentials?.password ?? "", user.password))
         ) {
           // Any object returned will be saved in `user` property of the JWT
@@ -80,7 +81,7 @@ const handler = NextAuth({
       session.user = token as any;
       return session;
     },
-  },
+  }
 });
 
 export { handler as GET, handler as POST };

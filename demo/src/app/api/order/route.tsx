@@ -10,5 +10,6 @@ export async function GET(request: Request) {
   //     MessageBody: "Hello from Next.js!",
   //   });
   //   await sqs.send(command);
+
   return NextResponse.json({ data: "Hello From Order API!" });
 }
