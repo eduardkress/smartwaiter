@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 const bcrypt = require('bcryptjs');
 
 const handler = NextAuth({
@@ -34,6 +35,8 @@ const handler = NextAuth({
 
         // const user = await res.json();
         console.log(credentials);
+        console.log(process.env.NEXTAUTH_SECRET);
+        console.log(req);
         const user = {
           id: "1",
           name: "Demo",
@@ -51,13 +54,16 @@ const handler = NextAuth({
         // if (!user || !(await compare(credentials.password, user.password))) {
         //   return null;
         // }
-
+        console.log("User", user);
+        console.log("Credentials", credentials);
+        console.log("Compare", (await bcrypt.compare(credentials?.password ?? "", user.password)));
         if (
           user &&
           user.email == credentials?.email &&
           (await bcrypt.compare(credentials?.password ?? "", user.password))
         ) {
           // Any object returned will be saved in `user` property of the JWT
+          console.log("Login successful", credentials);
           return {
             id: user.id,
             name: user.name,
@@ -81,7 +87,11 @@ const handler = NextAuth({
       session.user = token as any;
       return session;
     },
-  }
+  },
+  //secret: process.env.NEXTAUTH_SECRET,
+  // jwt: {
+  //   secret: Config.NEXTAUTH_SECRET
+  // }
 });
 
 export { handler as GET, handler as POST };

@@ -34,6 +34,7 @@ export default function Page() {
       if (!res?.error) {
         router.push(callbackUrl);
       } else {
+        console.log(res.error);
         setError("invalid email or password");
       }
     } catch (error: any) {
