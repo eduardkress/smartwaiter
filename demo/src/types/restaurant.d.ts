@@ -1,0 +1,181 @@
+export interface Restaurant {
+  brand: Brand;
+  rating: Rating;
+  location: Location;
+  restaurantId: string;
+  colophon: Colophon;
+  menu: Menu;
+}
+
+export interface Brand {
+  name: string;
+  branchName: string;
+  chainId: string;
+  description: any[];
+  slogan: string;
+  logoUrl: string;
+  headerImageUrl: string;
+}
+
+export interface Colophon {
+  status: string;
+  data: Data;
+}
+
+export interface Data {
+  branchName: string;
+  restaurantName: string;
+  streetName: string;
+  streetNumber: string;
+  postalCode: string;
+  city: string;
+  legalEntity: string;
+  legalRepresentativeName: string;
+  legalName: null;
+  legalEntityClass: string;
+  email: string;
+  fax: string;
+  chamberOfCommerce: any[];
+  vatNumber: null;
+  disputeResolutionLink: string;
+}
+
+export interface Location {
+  streetName: string;
+  streetNumber: string;
+  postalCode: string;
+  city: string;
+  country: string;
+  lat: string;
+  lng: string;
+  timeZone: string;
+}
+
+export interface Menu {
+  currency: Currency;
+  categories: Category[];
+  optionGroups: { [key: string]: OptionGroup };
+  options: { [key: string]: Option };
+  products: { [key: string]: Product };
+  popularProductIds: string[];
+  discounts: Discount[];
+  autoAddedProducts: AutoAddedProducts;
+}
+
+export interface AutoAddedProducts {}
+
+export interface Category {
+  id: string;
+  name: string;
+  description: string[];
+  imageUrl: string;
+  overviewImageUrl: null;
+  timeRestrictions: { [key: string]: TimeRestriction[] };
+  productIds: string[];
+}
+
+export interface TimeRestriction {
+  start: number;
+  end: number;
+  formattedStart: string;
+  formattedEnd: string;
+}
+
+export interface Currency {
+  denominator: number;
+  code: string;
+}
+
+export interface Discount {
+  type: string;
+  name: string;
+  description: string;
+  dayOfWeek: null;
+  promotionPrice: null;
+  absoluteAmount: number;
+  percentageAmount: null;
+  areSideDishesIncluded: boolean;
+  isAppliedToEveryOccurrence: boolean;
+  nthOccurrence: null;
+  startFromAmount: null;
+  shippingTypes: ShippingType[];
+  productGroups: Array<string[]>;
+}
+
+export enum ShippingType {
+  Delivery = 'DELIVERY',
+  Pickup = 'PICKUP'
+}
+
+export interface OptionGroup {
+  name: string;
+  isTypeMulti: boolean;
+  isRequired: boolean;
+  minChoices: number;
+  maxChoices: number;
+  optionIds: string[];
+}
+
+export interface Option {
+  name: string;
+  minAmount: number;
+  maxAmount: number;
+  prices: Prices;
+  metric: Metric;
+  priceUnit: PriceUnit | null;
+  pricePerUnitPickup: null;
+  pricePerUnitDelivery: null;
+  alcoholVolume: null;
+  caffeineAmount: null;
+  isSoldOut: boolean;
+  isExcludedFromMov: boolean;
+}
+
+export interface Metric {
+  unit: Unit | null;
+  quantity: number | null;
+}
+
+export enum Unit {
+  G = 'g',
+  Ml = 'ml'
+}
+
+export enum PriceUnit {
+  Kilogram = 'kilogram',
+  Liter = 'liter'
+}
+
+export interface Prices {
+  delivery: number;
+  pickup: number;
+  deposit: number | null;
+}
+
+export interface Variant {
+  id: string;
+  name: string | null;
+  optionGroupIds: string[];
+  shippingTypes: ShippingType[];
+  prices: Prices;
+  metric: Metric;
+  priceUnit: PriceUnit | null;
+  pricePerUnitPickup: number | null;
+  pricePerUnitDelivery: number | null;
+  alcoholVolume: null | string;
+  caffeineAmount: null | string;
+  isSoldOut: boolean;
+  isExcludedFromMov: boolean;
+}
+
+export interface Product {
+  name: string;
+  description: string[];
+  imageUrl: null | string;
+  variants: Variant[];
+}
+
+export interface Rating {
+  votes: number;
+  score: number;
+}

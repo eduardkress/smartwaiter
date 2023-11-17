@@ -1,8 +1,7 @@
 [
   {
-    "categoryId": 1,
+    "id": 1,
     "categoryName": "Beliebt ❤️",
-    "img": "URL",
     "items": [
       {
         "id": 1,
@@ -57,9 +56,9 @@
     ]
   },
   {
-    "categoryId": 2,
+    "id": 2,
     "categoryName": "Kategorie 2",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 4,
@@ -101,9 +100,9 @@
     ]
   },
   {
-    "categoryId": 3,
+    "id": 3,
     "categoryName": "Kategorie 3",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -146,9 +145,9 @@
     ]
   },
   {
-    "categoryId": 4,
+    "id": 4,
     "categoryName": "Kategorie 4",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -191,9 +190,9 @@
     ]
   },
   {
-    "categoryId": 5,
+    "id": 5,
     "categoryName": "Kategorie 5",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -236,9 +235,9 @@
     ]
   },
   {
-    "categoryId": 6,
+    "id": 6,
     "categoryName": "Kategorie 6",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -281,9 +280,9 @@
     ]
   },
   {
-    "categoryId": 7,
+    "id": 7,
     "categoryName": "Kategorie 7",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -326,9 +325,9 @@
     ]
   },
   {
-    "categoryId": 8,
+    "id": 8,
     "categoryName": "Kategorie 8",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
@@ -371,9 +370,9 @@
     ]
   },
   {
-    "categoryId": 9,
+    "id": 9,
     "categoryName": "Kategorie 9",
-    "img": "URL",
+    "img": "/images/hero-restaurants.jpeg",
     "items": [
       {
         "id": 7,
