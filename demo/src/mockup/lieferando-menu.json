@@ -1,0 +1,512 @@
+{
+  "menu": {
+    "currency": {
+      "denominator": 100,
+      "code": "EUR"
+    },
+    "categories": [
+      {
+        "id": "RQNO5PQ51",
+        "name": "Mittagsangebot",
+        "description": [
+          "Lieferung bis 16 Uhr! Bitte beachte unsere Öffnungszeiten und den Mindestbestellwert.",
+          "Alle Größen: Blechinnenmaß gerundet."
+        ],
+        "imageUrl": "",
+        "overviewImageUrl": null,
+        "timeRestrictions": {
+          "1": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "2": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "3": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "4": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "5": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "6": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ],
+          "0": [
+            {
+              "start": 660,
+              "end": 960,
+              "formattedStart": "11:00",
+              "formattedEnd": "16:00"
+            }
+          ]
+        },
+        "productIds": [
+          "R353NNR3Q1",
+          "R5P3NNR3Q1",
+          "QO5QO33Q0N",
+          "Q0PQO33Q0N",
+          "Q1ORO33Q0N",
+          "QQRRO33Q0N",
+          "RR53NNR3Q1",
+          "QN5NPNR7R1"
+        ]
+      },
+      {
+        "id": "R15PROR71",
+        "name": "Aktion",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1699813661/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["RNO7RPP7NN"]
+      },
+      {
+        "id": "QQQQN1571",
+        "name": "Die Domino's Box",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1699813661/static-takeaway-com/images/chains/de/dominos_neu/categories/header_dominos_box",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "QPO5OPOQ1N",
+          "QRO5OPOQ1N",
+          "QN55OPOQ1N",
+          "Q555OPOQ1N",
+          "QQ55OPOQ1N"
+        ]
+      },
+      {
+        "id": "R13O5PQ51",
+        "name": "Pizza - World Kitchen",
+        "description": [
+          "Jeweils mit mediterraner Tomatensauce und herzhaftem Käse (echtem Mozzarella). Alle Größen: Blechinnenmaß gerundet."
+        ],
+        "imageUrl": "",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R5R3NNR3Q1",
+          "Q30RR3NR0N",
+          "RQR3NNR3Q1",
+          "R10ONNR3Q1",
+          "RO0ONNR3Q1",
+          "R70ONNR3Q1",
+          "RO73NNR3Q1",
+          "RPQ3NNR3Q1",
+          "Q11157NR0N",
+          "QOQQ1NR51N",
+          "R133N7P7NN"
+        ]
+      }
+    ],
+    "optionGroups": [
+      {
+        "id": "9c70affdb9f07d31e52efd1098112401",
+        "name": "Ihre 1. Zutat",
+        "isTypeMulti": false,
+        "isRequired": true,
+        "minChoices": 1,
+        "maxChoices": 1,
+        "optionIds": [
+          "R7P1P1O1703",
+          "RP3NP1O1703",
+          "R071P1O1703",
+          "RP71P1O1703",
+          "RR71P1O1703",
+          "RR3NP1O1703",
+          "RNONP1O1703",
+          "RNQ1P1O1703",
+          "R5Q1P1O1703",
+          "RQQ1P1O1703",
+          "R1R1P1O1703",
+          "Q0OO7751753",
+          "RQ1NP1O1703",
+          "R51NP1O1703",
+          "ROR1P1O1703",
+          "R1NNP1O1703",
+          "Q537NQ1NPP3",
+          "R7R1P1O1703",
+          "RONNP1O1703",
+          "R00NP1O1703",
+          "RO73P1O1703",
+          "R5ONP1O1703",
+          "RQONP1O1703",
+          "R0PNP1O1703",
+          "R15NP1O1703",
+          "R30NP1O1703",
+          "R0Q3P1O1703",
+          "R773P1O1703",
+          "RO5NP1O1703",
+          "R03NP1O1703",
+          "RP0NP1O1703",
+          "RR0NP1O1703",
+          "R33NP1O1703",
+          "R75NP1O1703",
+          "RN1NP1O1703"
+        ]
+      },
+      {
+        "id": "2e02799dc6269a5cf08c058729b058e3",
+        "name": "Ihre 2. Zutat",
+        "isTypeMulti": false,
+        "isRequired": true,
+        "minChoices": 1,
+        "maxChoices": 1,
+        "optionIds": [
+          "R5P3P1O1703",
+          "RPPNP1O1703",
+          "R533P1O1703",
+          "RRPNP1O1703",
+          "R57NP1O1703",
+          "RQ7NP1O1703",
+          "RQ33P1O1703",
+          "R1O3P1O1703",
+          "R1QNP1O1703",
+          "ROQNP1O1703",
+          "R7QNP1O1703",
+          "R0RNP1O1703",
+          "QN5O7751753",
+          "R713P1O1703",
+          "RO13P1O1703",
+          "R3RNP1O1703",
+          "R0N3P1O1703",
+          "Q15OOQ1NPP3",
+          "RPRNP1O1703",
+          "R3N3P1O1703",
+          "RRRNP1O1703",
+          "ROO3P1O1703",
+          "R7O3P1O1703",
+          "RR53P1O1703",
+          "R053P1O1703",
+          "RN03P1O1703",
+          "R353P1O1703",
+          "RRN3P1O1703",
+          "R503P1O1703",
+          "RQ03P1O1703",
+          "RN33P1O1703",
+          "RP53P1O1703",
+          "R113P1O1703"
+        ]
+      },
+      {
+        "id": "7a9b9038268d041610094db2e2c0efba",
+        "name": "Ihre Sauce",
+        "isTypeMulti": false,
+        "isRequired": true,
+        "minChoices": 1,
+        "maxChoices": 1,
+        "optionIds": [
+          "RQP3P1O1703",
+          "R173P1O1703",
+          "QP1Q1NOO053",
+          "Q55O7751753",
+          "RN3530R1NQ3"
+        ]
+      }
+    ],
+    "options": [
+      {
+        "id": "R7P1P1O1703",
+        "name": "Ananas",
+        "minAmount": 1,
+        "maxAmount": 1,
+        "prices": {
+          "delivery": 0,
+          "pickup": 0,
+          "deposit": null
+        },
+        "metric": {
+          "unit": null,
+          "quantity": null
+        },
+        "priceUnit": null,
+        "pricePerUnitPickup": null,
+        "pricePerUnitDelivery": null,
+        "alcoholVolume": null,
+        "caffeineAmount": null,
+        "isSoldOut": false,
+        "isExcludedFromMov": false
+      },
+      {
+        "id": "RP3NP1O1703",
+        "name": "Bacon",
+        "minAmount": 1,
+        "maxAmount": 1,
+        "prices": {
+          "delivery": 0,
+          "pickup": 0,
+          "deposit": null
+        },
+        "metric": {
+          "unit": null,
+          "quantity": null
+        },
+        "priceUnit": null,
+        "pricePerUnitPickup": null,
+        "pricePerUnitDelivery": null,
+        "alcoholVolume": null,
+        "caffeineAmount": null,
+        "isSoldOut": false,
+        "isExcludedFromMov": false
+      },
+      {
+        "id": "R071P1O1703",
+        "name": "Basilikum-Pesto",
+        "minAmount": 1,
+        "maxAmount": 1,
+        "prices": {
+          "delivery": 0,
+          "pickup": 0,
+          "deposit": null
+        },
+        "metric": {
+          "unit": null,
+          "quantity": null
+        },
+        "priceUnit": null,
+        "pricePerUnitPickup": null,
+        "pricePerUnitDelivery": null,
+        "alcoholVolume": null,
+        "caffeineAmount": null,
+        "isSoldOut": false,
+        "isExcludedFromMov": false
+      },
+      {
+        "id": "RP71P1O1703",
+        "name": "Broccoli-Röschen",
+        "minAmount": 1,
+        "maxAmount": 1,
+        "prices": {
+          "delivery": 0,
+          "pickup": 0,
+          "deposit": null
+        },
+        "metric": {
+          "unit": null,
+          "quantity": null
+        },
+        "priceUnit": null,
+        "pricePerUnitPickup": null,
+        "pricePerUnitDelivery": null,
+        "alcoholVolume": null,
+        "caffeineAmount": null,
+        "isSoldOut": false,
+        "isExcludedFromMov": false
+      }
+    ],
+    "products": [
+      {
+        "id": "R353NNR3Q1",
+        "name": "Pizza Individuell - Lunch",
+        "description": ["mit 2 Belägen nach Wahl"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1699731816",
+        "variants": [
+          {
+            "id": "R353NNR3Q1",
+            "name": "Medium (ø 28cm)",
+            "optionGroupIds": [
+              "9c70affdb9f07d31e52efd1098112401",
+              "2e02799dc6269a5cf08c058729b058e3",
+              "7a9b9038268d041610094db2e2c0efba",
+              "960d9bb2454a6730b6e88aa32a485dd9"
+            ],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 949,
+              "pickup": 949,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          },
+          {
+            "id": "R053NNR3Q1",
+            "name": "Classic (ø 25cm)",
+            "optionGroupIds": [
+              "045be56c340d2a57901fcadf134cbd09",
+              "4f191a36b7fc0e0d4773601af4e8bb1e",
+              "be0b2c26b50d289c2cd107de83caa3a7"
+            ],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 799,
+              "pickup": 799,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          },
+          {
+            "id": "RP53NNR3Q1",
+            "name": "Large (ø 32cm)",
+            "optionGroupIds": [
+              "f9c1bc26f9985ec2f959f67aa1c6ada6",
+              "db15b6b1884dde0f0ab320b05e6e87b6",
+              "8c32d84c28f98805efce910019b8094a",
+              "e03f80f3575c7e06b3869e79ca04ba92"
+            ],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 1199,
+              "pickup": 1199,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          }
+        ]
+      },
+      {
+        "id": "R5P3NNR3Q1",
+        "name": "Pizza Broccoli Hollandaise",
+        "description": ["mit leckerem Broccoli und Sauce Hollandaise"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_10_lunch-broccoli-hollandaise.png?timestamp=1699731816",
+        "variants": [
+          {
+            "id": "R5P3NNR3Q1",
+            "name": "Medium (ø 28cm)",
+            "optionGroupIds": ["c509414306cbcdf85a2d43c85c84399f"],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 949,
+              "pickup": 949,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          },
+          {
+            "id": "R173NNR3Q1",
+            "name": "Classic (ø 25cm)",
+            "optionGroupIds": ["4df78b3c5fcf3571ff8a9aade54ec82b"],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 799,
+              "pickup": 799,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          },
+          {
+            "id": "RQP3NNR3Q1",
+            "name": "Large (ø 32cm)",
+            "optionGroupIds": ["973122ad38e58240423993f16917a0c7"],
+            "shippingTypes": ["DELIVERY", "PICKUP"],
+            "prices": {
+              "delivery": 1199,
+              "pickup": 1199,
+              "deposit": null
+            },
+            "metric": {
+              "unit": null,
+              "quantity": null
+            },
+            "priceUnit": null,
+            "pricePerUnitPickup": null,
+            "pricePerUnitDelivery": null,
+            "alcoholVolume": null,
+            "caffeineAmount": null,
+            "isSoldOut": false,
+            "isExcludedFromMov": false
+          }
+        ]
+      }
+    ],
+    "popularProductIds": ["R11RNNR3Q1", "R1NQNNR3Q1", "RRNRNNR3Q1"],
+    "discounts": [
+      {
+        "type": "product",
+        "name": "Pizza des Monats - November",
+        "description": "Bestellen Sie eine Pizza Conchita, Large Ø 32cm und erhalten Sie 3€ Rabatt!",
+        "dayOfWeek": null,
+        "promotionPrice": null,
+        "absoluteAmount": 300,
+        "percentageAmount": null,
+        "areSideDishesIncluded": true,
+        "isAppliedToEveryOccurrence": true,
+        "nthOccurrence": null,
+        "startFromAmount": null,
+        "shippingTypes": ["DELIVERY", "PICKUP"],
+        "productGroups": [["RN5ONNR3Q1"]]
+      }
+    ]
+  }
+}

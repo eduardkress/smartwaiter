@@ -1,20 +1,22 @@
 [
   {
-    "id": 1,
+    "categoryId": 1,
     "categoryName": "Beliebt ❤️",
     "img": "URL",
     "items": [
       {
         "id": 1,
         "title": "buttermilk pancakes",
-        "prices": [{
+        "prices": [
+          {
             "variation": "single",
             "price": 15.99
           },
           {
             "variation": "double",
             "price": 25.99
-          }],
+          }
+        ],
         "img": "/images/menu/item-1.jpeg",
         "desc": "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed",
         "allergens": "1,2,3"
@@ -22,26 +24,32 @@
       {
         "id": 2,
         "title": "diner double",
-        "prices": [{
-          "variation": "single",
-          "price": 13.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 13.99
+          }
+        ],
         "img": "/images/menu/item-2.jpeg",
         "desc": "vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats"
       },
       {
         "id": 3,
         "title": "godzilla milkshake",
-        "prices": [{
+        "prices": [
+          {
             "variation": "200ml",
             "price": 6.99
-          }, {
+          },
+          {
             "variation": "400ml",
             "price": 9.99
-          }, {
+          },
+          {
             "variation": "600ml",
             "price": 12.99
-        }],
+          }
+        ],
         "img": "/images/menu/item-3.jpeg",
         "desc": "ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.",
         "allergens": "1,2,3"
@@ -49,27 +57,31 @@
     ]
   },
   {
-    "id": 2,
+    "categoryId": 2,
     "categoryName": "Kategorie 2",
     "img": "URL",
     "items": [
       {
         "id": 4,
         "title": "country delight",
-        "prices": [{
-          "variation": "single",
-          "price": 20.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 20.99
+          }
+        ],
         "img": "/images/menu/item-4.jpeg",
         "desc": "SUPER LANGE BESCHREIBUNG Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut,Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut,Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut,Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut,"
       },
       {
         "id": 5,
         "title": "egg attack",
-        "prices": [{
-          "variation": "single",
-          "price": 22.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 22.99
+          }
+        ],
         "img": "/images/menu/item-5.jpeg",
         "desc": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up",
         "allergens": "A"
@@ -77,27 +89,31 @@
       {
         "id": 6,
         "title": "oreo dream",
-        "prices": [{
-          "variation": "single",
-          "price": 18.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 18.99
+          }
+        ],
         "img": "/images/menu/item-6.jpeg",
         "desc": "Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday"
       }
     ]
   },
   {
-    "id": 3,
+    "categoryId": 3,
     "categoryName": "Kategorie 3",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -105,20 +121,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -126,17 +146,19 @@
     ]
   },
   {
-    "id": 4,
+    "categoryId": 4,
     "categoryName": "Kategorie 4",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -144,20 +166,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -165,17 +191,19 @@
     ]
   },
   {
-    "id": 5,
+    "categoryId": 5,
     "categoryName": "Kategorie 5",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -183,20 +211,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -204,17 +236,19 @@
     ]
   },
   {
-    "id": 6,
+    "categoryId": 6,
     "categoryName": "Kategorie 6",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -222,20 +256,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -243,17 +281,19 @@
     ]
   },
   {
-    "id": 7,
+    "categoryId": 7,
     "categoryName": "Kategorie 7",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -261,20 +301,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -282,17 +326,19 @@
     ]
   },
   {
-    "id": 8,
+    "categoryId": 8,
     "categoryName": "Kategorie 8",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -300,20 +346,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"
@@ -321,17 +371,19 @@
     ]
   },
   {
-    "id": 9,
+    "categoryId": 9,
     "categoryName": "Kategorie 9",
     "img": "URL",
     "items": [
       {
         "id": 7,
         "title": "bacon overflow",
-        "prices": [{
-          "variation": "single",
-          "price": 8.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 8.99
+          }
+        ],
         "img": "/images/menu/item-7.jpeg",
         "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
         "allergens": "3"
@@ -339,20 +391,24 @@
       {
         "id": 8,
         "title": "american classic",
-        "prices": [{
-          "variation": "single",
-          "price": 12.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 12.99
+          }
+        ],
         "img": "/images/menu/item-8.jpeg",
         "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. menu truck truffaut"
       },
       {
         "id": 9,
         "title": "quarantine buddy",
-        "prices": [{
-          "variation": "single",
-          "price": 16.99
-        }],
+        "prices": [
+          {
+            "variation": "single",
+            "price": 16.99
+          }
+        ],
         "img": "/images/menu/item-9.jpeg",
         "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
         "allergens": "2,3"

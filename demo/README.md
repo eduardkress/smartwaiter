@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Deploy to AWS with SST
+
+Production:
+Deploy to AWS with "npx sst deploy --stage prod".
+
+Possible errors:
+
+1. Resource handler returned message: "Resource of type 'AWS::DynamoDB::Table' with identifier 'XXXX' already exists.
+   Please delete the ressource by hand in AWS Console
+
+2)Resource handler returned message: "Invalid request provided: AWS::CloudFront::Distribution: One or more aliases specified for the distribution includes an incorrectly configured DNS record that points to another CloudFront distributio
+Please remove old CNAME from your Domain provider (eg. Namecheap). After deploymend you need to set CNAME to the new correct URL.

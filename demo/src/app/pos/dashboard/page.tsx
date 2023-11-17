@@ -1,19 +1,20 @@
-"use client";
-import { signOut, useSession } from "next-auth/react";
-import React from "react";
+'use client';
+
+import { signOut } from 'next-auth/react';
 
 export default function Page() {
-  const { data: session } = useSession();
-
   return (
-    <main className="min-h-screen">
-      {session && <div>Hello {session.user?.name}</div>}
-      <button
-        className="py-2 px-4 bg-black text-white hover:cursor-pointer hover:bg-gray-600 rounded-full"
-        onClick={() => signOut()}
-      >
-        Log Out
-      </button>
-    </main>
+    <>
+      <section className='bg-ct-blue-600 min-h-screen pt-20'>
+        <div>Dashboard</div>
+        <button
+          onClick={async () => {
+            await signOut();
+          }}
+        >
+          LogOut
+        </button>
+      </section>
+    </>
   );
 }

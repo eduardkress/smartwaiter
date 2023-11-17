@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "sst bind next dev",
-    "build": "sst bind next build",
+    "dev": "npx sst bind next dev --stage dev",
+    "build": "npx sst bind next build",
     "start": "next start",
     "lint": "next lint",
     "deploy:prod": "npx sst deploy --stage prod"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.445.0",
+    "@aws-sdk/lib-dynamodb": "^3.445.0",
     "@headlessui/react": "^1.7.17",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.0.0",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
