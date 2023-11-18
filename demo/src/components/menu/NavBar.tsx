@@ -1,18 +1,16 @@
 import { twMerge } from 'tailwind-merge';
-import { MenuCategory } from '@/types/menuCategory';
 import React, { useEffect, useState } from 'react';
 import ArrowRight from '@/components/icons/ArrowRight';
 import ArrowLeft from '@/components/icons/ArrowLeft';
-import { Restaurant } from '@/types/restaurant';
+import { Menu } from '@/types/restaurant';
 
 interface Props {
-  menu: MenuCategory[];
-  restaurant: Restaurant;
+  menu: Menu;
 }
 
-function NavBar({ menu, restaurant }: Props) {
+function NavBar({ menu }: Props) {
   /* Use States */
-  const [menuActive, setMenuActive] = useState(1);
+  const [menuActive, setMenuActive] = useState('');
   const [navMove, setNavMove] = useState(false);
   const [scrollButtonActive, setScrollButtonActive] = useState({
     left: false,
@@ -60,7 +58,7 @@ function NavBar({ menu, restaurant }: Props) {
     document.removeEventListener('mouseup', mouseUpHandler);
   };
 
-  const clickCategoryHandler = (id: number) => {
+  const clickCategoryHandler = (id: string) => {
     if (navMove) {
       setNavMove(false);
       return;
@@ -82,10 +80,10 @@ function NavBar({ menu, restaurant }: Props) {
   };
 
   /* Functions */
-  const scrollNavbarToItem = (id: number) => {
+  const scrollNavbarToItem = (categoryId: string) => {
     const slider = document.getElementById('categorySlider');
     if (slider == null) return;
-    const sliderItem = document.getElementById('categorySliderItem' + id);
+    const sliderItem = document.getElementById(categoryId);
     if (sliderItem == null) return;
     // let mdLeft = window.matchMedia("(min-width: 768px)").matches ? 0 : 32;
     // console.log(mdLeft);
@@ -147,9 +145,8 @@ function NavBar({ menu, restaurant }: Props) {
           entry.target.getBoundingClientRect().y < entry.rootBounds.height / 2
         ) {
           if (entry.target.parentElement) {
-            const id = entry.target.parentElement.id ?? '';
-            const number = id.replace('category', '');
-            setMenuActive(Number(number));
+            const categoryId = entry.target.parentElement.id ?? '';
+            setMenuActive(categoryId);
           }
         }
         // Else if element scrolls outside view from top then select the parents next sibling category
@@ -161,9 +158,9 @@ function NavBar({ menu, restaurant }: Props) {
             entry.target.parentElement &&
             entry.target.parentElement.nextElementSibling
           ) {
-            const id = entry.target.parentElement.nextElementSibling.id ?? '';
-            const number = id.replace('category', '');
-            setMenuActive(Number(number));
+            const categoryId =
+              entry.target.parentElement.nextElementSibling.id ?? '';
+            setMenuActive(categoryId);
           }
         }
       },
@@ -216,7 +213,7 @@ function NavBar({ menu, restaurant }: Props) {
           id='categorySlider'
           onMouseDown={(e) => mouseDownHandler(e)}
         >
-          {menu.map((category, index) => {
+          {menu.categories.map((category, index) => {
             return (
               <div
                 key={category.id}
@@ -230,7 +227,7 @@ function NavBar({ menu, restaurant }: Props) {
                   index === 0 ? 'ml-4 lg:ml-0' : ''
                 )}
               >
-                {category.categoryName}
+                {category.name}
               </div>
             );
           })}

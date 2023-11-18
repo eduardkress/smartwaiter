@@ -3,7 +3,7 @@
     "name": "Domino's Pizza",
     "branchName": "Paderborn Mitte",
     "chainId": "ORPO7",
-    "description": [],
+    "description": ["Best pizza", "In Paderborn"],
     "slogan": "Domino's Pizza",
     "logoUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1700243946/static-takeaway-com/images/chains/de/dominos_neu/logo_465x320",
     "headerImageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1700243946/static-takeaway-com/images/chains/de/dominos_neu/headers/header"
@@ -24,24 +24,21 @@
   },
   "restaurantId": "N3OR507",
   "colophon": {
-    "status": "fetched",
-    "data": {
-      "branchName": "Paderborn Mitte",
-      "restaurantName": "Domino's Pizza",
-      "streetName": "Liboristraße",
-      "streetNumber": "5",
-      "postalCode": "33098",
-      "city": "Paderborn",
-      "legalEntity": "person",
-      "legalRepresentativeName": "Matthias Struck",
-      "legalName": null,
-      "legalEntityClass": "non-legal",
-      "email": "info@lieferando.de",
-      "fax": "4952511425052",
-      "chamberOfCommerce": [],
-      "vatNumber": null,
-      "disputeResolutionLink": "https://ec.europa.eu/consumers/odr"
-    }
+    "branchName": "Paderborn Mitte",
+    "restaurantName": "Domino's Pizza",
+    "streetName": "Liboristraße",
+    "streetNumber": "5",
+    "postalCode": "33098",
+    "city": "Paderborn",
+    "legalEntity": "person",
+    "legalRepresentativeName": "Matthias Struck",
+    "legalName": "TestTest",
+    "legalEntityClass": "non-legal",
+    "email": "info@lieferando.de",
+    "fax": "4952511425052",
+    "chamberOfCommerce": [],
+    "vatNumber": "DE19273TEST",
+    "disputeResolutionLink": "https://ec.europa.eu/consumers/odr"
   },
   "menu": {
     "currency": {
@@ -24232,7 +24229,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R5P3NNR3Q1": {
         "name": "Pizza Broccoli Hollandaise",
@@ -24305,7 +24303,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QO5QO33Q0N": {
         "name": "Pizza Rinderhackfleisch und Mais",
@@ -24378,7 +24377,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "Q0PQO33Q0N": {
         "name": "Pizza Hähnchenbrust und rote Zwiebeln",
@@ -24453,7 +24453,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "Q1ORO33Q0N": {
         "name": "Pizza Bacon und Broccoli",
@@ -24526,7 +24527,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QQRRO33Q0N": {
         "name": "Pizza Champignons und rote Zwiebeln",
@@ -24601,7 +24603,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RR53NNR3Q1": {
         "name": "Salat Deluxe Lunch",
@@ -24632,7 +24635,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QN5NPNR7R1": {
         "name": "Pasta Veggio Lunch",
@@ -24666,7 +24670,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RNO7RPP7NN": {
         "name": "Udai's Chicken & Cream",
@@ -24764,7 +24769,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QPO5OPOQ1N": {
         "name": "Premium Pizza Caprese + Chicken Strippers + Cho Cho Churros",
@@ -24797,7 +24803,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QRO5OPOQ1N": {
         "name": "Premium Pizza Boston + Chicken Kickers + Lava Cake",
@@ -24830,7 +24837,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QN55OPOQ1N": {
         "name": "Premium Pizza Tuna + Chicken Kickers + Cho Cho Churros",
@@ -24863,7 +24871,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "Q555OPOQ1N": {
         "name": "Premium Pizza Waikiki + Chicken Kickers + Lava Cake",
@@ -24896,7 +24905,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QQ55OPOQ1N": {
         "name": "Premium Pizza Lucca + Chicken Strippers + Cho Cho Churros",
@@ -24929,7 +24939,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R5R3NNR3Q1": {
         "name": "Pizza Dutchman",
@@ -25027,7 +25038,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "Q30RR3NR0N": {
         "name": "Chicken Döner Pizza",
@@ -25125,7 +25137,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RQR3NNR3Q1": {
         "name": "Pizza Teriyaki Chicken",
@@ -25223,7 +25236,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R10ONNR3Q1": {
         "name": "Pizza Crazy Dog",
@@ -25321,7 +25335,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RO0ONNR3Q1": {
         "name": "Pizza Sucuk Hollandaise",
@@ -25419,7 +25434,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R70ONNR3Q1": {
         "name": "Pizza Bombay",
@@ -25517,7 +25533,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RO73NNR3Q1": {
         "name": "Pizza Boston",
@@ -25615,7 +25632,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RPQ3NNR3Q1": {
         "name": "Pizza BBQ Poncho",
@@ -25713,7 +25731,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "Q11157NR0N": {
         "name": "Pizza Cheeseburger",
@@ -25811,7 +25830,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QOQQ1NR51N": {
         "name": "Pizza Chicken & Broccoli",
@@ -25909,7 +25929,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R133N7P7NN": {
         "name": "Udai's Chicken & Cream",
@@ -26007,7 +26028,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "QRQR75Q5R1": {
         "name": "Pizza Prosciutto Supreme",
@@ -26203,7 +26225,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RQ5ONNR3Q1": {
         "name": "Pizza Salami Supreme",
@@ -26299,7 +26322,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R1PONNR3Q1": {
         "name": "Pizza Lucifer",
@@ -26397,7 +26421,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RROONNR3Q1": {
         "name": "Pizza Conchita",
@@ -26495,7 +26520,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "ROPONNR3Q1": {
         "name": "Pizza Lucca",
@@ -26593,7 +26619,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R37ONNR3Q1": {
         "name": "Pizza Fitness Fan",
@@ -26691,7 +26718,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R515NNR3Q1": {
         "name": "Pizza Salami",
@@ -26787,7 +26815,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RQ15NNR3Q1": {
         "name": "Pizza Margherita",
@@ -26883,7 +26912,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R1N5NNR3Q1": {
         "name": "Pizza Funghi",
@@ -26981,7 +27011,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "RON5NNR3Q1": {
         "name": "Pizza Caprese",
@@ -27079,7 +27110,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R7N5NNR3Q1": {
         "name": "Pizza Prosciutto e Funghi",
@@ -27177,7 +27209,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R035NNR3Q1": {
         "name": "Pizza Tuna",
@@ -27273,7 +27306,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergens": "Erdnuss, E412, DiesDas"
       },
       "R335NNR3Q1": {
         "name": "Pizza Waikiki",
@@ -31378,7 +31412,6 @@
         "shippingTypes": ["DELIVERY", "PICKUP"],
         "productGroups": [["RN5ONNR3Q1"]]
       }
-    ],
-    "autoAddedProducts": {}
+    ]
   }
 }

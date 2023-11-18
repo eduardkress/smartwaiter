@@ -11,18 +11,13 @@ export interface Brand {
   name: string;
   branchName: string;
   chainId: string;
-  description: any[];
+  description: string[];
   slogan: string;
   logoUrl: string;
   headerImageUrl: string;
 }
 
 export interface Colophon {
-  status: string;
-  data: Data;
-}
-
-export interface Data {
   branchName: string;
   restaurantName: string;
   streetName: string;
@@ -31,12 +26,12 @@ export interface Data {
   city: string;
   legalEntity: string;
   legalRepresentativeName: string;
-  legalName: null;
+  legalName: string;
   legalEntityClass: string;
   email: string;
   fax: string;
   chamberOfCommerce: any[];
-  vatNumber: null;
+  vatNumber: string;
   disputeResolutionLink: string;
 }
 
@@ -59,10 +54,7 @@ export interface Menu {
   products: { [key: string]: Product };
   popularProductIds: string[];
   discounts: Discount[];
-  autoAddedProducts: AutoAddedProducts;
 }
-
-export interface AutoAddedProducts {}
 
 export interface Category {
   id: string;
@@ -115,7 +107,6 @@ export interface OptionGroup {
   maxChoices: number;
   optionIds: string[];
 }
-
 export interface Option {
   name: string;
   minAmount: number;
@@ -173,6 +164,7 @@ export interface Product {
   description: string[];
   imageUrl: null | string;
   variants: Variant[];
+  allergens?: null | string;
 }
 
 export interface Rating {

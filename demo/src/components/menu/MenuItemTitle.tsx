@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Fragment, useEffect } from 'react';
 import { Button, Tooltip } from '@nextui-org/react';
 import Info from '@/components/icons/Info';
-import { CategoryItem } from '@/types/categoryItem';
 import { allergens } from '@/components/ui/allergen';
+import { Product } from '@/types/restaurant';
 
 type Props = {
-  item: CategoryItem;
+  product: Product;
 };
 
-function MenuItemTitle({ item }: Props) {
+function MenuItemTitle({ product }: Props) {
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
   const onScroll = () => {
     setIsTooltipOpen(false);
@@ -22,11 +22,11 @@ function MenuItemTitle({ item }: Props) {
 
   return (
     <Fragment>
-      {item.title}
-      {item.allergens && (
+      {product.name}
+      {product.allergens && (
         <sup className='text-base font-light'>
           <Tooltip
-            content={item.allergens.split(',').map((allergen, i) => (
+            content={product.allergens.split(',').map((allergen, i) => (
               <React.Fragment key={i}>
                 {allergens[allergen.trim().toLowerCase()]}
                 <br />
