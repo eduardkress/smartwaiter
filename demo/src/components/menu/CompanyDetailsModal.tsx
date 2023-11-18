@@ -11,12 +11,11 @@ import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 
 type Props = {
-  item: CategoryItem;
   isOpen: boolean;
   onOpenChange: () => void;
 };
 
-const CompanyDetailsModal = ({ item, isOpen, onOpenChange }: Props) => {
+const CompanyDetailsModal = ({ isOpen, onOpenChange }: Props) => {
   return (
     <Modal
       isOpen={isOpen}

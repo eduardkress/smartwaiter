@@ -10,7 +10,7 @@ interface Props {
 
 function NavBar({ menu }: Props) {
   /* Use States */
-  const [menuActive, setMenuActive] = useState('');
+  const [menuActive, setMenuActive] = useState('category'+menu.categories[0].id);
   const [navMove, setNavMove] = useState(false);
   const [scrollButtonActive, setScrollButtonActive] = useState({
     left: false,
@@ -220,10 +220,10 @@ function NavBar({ menu }: Props) {
                 onClick={() => {
                   clickCategoryHandler(category.id);
                 }}
-                id={'categorySliderItem' + category.id}
+                id={'category' + category.id}
                 className={twMerge(
                   `text-md cursor-default snap-center rounded-full px-4 py-2 font-bold sm:cursor-pointer`,
-                  menuActive == category.id ? 'bg-black text-white' : '',
+                  menuActive == 'category'+category.id ? 'bg-black text-white' : '',
                   index === 0 ? 'ml-4 lg:ml-0' : ''
                 )}
               >

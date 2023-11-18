@@ -48,7 +48,7 @@ function CompanyDetails({ companyName, companySlogan }: Props) {
           <Info />
         </Button>
       </div>
-      <CompanyDetailsModal item={undefined} isOpen={isOpen} onOpenChange={onOpenChange} />
+      <CompanyDetailsModal isOpen={isOpen} onOpenChange={onOpenChange} />
     </div>
   );
 }
