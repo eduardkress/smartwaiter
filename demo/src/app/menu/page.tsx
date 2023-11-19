@@ -11,6 +11,7 @@ import CompanyDetails from '@/components/menu/CompanyDetails';
 import Footer from '@/components/menu/Footer';
 import NavBar from '@/components/menu/NavBar';
 import { NextUIProvider } from '@nextui-org/react';
+import Basket from "@/components/menu/Basket";
 
 //const menu = _menuItem as MenuCategory[];
 const restaurantData = _restaurantData as Restaurant;
@@ -64,6 +65,7 @@ export default function Page({
         <NavBar menu={menu} />
         <Menu menu={menu} />
         <Footer />
+        <Basket />
       </NextUIProvider>
     );
   } else {
