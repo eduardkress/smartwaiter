@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ArrowRight from '@/components/icons/ArrowRight';
 import ArrowLeft from '@/components/icons/ArrowLeft';
 import { Menu } from '@/types/restaurant';
+import { Button } from "@nextui-org/react";
 
 interface Props {
   menu: Menu;
@@ -10,7 +11,9 @@ interface Props {
 
 function NavBar({ menu }: Props) {
   /* Use States */
-  const [menuActive, setMenuActive] = useState('category'+menu.categories[0].id);
+  const [menuActive, setMenuActive] = useState(
+    'navBarCategory-' + menu.categories[0].id
+  );
   const [navMove, setNavMove] = useState(false);
   const [scrollButtonActive, setScrollButtonActive] = useState({
     left: false,
@@ -22,7 +25,7 @@ function NavBar({ menu }: Props) {
 
   /* Event handler */
   const mouseDownHandler = function (e: React.MouseEvent) {
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
 
     initialNavPositions = {
@@ -35,7 +38,7 @@ function NavBar({ menu }: Props) {
   };
 
   const mouseMoveHandler = function (e: MouseEvent) {
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
     // How far the mouse has been moved
     const dx = e.clientX - initialNavPositions.x;
@@ -64,14 +67,14 @@ function NavBar({ menu }: Props) {
       return;
     }
     var category = document.getElementById('category' + id);
-    var slider = document.getElementById('categorySlider');
+    var slider = document.getElementById('categoryNavbar');
     if (category == null) return;
     if (slider == null) return;
     var categoryPosition = category.getBoundingClientRect().top;
     var offsetPosition =
       categoryPosition + window.pageYOffset - slider.offsetHeight;
 
-    setMenuActive(id);
+    setMenuActive('navBarCategory-' +id);
 
     window.scrollTo({
       top: offsetPosition,
@@ -81,7 +84,7 @@ function NavBar({ menu }: Props) {
 
   /* Functions */
   const scrollNavbarToItem = (categoryId: string) => {
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
     const sliderItem = document.getElementById(categoryId);
     if (sliderItem == null) return;
@@ -97,7 +100,7 @@ function NavBar({ menu }: Props) {
   };
 
   const scrollNavbarXByPixel = (pixelX: number) => {
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
 
     slider.scrollBy({
@@ -108,7 +111,7 @@ function NavBar({ menu }: Props) {
   };
 
   const updateScrollButtons = () => {
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
 
     setScrollButtonActive({
@@ -126,7 +129,7 @@ function NavBar({ menu }: Props) {
     // Get the anchor elements
     const categoryAnchors = document.querySelectorAll('.categoryAnchor');
 
-    const slider = document.getElementById('categorySlider');
+    const slider = document.getElementById('categoryNavbar');
     if (slider == null) return;
 
     slider.addEventListener('scroll', updateScrollButtons);
@@ -146,7 +149,7 @@ function NavBar({ menu }: Props) {
         ) {
           if (entry.target.parentElement) {
             const categoryId = entry.target.parentElement.id ?? '';
-            setMenuActive(categoryId);
+            setMenuActive(categoryId.replace("category", "navBarCategory-"));
           }
         }
         // Else if element scrolls outside view from top then select the parents next sibling category
@@ -160,7 +163,7 @@ function NavBar({ menu }: Props) {
           ) {
             const categoryId =
               entry.target.parentElement.nextElementSibling.id ?? '';
-            setMenuActive(categoryId);
+            setMenuActive(categoryId.replace("category", "navBarCategory-"));
           }
         }
       },
@@ -197,20 +200,21 @@ function NavBar({ menu }: Props) {
             scrollButtonActive.left ? 'md:block' : 'hidden'
           )}
         >
-          <div
+          <Button
+            isIconOnly
             onClick={() => {
               scrollNavbarXByPixel(-100);
             }}
-            id={'categorySliderScrollButtonLeft'}
+            id={'categoryNavbarScrollButtonLeft'}
             className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
           >
             <ArrowLeft />
-          </div>
+          </Button>
         </div>
         {/* Nav Items*/}
         <div
           className='mx-auto flex select-none flex-row gap-x-4 overflow-x-scroll whitespace-nowrap bg-white px-2 py-2 scrollbar-hide'
-          id='categorySlider'
+          id='categoryNavbar'
           onMouseDown={(e) => mouseDownHandler(e)}
         >
           {menu.categories.map((category, index) => {
@@ -220,10 +224,12 @@ function NavBar({ menu }: Props) {
                 onClick={() => {
                   clickCategoryHandler(category.id);
                 }}
-                id={'category' + category.id}
+                id={'navBarCategory-' + category.id}
                 className={twMerge(
-                  `text-md cursor-default snap-center rounded-full px-4 py-2 font-bold sm:cursor-pointer`,
-                  menuActive == 'category'+category.id ? 'bg-black text-white' : '',
+                  `text-md shrink-0 cursor-default snap-center rounded-full bg-white px-4 py-2 font-bold sm:cursor-pointer`,
+                  menuActive == 'navBarCategory-' + category.id
+                    ? 'bg-black text-white'
+                    : '',
                   index === 0 ? 'ml-4 lg:ml-0' : ''
                 )}
               >
@@ -239,15 +245,16 @@ function NavBar({ menu }: Props) {
             scrollButtonActive.right ? 'visible' : 'invisible'
           )}
         >
-          <div
+          <Button
+            isIconOnly
             onClick={() => {
               scrollNavbarXByPixel(100);
             }}
-            id={'categorySliderScrollButtonRight'}
+            id={'categoryNavbarScrollButtonRight'}
             className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
           >
             <ArrowRight />
-          </div>
+          </Button>
         </div>
       </div>
     </div>
