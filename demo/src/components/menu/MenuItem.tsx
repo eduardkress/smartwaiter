@@ -45,8 +45,8 @@ export function MenuItem({ product }: Props) {
             <div className='flex grow flex-col-reverse pt-3 text-base font-bold sm:text-xl'>
               <div className=''>
                 {product.variants.length > 1
-                  ? 'ab ' + product.variants[0].prices + ' €'
-                  : product.variants[0].prices + ' €'}
+                  ? 'ab ' + product.variants[0].prices.pickup + ' €'
+                  : product.variants[0].prices.pickup + ' €'}
               </div>
             </div>
           </div>
