@@ -55,16 +55,20 @@ const MenuModal = ({ product, isOpen, onOpenChange }: Props) => {
                       <Fragment>{product.variants[0].prices.pickup} €</Fragment>
                     ) : (
                       <table className='table-auto border-spacing-x-2'>
-                        {product.variants.map((variant) => {
-                          return (
-                            <tr key={variant.id}>
-                              <th className='pr-4 text-left'>{variant.name}</th>
-                              <th className='text-right'>
-                                {variant.prices.pickup} €
-                              </th>
-                            </tr>
-                          );
-                        })}
+                        <tbody>
+                          {product.variants.map((variant) => {
+                            return (
+                              <tr key={variant.id}>
+                                <th className='pr-4 text-left'>
+                                  {variant.name}
+                                </th>
+                                <th className='text-right'>
+                                  {variant.prices.pickup} €
+                                </th>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
                       </table>
                     )}
                   </div>
