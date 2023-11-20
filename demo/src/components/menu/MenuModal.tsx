@@ -89,7 +89,6 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
         body: 'px-0 py-0',
         footer: 'bg-[#f5f3f1]'
       }}
-      scrollBehavior='inside'
     >
       <ModalContent>
         {(onClose) => (
@@ -103,7 +102,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 />
               )}
 
-              <div className='container flex flex-col space-y-3 bg-white py-4'>
+              <div className='container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4'>
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle product={product} />
                 </h2>
