@@ -87,7 +87,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
       size={'lg'}
       classNames={{
         body: 'px-0 py-0',
-        footer: 'bg-[#f5f3f1]'
+        footer: 'bg-[#f5f3f1]',
+        closeButton: "bg-white",
       }}
     >
       <ModalContent>
