@@ -4,13 +4,14 @@ import Image from 'next/image';
 import MenuModal from '@/components/menu/MenuModal';
 import { useDisclosure } from '@nextui-org/react';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Product } from '@/types/restaurant';
+import { Menu, Product } from '@/types/restaurant';
 
 type Props = {
+  menu: Menu;
   product: Product;
 };
 
-export function MenuItem({ product }: Props) {
+export function MenuItem({ menu, product }: Props) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -67,6 +68,7 @@ export function MenuItem({ product }: Props) {
         </div>
       </div>
       <MenuModal
+        menu={menu}
         product={product}
         isOpen={isOpen}
         onOpenChange={onOpenChange}

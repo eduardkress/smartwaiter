@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { HiClock, HiMapPin, HiPhone } from 'react-icons/hi2';
 import StarFull from '@/components/icons/StarFull';
-import {Button, useDisclosure} from "@nextui-org/react";
-import {InfoIcon} from "@nextui-org/shared-icons";
-import Info from "@/components/icons/Info";
-import * as React from "react";
-import CompanyDetailsModal from "@/components/menu/CompanyDetailsModal";
+import { Button, useDisclosure } from '@nextui-org/react';
+import { InfoIcon } from '@nextui-org/shared-icons';
+import Info from '@/components/icons/Info';
+import * as React from 'react';
+import CompanyDetailsModal from '@/components/menu/CompanyDetailsModal';
+import { Brand, Location } from '@/types/restaurant';
 
 interface Props {
   companyName: string;
@@ -38,12 +39,12 @@ function CompanyDetails({ companyName, companySlogan }: Props) {
           <span className='mt-2 text-sm text-gray-700'>{companySlogan}</span>
         </div>
         <Button
-            isIconOnly
-            variant='shadow'
-            size='lg'
-            radius='full'
-            className='border-transparent bg-[#f5f3f1] hover:bg-[#ebe9e8]'
-            onClick={onOpen}
+          isIconOnly
+          variant='shadow'
+          size='lg'
+          radius='full'
+          className='border-transparent bg-[#f5f3f1] hover:bg-[#ebe9e8]'
+          onClick={onOpen}
         >
           <Info />
         </Button>

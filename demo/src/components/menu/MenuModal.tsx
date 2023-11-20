@@ -1,22 +1,85 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import {
   Button,
+  Checkbox,
+  CheckboxGroup,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter
+  ModalFooter,
+  ModalHeader
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Product } from '@/types/restaurant';
+import { Menu, Product } from '@/types/restaurant';
+import Minus from '../icons/Minus';
+import Plus from '../icons/Plus';
 
 type Props = {
+  menu: Menu;
   product: Product;
   isOpen: boolean;
   onOpenChange: () => void;
 };
 
-const MenuModal = ({ product, isOpen, onOpenChange }: Props) => {
+interface OptionsDataObject {
+  [key: string]: string[];
+}
+
+const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
+  const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
+  const [selectedOptions, setSelectedOptions] = useState<OptionsDataObject>({});
+
+  const [itemCounter, setItemCounter] = useState(1);
+  const [itemPrice, setItemPrice] = useState(selectedVariant.prices.pickup);
+
+  useEffect(() => {
+    //if variant is changed then reset itemCounter and seletedOptions
+    setItemCounter(1);
+    Object.keys(selectedOptions).forEach((key) => {
+      setSelectedOptions((prevData) => ({
+        ...prevData,
+        [key]: []
+      }));
+    });
+  }, [selectedVariant]);
+
+  useEffect(() => {
+    console.log(selectedOptions);
+    let endPrice = selectedVariant.prices.pickup;
+    Object.values(selectedOptions).forEach((optionsIds) => {
+      optionsIds.forEach((optionid) => {
+        let option = menu.options[optionid];
+        if (option) {
+          endPrice = endPrice + option.prices.pickup;
+        }
+      });
+      setItemPrice(endPrice);
+    });
+  }, [selectedVariant, selectedOptions]);
+
+  const handleVariantChange = (variantId: string) => {
+    let variant = product.variants.find((variant) => variant.id === variantId);
+    //Select first variant if variant with variantId is not present
+    if (!variant) variant = product.variants[0];
+    setSelectedVariant(variant);
+  };
+
+  const decreaseItemCounter = () => {
+    if (itemCounter - 1 > 0) {
+      setItemCounter(itemCounter - 1);
+    }
+  };
+  const increaseItemCounter = () => {
+    if (itemCounter + 1 < 99) {
+      setItemCounter(itemCounter + 1);
+    }
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -26,6 +89,7 @@ const MenuModal = ({ product, isOpen, onOpenChange }: Props) => {
         body: 'px-0 py-0',
         footer: 'bg-[#f5f3f1]'
       }}
+      scrollBehavior='inside'
     >
       <ModalContent>
         {(onClose) => (
@@ -39,51 +103,144 @@ const MenuModal = ({ product, isOpen, onOpenChange }: Props) => {
                 />
               )}
 
-              <div className='container flex flex-col items-center space-y-3 bg-white py-4'>
+              <div className='container flex flex-col space-y-3 bg-white py-4'>
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle product={product} />
                 </h2>
-                <div className='flex flex-col items-center space-y-2 pb-3 '>
-                  <div className='text-center text-base font-normal'>
+                <div className='flex flex-col space-y-2 pb-3 '>
+                  <div className='text-base font-normal'>
                     {product.description}
                   </div>
-                  <div className='text-center text-sm font-normal'>
+                  <div className='text-sm font-normal'>
                     Zutaten: Teig, Dies das und so
                   </div>
-                  <div className='pt-3 text-center text-lg font-bold'>
+                  <div className='pt-3 text-lg font-normal'>
                     {product.variants.length === 1 ? (
                       <Fragment>{product.variants[0].prices.pickup} €</Fragment>
                     ) : (
-                      <table className='table-auto border-spacing-x-2'>
-                        <tbody>
-                          {product.variants.map((variant) => {
+                      <>
+                        {/*Variant Dropdown*/}
+                        <div>{product.name}:</div>
+                        <Dropdown>
+                          <DropdownTrigger>
+                            <Button variant='bordered' className='w-full'>
+                              {selectedVariant.name}
+                            </Button>
+                          </DropdownTrigger>
+                          <DropdownMenu
+                            items={product.variants}
+                            onAction={(key) =>
+                              handleVariantChange(key.toString())
+                            }
+                          >
+                            {(variant) => (
+                              <DropdownItem key={variant.id}>
+                                {variant.name}
+                              </DropdownItem>
+                            )}
+                          </DropdownMenu>
+                        </Dropdown>
+                        {/*OptionGroups*/}
+                        {selectedVariant.optionGroupIds
+                          .map((optionGroupId) => {
+                            return menu.optionGroups[optionGroupId];
+                          })
+                          .filter(
+                            (optionGroup) =>
+                              optionGroup !== null && optionGroup !== undefined
+                          )
+                          .map((optionGroup, index) => {
+                            {
+                              /*Options*/
+                            }
                             return (
-                              <tr key={variant.id}>
-                                <th className='pr-4 text-left'>
-                                  {variant.name}
-                                </th>
-                                <th className='text-right'>
-                                  {variant.prices.pickup} €
-                                </th>
-                              </tr>
+                              <div key={index} className='mt-4'>
+                                <div className='font-normal'>
+                                  {optionGroup.name}
+                                </div>
+                                {optionGroup.isTypeMulti ? (
+                                  <CheckboxGroup
+                                    value={selectedOptions[optionGroup.id]}
+                                    onValueChange={(selectedValues) => {
+                                      setSelectedOptions((prevData) => ({
+                                        ...prevData,
+                                        [optionGroup.id]: selectedValues
+                                      }));
+                                    }}
+                                  >
+                                    {optionGroup.optionIds
+                                      .map((optionId) => {
+                                        return menu.options[optionId];
+                                      })
+                                      .filter(
+                                        (option) =>
+                                          option !== null &&
+                                          option !== undefined
+                                      )
+                                      .map((option, index) => {
+                                        return (
+                                          <Checkbox
+                                            key={index}
+                                            value={option.id}
+                                            // onValueChange={(isSelected) => {
+                                            //   handleOptionChange(
+                                            //     isSelected,
+                                            //     option.id
+                                            //   );
+                                            // }}
+                                          >
+                                            {option.name}
+                                            {option.prices.pickup > 0 ? (
+                                              <>
+                                                {' '}
+                                                (+{option.prices.pickup /
+                                                  100}{' '}
+                                                €)
+                                              </>
+                                            ) : (
+                                              ''
+                                            )}
+                                          </Checkbox>
+                                        );
+                                      })}
+                                  </CheckboxGroup>
+                                ) : (
+                                  'false'
+                                )}
+                              </div>
                             );
                           })}
-                        </tbody>
-                      </table>
+                      </>
                     )}
                   </div>
                 </div>
               </div>
             </ModalBody>
             <ModalFooter>
-              <Button
-                onPress={onClose}
-                className={
-                  'w-full bg-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
-                }
-              >
-                Zurück
-              </Button>
+              <div className='flex w-full items-center gap-x-2'>
+                <Button
+                  isIconOnly
+                  disabled={itemCounter <= 1}
+                  className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold  shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+                  onClick={() => decreaseItemCounter()}
+                >
+                  <Minus />
+                </Button>
+                <div>{itemCounter}</div>
+                <Button
+                  isIconOnly
+                  className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+                  onClick={() => increaseItemCounter()}
+                >
+                  <Plus />
+                </Button>
+                <Button
+                  radius={'full'}
+                  className='text-md flex-grow bg-black px-8 py-7 font-bold text-white'
+                >
+                  {itemPrice / 100} €
+                </Button>
+              </div>
             </ModalFooter>
           </>
         )}

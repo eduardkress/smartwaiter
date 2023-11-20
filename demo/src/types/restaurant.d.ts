@@ -100,6 +100,7 @@ export enum ShippingType {
 }
 
 export interface OptionGroup {
+  id: string;
   name: string;
   isTypeMulti: boolean;
   isRequired: boolean;
@@ -108,6 +109,7 @@ export interface OptionGroup {
   optionIds: string[];
 }
 export interface Option {
+  id: string;
   name: string;
   minAmount: number;
   maxAmount: number;
@@ -160,6 +162,7 @@ export interface Variant {
 }
 
 export interface Product {
+  id: string;
   name: string;
   description: string[];
   imageUrl: null | string;

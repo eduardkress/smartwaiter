@@ -30,7 +30,7 @@ function Menu({ menu }: Props) {
               </div>
               <div className='flex flex-col space-y-5'>
                 {category.productIds.map((productId, index) => {
-                  return <MenuItem key={index} product={menu.products[productId]} />;
+                  return <MenuItem key={index} menu={menu} product={menu.products[productId]} />;
                 })}
               </div>
               {/* <div className="categoryEndAnchor mx-auto"></div> */}

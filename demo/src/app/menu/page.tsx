@@ -2,7 +2,6 @@
 
 import _menuItem from '@/mockup/menu2.json';
 import _restaurantData from '@/mockup/restaurant.json';
-import { MenuCategory } from '@/types/menuCategory';
 import { Restaurant } from '@/types/restaurant';
 import Menu from '@/components/menu/Menu';
 import Hero from '@/components/menu/Hero';
@@ -11,11 +10,10 @@ import CompanyDetails from '@/components/menu/CompanyDetails';
 import Footer from '@/components/menu/Footer';
 import NavBar from '@/components/menu/NavBar';
 import { NextUIProvider } from '@nextui-org/react';
-import Basket from "@/components/menu/Basket";
+import Basket from '@/components/menu/Basket';
 
 //const menu = _menuItem as MenuCategory[];
 const restaurantData = _restaurantData as Restaurant;
-const menu = restaurantData.menu;
 
 const getOrderData = (orderId: string) => {
   if (orderId === '1234') {
@@ -62,8 +60,8 @@ export default function Page({
           companyName={'Losteria'}
           companySlogan={'Slogan: Food that makes you say wow.'}
         />
-        <NavBar menu={menu} />
-        <Menu menu={menu} />
+        <NavBar menu={restaurantData.menu} />
+        <Menu menu={restaurantData.menu} />
         <Footer />
         <Basket />
       </NextUIProvider>

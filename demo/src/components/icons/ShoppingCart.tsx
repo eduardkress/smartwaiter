@@ -1,9 +1,10 @@
 function ShoppingCart() {
   return (
     <svg
-      width="25px" height="auto"
+      width='1.4em'
+      height='1.4em'
       viewBox='0 0 512 512'
-      className="stroke-white fill-white"
+      className='fill-white stroke-white'
     >
       <g>
         <path
