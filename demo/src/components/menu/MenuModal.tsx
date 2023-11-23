@@ -1,10 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import {
-  Accordion,
-  AccordionItem,
   Button,
-  Checkbox,
-  CheckboxGroup,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -12,14 +8,14 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
-  ModalHeader
+  ModalFooter
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import { Menu, Product } from '@/types/restaurant';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
+import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
 
 type Props = {
   menu: Menu;
@@ -175,215 +171,9 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                                         );
 
                                     return (
-                                      <div className='flex flex-col gap-2'>
-                                        <CheckboxGroup
-                                          value={
-                                            selectedOptions[optionGroup.id]
-                                          }
-                                          onValueChange={(selectedValues) => {
-                                            setSelectedOptions((prevData) => ({
-                                              ...prevData,
-                                              [optionGroup.id]: selectedValues
-                                            }));
-                                          }}
-                                        >
-                                          {filteredOptions
-                                            .filter(
-                                              (value, index1) => index1 < 4
-                                            )
-                                            .map((option, index) => {
-                                              return (
-                                                <Checkbox
-                                                  key={index}
-                                                  value={option.id}
-                                                  // onValueChange={(isSelected) => {
-                                                  //   handleOptionChange(
-                                                  //     isSelected,
-                                                  //     option.id
-                                                  //   );
-                                                  // }}
-                                                >
-                                                  {option.name}
-                                                  {option.prices.pickup > 0 ? (
-                                                    <>
-                                                      {' '}
-                                                      (+
-                                                      {option.prices.pickup /
-                                                        100}{' '}
-                                                      €)
-                                                    </>
-                                                  ) : (
-                                                    ''
-                                                  )}
-                                                </Checkbox>
-                                              );
-                                            })}
-                                        </CheckboxGroup>
-                                        {filteredOptions.length > 4 &&
-                                          (() => {
-                                            const [
-                                              selectedKeys,
-                                              setSelectedKeys
-                                            ] = useState(new Set(['0']));
-
-                                            return (
-                                              <div>
-                                                <Accordion
-                                                  selectedKeys={selectedKeys}
-                                                  itemClasses={{
-                                                    base: 'px-0',
-                                                    title:
-                                                      'py-0 font-normal text-medium h-0',
-                                                    trigger:
-                                                      'px-0 py-0 data-[hover=true]:bg-default-100 rounded-lg hidden flex items-center',
-                                                    indicator:
-                                                      'text-medium hidden',
-                                                    content:
-                                                      'text-small px-0 py-0'
-                                                  }}
-                                                  className='px-0'
-                                                >
-                                                  <AccordionItem
-                                                    key='1'
-                                                    aria-label='Accordion 1'
-                                                    title=''
-                                                  >
-                                                    <CheckboxGroup
-                                                      value={
-                                                        selectedOptions[
-                                                          optionGroup.id
-                                                        ]
-                                                      }
-                                                      onValueChange={(
-                                                        selectedValues
-                                                      ) => {
-                                                        setSelectedOptions(
-                                                          (prevData) => ({
-                                                            ...prevData,
-                                                            [optionGroup.id]:
-                                                              selectedValues
-                                                          })
-                                                        );
-                                                      }}
-                                                    >
-                                                      {filteredOptions
-                                                        .filter(
-                                                          (value, index1) =>
-                                                            index1 >= 4
-                                                        )
-                                                        .map(
-                                                          (option, index) => {
-                                                            return (
-                                                              <Checkbox
-                                                                key={index}
-                                                                value={
-                                                                  option.id
-                                                                }
-                                                                // onValueChange={(isSelected) => {
-                                                                //   handleOptionChange(
-                                                                //     isSelected,
-                                                                //     option.id
-                                                                //   );
-                                                                // }}
-                                                              >
-                                                                {option.name}
-                                                                {option.prices
-                                                                  .pickup >
-                                                                0 ? (
-                                                                  <>
-                                                                    {' '}
-                                                                    (+
-                                                                    {option
-                                                                      .prices
-                                                                      .pickup /
-                                                                      100}{' '}
-                                                                    €)
-                                                                  </>
-                                                                ) : (
-                                                                  ''
-                                                                )}
-                                                              </Checkbox>
-                                                            );
-                                                          }
-                                                        )}
-                                                    </CheckboxGroup>
-                                                  </AccordionItem>
-                                                </Accordion>
-                                                {selectedKeys.has('0') ? (
-                                                  <div
-                                                    className='mt-2 cursor-pointer text-base underline'
-                                                    onClick={() =>
-                                                      setSelectedKeys(
-                                                        new Set(['1'])
-                                                      )
-                                                    }
-                                                  >
-                                                    Zeige mehr...
-                                                  </div>
-                                                ) : (
-                                                  <div
-                                                    className='mt-2 cursor-pointer text-base underline'
-                                                    onClick={() =>
-                                                      setSelectedKeys(
-                                                        new Set(['0'])
-                                                      )
-                                                    }
-                                                  >
-                                                    Zeige weniger...
-                                                  </div>
-                                                )}
-                                              </div>
-                                            );
-                                          })()}
-                                      </div>
+                                      <MenuModalItemExtras options={filteredOptions} selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} optionGroupId={optionGroup.id} />
                                     );
                                   })()}
-                                {/*  <CheckboxGroup*/}
-                                {/*    value={selectedOptions[optionGroup.id]}*/}
-                                {/*    onValueChange={(selectedValues) => {*/}
-                                {/*      setSelectedOptions((prevData) => ({*/}
-                                {/*        ...prevData,*/}
-                                {/*        [optionGroup.id]: selectedValues*/}
-                                {/*      }));*/}
-                                {/*    }}*/}
-                                {/*  >*/}
-                                {/*    {optionGroup.optionIds*/}
-                                {/*      .map((optionId) => {*/}
-                                {/*        return menu.options[optionId];*/}
-                                {/*      })*/}
-                                {/*      .filter(*/}
-                                {/*        (option) =>*/}
-                                {/*          option !== null &&*/}
-                                {/*          option !== undefined*/}
-                                {/*      )*/}
-                                {/*      .map((option, index) => {*/}
-                                {/*        return (*/}
-                                {/*          <Checkbox*/}
-                                {/*            key={index}*/}
-                                {/*            value={option.id}*/}
-                                {/*            // onValueChange={(isSelected) => {*/}
-                                {/*            //   handleOptionChange(*/}
-                                {/*            //     isSelected,*/}
-                                {/*            //     option.id*/}
-                                {/*            //   );*/}
-                                {/*            // }}*/}
-                                {/*          >*/}
-                                {/*            {option.name}*/}
-                                {/*            {option.prices.pickup > 0 ? (*/}
-                                {/*              <>*/}
-                                {/*                {' '}*/}
-                                {/*                (+{option.prices.pickup /*/}
-                                {/*                  100}{' '}*/}
-                                {/*                €)*/}
-                                {/*              </>*/}
-                                {/*            ) : (*/}
-                                {/*              ''*/}
-                                {/*            )}*/}
-                                {/*          </Checkbox>*/}
-                                {/*        );*/}
-                                {/*      })}*/}
-                                {/*  </CheckboxGroup>*/}
-                                {/*)}*/}
                               </div>
                             );
                           })}
