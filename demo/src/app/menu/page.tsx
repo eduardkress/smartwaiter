@@ -61,9 +61,11 @@ export default function Page({
           companySlogan={'Slogan: Food that makes you say wow.'}
         />
         <NavBar menu={restaurantData.menu} />
-        <Menu menu={restaurantData.menu} />
-        <Footer />
-        <Basket />
+        <div>
+          <Menu menu={restaurantData.menu} />
+          <Footer />
+          <Basket />
+        </div>
       </NextUIProvider>
     );
   } else {
