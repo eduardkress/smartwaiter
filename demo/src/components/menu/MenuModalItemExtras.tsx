@@ -34,10 +34,7 @@ const MenuModalItemCheckboxGroup = ({
     >
       {options.map((option, index) => {
         return (
-          <Checkbox
-            key={index}
-            value={option.id}
-          >
+          <Checkbox key={index} value={option.id}>
             {option.name}
             {option.prices.pickup > 0 ? (
               <>
@@ -55,6 +52,57 @@ const MenuModalItemCheckboxGroup = ({
   );
 };
 
+const MenuModalItemCheckboxGroupWithAccordion = ({
+  options,
+  selectedOptions,
+  setSelectedOptions,
+  optionGroupId
+}: Props) => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string> | undefined>(
+    undefined
+  );
+
+  return (
+    <div>
+      <Accordion
+        selectedKeys={selectedKeys}
+        itemClasses={{
+          base: 'px-0',
+          title: 'py-0 h-0',
+          trigger: 'px-0 py-0 hidden',
+          indicator: 'hidden',
+          content: 'px-0 py-0 overflow-hidden'
+        }}
+        className='px-0'
+      >
+        <AccordionItem key='1' aria-label='Accordion 1' title=''>
+          <MenuModalItemCheckboxGroup
+            options={options}
+            selectedOptions={selectedOptions}
+            setSelectedOptions={setSelectedOptions}
+            optionGroupId={optionGroupId}
+          />
+        </AccordionItem>
+      </Accordion>
+      {selectedKeys === undefined ? (
+        <div
+          className='mt-2 cursor-pointer text-base underline'
+          onClick={() => setSelectedKeys(new Set(['1']))}
+        >
+          Zeige mehr...
+        </div>
+      ) : (
+        <div
+          className='mt-2 cursor-pointer text-base underline'
+          onClick={() => setSelectedKeys(undefined)}
+        >
+          Zeige weniger...
+        </div>
+      )}
+    </div>
+  );
+};
+
 const MenuModalItemExtras = ({
   options,
   selectedOptions,
@@ -69,50 +117,14 @@ const MenuModalItemExtras = ({
         setSelectedOptions={setSelectedOptions}
         optionGroupId={optionGroupId}
       />
-      {options.length > 4 &&
-        (() => {
-          const [selectedKeys, setSelectedKeys] = useState<Set<string>|undefined>(undefined);
-
-          return (
-            <div>
-              <Accordion
-                selectedKeys={selectedKeys}
-                itemClasses={{
-                  base: 'px-0',
-                  title: 'py-0 h-0',
-                  trigger: 'px-0 py-0 hidden',
-                  indicator: 'hidden',
-                  content: 'px-0 py-0 overflow-hidden'
-                }}
-                className='px-0'
-              >
-                <AccordionItem key='1' aria-label='Accordion 1' title=''>
-                  <MenuModalItemCheckboxGroup
-                    options={options.filter((value, index1) => index1 >= 4)}
-                    selectedOptions={selectedOptions}
-                    setSelectedOptions={setSelectedOptions}
-                    optionGroupId={optionGroupId}
-                  />
-                </AccordionItem>
-              </Accordion>
-              {selectedKeys === undefined ? (
-                <div
-                  className='mt-2 cursor-pointer text-base underline'
-                  onClick={() => setSelectedKeys(new Set(['1']))}
-                >
-                  Zeige mehr...
-                </div>
-              ) : (
-                <div
-                  className='mt-2 cursor-pointer text-base underline'
-                  onClick={() => setSelectedKeys(undefined)}
-                >
-                  Zeige weniger...
-                </div>
-              )}
-            </div>
-          );
-        })()}
+      {options.length > 4 && (
+        <MenuModalItemCheckboxGroupWithAccordion
+          options={options.filter((value, index1) => index1 >= 4)}
+          selectedOptions={selectedOptions}
+          setSelectedOptions={setSelectedOptions}
+          optionGroupId={optionGroupId}
+        />
+      )}
     </div>
   );
 };

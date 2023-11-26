@@ -29,7 +29,7 @@ function SingleItemMockup() {
         </strong>
         <span className='pl-5'>15,99€</span>
       </div>
-      <div>mit "Variation Text"</div>
+      <div>mit Variation Text</div>
       <div className='flex w-full items-center gap-x-2'>
         <div className='grow underline'>Anmerkung hinzufügen</div>
         <Button
