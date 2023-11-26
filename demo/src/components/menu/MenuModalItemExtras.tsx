@@ -82,7 +82,7 @@ const MenuModalItemExtras = ({
                   title: 'py-0 h-0',
                   trigger: 'px-0 py-0 hidden',
                   indicator: 'hidden',
-                  content: 'px-0 py-0'
+                  content: 'px-0 py-0 overflow-hidden'
                 }}
                 className='px-0'
               >
