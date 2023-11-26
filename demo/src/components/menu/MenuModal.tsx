@@ -8,8 +8,8 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter
-} from '@nextui-org/react';
+  ModalFooter, ScrollShadow
+} from "@nextui-org/react";
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import { Menu, Product } from '@/types/restaurant';
@@ -102,7 +102,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 />
               )}
 
-              <div className='container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4'>
+              <ScrollShadow className='container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4'>
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle product={product} />
                 </h2>
@@ -181,7 +181,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     )}
                   </div>
                 </div>
-              </div>
+              </ScrollShadow>
             </ModalBody>
             <ModalFooter>
               <div className='flex w-full items-center gap-x-2'>
