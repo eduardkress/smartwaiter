@@ -1,5 +1,6 @@
-import { Badge, Button } from '@nextui-org/react';
+import { Badge, Button, useDisclosure } from "@nextui-org/react";
 import ShoppingCart from '@/components/icons/ShoppingCart';
+import BasketModal from "@/components/menu/BasketModal";
 
 function Basket() {
   let itemsInBasket = [
@@ -13,11 +14,14 @@ function Basket() {
     }
   ];
 
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <div className='sticky bottom-0 flex h-20 items-center justify-center bg-white'>
       <Button
         radius={'full'}
         className='text-md bg-black px-8 py-7 font-bold text-white'
+        onClick={onOpen}
       >
         <Badge
           content='5'
@@ -30,6 +34,7 @@ function Basket() {
         </Badge>
         Warenkorb (25,99€)
       </Button>
+      <BasketModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} />
     </div>
   );
 }
