@@ -8,14 +8,16 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter, ScrollShadow
-} from "@nextui-org/react";
+  ModalFooter,
+  ScrollShadow
+} from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import { Menu, Product } from '@/types/restaurant';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
+import { addToBasket, basketSignal } from './Basket';
 
 type Props = {
   menu: Menu;
@@ -35,23 +37,18 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
   const [itemCounter, setItemCounter] = useState(1);
   const [itemPrice, setItemPrice] = useState(selectedVariant.prices.pickup);
 
+  //if variant is changed then reset itemCounter and seletedOptions
   useEffect(() => {
-    //if variant is changed then reset itemCounter and seletedOptions
     setItemCounter(1);
-    Object.keys(selectedOptions).forEach((key) => {
-      setSelectedOptions((prevData) => ({
-        ...prevData,
-        [key]: []
-      }));
-    });
+    setSelectedOptions(() => ({}));
   }, [selectedVariant]);
 
+  //Calculate new price if variant, item count or options change
   useEffect(() => {
-    console.log(selectedOptions);
     let endPrice = selectedVariant.prices.pickup;
     Object.values(selectedOptions).forEach((optionsIds) => {
-      optionsIds.forEach((optionid) => {
-        let option = menu.options[optionid];
+      optionsIds.forEach((optionId) => {
+        let option = menu.options[optionId];
         if (option) {
           endPrice = endPrice + option.prices.pickup;
         }
@@ -59,13 +56,28 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     });
     endPrice = endPrice * itemCounter;
     setItemPrice(endPrice);
-  }, [selectedVariant, selectedOptions, itemCounter]);
+  }, [selectedVariant, selectedOptions, itemCounter, menu]);
 
   const handleVariantChange = (variantId: string) => {
     let variant = product.variants.find((variant) => variant.id === variantId);
-    //Select first variant if variant with variantId is not present
     if (!variant) variant = product.variants[0];
     setSelectedVariant(variant);
+  };
+
+  const handleOptionsChange = (
+    optionGroupId: string,
+    seletedOptions: string[]
+  ) => {
+    if (seletedOptions.length == 0) {
+      const optionGroups = { ...selectedOptions };
+      delete optionGroups[optionGroupId];
+      setSelectedOptions(optionGroups);
+    } else {
+      setSelectedOptions((current) => ({
+        ...current,
+        [optionGroupId]: seletedOptions
+      }));
+    }
   };
 
   const decreaseItemCounter = () => {
@@ -79,10 +91,20 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     }
   };
 
+  const handleAddToBasket = () => {
+    const data = {
+      variant: selectedVariant.id,
+      options: selectedOptions,
+      amount: itemCounter
+    };
+    console.log(data);
+  };
+
   return (
     <Modal
       isOpen={isOpen}
       onOpenChange={onOpenChange}
+      placement={'center'}
       size={'xl'}
       classNames={{
         body: 'px-0 py-0',
@@ -131,6 +153,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                             onAction={(key) =>
                               handleVariantChange(key.toString())
                             }
+                            aria-label='Select Product Variation'
                           >
                             {(variant) => (
                               <DropdownItem key={variant.id}>
@@ -171,7 +194,13 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                                         );
 
                                     return (
-                                      <MenuModalItemExtras options={filteredOptions} selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} optionGroupId={optionGroup.id} />
+                                      <MenuModalItemExtras
+                                        options={filteredOptions}
+                                        handleOptionsChange={
+                                          handleOptionsChange
+                                        }
+                                        optionGroupId={optionGroup.id}
+                                      />
                                     );
                                   })()}
                               </div>
@@ -204,6 +233,9 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 <Button
                   radius={'full'}
                   className='text-md flex-grow bg-black px-8 py-7 font-bold text-white'
+                  onClick={() => {
+                    handleAddToBasket();
+                  }}
                 >
                   {itemPrice / 100} €
                 </Button>

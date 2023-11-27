@@ -9,27 +9,23 @@ import {
 
 interface Props {
   options: Array<Option>;
-  selectedOptions: { [key: string]: string[] };
-  setSelectedOptions: React.Dispatch<
-    React.SetStateAction<{ [key: string]: string[] }>
-  >;
+  handleOptionsChange: (
+    optionGroupId: string,
+    selectedOptions: string[]
+  ) => void;
   optionGroupId: string;
 }
 
 const MenuModalItemCheckboxGroup = ({
   options,
-  selectedOptions,
-  setSelectedOptions,
+  handleOptionsChange,
   optionGroupId
 }: Props) => {
   return (
     <CheckboxGroup
-      value={selectedOptions[optionGroupId]}
+      //value={selectedOptions[optionGroupId] || { '': [] }}
       onValueChange={(selectedValues) => {
-        setSelectedOptions((prevData) => ({
-          ...prevData,
-          [optionGroupId]: selectedValues
-        }));
+        handleOptionsChange(optionGroupId, selectedValues);
       }}
     >
       {options.map((option, index) => {
@@ -54,8 +50,7 @@ const MenuModalItemCheckboxGroup = ({
 
 const MenuModalItemCheckboxGroupWithAccordion = ({
   options,
-  selectedOptions,
-  setSelectedOptions,
+  handleOptionsChange,
   optionGroupId
 }: Props) => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string> | undefined>(
@@ -78,8 +73,7 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
         <AccordionItem key='1' aria-label='Accordion 1' title=''>
           <MenuModalItemCheckboxGroup
             options={options}
-            selectedOptions={selectedOptions}
-            setSelectedOptions={setSelectedOptions}
+            handleOptionsChange={handleOptionsChange}
             optionGroupId={optionGroupId}
           />
         </AccordionItem>
@@ -105,23 +99,20 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
 
 const MenuModalItemExtras = ({
   options,
-  selectedOptions,
-  setSelectedOptions,
+  handleOptionsChange,
   optionGroupId
 }: Props) => {
   return (
     <div className='flex flex-col gap-2'>
       <MenuModalItemCheckboxGroup
         options={options.filter((value, index1) => index1 < 4)}
-        selectedOptions={selectedOptions}
-        setSelectedOptions={setSelectedOptions}
+        handleOptionsChange={handleOptionsChange}
         optionGroupId={optionGroupId}
       />
       {options.length > 4 && (
         <MenuModalItemCheckboxGroupWithAccordion
           options={options.filter((value, index1) => index1 >= 4)}
-          selectedOptions={selectedOptions}
-          setSelectedOptions={setSelectedOptions}
+          handleOptionsChange={handleOptionsChange}
           optionGroupId={optionGroupId}
         />
       )}

@@ -1,19 +1,27 @@
-import { Badge, Button, useDisclosure } from "@nextui-org/react";
+import { Badge, Button, useDisclosure } from '@nextui-org/react';
 import ShoppingCart from '@/components/icons/ShoppingCart';
-import BasketModal from "@/components/menu/BasketModal";
+import BasketModal from '@/components/menu/BasketModal';
+import { effect, signal } from '@preact/signals';
+import { BasketItem } from '@/types/basketItem';
+
+export const basketSignal = signal<BasketItem[]>([
+  { variationId: '', optionIds: [], amount: 0 }
+]);
+
+export const addToBasket = (
+  variationId: string,
+  optionIds: string[],
+  amount: number
+) => {
+  basketSignal.value = [
+    ...basketSignal.value,
+    { variationId: variationId, optionIds: optionIds, amount: amount }
+  ];
+};
+
+effect(() => console.log('Basket changed', basketSignal.value));
 
 function Basket() {
-  let itemsInBasket = [
-    {
-      variantId: '1234',
-      price: 2353
-    },
-    {
-      variantId: '5678',
-      price: 2353
-    }
-  ];
-
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -26,7 +34,7 @@ function Basket() {
         <Badge
           content='5'
           showOutline={false}
-          isInvisible={itemsInBasket.length === 0}
+          isInvisible={basketSignal.value.length === 0}
           placement={'top-left'}
           className='bg-[#f9fafb]'
         >
@@ -34,7 +42,11 @@ function Basket() {
         </Badge>
         Warenkorb (25,99€)
       </Button>
-      <BasketModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} />
+      <BasketModal
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onOpenChange={onOpenChange}
+      />
     </div>
   );
 }
