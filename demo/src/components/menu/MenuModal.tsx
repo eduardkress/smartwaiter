@@ -121,7 +121,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 <Hero
                   imgSrc={product.imageUrl}
                   heroAlt={''}
-                  tailwindClasses={'h-64 drop-shadow-md z-[-1]'}
+                  tailwindClasses={'h-56 drop-shadow-md z-[-1]'}
                 />
               )}
 

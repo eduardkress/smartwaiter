@@ -25,7 +25,7 @@ function Basket() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div className='sticky bottom-0 flex h-20 items-center justify-center bg-white'>
+    <div className='sticky bottom-0 flex h-20 items-center justify-center bg-[#f5f3f1] shadow-inner'>
       <Button
         radius={'full'}
         className='text-md bg-black px-8 py-7 font-bold text-white'

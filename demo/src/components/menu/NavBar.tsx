@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from "react";
 import ArrowRight from '@/components/icons/ArrowRight';
 import ArrowLeft from '@/components/icons/ArrowLeft';
 import { Menu } from '@/types/restaurant';
@@ -191,73 +191,76 @@ function NavBar({ menu }: Props) {
   }, []);
 
   return (
-    <div className='sticky top-0 z-10 h-14 w-full bg-white'>
-      <div className='container flex max-w-5xl items-center justify-between px-0'>
-        {/* < */}
-        <div
-          className={twMerge(
-            'hidden p-2',
-            scrollButtonActive.left ? 'md:block' : 'hidden'
-          )}
-        >
-          <Button
-            isIconOnly
-            onClick={() => {
-              scrollNavbarXByPixel(-100);
-            }}
-            id={'categoryNavbarScrollButtonLeft'}
-            className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+    <Fragment>
+      <div className='sticky top-0 z-10 h-14 w-full bg-white'>
+        <div className='container flex max-w-5xl items-center justify-between px-0'>
+          {/* < */}
+          <div
+            className={twMerge(
+              'hidden p-2',
+              scrollButtonActive.left ? 'md:block' : 'hidden'
+            )}
           >
-            <ArrowLeft />
-          </Button>
-        </div>
-        {/* Nav Items*/}
-        <div
-          className='mx-auto flex select-none flex-row gap-x-4 overflow-x-scroll whitespace-nowrap bg-white px-2 py-2 scrollbar-hide'
-          id='categoryNavbar'
-          onMouseDown={(e) => mouseDownHandler(e)}
-        >
-          {menu.categories.map((category, index) => {
-            return (
-              <div
-                key={category.id}
-                onClick={() => {
-                  clickCategoryHandler(category.id);
-                }}
-                id={'navBarCategory-' + category.id}
-                className={twMerge(
-                  `text-md shrink-0 cursor-default snap-center rounded-full bg-white px-4 py-2 font-bold sm:cursor-pointer`,
-                  menuActive == 'navBarCategory-' + category.id
-                    ? 'bg-black text-white'
-                    : '',
-                  index === 0 ? 'ml-4 lg:ml-0' : ''
-                )}
-              >
-                {category.name}
-              </div>
-            );
-          })}
-        </div>
-        {/* > */}
-        <div
-          className={twMerge(
-            'hidden p-2 md:block',
-            scrollButtonActive.right ? 'visible' : 'invisible'
-          )}
-        >
-          <Button
-            isIconOnly
-            onClick={() => {
-              scrollNavbarXByPixel(100);
-            }}
-            id={'categoryNavbarScrollButtonRight'}
-            className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+            <Button
+              isIconOnly
+              onClick={() => {
+                scrollNavbarXByPixel(-100);
+              }}
+              id={'categoryNavbarScrollButtonLeft'}
+              className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+            >
+              <ArrowLeft />
+            </Button>
+          </div>
+          {/* Nav Items*/}
+          <div
+            className='mx-auto flex select-none flex-row gap-x-4 overflow-x-scroll whitespace-nowrap bg-white px-2 py-2 scrollbar-hide'
+            id='categoryNavbar'
+            onMouseDown={(e) => mouseDownHandler(e)}
           >
-            <ArrowRight />
-          </Button>
+            {menu.categories.map((category, index) => {
+              return (
+                <div
+                  key={category.id}
+                  onClick={() => {
+                    clickCategoryHandler(category.id);
+                  }}
+                  id={'navBarCategory-' + category.id}
+                  className={twMerge(
+                    `text-md shrink-0 cursor-default snap-center rounded-full bg-white px-4 py-2 font-bold sm:cursor-pointer`,
+                    menuActive == 'navBarCategory-' + category.id
+                      ? 'bg-black text-white'
+                      : '',
+                    index === 0 ? 'ml-4 lg:ml-0' : ''
+                  )}
+                >
+                  {category.name}
+                </div>
+              );
+            })}
+          </div>
+          {/* > */}
+          <div
+            className={twMerge(
+              'hidden p-2 md:block',
+              scrollButtonActive.right ? 'visible' : 'invisible'
+            )}
+          >
+            <Button
+              isIconOnly
+              onClick={() => {
+                scrollNavbarXByPixel(100);
+              }}
+              id={'categoryNavbarScrollButtonRight'}
+              className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+            >
+              <ArrowRight />
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="relative w-full h-1 shadow" />
+    </Fragment>
   );
 }
 
