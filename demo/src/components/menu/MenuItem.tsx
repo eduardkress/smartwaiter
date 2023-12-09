@@ -5,6 +5,7 @@ import MenuModal from '@/components/menu/MenuModal';
 import { useDisclosure } from '@nextui-org/react';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import { Menu, Product } from '@/types/restaurant';
+import { EURO } from '@/utils/currencies';
 
 type Props = {
   menu: Menu;
@@ -23,7 +24,12 @@ export function MenuItem({ menu, product }: Props) {
         >
           <div className='flex flex-col gap-y-2'>
             <h3 className='text-base font-bold sm:text-2xl'>
-              <MenuItemTitle product={product} />
+              <MenuItemTitle
+                product={product}
+                allergens={product.allergenIds.map((id) => {
+                  return menu.allergens[id];
+                })}
+              />
             </h3>
             <div className='text-sm font-normal md:text-base'>
               {product.description}
@@ -46,8 +52,15 @@ export function MenuItem({ menu, product }: Props) {
             <div className='flex grow flex-col-reverse pt-3 text-base font-bold sm:text-xl'>
               <div className=''>
                 {product.variants.length > 1
-                  ? 'ab ' + product.variants[0].prices.pickup + ' €'
-                  : product.variants[0].prices.pickup + ' €'}
+                  ? 'ab ' +
+                    EURO.format(
+                      product.variants[0].prices.pickup /
+                        menu.currency.denominator
+                    )
+                  : EURO.format(
+                      product.variants[0].prices.pickup /
+                        menu.currency.denominator
+                    )}
               </div>
             </div>
           </div>

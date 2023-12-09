@@ -8,7 +8,6 @@ import {
   ModalHeader
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
-import MenuItemTitle from '@/components/menu/MenuItemTitle';
 
 type Props = {
   isOpen: boolean;

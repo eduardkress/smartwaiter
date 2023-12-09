@@ -18,6 +18,7 @@ import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
 import { addToBasket, basketSignal } from './Basket';
+import { EURO } from '@/utils/currencies';
 
 type Props = {
   menu: Menu;
@@ -43,7 +44,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     setSelectedOptions(() => ({}));
   }, [selectedVariant]);
 
-  //Calculate new price if variant, item count or options change
+  //Recalculate price if variant, item count or options change
   useEffect(() => {
     let endPrice = selectedVariant.prices.pickup;
     Object.values(selectedOptions).forEach((optionsIds) => {
@@ -126,7 +127,12 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
 
               <ScrollShadow className='container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4'>
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
-                  <MenuItemTitle product={product} />
+                  <MenuItemTitle
+                    product={product}
+                    allergens={product.allergenIds.map((id) => {
+                      return menu.allergens[id];
+                    })}
+                  />
                 </h2>
                 <div className='flex flex-col space-y-2 pb-3 '>
                   <div className='text-base font-normal'>
@@ -145,7 +151,13 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                         <Dropdown>
                           <DropdownTrigger>
                             <Button variant='bordered' className='w-full'>
-                              {selectedVariant.name}
+                              {selectedVariant.name +
+                                ' (' +
+                                EURO.format(
+                                  selectedVariant.prices.pickup /
+                                    menu.currency.denominator
+                                ) +
+                                ')'}
                             </Button>
                           </DropdownTrigger>
                           <DropdownMenu
@@ -157,7 +169,13 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                           >
                             {(variant) => (
                               <DropdownItem key={variant.id}>
-                                {variant.name}
+                                {variant.name +
+                                  ' (' +
+                                  EURO.format(
+                                    variant.prices.pickup /
+                                      menu.currency.denominator
+                                  ) +
+                                  ')'}
                               </DropdownItem>
                             )}
                           </DropdownMenu>
@@ -237,7 +255,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     handleAddToBasket();
                   }}
                 >
-                  {itemPrice / 100} €
+                  {EURO.format(itemPrice / menu.currency.denominator)}
                 </Button>
               </div>
             </ModalFooter>

@@ -52,6 +52,7 @@ export interface Menu {
   optionGroups: { [key: string]: OptionGroup };
   options: { [key: string]: Option };
   products: { [key: string]: Product };
+  allergens: { [key: string]: Allergen };
   popularProductIds: string[];
   discounts: Discount[];
 }
@@ -167,10 +168,15 @@ export interface Product {
   description: string[];
   imageUrl: null | string;
   variants: Variant[];
-  allergens?: null | string;
+  allergenIds: string[];
 }
 
 export interface Rating {
   votes: number;
   score: number;
+}
+
+export interface Allergen {
+  id: string;
+  description: string;
 }

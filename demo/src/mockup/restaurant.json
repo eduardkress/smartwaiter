@@ -25398,7 +25398,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R5P3NNR3Q1": {
         "id": "R5P3NNR3Q1",
@@ -25473,7 +25473,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QO5QO33Q0N": {
         "id": "QO5QO33Q0N",
@@ -25548,7 +25548,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q0PQO33Q0N": {
         "id": "Q0PQO33Q0N",
@@ -25625,7 +25625,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q1ORO33Q0N": {
         "id": "Q1ORO33Q0N",
@@ -25700,7 +25700,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QQRRO33Q0N": {
         "id": "QQRRO33Q0N",
@@ -25777,7 +25777,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR53NNR3Q1": {
         "id": "RR53NNR3Q1",
@@ -25810,7 +25810,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QN5NPNR7R1": {
         "id": "QN5NPNR7R1",
@@ -25846,7 +25846,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNO7RPP7NN": {
         "id": "RNO7RPP7NN",
@@ -25946,7 +25946,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QPO5OPOQ1N": {
         "id": "QPO5OPOQ1N",
@@ -25981,7 +25981,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QRO5OPOQ1N": {
         "id": "QRO5OPOQ1N",
@@ -26016,7 +26016,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QN55OPOQ1N": {
         "id": "QN55OPOQ1N",
@@ -26051,7 +26051,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q555OPOQ1N": {
         "id": "Q555OPOQ1N",
@@ -26086,7 +26086,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QQ55OPOQ1N": {
         "id": "QQ55OPOQ1N",
@@ -26121,7 +26121,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R5R3NNR3Q1": {
         "id": "R5R3NNR3Q1",
@@ -26221,7 +26221,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q30RR3NR0N": {
         "id": "Q30RR3NR0N",
@@ -26321,7 +26321,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQR3NNR3Q1": {
         "id": "RQR3NNR3Q1",
@@ -26421,7 +26421,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R10ONNR3Q1": {
         "id": "R10ONNR3Q1",
@@ -26521,7 +26521,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO0ONNR3Q1": {
         "id": "RO0ONNR3Q1",
@@ -26621,7 +26621,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R70ONNR3Q1": {
         "id": "R70ONNR3Q1",
@@ -26721,7 +26721,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO73NNR3Q1": {
         "id": "RO73NNR3Q1",
@@ -26821,7 +26821,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RPQ3NNR3Q1": {
         "id": "RPQ3NNR3Q1",
@@ -26921,7 +26921,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q11157NR0N": {
         "id": "Q11157NR0N",
@@ -27021,7 +27021,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QOQQ1NR51N": {
         "id": "QOQQ1NR51N",
@@ -27121,7 +27121,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R133N7P7NN": {
         "id": "R133N7P7NN",
@@ -27221,7 +27221,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QRQR75Q5R1": {
         "id": "QRQR75Q5R1",
@@ -27320,7 +27320,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QNRR75Q5R1": {
         "id": "QNRR75Q5R1",
@@ -27420,7 +27421,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ5ONNR3Q1": {
         "id": "RQ5ONNR3Q1",
@@ -27518,7 +27519,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1PONNR3Q1": {
         "id": "R1PONNR3Q1",
@@ -27618,7 +27619,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RROONNR3Q1": {
         "id": "RROONNR3Q1",
@@ -27718,7 +27719,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "ROPONNR3Q1": {
         "id": "ROPONNR3Q1",
@@ -27818,7 +27819,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R37ONNR3Q1": {
         "id": "R37ONNR3Q1",
@@ -27918,7 +27919,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R515NNR3Q1": {
         "id": "R515NNR3Q1",
@@ -28016,7 +28017,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ15NNR3Q1": {
         "id": "RQ15NNR3Q1",
@@ -28114,7 +28115,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1N5NNR3Q1": {
         "id": "R1N5NNR3Q1",
@@ -28214,7 +28215,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RON5NNR3Q1": {
         "id": "RON5NNR3Q1",
@@ -28314,7 +28315,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R7N5NNR3Q1": {
         "id": "R7N5NNR3Q1",
@@ -28414,7 +28415,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R035NNR3Q1": {
         "id": "R035NNR3Q1",
@@ -28512,7 +28513,7 @@
             "isExcludedFromMov": false
           }
         ],
-        "allergens": "1, 11, e"
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R335NNR3Q1": {
         "id": "R335NNR3Q1",
@@ -28611,7 +28612,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ75NNR3Q1": {
         "id": "RQ75NNR3Q1",
@@ -28708,7 +28710,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1Q5NNR3Q1": {
         "id": "R1Q5NNR3Q1",
@@ -28807,7 +28810,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "ROQ5NNR3Q1": {
         "id": "ROQ5NNR3Q1",
@@ -28906,7 +28910,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q5P00PQ5R1": {
         "id": "Q5P00PQ5R1",
@@ -29005,7 +29010,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QQO3Q7NR0N": {
         "id": "QQO3Q7NR0N",
@@ -29104,7 +29110,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO1PNNR3Q1": {
         "id": "RO1PNNR3Q1",
@@ -29204,7 +29211,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R71PNNR3Q1": {
         "id": "R71PNNR3Q1",
@@ -29303,7 +29311,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0NPNNR3Q1": {
         "id": "R0NPNNR3Q1",
@@ -29402,7 +29411,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3NPNNR3Q1": {
         "id": "R3NPNNR3Q1",
@@ -29501,7 +29511,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR5PNNR3Q1": {
         "id": "RR5PNNR3Q1",
@@ -29600,7 +29611,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R30QNNR3Q1": {
         "id": "R30QNNR3Q1",
@@ -29697,7 +29709,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QNRN7PQ5R1": {
         "id": "QNRN7PQ5R1",
@@ -29732,7 +29745,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q0O11RNR0N": {
         "id": "Q0O11RNR0N",
@@ -29767,7 +29781,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ1QNNR3Q1": {
         "id": "RQ1QNNR3Q1",
@@ -29800,7 +29815,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1NQNNR3Q1": {
         "id": "R1NQNNR3Q1",
@@ -29835,7 +29851,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R75337P7NN": {
         "id": "R75337P7NN",
@@ -29868,7 +29885,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0P337P7NN": {
         "id": "R0P337P7NN",
@@ -29903,7 +29921,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3P337P7NN": {
         "id": "R3P337P7NN",
@@ -29938,7 +29957,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO5QNNR3Q1": {
         "id": "RO5QNNR3Q1",
@@ -29970,7 +29990,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R75QNNR3Q1": {
         "id": "R75QNNR3Q1",
@@ -30002,7 +30023,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0PQNNR3Q1": {
         "id": "R0PQNNR3Q1",
@@ -30034,7 +30056,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3PQNNR3Q1": {
         "id": "R3PQNNR3Q1",
@@ -30066,7 +30089,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR3QNNR3Q1": {
         "id": "RR3QNNR3Q1",
@@ -30098,7 +30122,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNOQNNR3Q1": {
         "id": "RNOQNNR3Q1",
@@ -30128,7 +30153,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R5OQNNR3Q1": {
         "id": "R5OQNNR3Q1",
@@ -30158,7 +30184,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQOQNNR3Q1": {
         "id": "RQOQNNR3Q1",
@@ -30188,7 +30215,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R15QNNR3Q1": {
         "id": "R15QNNR3Q1",
@@ -30218,7 +30246,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RRPQNNR3Q1": {
         "id": "RRPQNNR3Q1",
@@ -30248,7 +30277,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q13P7PQ5R1": {
         "id": "Q13P7PQ5R1",
@@ -30278,7 +30308,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RN7QNNR3Q1": {
         "id": "RN7QNNR3Q1",
@@ -30308,7 +30339,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R57QNNR3Q1": {
         "id": "R57QNNR3Q1",
@@ -30338,7 +30370,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QO3P7PQ5R1": {
         "id": "QO3P7PQ5R1",
@@ -30368,7 +30401,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ7QNNR3Q1": {
         "id": "RQ7QNNR3Q1",
@@ -30400,7 +30434,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1QQNNR3Q1": {
         "id": "R1QQNNR3Q1",
@@ -30432,7 +30467,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RN1O57P7NN": {
         "id": "RN1O57P7NN",
@@ -30464,7 +30500,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R51O57P7NN": {
         "id": "R51O57P7NN",
@@ -30496,7 +30533,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R771N7R3Q1": {
         "id": "R771N7R3Q1",
@@ -30531,7 +30569,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0RQNNR3Q1": {
         "id": "R0RQNNR3Q1",
@@ -30563,7 +30602,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3RQNNR3Q1": {
         "id": "R3RQNNR3Q1",
@@ -30595,7 +30635,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RRRQNNR3Q1": {
         "id": "RRRQNNR3Q1",
@@ -30627,7 +30668,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RN0RNNR3Q1": {
         "id": "RN0RNNR3Q1",
@@ -30657,7 +30699,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R50RNNR3Q1": {
         "id": "R50RNNR3Q1",
@@ -30687,7 +30730,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ0RNNR3Q1": {
         "id": "RQ0RNNR3Q1",
@@ -30717,7 +30761,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R11RNNR3Q1": {
         "id": "R11RNNR3Q1",
@@ -30747,7 +30792,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO1RNNR3Q1": {
         "id": "RO1RNNR3Q1",
@@ -30777,7 +30823,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R71RNNR3Q1": {
         "id": "R71RNNR3Q1",
@@ -30807,7 +30854,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0NRNNR3Q1": {
         "id": "R0NRNNR3Q1",
@@ -30839,7 +30887,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RPNRNNR3Q1": {
         "id": "RPNRNNR3Q1",
@@ -30871,7 +30920,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RRNRNNR3Q1": {
         "id": "RRNRNNR3Q1",
@@ -30901,7 +30951,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R53RNNR3Q1": {
         "id": "R53RNNR3Q1",
@@ -30933,7 +30984,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q1R077R3R1": {
         "id": "Q1R077R3R1",
@@ -30963,7 +31015,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ3RNNR3Q1": {
         "id": "RQ3RNNR3Q1",
@@ -30993,7 +31046,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1ORNNR3Q1": {
         "id": "R1ORNNR3Q1",
@@ -31023,7 +31077,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "ROORNNR3Q1": {
         "id": "ROORNNR3Q1",
@@ -31055,7 +31110,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R7ORNNR3Q1": {
         "id": "R7ORNNR3Q1",
@@ -31088,7 +31144,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R05RNNR3Q1": {
         "id": "R05RNNR3Q1",
@@ -31121,7 +31178,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R35RNNR3Q1": {
         "id": "R35RNNR3Q1",
@@ -31153,7 +31211,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R37357P7NN": {
         "id": "R37357P7NN",
@@ -31185,7 +31244,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RP5RNNR3Q1": {
         "id": "RP5RNNR3Q1",
@@ -31215,7 +31275,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR5RNNR3Q1": {
         "id": "RR5RNNR3Q1",
@@ -31245,7 +31306,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNPRNNR3Q1": {
         "id": "RNPRNNR3Q1",
@@ -31275,7 +31337,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQPRNNR3Q1": {
         "id": "RQPRNNR3Q1",
@@ -31305,7 +31368,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QR75QPQ5R1": {
         "id": "QR75QPQ5R1",
@@ -31335,7 +31399,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0PN1RRQNN": {
         "id": "R0PN1RRQNN",
@@ -31365,7 +31430,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R5N03NR3Q1": {
         "id": "R5N03NR3Q1",
@@ -31397,7 +31463,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQN03NR3Q1": {
         "id": "RQN03NR3Q1",
@@ -31429,7 +31496,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1303NR3Q1": {
         "id": "R1303NR3Q1",
@@ -31461,7 +31529,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO303NR3Q1": {
         "id": "RO303NR3Q1",
@@ -31493,7 +31562,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R7303NR3Q1": {
         "id": "R7303NR3Q1",
@@ -31525,7 +31595,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0O03NR3Q1": {
         "id": "R0O03NR3Q1",
@@ -31557,7 +31628,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R50557P7NN": {
         "id": "R50557P7NN",
@@ -31589,7 +31661,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q1O0QN3Q0N": {
         "id": "Q1O0QN3Q0N",
@@ -31619,7 +31692,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RO7RNNR3Q1": {
         "id": "RO7RNNR3Q1",
@@ -31651,7 +31725,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QNQ5QPQ5R1": {
         "id": "QNQ5QPQ5R1",
@@ -31681,7 +31756,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R77RNNR3Q1": {
         "id": "R77RNNR3Q1",
@@ -31711,7 +31787,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3QRNNR3Q1": {
         "id": "R3QRNNR3Q1",
@@ -31741,7 +31818,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RPQRNNR3Q1": {
         "id": "RPQRNNR3Q1",
@@ -31773,7 +31851,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RRQRNNR3Q1": {
         "id": "RRQRNNR3Q1",
@@ -31805,7 +31884,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNRRNNR3Q1": {
         "id": "RNRRNNR3Q1",
@@ -31837,7 +31917,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "Q5P7N5NRR1": {
         "id": "Q5P7N5NRR1",
@@ -31869,7 +31950,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "QQP7N5NRR1": {
         "id": "QQP7N5NRR1",
@@ -31901,7 +31983,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R5RRNNR3Q1": {
         "id": "R5RRNNR3Q1",
@@ -31953,7 +32036,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1003NR3Q1": {
         "id": "R1003NR3Q1",
@@ -32005,7 +32089,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R3103NR3Q1": {
         "id": "R3103NR3Q1",
@@ -32059,7 +32144,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR103NR3Q1": {
         "id": "RR103NR3Q1",
@@ -32091,7 +32177,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNN03NR3Q1": {
         "id": "RNN03NR3Q1",
@@ -32123,7 +32210,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RR7QNRNONN": {
         "id": "RR7QNRNONN",
@@ -32155,7 +32243,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RP7QNRNONN": {
         "id": "RP7QNRNONN",
@@ -32187,7 +32276,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RPO03NR3Q1": {
         "id": "RPO03NR3Q1",
@@ -32219,7 +32309,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RRO03NR3Q1": {
         "id": "RRO03NR3Q1",
@@ -32251,7 +32342,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RN503NR3Q1": {
         "id": "RN503NR3Q1",
@@ -32281,7 +32373,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQ503NR3Q1": {
         "id": "RQ503NR3Q1",
@@ -32335,7 +32428,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "ROP03NR3Q1": {
         "id": "ROP03NR3Q1",
@@ -32389,7 +32483,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0703NR3Q1": {
         "id": "R0703NR3Q1",
@@ -32441,7 +32536,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RP703NR3Q1": {
         "id": "RP703NR3Q1",
@@ -32495,7 +32591,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RNQ03NR3Q1": {
         "id": "RNQ03NR3Q1",
@@ -32549,7 +32646,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RQQ03NR3Q1": {
         "id": "RQQ03NR3Q1",
@@ -32579,7 +32677,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R1R03NR3Q1": {
         "id": "R1R03NR3Q1",
@@ -32609,7 +32708,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R7R03NR3Q1": {
         "id": "R7R03NR3Q1",
@@ -32639,7 +32739,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": true
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "R0013NR3Q1": {
         "id": "R0013NR3Q1",
@@ -32669,7 +32770,8 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
       },
       "RP013NR3Q1": {
         "id": "RP013NR3Q1",
@@ -32699,7 +32801,75 @@
             "isSoldOut": false,
             "isExcludedFromMov": false
           }
-        ]
+        ],
+        "allergenIds": ["ALL1", "ALL2"]
+      }
+    },
+    "allergens": {
+      "ALL1": { "id": "ALL1", "description": "mit Konservierungsstoff" },
+      "ALL2": { "id": "ALL2", "description": "mit Farbstoff" },
+      "3": { "id": "3", "description": "mit Antioxidationsmittel" },
+      "4": { "id": "4", "description": "mit Süßungsmittel Saccharin" },
+      "5": { "id": "5", "description": "mit Süßungsmittel Cyclamat" },
+      "6": {
+        "id": "6",
+        "description": "mit Süßungsmittel Aspartam, enthält Phenylanunquelle"
+      },
+      "7": { "id": "7", "description": "mit Süßungsmittel Acesulfam" },
+      "8": { "id": "8", "description": "mit Phosphat" },
+      "9": { "id": "9", "description": "geschwefelt" },
+      "10": { "id": "10", "description": "chininhaltig" },
+      "11": { "id": "11", "description": "coffeinhaltig" },
+      "12": { "id": "12", "description": "mit Geschmacksverstärker" },
+      "13": { "id": "13", "description": "geschwärzt" },
+      "14": { "id": "14", "description": "gewachst" },
+      "15": { "id": "15", "description": "gentechnisch verändert" },
+      "a": { "id": "a", "description": "Glutenhaltiges Getreide" },
+      "b": {
+        "id": "b",
+        "description": "Krebstiere und daraus gewonnene Erzeugnisse"
+      },
+      "c": {
+        "id": "c",
+        "description": "Eier und daraus gewonnene Erzeugnisse"
+      },
+      "d": {
+        "id": "d",
+        "description": "Fische und daraus gewonnene Erzeugnisse"
+      },
+      "e": {
+        "id": "e",
+        "description": "Erdnüsse und daraus gewonnene Erzeugnisse"
+      },
+      "f": {
+        "id": "f",
+        "description": "Sojabohnen und daraus gewonnene Erzeugnisse"
+      },
+      "g": {
+        "id": "g",
+        "description": "Milch und daraus gewonnene Erzeugnisse"
+      },
+      "h": { "id": "h", "description": "Schalenfrüchte" },
+      "i": {
+        "id": "i",
+        "description": "Sellerie und daraus gewonnene Erzeugnisse"
+      },
+      "j": {
+        "id": "j",
+        "description": "Senf und daraus gewonnene Erzeugnisse"
+      },
+      "k": {
+        "id": "k",
+        "description": "Sesamsamen und daraus gewonnene Erzeugnisse"
+      },
+      "l": { "id": "l", "description": "Schwefeldioxid und Sulphite" },
+      "m": {
+        "id": "m",
+        "description": "Lupinen und daraus gewonnene Erzeugnisse"
+      },
+      "n": {
+        "id": "n",
+        "description": "Weichtiere und daraus gewonnene Erzeugnisse"
       }
     },
     "popularProductIds": ["R11RNNR3Q1", "RNO7RPP7NN", "RQ15NNR3Q1"],

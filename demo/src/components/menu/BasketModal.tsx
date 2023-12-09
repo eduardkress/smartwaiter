@@ -10,7 +10,6 @@ import {
   ScrollShadow
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
-import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import Minus from '@/components/icons/Minus';
 import Plus from '@/components/icons/Plus';
 import { toast, Toaster } from 'sonner';
