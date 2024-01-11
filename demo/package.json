@@ -10,11 +10,13 @@
     "deploy:prod": "npx sst deploy --stage prod"
   },
   "dependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.470.0",
     "@aws-sdk/client-dynamodb": "^3.445.0",
     "@aws-sdk/lib-dynamodb": "^3.445.0",
     "@headlessui/react": "^1.7.17",
     "@nextui-org/react": "^2.2.9",
     "@preact/signals": "^1.2.2",
+    "aws-amplify": "^6.0.6",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.5",
@@ -29,6 +31,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.130",
     "@types/bcrypt": "^5.0.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",

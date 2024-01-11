@@ -1,7 +1,9 @@
 import { SSTConfig } from 'sst';
-import { Table, Config, NextjsSite } from 'sst/constructs';
+import { Table, Config, NextjsSite, AppSyncApi } from 'sst/constructs';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
+import * as cdk from "aws-cdk-lib";
+import * as appsync from "aws-cdk-lib/aws-appsync";
 
 const appName = 'demo';
 const domainCertArn =
@@ -72,6 +74,40 @@ export default {
       // });
 
       console.log(app);
+
+      // Create the AppSync GraphQL API
+      const api = new AppSyncApi(stack, "AppSyncApi", {
+        schema: "src/appSync/graphql/schema.graphql",
+        cdk: {
+          graphqlApi: {
+            authorizationConfig: {
+              defaultAuthorization: {
+                authorizationType: appsync.AuthorizationType.API_KEY,
+                apiKeyConfig: {
+                  expires: cdk.Expiration.after(cdk.Duration.days(365)),
+                },
+              },
+            },
+          },
+        },
+        // defaults: {
+        //   function: {
+        //     // Bind the table name to the function
+        //     bind: [notesTable],
+        //   },
+        // },
+        dataSources: {
+          order: "src/appSync/main.handler",
+        },
+        resolvers: {
+          "Query    listOrders": "order",
+          // "Query    getNoteById": "notes",
+          "Mutation createOrder": "order",
+          // "Mutation updateNote": "notes",
+          // "Mutation deleteNote": "notes",
+        },
+      });
+
       const site = new NextjsSite(stack, 'site', {
         environment: {
           NEXTAUTH_URL:
@@ -98,12 +134,16 @@ export default {
           productsTable,
           variantsTable,
           optionsGroupsTable,
-          optionsTable
+          optionsTable,
+          api
         ]
       });
 
       stack.addOutputs({
-        SiteUrl: site.url
+        SiteUrl: site.url,
+        ApiId: api.apiId,
+        APiUrl: api.url,
+        ApiKey: api.cdk.graphqlApi.apiKey || "",
       });
     });
   }

@@ -1,0 +1,7 @@
+schema: schema.graphql
+extensions:
+  endpoints:
+    One:
+      url: https://px7ttklborgf3nmnrxe3welowu.appsync-api.eu-central-1.amazonaws.com/graphql
+      headers:
+        X-Api-Key: da2-3cugyvlerjcsbp6vknt2xmy7ga

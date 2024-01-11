@@ -1,0 +1,31 @@
+# graphql/schema.graphql
+directive @aws_subscribe(mutations: [String!]!) on FIELD_DEFINITION
+
+type Order {
+  id: ID!
+  name: String!
+}
+
+input OrderInput {
+  id: String!
+  name: String!
+}
+
+type Query {
+  listOrders: [Order]
+}
+
+type Mutation {
+  createOrder(order: OrderInput!): Order
+}
+
+type Subscription {
+  onCreateNote: Order
+    @aws_subscribe(mutations: ["createOrder"])
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

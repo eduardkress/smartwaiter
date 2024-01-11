@@ -1,0 +1,16 @@
+projects:
+  user-demo-smartwaiter-AppSyncApi:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+      - src/API.ts
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql
+        region: eu-central-1
+        apiId: xvgjbav755eldmcza4xfyqmtbu
+        maxDepth: 5
