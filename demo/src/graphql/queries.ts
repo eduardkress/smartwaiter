@@ -11,7 +11,14 @@ type GeneratedQuery<InputType, OutputType> = string & {
 export const listOrders = /* GraphQL */ `query ListOrders {
   listOrders {
     id
-    name
+    orderCodeId
+    items {
+      variantId
+      optionIds
+      amount
+      __typename
+    }
+    extraText
     __typename
   }
 }

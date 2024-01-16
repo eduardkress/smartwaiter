@@ -2,8 +2,8 @@ import { SSTConfig } from 'sst';
 import { Table, Config, NextjsSite, AppSyncApi } from 'sst/constructs';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
-import * as cdk from "aws-cdk-lib";
-import * as appsync from "aws-cdk-lib/aws-appsync";
+import * as cdk from 'aws-cdk-lib';
+import * as appsync from 'aws-cdk-lib/aws-appsync';
 
 const appName = 'demo';
 const domainCertArn =
@@ -30,38 +30,26 @@ export default {
       //Add Tables to App Stack
       const usersTable = new Table(stack, 'Users', {
         fields: {
-          email: 'string',
-          name: 'string',
-          password: 'string',
-          role: 'string'
+          email: 'string'
         },
         primaryIndex: { partitionKey: 'email' }
       });
-      const categoriesTable = new Table(stack, 'Categories', {
+
+      const desksTable = new Table(stack, 'Desks', {
         fields: {
           id: 'string'
         },
         primaryIndex: { partitionKey: 'id' }
       });
-      const productsTable = new Table(stack, 'Products', {
+
+      const orderCodesTable = new Table(stack, 'OrderCodes', {
         fields: {
           id: 'string'
         },
         primaryIndex: { partitionKey: 'id' }
       });
-      const variantsTable = new Table(stack, 'Variants', {
-        fields: {
-          id: 'string'
-        },
-        primaryIndex: { partitionKey: 'id' }
-      });
-      const optionsGroupsTable = new Table(stack, 'OptionsGroup', {
-        fields: {
-          id: 'string'
-        },
-        primaryIndex: { partitionKey: 'id' }
-      });
-      const optionsTable = new Table(stack, 'Options', {
+
+      const ordersTable = new Table(stack, 'Orders', {
         fields: {
           id: 'string'
         },
@@ -76,36 +64,36 @@ export default {
       console.log(app);
 
       // Create the AppSync GraphQL API
-      const api = new AppSyncApi(stack, "AppSyncApi", {
-        schema: "src/appSync/graphql/schema.graphql",
+      const api = new AppSyncApi(stack, 'AppSyncApi', {
+        schema: 'src/appSync/graphql/schema.graphql',
         cdk: {
           graphqlApi: {
             authorizationConfig: {
               defaultAuthorization: {
                 authorizationType: appsync.AuthorizationType.API_KEY,
                 apiKeyConfig: {
-                  expires: cdk.Expiration.after(cdk.Duration.days(365)),
-                },
-              },
-            },
-          },
+                  expires: cdk.Expiration.after(cdk.Duration.days(365))
+                }
+              }
+            }
+          }
         },
-        // defaults: {
-        //   function: {
-        //     // Bind the table name to the function
-        //     bind: [notesTable],
-        //   },
-        // },
+        defaults: {
+          function: {
+            // Bind the table name to the function
+            bind: [ordersTable]
+          }
+        },
         dataSources: {
-          order: "src/appSync/main.handler",
+          order: 'src/appSync/main.handler'
         },
         resolvers: {
-          "Query    listOrders": "order",
+          'Query   listOrders': 'order',
           // "Query    getNoteById": "notes",
-          "Mutation createOrder": "order",
+          'Mutation createOrder': 'order'
           // "Mutation updateNote": "notes",
           // "Mutation deleteNote": "notes",
-        },
+        }
       });
 
       const site = new NextjsSite(stack, 'site', {
@@ -128,22 +116,14 @@ export default {
             )
           }
         },
-        bind: [
-          usersTable,
-          categoriesTable,
-          productsTable,
-          variantsTable,
-          optionsGroupsTable,
-          optionsTable,
-          api
-        ]
+        bind: [usersTable, desksTable, orderCodesTable, api]
       });
 
       stack.addOutputs({
         SiteUrl: site.url,
         ApiId: api.apiId,
         APiUrl: api.url,
-        ApiKey: api.cdk.graphqlApi.apiKey || "",
+        ApiKey: api.cdk.graphqlApi.apiKey || ''
       });
     });
   }

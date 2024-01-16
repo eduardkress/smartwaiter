@@ -8,14 +8,21 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onCreateNote = /* GraphQL */ `subscription OnCreateNote {
-  onCreateNote {
+export const onCreateOrder = /* GraphQL */ `subscription OnCreateOrder {
+  onCreateOrder {
     id
-    name
+    orderCodeId
+    items {
+      variantId
+      optionIds
+      amount
+      __typename
+    }
+    extraText
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateNoteSubscriptionVariables,
-  APITypes.OnCreateNoteSubscription
+  APITypes.OnCreateOrderSubscriptionVariables,
+  APITypes.OnCreateOrderSubscription
 >;

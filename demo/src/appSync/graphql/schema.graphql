@@ -2,17 +2,33 @@
 directive @aws_subscribe(mutations: [String!]!) on FIELD_DEFINITION
 
 type Order {
-  id: ID!
-  name: String!
+  id: String!
+  orderCodeId: String!
+  items: [OrderItem!]!
+  extraText: String!
+}
+
+type OrderItem {
+  variantId: String!
+  optionIds: [String!]!
+  amount: Int!
 }
 
 input OrderInput {
   id: String!
-  name: String!
+  orderCodeId: String!
+  items: [OrderItemInput!]!
+  extraText: String!
+}
+
+input OrderItemInput {
+  variantId: String!
+  optionIds: [String!]!
+  amount: Int!
 }
 
 type Query {
-  listOrders: [Order]
+  listOrders: [Order!]!
 }
 
 type Mutation {
@@ -20,8 +36,7 @@ type Mutation {
 }
 
 type Subscription {
-  onCreateNote: Order
-    @aws_subscribe(mutations: ["createOrder"])
+  onCreateOrder: Order @aws_subscribe(mutations: ["createOrder"])
 }
 
 schema {

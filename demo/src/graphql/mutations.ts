@@ -8,10 +8,17 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createOrder = /* GraphQL */ `mutation CreateOrder($note: OrderInput!) {
-  createOrder(note: $note) {
+export const createOrder = /* GraphQL */ `mutation CreateOrder($order: OrderInput!) {
+  createOrder(order: $order) {
     id
-    name
+    orderCodeId
+    items {
+      variantId
+      optionIds
+      amount
+      __typename
+    }
+    extraText
     __typename
   }
 }

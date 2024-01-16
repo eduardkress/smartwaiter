@@ -4,24 +4,48 @@
 
 export type OrderInput = {
   id: string,
-  name: string,
+  orderCodeId: string,
+  items: Array< OrderItemInput >,
+  extraText: string,
+};
+
+export type OrderItemInput = {
+  variantId: string,
+  optionIds: Array< string >,
+  amount: number,
 };
 
 export type Order = {
   __typename: "Order",
   id: string,
-  name: string,
+  orderCodeId: string,
+  items:  Array<OrderItem >,
+  extraText: string,
+};
+
+export type OrderItem = {
+  __typename: "OrderItem",
+  variantId: string,
+  optionIds: Array< string >,
+  amount: number,
 };
 
 export type CreateOrderMutationVariables = {
-  note: OrderInput,
+  order: OrderInput,
 };
 
 export type CreateOrderMutation = {
   createOrder?:  {
     __typename: "Order",
     id: string,
-    name: string,
+    orderCodeId: string,
+    items:  Array< {
+      __typename: "OrderItem",
+      variantId: string,
+      optionIds: Array< string >,
+      amount: number,
+    } >,
+    extraText: string,
   } | null,
 };
 
@@ -29,20 +53,34 @@ export type ListOrdersQueryVariables = {
 };
 
 export type ListOrdersQuery = {
-  listOrders?:  Array< {
+  listOrders:  Array< {
     __typename: "Order",
     id: string,
-    name: string,
-  } | null > | null,
+    orderCodeId: string,
+    items:  Array< {
+      __typename: "OrderItem",
+      variantId: string,
+      optionIds: Array< string >,
+      amount: number,
+    } >,
+    extraText: string,
+  } >,
 };
 
-export type OnCreateNoteSubscriptionVariables = {
+export type OnCreateOrderSubscriptionVariables = {
 };
 
-export type OnCreateNoteSubscription = {
-  onCreateNote?:  {
+export type OnCreateOrderSubscription = {
+  onCreateOrder?:  {
     __typename: "Order",
     id: string,
-    name: string,
+    orderCodeId: string,
+    items:  Array< {
+      __typename: "OrderItem",
+      variantId: string,
+      optionIds: Array< string >,
+      amount: number,
+    } >,
+    extraText: string,
   } | null,
 };

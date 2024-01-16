@@ -1,16 +1,17 @@
-import { DynamoDB } from "aws-sdk";
-import { Table } from "sst/node/table";
-import Order from "./Order";
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
+import { Table } from 'sst/node/table';
+import Order from '@/appSync/graphql/types/Order';
 
-// const dynamoDb = new DynamoDB.DocumentClient();
+const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
 export default async function listOrders(): Promise<Array<Order>> {
-  // const params = {
-  //   Item: order as Record<string, unknown>,
-  //   TableName: Table.Notes.tableName,
-  // };
-  //
-  // await dynamoDb.put(params).promise();
+  const command = new ScanCommand({
+    TableName: Table.Orders.tableName
+  });
 
-  return [{id: "123", name: "Hello World"}];
+  const response = await client.send(command);
+  const orders = response.Items as Array<Order>;
+
+  return orders ?? new Array<Order>();
 }
