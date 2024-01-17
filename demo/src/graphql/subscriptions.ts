@@ -12,7 +12,7 @@ export const onCreateOrder = /* GraphQL */ `subscription OnCreateOrder {
   onCreateOrder {
     id
     orderCodeId
-    items {
+    orderItems {
       variantId
       optionIds
       amount

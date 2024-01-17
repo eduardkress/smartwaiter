@@ -4,16 +4,16 @@ import { generateClient } from 'aws-amplify/api';
 import { Amplify } from 'aws-amplify';
 import OrderCode from '@/models/OrderCode';
 import { getOrderCodeFromDB } from '@/app/services/database/OrderCodesService';
-import { OrderItem } from '@/API';
 import Order from '@/appSync/graphql/types/Order';
+import OrderItem from '@/appSync/graphql/types/OrderItem';
 
 Amplify.configure({
   // @ts-ignore
   aws_appsync_graphqlEndpoint:
-    'https://q7rearab2ncc3goc6fxao5owgm.appsync-api.eu-central-1.amazonaws.com/graphql',
+    'https://b2p7dsy7qvaajbeuaqwjgotce4.appsync-api.eu-central-1.amazonaws.com/graphql',
   aws_appsync_region: 'eu-central-1',
   aws_appsync_authenticationType: 'API_KEY',
-  aws_appsync_apiKey: 'da2-mggi3hokrvatdeijdpy5ohqtym'
+  aws_appsync_apiKey: 'da2-dh6dys6oxbdbnb3teiibo6v5tu'
 });
 
 const client = generateClient();
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
   const reqData = await request.json();
 
   const orderCode = reqData.orderCode as string; //TODO: Validierung und typensicheres casten in string
-  const orderItems = reqData.orderItems as OrderItem[]; //TODO: Validierung und typensicheres casten in OrderItem[]
+  const orderItems = reqData.orderItems as Array<OrderItem>; //TODO: Validierung und typensicheres casten in OrderItem[]
   const extraText = reqData.extraText as string;
 
   // Überprüfe ob orderCode und orderItems in der Anfrage gesetzt wurden (Achtung: Noch keine echte Validierung)
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       order: {
         id: crypto.randomUUID(),
         orderCodeId: orderCode,
-        items: orderItems,
+        orderItems: orderItems,
         extraText: extraText ?? ''
       }
     }

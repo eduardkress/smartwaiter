@@ -3,7 +3,7 @@ import OrderItem from './OrderItem';
 type Order = {
   id: string;
   orderCodeId: string;
-  items: Array<OrderItem>;
+  orderItems: Array<OrderItem>;
   extraText: string;
 };
 

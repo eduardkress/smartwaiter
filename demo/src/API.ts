@@ -5,7 +5,7 @@
 export type OrderInput = {
   id: string,
   orderCodeId: string,
-  items: Array< OrderItemInput >,
+  orderItems: Array< OrderItemInput >,
   extraText: string,
 };
 
@@ -19,7 +19,7 @@ export type Order = {
   __typename: "Order",
   id: string,
   orderCodeId: string,
-  items:  Array<OrderItem >,
+  orderItems:  Array<OrderItem >,
   extraText: string,
 };
 
@@ -39,7 +39,7 @@ export type CreateOrderMutation = {
     __typename: "Order",
     id: string,
     orderCodeId: string,
-    items:  Array< {
+    orderItems:  Array< {
       __typename: "OrderItem",
       variantId: string,
       optionIds: Array< string >,
@@ -57,7 +57,7 @@ export type ListOrdersQuery = {
     __typename: "Order",
     id: string,
     orderCodeId: string,
-    items:  Array< {
+    orderItems:  Array< {
       __typename: "OrderItem",
       variantId: string,
       optionIds: Array< string >,
@@ -75,7 +75,7 @@ export type OnCreateOrderSubscription = {
     __typename: "Order",
     id: string,
     orderCodeId: string,
-    items:  Array< {
+    orderItems:  Array< {
       __typename: "OrderItem",
       variantId: string,
       optionIds: Array< string >,

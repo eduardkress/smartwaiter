@@ -11,6 +11,7 @@ export default async function listOrders(): Promise<Array<Order>> {
   });
 
   const response = await client.send(command);
+
   const orders = response.Items as Array<Order>;
 
   return orders ?? new Array<Order>();

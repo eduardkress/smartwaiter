@@ -4,7 +4,7 @@ directive @aws_subscribe(mutations: [String!]!) on FIELD_DEFINITION
 type Order {
   id: String!
   orderCodeId: String!
-  items: [OrderItem!]!
+  orderItems: [OrderItem!]!
   extraText: String!
 }
 
@@ -17,7 +17,7 @@ type OrderItem {
 input OrderInput {
   id: String!
   orderCodeId: String!
-  items: [OrderItemInput!]!
+  orderItems: [OrderItemInput!]!
   extraText: String!
 }
 

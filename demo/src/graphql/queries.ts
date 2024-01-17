@@ -12,7 +12,7 @@ export const listOrders = /* GraphQL */ `query ListOrders {
   listOrders {
     id
     orderCodeId
-    items {
+    orderItems {
       variantId
       optionIds
       amount

@@ -12,7 +12,7 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder($order: OrderInpu
   createOrder(order: $order) {
     id
     orderCodeId
-    items {
+    orderItems {
       variantId
       optionIds
       amount
