@@ -13,16 +13,70 @@ export const onCreateOrder = /* GraphQL */ `subscription OnCreateOrder {
     id
     orderCodeId
     orderItems {
+      productId
       variantId
       optionIds
       amount
+      extraText
       __typename
     }
-    extraText
+    orderStatus
     __typename
   }
 }
 ` as GeneratedSubscription<
   APITypes.OnCreateOrderSubscriptionVariables,
   APITypes.OnCreateOrderSubscription
+>;
+export const onCreateOrderCode = /* GraphQL */ `subscription OnCreateOrderCode {
+  onCreateOrderCode {
+    id
+    deskId
+    isActive
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateOrderCodeSubscriptionVariables,
+  APITypes.OnCreateOrderCodeSubscription
+>;
+export const onUpdateOrder = /* GraphQL */ `subscription OnUpdateOrder {
+  onUpdateOrder {
+    id
+    orderCodeId
+    orderItems {
+      productId
+      variantId
+      optionIds
+      amount
+      extraText
+      __typename
+    }
+    orderStatus
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateOrderSubscriptionVariables,
+  APITypes.OnUpdateOrderSubscription
+>;
+export const onDeleteOrder = /* GraphQL */ `subscription OnDeleteOrder {
+  onDeleteOrder {
+    id
+    orderCodeId
+    orderItems {
+      productId
+      variantId
+      optionIds
+      amount
+      extraText
+      __typename
+    }
+    orderStatus
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteOrderSubscriptionVariables,
+  APITypes.OnDeleteOrderSubscription
 >;

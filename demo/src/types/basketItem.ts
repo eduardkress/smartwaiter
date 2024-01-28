@@ -1,5 +1,7 @@
 export interface BasketItem {
-  variationId: string;
+  productId: string;
+  variantId: string;
   optionIds: string[];
   amount: number;
+  extraText: string;
 }

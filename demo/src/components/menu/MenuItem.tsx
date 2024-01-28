@@ -23,7 +23,7 @@ export function MenuItem({ menu, product }: Props) {
           onClick={onOpen}
         >
           <div className='flex flex-col gap-y-2'>
-            <h3 className='text-base font-bold sm:text-2xl'>
+            <h3 className='text-base font-bold sm:text-xl'>
               <MenuItemTitle
                 product={product}
                 allergens={product.allergenIds.map((id) => {

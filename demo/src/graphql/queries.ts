@@ -13,16 +13,42 @@ export const listOrders = /* GraphQL */ `query ListOrders {
     id
     orderCodeId
     orderItems {
+      productId
       variantId
       optionIds
       amount
+      extraText
       __typename
     }
-    extraText
+    orderStatus
     __typename
   }
 }
 ` as GeneratedQuery<
   APITypes.ListOrdersQueryVariables,
   APITypes.ListOrdersQuery
+>;
+export const listActiveOrderCodes = /* GraphQL */ `query ListActiveOrderCodes {
+  listActiveOrderCodes {
+    id
+    deskId
+    isActive
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListActiveOrderCodesQueryVariables,
+  APITypes.ListActiveOrderCodesQuery
+>;
+export const getOrderCodeById = /* GraphQL */ `query GetOrderCodeById($orderCodeId: String!) {
+  getOrderCodeById(orderCodeId: $orderCodeId) {
+    id
+    deskId
+    isActive
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetOrderCodeByIdQueryVariables,
+  APITypes.GetOrderCodeByIdQuery
 >;

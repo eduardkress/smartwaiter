@@ -52,6 +52,7 @@ export const authOptions: NextAuthOptions = {
           };
         } else {
           // If no user with email was found in DynamoDB table Users or hashed password did not match return null
+          console.log('No user was found in DB that match credentials');
           return null;
         }
       }

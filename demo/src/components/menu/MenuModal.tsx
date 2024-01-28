@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalContent,
   ModalFooter,
+  ModalHeader,
   ScrollShadow
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
@@ -93,12 +94,11 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
   };
 
   const handleAddToBasket = () => {
-    const data = {
-      variant: selectedVariant.id,
-      options: selectedOptions,
-      amount: itemCounter
-    };
-    console.log(data);
+    const optionIds = Object.values(selectedOptions).reduce(
+      (acc, values) => acc.concat(values),
+      []
+    );
+    addToBasket(product.id, selectedVariant.id, optionIds, itemCounter, '');
   };
 
   return (
@@ -253,6 +253,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                   className='text-md flex-grow bg-black px-8 py-7 font-bold text-white'
                   onClick={() => {
                     handleAddToBasket();
+                    onClose();
                   }}
                 >
                   {EURO.format(itemPrice / menu.currency.denominator)}

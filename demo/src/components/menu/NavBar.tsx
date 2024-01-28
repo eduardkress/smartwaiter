@@ -1,9 +1,9 @@
 import { twMerge } from 'tailwind-merge';
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from 'react';
 import ArrowRight from '@/components/icons/ArrowRight';
 import ArrowLeft from '@/components/icons/ArrowLeft';
 import { Menu } from '@/types/restaurant';
-import { Button } from "@nextui-org/react";
+import { Button } from '@nextui-org/react';
 
 interface Props {
   menu: Menu;
@@ -74,7 +74,7 @@ function NavBar({ menu }: Props) {
     var offsetPosition =
       categoryPosition + window.pageYOffset - slider.offsetHeight;
 
-    setMenuActive('navBarCategory-' +id);
+    setMenuActive('navBarCategory-' + id);
 
     window.scrollTo({
       top: offsetPosition,
@@ -149,7 +149,7 @@ function NavBar({ menu }: Props) {
         ) {
           if (entry.target.parentElement) {
             const categoryId = entry.target.parentElement.id ?? '';
-            setMenuActive(categoryId.replace("category", "navBarCategory-"));
+            setMenuActive(categoryId.replace('category', 'navBarCategory-'));
           }
         }
         // Else if element scrolls outside view from top then select the parents next sibling category
@@ -163,7 +163,7 @@ function NavBar({ menu }: Props) {
           ) {
             const categoryId =
               entry.target.parentElement.nextElementSibling.id ?? '';
-            setMenuActive(categoryId.replace("category", "navBarCategory-"));
+            setMenuActive(categoryId.replace('category', 'navBarCategory-'));
           }
         }
       },
@@ -259,7 +259,7 @@ function NavBar({ menu }: Props) {
           </div>
         </div>
       </div>
-      <div className="relative w-full h-1 shadow" />
+      <div className='relative h-1 w-full shadow' />
     </Fragment>
   );
 }

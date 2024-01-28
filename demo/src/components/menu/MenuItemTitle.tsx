@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Button, Tooltip } from '@nextui-org/react';
 import Info from '@/components/icons/Info';
 //import { allergens } from '@/components/ui/allergen';
@@ -11,7 +11,7 @@ type Props = {
 };
 
 function MenuItemTitle({ product, allergens }: Props) {
-  const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const onScroll = () => {
     setIsTooltipOpen(false);
   };

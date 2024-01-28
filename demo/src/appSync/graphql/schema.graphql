@@ -1,42 +1,67 @@
-# graphql/schema.graphql
-directive @aws_subscribe(mutations: [String!]!) on FIELD_DEFINITION
+enum OrderStatus {
+  NEW
+  DONE
+  CANCELED
+}
 
 type Order {
   id: String!
   orderCodeId: String!
   orderItems: [OrderItem!]!
-  extraText: String!
-}
-
-type OrderItem {
-  variantId: String!
-  optionIds: [String!]!
-  amount: Int!
+  orderStatus: OrderStatus!
 }
 
 input OrderInput {
-  id: String!
   orderCodeId: String!
   orderItems: [OrderItemInput!]!
+  orderStatus: OrderStatus!
+}
+
+type OrderItem {
+  productId: String!
+  variantId: String!
+  optionIds: [String!]!
+  amount: Int!
   extraText: String!
 }
 
 input OrderItemInput {
+  productId: String!
   variantId: String!
   optionIds: [String!]!
   amount: Int!
+  extraText: String!
+}
+
+type OrderCode {
+  id: String!
+  deskId: String!
+  isActive: Boolean!
+}
+
+input OrderCodeInput {
+  deskId: String!
+  isActive: Boolean!
+}
+
+type Mutation {
+  createOrder(orderInput: OrderInput!): Order
+  createOrderCode(orderCodeInput: OrderCodeInput!): OrderCode
+  updateOrder(orderId: String!, orderInput: OrderInput!): Order
+  deleteOrder(orderId: String!): Order
 }
 
 type Query {
   listOrders: [Order!]!
-}
-
-type Mutation {
-  createOrder(order: OrderInput!): Order
+  listActiveOrderCodes: [OrderCode!]!
+  getOrderCodeById(orderCodeId: String!): OrderCode
 }
 
 type Subscription {
   onCreateOrder: Order @aws_subscribe(mutations: ["createOrder"])
+  onCreateOrderCode: OrderCode @aws_subscribe(mutations: ["createOrderCode"])
+  onUpdateOrder: Order @aws_subscribe(mutations: ["updateOrder"])
+  onDeleteOrder: Order @aws_subscribe(mutations: ["deleteOrder"])
 }
 
 schema {

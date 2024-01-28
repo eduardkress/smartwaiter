@@ -81,18 +81,21 @@ export default {
         defaults: {
           function: {
             // Bind the table name to the function
-            bind: [ordersTable]
+            bind: [ordersTable, orderCodesTable]
           }
         },
         dataSources: {
-          order: 'src/appSync/main.handler'
+          order: 'src/appSync/graphql/order/main.handler',
+          orderCode: 'src/appSync/graphql/orderCode/main.handler'
         },
         resolvers: {
-          'Query   listOrders': 'order',
-          // "Query    getNoteById": "notes",
-          'Mutation createOrder': 'order'
-          // "Mutation updateNote": "notes",
-          // "Mutation deleteNote": "notes",
+          'Query listOrders': 'order',
+          'Mutation createOrder': 'order',
+          'Mutation updateOrder': 'order',
+          'Mutation deleteOrder': 'order',
+          'Query listActiveOrderCodes': 'orderCode',
+          'Query getOrderCodeById': 'orderCode',
+          'Mutation createOrderCode': 'orderCode'
         }
       });
 
@@ -103,7 +106,11 @@ export default {
               ? 'http://localhost:3000'
               : 'https://' + appName + '.smartwaiter.app',
           NEXTAUTH_SECRET: '33jr9jfH5CLwSqsArC2uugxFXFW7vZhF',
-          SALT: 'EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw'
+          SALT: 'EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw',
+          NEXT_PUBLIC_APP_URL:
+            app.stage === 'dev'
+              ? 'http://localhost:3000'
+              : 'https://' + appName + '.smartwaiter.app'
         },
         customDomain: {
           isExternalDomain: true,
@@ -116,7 +123,7 @@ export default {
             )
           }
         },
-        bind: [usersTable, desksTable, orderCodesTable, api]
+        bind: [usersTable, desksTable, api]
       });
 
       stack.addOutputs({
