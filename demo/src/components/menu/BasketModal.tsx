@@ -19,6 +19,7 @@ import { twMerge } from 'tailwind-merge';
 import { calculateTotalPrice } from '@/services/ProductDataService';
 import { EURO } from '@/utils/currencies';
 import { useSearchParams } from 'next/navigation';
+import { clearBasket } from './Basket';
 
 type Props = {
   isOpen: boolean;
@@ -28,7 +29,6 @@ type Props = {
 };
 
 async function sendOrder(orderCode: string, orderItems: Array<BasketItem>) {
-  //orderCode = 'b90d9b04-9010-483d-bdf1-41464c7ae03c';
   const data = {
     orderCode: orderCode,
     orderItems: orderItems
@@ -147,13 +147,16 @@ const BasketModal = ({ isOpen, onOpen, onOpenChange, basketItems }: Props) => {
                   radius={'full'}
                   className='text-md w-full bg-black px-8 py-7 font-bold text-white'
                   onClick={() => {
-                    onClose();
                     toast.promise(sendOrder(orderCode ?? '', basketItems), {
                       loading: 'Deine Bestellung wird abgeschickt...',
                       success: (data) => {
-                        return `Deine Bestellung ist eingegangen. Wir kümmern uns drum!`;
+                        onClose();
+                        clearBasket();
+                        return 'Deine Bestellung ist eingegangen. Wir kümmern uns drum!';
                       },
-                      error: 'Error'
+                      error: (error) => {
+                        return 'Deine Bestellung konnte nicht verarbeitet werden. Bitte versuche es später erneut!';
+                      }
                     });
                   }}
                 >
@@ -165,7 +168,6 @@ const BasketModal = ({ isOpen, onOpen, onOpenChange, basketItems }: Props) => {
           )}
         </ModalContent>
       </Modal>
-      <Toaster richColors position='bottom-center' />
     </Fragment>
   );
 };

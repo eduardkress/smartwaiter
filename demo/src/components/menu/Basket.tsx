@@ -7,9 +7,10 @@ import {
   calculateTotalItems,
   calculateTotalPrice
 } from '@/services/ProductDataService';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { EURO } from '@/utils/currencies';
 import { twMerge } from 'tailwind-merge';
+import { Toaster } from 'sonner';
 
 export const basketSignal = signal<BasketItem[]>([]);
 
@@ -32,6 +33,10 @@ export const addToBasket = (
   ];
 };
 
+export const clearBasket = () => {
+  basketSignal.value = new Array<BasketItem>();
+};
+
 export function Basket() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [basketPrice, setBasketPrice] = useState<number>(0);
@@ -51,34 +56,37 @@ export function Basket() {
   });
 
   return (
-    <div
-      className={twMerge(
-        'sticky bottom-0 h-20 items-center justify-center bg-[#f5f3f1] shadow-inner',
-        basketSignal.value.length > 0 ? 'flex' : 'hidden'
-      )}
-    >
-      <Button
-        radius={'full'}
-        className='text-md bg-black px-8 py-7 font-bold text-white'
-        onClick={onOpen}
+    <Fragment>
+      <Toaster richColors position='bottom-center' />
+      <div
+        className={twMerge(
+          'sticky bottom-0 h-20 items-center justify-center bg-[#f5f3f1] shadow-inner',
+          basketSignal.value.length > 0 ? 'flex' : 'hidden'
+        )}
       >
-        <Badge
-          content={itemsInBasket}
-          showOutline={false}
-          isInvisible={basketSignal.value.length === 0}
-          placement={'top-left'}
-          className='bg-[#f9fafb]'
+        <Button
+          radius={'full'}
+          className='text-md bg-black px-8 py-7 font-bold text-white'
+          onClick={onOpen}
         >
-          <ShoppingCart />
-        </Badge>
-        Warenkorb {EURO.format(basketPrice)}
-      </Button>
-      <BasketModal
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-        basketItems={basketSignal.value}
-      />
-    </div>
+          <Badge
+            content={itemsInBasket}
+            showOutline={false}
+            isInvisible={basketSignal.value.length === 0}
+            placement={'top-left'}
+            className='bg-[#f9fafb]'
+          >
+            <ShoppingCart />
+          </Badge>
+          Warenkorb {EURO.format(basketPrice)}
+        </Button>
+        <BasketModal
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onOpenChange={onOpenChange}
+          basketItems={basketSignal.value}
+        />
+      </div>
+    </Fragment>
   );
 }
