@@ -7,12 +7,12 @@ import { getOrderCodeById } from '@/graphql/queries';
 import { OrderInput, OrderItemInput, OrderStatus } from '@/API';
 
 Amplify.configure({
-  // @ts-ignore
+  // @ts-expect-error Parameter kann nicht zugewiesen werden
   aws_appsync_graphqlEndpoint:
     'https://hrdurbet4zhuhhsv6l6h3waa6y.appsync-api.eu-central-1.amazonaws.com/graphql',
   aws_appsync_region: 'eu-central-1',
   aws_appsync_authenticationType: 'API_KEY',
-  aws_appsync_apiKey: 'da2-kbr4bvydx5gitc24biosqxunbq'
+  aws_appsync_apiKey: 'da2-kbr4bvydx5gitc24biosqxunbq',
 });
 
 const client = generateClient();
@@ -35,8 +35,8 @@ export async function POST(request: NextRequest) {
   const result = await client.graphql({
     query: getOrderCodeById,
     variables: {
-      orderCodeId: orderCode
-    }
+      orderCodeId: orderCode,
+    },
   });
 
   if (!result.data.getOrderCodeById || !result.data.getOrderCodeById.isActive) {
@@ -46,15 +46,15 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const response = await client.graphql({
+  await client.graphql({
     query: createOrder,
     variables: {
       orderInput: {
         orderCodeId: orderCode,
         orderItems: orderItems,
-        orderStatus: OrderStatus.NEW
-      } as OrderInput
-    }
+        orderStatus: OrderStatus.NEW,
+      } as OrderInput,
+    },
   });
 
   return NextResponse.json(

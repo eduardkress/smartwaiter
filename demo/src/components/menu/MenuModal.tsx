@@ -9,8 +9,7 @@ import {
   ModalBody,
   ModalContent,
   ModalFooter,
-  ModalHeader,
-  ScrollShadow
+  ScrollShadow,
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
@@ -18,7 +17,7 @@ import { Menu, Product } from '@/types/restaurant';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
-import { addToBasket, basketSignal } from './Basket';
+import { addToBasket } from './Basket';
 import { EURO } from '@/utils/currencies';
 
 type Props = {
@@ -50,7 +49,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     let endPrice = selectedVariant.prices.pickup;
     Object.values(selectedOptions).forEach((optionsIds) => {
       optionsIds.forEach((optionId) => {
-        let option = menu.options[optionId];
+        const option = menu.options[optionId];
         if (option) {
           endPrice = endPrice + option.prices.pickup;
         }
@@ -77,7 +76,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     } else {
       setSelectedOptions((current) => ({
         ...current,
-        [optionGroupId]: seletedOptions
+        [optionGroupId]: seletedOptions,
       }));
     }
   };
@@ -110,7 +109,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
       classNames={{
         body: 'px-0 py-0',
         footer: 'bg-[#f5f3f1]',
-        closeButton: 'bg-white'
+        closeButton: 'bg-white',
       }}
     >
       <ModalContent>

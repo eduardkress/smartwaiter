@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Categories = ({
   categories,
@@ -6,17 +6,21 @@ const Categories = ({
   currentActive,
 }: {
   categories: string[];
-  filterItems: Function;
+  filterItems: (category: string) => void;
   currentActive: number;
 }) => {
   return (
-    <div className="flex justify-center mb-16">
+    <div className='mb-16 flex justify-center'>
       {categories.map((category: string, i: number) => {
         return (
           <button
             key={i}
-            type="button"
-            className={`text-base capitalize tracking-[1px] text-[#c59d5f] cursor-pointer transition-all duration-[0.3s] ease-linear rounded mx-2 my-0 px-3 py-1.5 border-transparent hover:text-white hover:bg-[#c59d5f] ${categories.indexOf(category) === currentActive ? "text-white bg-[#c59d5f]" :"" }`}
+            type='button'
+            className={`duration-[0.3s] mx-2 my-0 cursor-pointer rounded border-transparent px-3 py-1.5 text-base capitalize tracking-[1px] text-[#c59d5f] transition-all ease-linear hover:bg-[#c59d5f] hover:text-white ${
+              categories.indexOf(category) === currentActive
+                ? 'bg-[#c59d5f] text-white'
+                : ''
+            }`}
             onClick={() => filterItems(category)}
           >
             {category}

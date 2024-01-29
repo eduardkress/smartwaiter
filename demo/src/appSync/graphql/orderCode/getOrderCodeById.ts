@@ -12,8 +12,8 @@ export default async function getOrderCodeById(
     const command = new GetCommand({
       TableName: Table.OrderCodes.tableName,
       Key: {
-        id: orderCodeId
-      }
+        id: orderCodeId,
+      },
     });
 
     const response = await client.send(command);

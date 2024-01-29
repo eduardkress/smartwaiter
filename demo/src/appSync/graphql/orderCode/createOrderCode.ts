@@ -1,10 +1,6 @@
 import { OrderCode, OrderCodeInput } from '@/API';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import {
-  PutCommand,
-  DynamoDBDocumentClient,
-  GetCommand
-} from '@aws-sdk/lib-dynamodb';
+import { PutCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { Table } from 'sst/node/table';
 import crypto from 'crypto';
 
@@ -18,7 +14,7 @@ export default async function createOrderCode(
 
     const command = new PutCommand({
       TableName: Table.OrderCodes.tableName,
-      Item: orderCode
+      Item: orderCode,
     });
 
     const response = await client.send(command);

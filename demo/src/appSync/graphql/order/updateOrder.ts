@@ -13,15 +13,15 @@ export default async function updateOrder(
     const command = new UpdateCommand({
       TableName: Table.Orders.tableName,
       Key: {
-        id: orderId
+        id: orderId,
       },
       UpdateExpression:
         'set orderItems = :orderItems, orderStatus = :orderStatus',
       ExpressionAttributeValues: {
         ':orderItems': orderInput.orderItems,
-        ':orderStatus': orderInput.orderStatus
+        ':orderStatus': orderInput.orderStatus,
       },
-      ReturnValues: 'ALL_NEW'
+      ReturnValues: 'ALL_NEW',
     });
 
     const response = await client.send(command);

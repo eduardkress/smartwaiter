@@ -7,7 +7,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  Input
+  Input,
 } from '@nextui-org/react';
 import SpinnerIcon from './SpinnerIcon';
 import { OrderCode, OrderCodeInput } from '@/API';
@@ -24,9 +24,8 @@ type Props = {
 
 const NewOrderCodeModal = ({
   isOpen,
-  onOpen,
   onOpenChange,
-  createOrderCodeFn
+  createOrderCodeFn,
 }: Props) => {
   const [value, setValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -55,7 +54,7 @@ const NewOrderCodeModal = ({
                   setIsLoading(true);
                   createOrderCodeFn({
                     deskId: value,
-                    isActive: true
+                    isActive: true,
                   } as OrderCodeInput)
                     .then((data) => {
                       if (!data) {
@@ -64,7 +63,11 @@ const NewOrderCodeModal = ({
                         );
                       }
                     })
-                    .catch((error) => {})
+                    .catch(() => {
+                      toast.error(
+                        'Bestellcode konnte nicht angelegt werden. Bitte versuche es später erneut!'
+                      );
+                    })
                     .finally(() => {
                       setIsLoading(false);
                       setValue('');

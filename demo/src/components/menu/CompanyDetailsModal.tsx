@@ -1,13 +1,11 @@
-import { CategoryItem } from '@/types/categoryItem';
 import React, { Fragment } from 'react';
 import {
   Modal,
   ModalBody,
   ModalContent,
   ModalFooter,
-  ModalHeader
+  ModalHeader,
 } from '@nextui-org/react';
-import Hero from '@/components/menu/Hero';
 
 type Props = {
   isOpen: boolean;
@@ -22,7 +20,7 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange }: Props) => {
       size={'lg'}
       scrollBehavior={'inside'}
       classNames={{
-        body: 'px-0 py-0'
+        body: 'px-0 py-0',
       }}
     >
       <ModalContent>

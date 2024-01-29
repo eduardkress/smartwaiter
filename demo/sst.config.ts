@@ -31,30 +31,30 @@ export default {
       //Add Tables to App Stack
       const usersTable = new Table(stack, 'Users', {
         fields: {
-          email: 'string'
+          email: 'string',
         },
-        primaryIndex: { partitionKey: 'email' }
+        primaryIndex: { partitionKey: 'email' },
       });
 
       const desksTable = new Table(stack, 'Desks', {
         fields: {
-          id: 'string'
+          id: 'string',
         },
-        primaryIndex: { partitionKey: 'id' }
+        primaryIndex: { partitionKey: 'id' },
       });
 
       const orderCodesTable = new Table(stack, 'OrderCodes', {
         fields: {
-          id: 'string'
+          id: 'string',
         },
-        primaryIndex: { partitionKey: 'id' }
+        primaryIndex: { partitionKey: 'id' },
       });
 
       const ordersTable = new Table(stack, 'Orders', {
         fields: {
-          id: 'string'
+          id: 'string',
         },
-        primaryIndex: { partitionKey: 'id' }
+        primaryIndex: { partitionKey: 'id' },
       });
 
       // app.addDefaultFunctionEnv({
@@ -73,21 +73,21 @@ export default {
               defaultAuthorization: {
                 authorizationType: appsync.AuthorizationType.API_KEY,
                 apiKeyConfig: {
-                  expires: cdk.Expiration.after(cdk.Duration.days(365))
-                }
-              }
-            }
-          }
+                  expires: cdk.Expiration.after(cdk.Duration.days(365)),
+                },
+              },
+            },
+          },
         },
         defaults: {
           function: {
             // Bind the table name to the function
-            bind: [ordersTable, orderCodesTable]
-          }
+            bind: [ordersTable, orderCodesTable],
+          },
         },
         dataSources: {
           order: 'src/appSync/graphql/order/main.handler',
-          orderCode: 'src/appSync/graphql/orderCode/main.handler'
+          orderCode: 'src/appSync/graphql/orderCode/main.handler',
         },
         resolvers: {
           'Query listOrders': 'order',
@@ -96,8 +96,8 @@ export default {
           'Mutation deleteOrder': 'order',
           'Query listActiveOrderCodes': 'orderCode',
           'Query getOrderCodeById': 'orderCode',
-          'Mutation createOrderCode': 'orderCode'
-        }
+          'Mutation createOrderCode': 'orderCode',
+        },
       });
 
       const site = new NextjsSite(stack, 'site', {
@@ -111,7 +111,7 @@ export default {
           NEXT_PUBLIC_APP_URL:
             app.stage === 'dev'
               ? 'http://localhost:3000'
-              : 'https://' + appName + '.smartwaiter.app'
+              : 'https://' + appName + '.smartwaiter.app',
         },
         customDomain: {
           isExternalDomain: true,
@@ -121,18 +121,18 @@ export default {
               stack,
               appName + '-certificate',
               domainCertArn
-            )
-          }
+            ),
+          },
         },
-        bind: [usersTable, desksTable, api]
+        bind: [usersTable, desksTable, api],
       });
 
       stack.addOutputs({
         SiteUrl: site.url,
         ApiId: api.apiId,
         APiUrl: api.url,
-        ApiKey: api.cdk.graphqlApi.apiKey || ''
+        ApiKey: api.cdk.graphqlApi.apiKey || '',
       });
     });
-  }
+  },
 } satisfies SSTConfig;

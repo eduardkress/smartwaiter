@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-const allergens: {[index: string]:string} = {
+const allergens: { [index: string]: string } = {
   '1': 'mit Konservierungsstoff',
   '2': 'mit Farbstoff',
   '3': 'mit Antioxidationsmittel',
@@ -29,7 +29,7 @@ const allergens: {[index: string]:string} = {
   k: 'Sesamsamen und daraus gewonnene Erzeugnisse',
   l: 'Schwefeldioxid und Sulphite',
   m: 'Lupinen und daraus gewonnene Erzeugnisse',
-  n: 'Weichtiere und daraus gewonnene Erzeugnisse'
+  n: 'Weichtiere und daraus gewonnene Erzeugnisse',
 };
 
 const Allergen = () => {

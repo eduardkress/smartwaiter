@@ -7,7 +7,7 @@ import bcrypt from 'bcryptjs';
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: '/pos/login'
+    signIn: '/pos/login',
   },
   providers: [
     CredentialsProvider({
@@ -20,9 +20,9 @@ export const authOptions: NextAuthOptions = {
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         email: { label: 'Email', type: 'text' },
-        password: { label: 'Password', type: 'password' }
+        password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         // Return null if no credentials are provided
         if (!credentials) return null;
 
@@ -31,8 +31,8 @@ export const authOptions: NextAuthOptions = {
         const get = new GetCommand({
           TableName: Table.Users.tableName,
           Key: {
-            email: credentials.email
-          }
+            email: credentials.email,
+          },
         });
         const result = await db.send(get);
         const user = result.Item;
@@ -48,15 +48,15 @@ export const authOptions: NextAuthOptions = {
             id: user.id,
             name: user.name,
             email: user.email,
-            role: user.role
+            role: user.role,
           };
         } else {
           // If no user with email was found in DynamoDB table Users or hashed password did not match return null
           console.log('No user was found in DB that match credentials');
           return null;
         }
-      }
-    })
+      },
+    }),
   ],
   callbacks: {
     async jwt({ token, user }) {
@@ -64,8 +64,8 @@ export const authOptions: NextAuthOptions = {
     },
 
     async session({ session, token }) {
-      session.user = token as any;
+      session.user = token;
       return session;
-    }
-  }
+    },
+  },
 };

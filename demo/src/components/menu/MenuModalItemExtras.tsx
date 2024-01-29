@@ -4,7 +4,7 @@ import {
   Accordion,
   AccordionItem,
   Checkbox,
-  CheckboxGroup
+  CheckboxGroup,
 } from '@nextui-org/react';
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 const MenuModalItemCheckboxGroup = ({
   options,
   handleOptionsChange,
-  optionGroupId
+  optionGroupId,
 }: Props) => {
   return (
     <CheckboxGroup
@@ -51,7 +51,7 @@ const MenuModalItemCheckboxGroup = ({
 const MenuModalItemCheckboxGroupWithAccordion = ({
   options,
   handleOptionsChange,
-  optionGroupId
+  optionGroupId,
 }: Props) => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string> | undefined>(
     undefined
@@ -66,7 +66,7 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
           title: 'py-0 h-0',
           trigger: 'px-0 py-0 hidden',
           indicator: 'hidden',
-          content: 'px-0 py-0 overflow-hidden'
+          content: 'px-0 py-0 overflow-hidden',
         }}
         className='px-0'
       >
@@ -100,7 +100,7 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
 const MenuModalItemExtras = ({
   options,
   handleOptionsChange,
-  optionGroupId
+  optionGroupId,
 }: Props) => {
   return (
     <div className='flex flex-col gap-2'>

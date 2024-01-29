@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   Modal,
   ModalContent,
@@ -6,12 +6,10 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  Input
 } from '@nextui-org/react';
-import SpinnerIcon from './SpinnerIcon';
-import OrderCode from '@/appSync/graphql/orderCode/OrderCode';
 import { useReactToPrint } from 'react-to-print';
 import { ComponentToPrint } from './ComponentToPrint';
+import { OrderCode } from '@/API';
 
 type Props = {
   isOpen: boolean;
@@ -20,23 +18,17 @@ type Props = {
   orderCode: OrderCode;
 };
 
-const PrintQrCodeModal = ({
-  isOpen,
-  onOpen,
-  onOpenChange,
-  orderCode
-}: Props) => {
-  const [isLoading, setIsLoading] = useState(false);
+const PrintQrCodeModal = ({ isOpen, onOpenChange, orderCode }: Props) => {
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
-    content: () => componentRef.current
+    content: () => componentRef.current,
   });
-  let appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://192.168.3.46:3000';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL!;
 
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange} size='lg'>
       <ModalContent>
-        {(onClose) => (
+        {() => (
           <>
             <ModalHeader className='flex flex-col gap-1'>
               QR-Code drucken
@@ -49,12 +41,7 @@ const PrintQrCodeModal = ({
                   ref={componentRef}
                 />
               </div>
-              <Button
-                color='primary'
-                isLoading={isLoading}
-                onClick={handlePrint}
-                spinner={<SpinnerIcon />}
-              >
+              <Button color='primary' onClick={handlePrint}>
                 QR-Code drucken
               </Button>
             </ModalBody>

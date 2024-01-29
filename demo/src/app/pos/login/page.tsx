@@ -9,7 +9,7 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const [formValues, setFormValues] = useState({
     email: '',
-    password: ''
+    password: '',
   });
   const [error, setError] = useState('');
 
@@ -22,7 +22,7 @@ export default function Page() {
       const res = await signIn('credentials', {
         redirect: false,
         email: formValues.email,
-        password: formValues.password
+        password: formValues.password,
       });
 
       setLoading(false);
@@ -32,9 +32,9 @@ export default function Page() {
       } else {
         setError('invalid email or password');
       }
-    } catch (error: any) {
+    } catch (error) {
       setLoading(false);
-      setError(error);
+      setError('unknown error');
     }
   };
 

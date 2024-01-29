@@ -4,14 +4,14 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-  User
+  User,
 } from '@nextui-org/react';
 import { signOut } from 'next-auth/react';
 import { useSession } from 'next-auth/react';
 
 const UserDropdown = () => {
   const session = useSession({
-    required: true
+    required: true,
   });
   return (
     <Dropdown placement='bottom-start'>
@@ -20,7 +20,7 @@ const UserDropdown = () => {
           as='button'
           avatarProps={{
             isBordered: true,
-            src: 'https://i.pravatar.cc/150?u=a042581f4e29026024d'
+            src: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
           }}
           className='transition-transform'
           description={session.data?.user?.email}

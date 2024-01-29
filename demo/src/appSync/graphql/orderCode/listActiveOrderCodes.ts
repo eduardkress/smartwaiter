@@ -13,8 +13,8 @@ export default async function listActiveOrderCodes(): Promise<
       TableName: Table.OrderCodes.tableName,
       FilterExpression: 'isActive = :isActive',
       ExpressionAttributeValues: {
-        ':isActive': true
-      }
+        ':isActive': true,
+      },
     });
 
     const response = await client.send(command);

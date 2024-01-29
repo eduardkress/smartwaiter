@@ -1,4 +1,4 @@
-import { Order, OrderInput } from '@/API';
+import { Order } from '@/API';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, DeleteCommand } from '@aws-sdk/lib-dynamodb';
 import { Table } from 'sst/node/table';
@@ -12,9 +12,9 @@ export default async function deleteOrder(
     const command = new DeleteCommand({
       TableName: Table.Orders.tableName,
       Key: {
-        id: orderId
+        id: orderId,
       },
-      ReturnValues: 'ALL_OLD'
+      ReturnValues: 'ALL_OLD',
     });
 
     const response = await client.send(command);

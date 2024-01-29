@@ -1,11 +1,11 @@
 import { Badge, Button, useDisclosure } from '@nextui-org/react';
 import ShoppingCart from '@/components/icons/ShoppingCart';
 import BasketModal from '@/components/menu/BasketModal';
-import { computed, effect, signal } from '@preact/signals';
+import { signal } from '@preact/signals';
 import { BasketItem } from '@/types/basketItem';
 import {
   calculateTotalItems,
-  calculateTotalPrice
+  calculateTotalPrice,
 } from '@/services/ProductDataService';
 import { Fragment, useEffect, useState } from 'react';
 import { EURO } from '@/utils/currencies';
@@ -28,8 +28,8 @@ export const addToBasket = (
       variantId: variantId,
       optionIds: optionIds,
       amount: amount,
-      extraText: extraText
-    }
+      extraText: extraText,
+    },
   ];
 };
 

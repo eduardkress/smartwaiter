@@ -1,12 +1,9 @@
 import Link from 'next/link';
-import { HiClock, HiMapPin, HiPhone } from 'react-icons/hi2';
 import StarFull from '@/components/icons/StarFull';
 import { Button, useDisclosure } from '@nextui-org/react';
-import { InfoIcon } from '@nextui-org/shared-icons';
 import Info from '@/components/icons/Info';
 import * as React from 'react';
 import CompanyDetailsModal from '@/components/menu/CompanyDetailsModal';
-import { Brand, Location } from '@/types/restaurant';
 
 interface Props {
   companyName: string;

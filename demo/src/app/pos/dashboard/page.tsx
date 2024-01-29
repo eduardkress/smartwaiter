@@ -6,7 +6,7 @@ import {
   onCreateOrder,
   onCreateOrderCode,
   onDeleteOrder,
-  onUpdateOrder
+  onUpdateOrder,
 } from '@/graphql/subscriptions';
 import { createOrderCode, deleteOrder, updateOrder } from '@/graphql/mutations';
 import { listOrders, listActiveOrderCodes } from '@/graphql/queries';
@@ -20,7 +20,7 @@ import {
   Divider,
   Image,
   Button,
-  useDisclosure
+  useDisclosure,
 } from '@nextui-org/react';
 import NewOrderCodeModal from '@/components/pos/NewOrderCodeModal';
 import UserDropdown from '@/components/pos/UserDropdown';
@@ -32,18 +32,18 @@ import {
   OrderCodeInput,
   OrderInput,
   OrderItemInput,
-  OrderStatus
+  OrderStatus,
 } from '@/API';
 import { omitDeep } from '@/utils/omitDeep';
 import { twMerge } from 'tailwind-merge';
 
 Amplify.configure({
-  // @ts-ignore
+  // @ts-expect-error Parameter kann nicht zugewiesen werden
   aws_appsync_graphqlEndpoint:
     'https://hrdurbet4zhuhhsv6l6h3waa6y.appsync-api.eu-central-1.amazonaws.com/graphql',
   aws_appsync_region: 'eu-central-1',
   aws_appsync_authenticationType: 'API_KEY',
-  aws_appsync_apiKey: 'da2-kbr4bvydx5gitc24biosqxunbq'
+  aws_appsync_apiKey: 'da2-kbr4bvydx5gitc24biosqxunbq',
 });
 
 const client = generateClient();
@@ -52,8 +52,8 @@ const createOrderCodeFn = async (orderCodeInput: OrderCodeInput) => {
   const response = await client.graphql({
     query: createOrderCode,
     variables: {
-      orderCodeInput: orderCodeInput
-    }
+      orderCodeInput: orderCodeInput,
+    },
   });
 
   return response.data.createOrderCode;
@@ -63,8 +63,8 @@ const deleteOrderFn = async (orderId: string) => {
   const response = await client.graphql({
     query: deleteOrder,
     variables: {
-      orderId: orderId
-    }
+      orderId: orderId,
+    },
   });
 
   return response.data.deleteOrder;
@@ -76,8 +76,8 @@ const updateOrderFn = async (orderId: string, orderInput: OrderInput) => {
     query: updateOrder,
     variables: {
       orderId: orderId,
-      orderInput: orderInput
-    }
+      orderInput: orderInput,
+    },
   });
 
   return response.data.updateOrder;
@@ -97,7 +97,7 @@ export default function Page() {
   useEffect(() => {
     client
       .graphql({
-        query: listOrders
+        query: listOrders,
       })
       .then((result) => {
         const orders = result.data.listOrders;
@@ -106,7 +106,7 @@ export default function Page() {
 
     client
       .graphql({
-        query: listActiveOrderCodes
+        query: listActiveOrderCodes,
       })
       .then((result) => {
         const activeOrderCodes = result.data.listActiveOrderCodes;
@@ -115,57 +115,57 @@ export default function Page() {
 
     const createOrderSubscription = client
       .graphql({
-        query: onCreateOrder
+        query: onCreateOrder,
       })
       .subscribe({
         next: ({ data }) => {
-          let order = data.onCreateOrder;
+          const order = data.onCreateOrder;
           setAllOrders((prevState) => [...prevState, order]);
           toast.success('Neue Bestellung eingetroffen!');
         },
-        error: (error) => console.warn(error)
+        error: (error) => console.warn(error),
       });
 
     const createOrderCodeSubscription = client
       .graphql({
-        query: onCreateOrderCode
+        query: onCreateOrderCode,
       })
       .subscribe({
         next: ({ data }) => {
-          let orderCode = data.onCreateOrderCode;
+          const orderCode = data.onCreateOrderCode;
           if (orderCode.isActive) {
             setActiveOrderCodes((prevState) => [...prevState, orderCode]);
           }
         },
-        error: (error) => console.warn(error)
+        error: (error) => console.warn(error),
       });
     const onUpdateOrderSubscription = client
       .graphql({
-        query: onUpdateOrder
+        query: onUpdateOrder,
       })
       .subscribe({
         next: ({ data }) => {
-          let updatedOrder = data.onUpdateOrder;
+          const updatedOrder = data.onUpdateOrder;
           setAllOrders((prevState) => {
             return prevState.map((order) => {
               return order.id == updatedOrder.id ? updatedOrder : order;
             });
           });
         },
-        error: (error) => console.warn(error)
+        error: (error) => console.warn(error),
       });
     const onDeleteOrderSubscription = client
       .graphql({
-        query: onDeleteOrder
+        query: onDeleteOrder,
       })
       .subscribe({
         next: ({ data }) => {
-          let deletedOrder = data.onDeleteOrder;
+          const deletedOrder = data.onDeleteOrder;
           setAllOrders((prevState) => {
             return prevState.filter((order) => order.id !== deletedOrder.id);
           });
         },
-        error: (error) => console.warn(error)
+        error: (error) => console.warn(error),
       });
 
     return () => {
@@ -346,14 +346,14 @@ export default function Page() {
                                 variantId: 'Test',
                                 optionIds: ['Op1', 'Op2'],
                                 amount: 2,
-                                extraText: 'Super Text'
+                                extraText: 'Super Text',
                               } as OrderItemInput;
                               const orderItems = new Array<OrderItemInput>();
                               orderItems.push(orderItem);
                               updateOrderFn(order.id, {
                                 orderCodeId: order.orderCodeId,
                                 orderItems: orderItems,
-                                orderStatus: OrderStatus.DONE
+                                orderStatus: OrderStatus.DONE,
                               });
                             }}
                           >
@@ -371,7 +371,11 @@ export default function Page() {
                                     );
                                   }
                                 })
-                                .catch((error) => {})
+                                .catch(() => {
+                                  toast.error(
+                                    'Die Bestellung konnte nicht gelöscht werden. Bitte versuche es später erneut!'
+                                  );
+                                })
                                 .finally(() => {});
                             }}
                             isDisabled={order.orderStatus == OrderStatus.DONE}

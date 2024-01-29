@@ -17,7 +17,7 @@ function NavBar({ menu }: Props) {
   const [navMove, setNavMove] = useState(false);
   const [scrollButtonActive, setScrollButtonActive] = useState({
     left: false,
-    right: false
+    right: false,
   });
 
   /* Variables */
@@ -30,7 +30,7 @@ function NavBar({ menu }: Props) {
 
     initialNavPositions = {
       left: slider.scrollLeft,
-      x: e.clientX
+      x: e.clientX,
     };
 
     document.addEventListener('mousemove', mouseMoveHandler);
@@ -66,19 +66,19 @@ function NavBar({ menu }: Props) {
       setNavMove(false);
       return;
     }
-    var category = document.getElementById('category' + id);
-    var slider = document.getElementById('categoryNavbar');
+    const category = document.getElementById('category' + id);
+    const slider = document.getElementById('categoryNavbar');
     if (category == null) return;
     if (slider == null) return;
-    var categoryPosition = category.getBoundingClientRect().top;
-    var offsetPosition =
+    const categoryPosition = category.getBoundingClientRect().top;
+    const offsetPosition =
       categoryPosition + window.pageYOffset - slider.offsetHeight;
 
     setMenuActive('navBarCategory-' + id);
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'instant'
+      behavior: 'instant',
     });
   };
 
@@ -95,7 +95,7 @@ function NavBar({ menu }: Props) {
 
     slider.scrollTo({
       left: scrollPosition,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -106,7 +106,7 @@ function NavBar({ menu }: Props) {
     slider.scrollBy({
       top: 0,
       left: pixelX,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -116,7 +116,7 @@ function NavBar({ menu }: Props) {
 
     setScrollButtonActive({
       left: slider.scrollLeft > 8,
-      right: slider.scrollLeft < slider.scrollWidth - slider.clientWidth - 8
+      right: slider.scrollLeft < slider.scrollWidth - slider.clientWidth - 8,
     });
   };
 
@@ -168,12 +168,12 @@ function NavBar({ menu }: Props) {
         }
       },
       {
-        rootMargin: `${slider.clientHeight * -1}px 0px 0px 0px`
+        rootMargin: `${slider.clientHeight * -1}px 0px 0px 0px`,
       }
     );
 
     if (observer) {
-      for (let anchor of categoryAnchors) {
+      for (const anchor of categoryAnchors) {
         observer.observe(anchor);
       }
     }
@@ -183,7 +183,7 @@ function NavBar({ menu }: Props) {
       // Unobserve each anchor
       if (observer) {
         observer.disconnect();
-        for (let anchor of categoryAnchors) {
+        for (const anchor of categoryAnchors) {
           observer.unobserve(anchor);
         }
       }

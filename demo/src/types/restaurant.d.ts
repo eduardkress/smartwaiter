@@ -30,7 +30,7 @@ export interface Colophon {
   legalEntityClass: string;
   email: string;
   fax: string;
-  chamberOfCommerce: any[];
+  chamberOfCommerce: string[];
   vatNumber: string;
   disputeResolutionLink: string;
 }
@@ -97,7 +97,7 @@ export interface Discount {
 
 export enum ShippingType {
   Delivery = 'DELIVERY',
-  Pickup = 'PICKUP'
+  Pickup = 'PICKUP',
 }
 
 export interface OptionGroup {
@@ -132,12 +132,12 @@ export interface Metric {
 
 export enum Unit {
   G = 'g',
-  Ml = 'ml'
+  Ml = 'ml',
 }
 
 export enum PriceUnit {
   Kilogram = 'kilogram',
-  Liter = 'liter'
+  Liter = 'liter',
 }
 
 export interface Prices {

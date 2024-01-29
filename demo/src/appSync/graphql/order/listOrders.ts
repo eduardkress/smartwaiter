@@ -8,7 +8,7 @@ const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 export default async function listOrders(): Promise<Array<Order>> {
   try {
     const command = new ScanCommand({
-      TableName: Table.Orders.tableName
+      TableName: Table.Orders.tableName,
     });
 
     const response = await client.send(command);

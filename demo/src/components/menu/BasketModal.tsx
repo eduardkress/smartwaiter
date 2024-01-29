@@ -1,4 +1,3 @@
-import { CategoryItem } from '@/types/categoryItem';
 import React, { Fragment, useState } from 'react';
 import {
   Button,
@@ -8,12 +7,11 @@ import {
   ModalFooter,
   ModalHeader,
   ScrollShadow,
-  Textarea
+  Textarea,
 } from '@nextui-org/react';
-import Hero from '@/components/menu/Hero';
 import Minus from '@/components/icons/Minus';
 import Plus from '@/components/icons/Plus';
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 import { BasketItem } from '@/types/basketItem';
 import { twMerge } from 'tailwind-merge';
 import { calculateTotalPrice } from '@/services/ProductDataService';
@@ -31,14 +29,14 @@ type Props = {
 async function sendOrder(orderCode: string, orderItems: Array<BasketItem>) {
   const data = {
     orderCode: orderCode,
-    orderItems: orderItems
+    orderItems: orderItems,
   };
-  const res = await fetch('/api/order', {
+  await fetch('/api/order', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      'content-type': 'application/json'
-    }
+      'content-type': 'application/json',
+    },
   });
 }
 
@@ -90,7 +88,7 @@ function SingleItemMockup({ item }: { item: BasketItem }) {
           }}
           disableAutosize
           classNames={{
-            input: 'resize-y min-h-[40px]'
+            input: 'resize-y min-h-[40px]',
           }}
           className={twMerge('hidden', showTextArea ? 'block' : 'hidden')}
         />
@@ -115,7 +113,7 @@ function SingleItemMockup({ item }: { item: BasketItem }) {
   );
 }
 
-const BasketModal = ({ isOpen, onOpen, onOpenChange, basketItems }: Props) => {
+const BasketModal = ({ isOpen, onOpenChange, basketItems }: Props) => {
   const searchParams = useSearchParams();
   const orderCode = searchParams.get('t');
 
@@ -128,7 +126,7 @@ const BasketModal = ({ isOpen, onOpen, onOpenChange, basketItems }: Props) => {
         classNames={{
           body: 'px-0 py-0',
           footer: 'bg-[#f5f3f1]',
-          closeButton: 'bg-white'
+          closeButton: 'bg-white',
         }}
       >
         <ModalContent>
@@ -149,14 +147,14 @@ const BasketModal = ({ isOpen, onOpen, onOpenChange, basketItems }: Props) => {
                   onClick={() => {
                     toast.promise(sendOrder(orderCode ?? '', basketItems), {
                       loading: 'Deine Bestellung wird abgeschickt...',
-                      success: (data) => {
+                      success: () => {
                         onClose();
                         clearBasket();
                         return 'Deine Bestellung ist eingegangen. Wir kümmern uns drum!';
                       },
-                      error: (error) => {
+                      error: () => {
                         return 'Deine Bestellung konnte nicht verarbeitet werden. Bitte versuche es später erneut!';
-                      }
+                      },
                     });
                   }}
                 >

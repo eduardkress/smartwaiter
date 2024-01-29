@@ -2,11 +2,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/options';
 import { Table } from 'sst/node/table';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import {
-  GetCommand,
-  UpdateCommand,
-  DynamoDBDocumentClient
-} from '@aws-sdk/lib-dynamodb';
+import { GetCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -17,8 +13,8 @@ export default async function Home() {
   const get = new GetCommand({
     TableName: Table.Users.tableName,
     Key: {
-      email: 'demo@smartwaiter.app'
-    }
+      email: 'demo@smartwaiter.app',
+    },
   });
   const results = await db.send(get);
   // let count = results.Item ? results.Item.tally : 0;
@@ -31,7 +27,7 @@ export default async function Home() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '70vh'
+        height: '70vh',
       }}
     >
       <div>

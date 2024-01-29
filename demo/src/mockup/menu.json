@@ -41,7 +41,6 @@
     "img": "/images/menu/item-5.jpeg",
     "desc": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up",
     "allergens": "A"
-
   },
   {
     "id": 6,
@@ -59,7 +58,6 @@
     "img": "/images/menu/item-7.jpeg",
     "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird",
     "allergens": "3"
-
   },
   {
     "id": 8,
@@ -77,6 +75,5 @@
     "img": "/images/menu/item-9.jpeg",
     "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
     "allergens": "2,3"
-
   }
 ]

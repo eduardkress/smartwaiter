@@ -1,10 +1,6 @@
 import { Order, OrderInput } from '@/API';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import {
-  PutCommand,
-  DynamoDBDocumentClient,
-  GetCommand
-} from '@aws-sdk/lib-dynamodb';
+import { PutCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { Table } from 'sst/node/table';
 import crypto from 'crypto';
 
@@ -18,7 +14,7 @@ export default async function createOrder(
 
     const command = new PutCommand({
       TableName: Table.Orders.tableName,
-      Item: order
+      Item: order,
     });
 
     const response = await client.send(command);

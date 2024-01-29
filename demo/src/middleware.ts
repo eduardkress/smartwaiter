@@ -12,7 +12,7 @@ export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname == '/pos/dashboard') {
     const token = await getToken({
       req: request,
-      secret: process.env.NEXTAUTH_SECRET
+      secret: process.env.NEXTAUTH_SECRET,
     });
     if (!token) {
       console.log('Dashboard need JWT Token! Redirect to login.');
@@ -30,5 +30,5 @@ export async function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/api/order', '/pos/dashboard']
+  matcher: ['/api/order', '/pos/dashboard'],
 };

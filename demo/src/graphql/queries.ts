@@ -2,7 +2,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../API";
+import * as APITypes from '../API';
 type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryInput: InputType;
   __generatedQueryOutput: OutputType;
@@ -40,7 +40,8 @@ export const listActiveOrderCodes = /* GraphQL */ `query ListActiveOrderCodes {
   APITypes.ListActiveOrderCodesQueryVariables,
   APITypes.ListActiveOrderCodesQuery
 >;
-export const getOrderCodeById = /* GraphQL */ `query GetOrderCodeById($orderCodeId: String!) {
+export const getOrderCodeById =
+  /* GraphQL */ `query GetOrderCodeById($orderCodeId: String!) {
   getOrderCodeById(orderCodeId: $orderCodeId) {
     id
     deskId
@@ -49,6 +50,6 @@ export const getOrderCodeById = /* GraphQL */ `query GetOrderCodeById($orderCode
   }
 }
 ` as GeneratedQuery<
-  APITypes.GetOrderCodeByIdQueryVariables,
-  APITypes.GetOrderCodeByIdQuery
->;
+    APITypes.GetOrderCodeByIdQueryVariables,
+    APITypes.GetOrderCodeByIdQuery
+  >;
