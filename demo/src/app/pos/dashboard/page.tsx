@@ -8,7 +8,7 @@ import {
   onDeleteOrder,
   onUpdateOrder
 } from '@/graphql/subscriptions';
-import { createOrderCode, deleteOrder } from '@/graphql/mutations';
+import { createOrderCode, deleteOrder, updateOrder } from '@/graphql/mutations';
 import { listOrders, listActiveOrderCodes } from '@/graphql/queries';
 import { toast, Toaster } from 'sonner';
 import {
@@ -30,6 +30,7 @@ import {
   Order,
   OrderCode,
   OrderCodeInput,
+  OrderInput,
   OrderItemInput,
   OrderStatus
 } from '@/API';
@@ -65,7 +66,21 @@ const deleteOrderFn = async (orderId: string) => {
       orderId: orderId
     }
   });
+
   return response.data.deleteOrder;
+};
+
+const updateOrderFn = async (orderId: string, orderInput: OrderInput) => {
+  orderInput = omitDeep(orderInput, '__typename'); //Deep omit __typename field from all objects, otherwise Graphql can't format Input Types correctly
+  const response = await client.graphql({
+    query: updateOrder,
+    variables: {
+      orderId: orderId,
+      orderInput: orderInput
+    }
+  });
+
+  return response.data.updateOrder;
 };
 
 export default function Page() {
@@ -124,7 +139,21 @@ export default function Page() {
         },
         error: (error) => console.warn(error)
       });
-
+    const onUpdateOrderSubscription = client
+      .graphql({
+        query: onUpdateOrder
+      })
+      .subscribe({
+        next: ({ data }) => {
+          let updatedOrder = data.onUpdateOrder;
+          setAllOrders((prevState) => {
+            return prevState.map((order) => {
+              return order.id == updatedOrder.id ? updatedOrder : order;
+            });
+          });
+        },
+        error: (error) => console.warn(error)
+      });
     const onDeleteOrderSubscription = client
       .graphql({
         query: onDeleteOrder
@@ -142,6 +171,7 @@ export default function Page() {
     return () => {
       createOrderSubscription.unsubscribe();
       createOrderCodeSubscription.unsubscribe();
+      onUpdateOrderSubscription.unsubscribe();
       onDeleteOrderSubscription.unsubscribe();
     };
   }, []);
@@ -242,7 +272,7 @@ export default function Page() {
                   .toReversed()
                   .map((order, index) => (
                     <Card
-                      key={index}
+                      key={index + '_' + order.id}
                       className={twMerge(
                         'flex-shrink-0',
                         order.orderStatus == OrderStatus.DONE
@@ -306,6 +336,28 @@ export default function Page() {
                             isDisabled={order.orderStatus == OrderStatus.DONE}
                           >
                             Bearbeiten
+                          </Button>
+                          <Button
+                            color='primary'
+                            isDisabled={order.orderStatus == OrderStatus.DONE}
+                            onClick={() => {
+                              const orderItem = {
+                                productId: 'Test',
+                                variantId: 'Test',
+                                optionIds: ['Op1', 'Op2'],
+                                amount: 2,
+                                extraText: 'Super Text'
+                              } as OrderItemInput;
+                              const orderItems = new Array<OrderItemInput>();
+                              orderItems.push(orderItem);
+                              updateOrderFn(order.id, {
+                                orderCodeId: order.orderCodeId,
+                                orderItems: orderItems,
+                                orderStatus: OrderStatus.DONE
+                              });
+                            }}
+                          >
+                            Update (Test)
                           </Button>
                           <Button
                             color='danger'

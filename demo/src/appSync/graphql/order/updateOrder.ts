@@ -9,21 +9,29 @@ export default async function updateOrder(
   orderId: string,
   orderInput: OrderInput
 ): Promise<Order | null> {
-  const command = new UpdateCommand({
-    TableName: Table.Orders.tableName,
-    Key: {
-      id: orderId
-    },
-    UpdateExpression:
-      'set orderItems = :orderItems, orderStatus = :orderStatus',
-    ExpressionAttributeValues: {
-      ':orderItems': orderInput.orderItems,
-      ':orderStatus': orderInput.orderStatus
-    },
-    ReturnValues: 'ALL_NEW'
-  });
+  try {
+    const command = new UpdateCommand({
+      TableName: Table.Orders.tableName,
+      Key: {
+        id: orderId
+      },
+      UpdateExpression:
+        'set orderItems = :orderItems, orderStatus = :orderStatus',
+      ExpressionAttributeValues: {
+        ':orderItems': orderInput.orderItems,
+        ':orderStatus': orderInput.orderStatus
+      },
+      ReturnValues: 'ALL_NEW'
+    });
 
-  const response = await client.send(command);
-  console.log(response);
-  return response.Attributes ? (response.Attributes as Order) : null;
+    const response = await client.send(command);
+    if (response.$metadata.httpStatusCode !== 200) {
+      throw new Error('HTTP Status Code ' + response.$metadata.httpStatusCode);
+    }
+
+    return response.Attributes ? (response.Attributes as Order) : null;
+  } catch (error) {
+    console.error('Fehler aufgetreten in der Funktion updateOrder', error);
+    return null;
+  }
 }
