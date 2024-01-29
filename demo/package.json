@@ -7,7 +7,15 @@
     "build": "npx sst bind next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:prod": "npx sst deploy --stage prod"
+    "deploy:prod": "npx sst deploy --stage prod",
+    "format": "prettier --check --ignore-path .gitignore --ignore-path .prettierignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore .",
+    "cleanAndBuild_COMMENT": "Sometimes the IDE just gets confused, cleaning and rebuilding helps in a lot of cases",
+    "cleanAndBuild": "npm run clean && npm install && npm run nextBuild",
+    "clean": "npm run clean:next && npm run clean:modules",
+    "clean:next": "rimraf .next/",
+    "clean:modules": "rimraf node_modules/",
+    "nextBuild": "next build"
   },
   "dependencies": {
     "@aws-sdk/client-apigatewaymanagementapi": "^3.470.0",
@@ -29,8 +37,7 @@
     "react-to-print": "^2.14.15",
     "sonner": "^1.2.3",
     "tailwind-merge": "^2.0.0",
-    "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.130",
@@ -39,6 +46,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
     "autoprefixer": "^10",
     "aws-cdk-lib": "2.101.1",
     "constructs": "10.2.69",
@@ -49,6 +57,7 @@
     "postcss": "^8",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
+    "rimraf": "^5.0.5",
     "sst": "^2.32.2",
     "tailwindcss": "^3",
     "typescript": "^5"

@@ -13,7 +13,8 @@ export default {
   config(_input) {
     return {
       name: appName + '-smartwaiter',
-      region: 'eu-central-1'
+      region: 'eu-central-1',
+      //profile: 'smartkellner',
     };
   },
   stacks(app) {
