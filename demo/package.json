@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "npx sst bind next dev --stage dev",
+    "dev:local1": "npx sst dev --stage $USER",
+    "dev:local2": "npx sst bind next dev --stage $USER",
+    "dev:remove": "npx sst remove --stage $USER",
     "build": "npx sst bind next build",
     "start": "next start",
     "lint": "next lint",
