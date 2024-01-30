@@ -4,6 +4,8 @@ import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 import * as cdk from 'aws-cdk-lib';
 import * as appsync from 'aws-cdk-lib/aws-appsync';
+// @ts-ignore
+import { ConfigOptions } from 'sst/project';
 
 const appName = 'demo';
 const domainCertArn =
@@ -11,11 +13,16 @@ const domainCertArn =
 
 export default {
   config(_input) {
-    return {
+    const config: ConfigOptions = {
       name: appName + '-smartwaiter',
       region: 'eu-central-1',
-      //profile: 'smartkellner',
     };
+
+    if (require("os").userInfo().username === "user") {
+      config.profile = 'smartkellner';
+    }
+
+    return config;
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
