@@ -1,13 +1,29 @@
 'use client';
 
-import { setSiteType, SiteSlot } from '@/components/slotting/SiteSlot';
+import { SiteSlot, siteTypeSignal } from '@/components/slotting/SiteSlot';
 import { SiteType } from '@/types/SiteType';
+import { useEffect } from 'react';
 
 export default function Page() {
-  setSiteType(SiteType.Landing);
+  useEffect(() => {
+    const unsubscribe = siteTypeSignal.subscribe((value) => {
+      console.log('Signal siteTypeSignal hat ein neuen Wert ', value);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  });
 
   return (
     <div>
+      <button
+        onClick={() => {
+          siteTypeSignal.value = SiteType.Landing;
+        }}
+      >
+        Change to Landing
+      </button>
       <SiteSlot siteType={SiteType.Landing}>
         das ist ein test und sollte angezeigt werden
         <div>mit mehreren divs</div>
@@ -17,7 +33,7 @@ export default function Page() {
           <button
             onClick={(evt) => {
               evt.preventDefault();
-              setSiteType(SiteType.Waiter);
+              siteTypeSignal.value = SiteType.Waiter;
             }}
           >
             Change to Waiter

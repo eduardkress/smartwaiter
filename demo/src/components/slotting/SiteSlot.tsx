@@ -1,12 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { signal } from '@preact/signals';
 import { SiteType } from '@/types/SiteType';
 
-const siteTypeSignal = signal<SiteType | undefined>(undefined);
-
-export function setSiteType(siteType: SiteType) {
-  siteTypeSignal.value = siteType;
-}
+export const siteTypeSignal = signal<SiteType | undefined>(undefined);
 
 type Props = {
   readonly children: ReactNode;
@@ -14,5 +10,17 @@ type Props = {
 };
 
 export function SiteSlot({ children, siteType }: Props) {
-  return siteType === siteTypeSignal.value && children;
+  const [siteTypeState, setTypeSiteState] = useState<SiteType | undefined>();
+  useEffect(() => {
+    const unsubscribe = siteTypeSignal.subscribe((value) => {
+      console.log('Signal siteTypeSignal hat ein neuen Wert ', value);
+      setTypeSiteState((prev) => value);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  });
+
+  return siteType === siteTypeState && children;
 }

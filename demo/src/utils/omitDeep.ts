@@ -1,3 +1,4 @@
+// https://github.com/patomation/omit-deep
 export type ComplexObject = {
   [key: string]: ComplexObject;
 };
