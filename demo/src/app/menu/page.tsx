@@ -12,9 +12,10 @@ import { NextUIProvider } from '@nextui-org/react';
 import { Basket } from '@/components/menu/Basket';
 import { generateClient } from 'aws-amplify/api';
 import { getOrderCodeById } from '@/graphql/queries';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
+import { SiteType, SiteTypeQueryParamName } from '@/types/SiteType';
 
 //const menu = _menuItem as MenuCategory[];
 const restaurantData = _restaurantData as Restaurant;
@@ -30,6 +31,30 @@ Amplify.configure({
 
 const client = generateClient();
 
+function validateOrderCodeId(orderCodeId: string|null, setIsValidOrderCode: Dispatch<SetStateAction<boolean>>) {
+  if (!orderCodeId || Array.isArray(orderCodeId)) {
+    setIsValidOrderCode(false);
+  } else {
+    client
+      .graphql({
+        query: getOrderCodeById,
+        variables: {
+          orderCodeId: orderCodeId,
+        },
+      })
+      .then((result) => {
+        const orderCode = result.data.getOrderCodeById;
+        if (!orderCode || !orderCode.isActive) {
+          setIsValidOrderCode(false);
+        }
+      });
+  }
+}
+
+function validateSiteTypeAccessRight(siteType: SiteType) {
+  //TODO: request the backend, if the current customer is eligible for the siteType, if not redirect to 404
+}
+
 export default function Page() {
   const searchParams = useSearchParams();
 
@@ -37,24 +62,11 @@ export default function Page() {
 
   useEffect(() => {
     const orderCodeId = searchParams.get('t');
+    const siteType = searchParams.get(SiteTypeQueryParamName) as SiteType;
 
-    if (!orderCodeId || Array.isArray(orderCodeId)) {
-      setIsValidOrderCode(false);
-    } else {
-      client
-        .graphql({
-          query: getOrderCodeById,
-          variables: {
-            orderCodeId: orderCodeId,
-          },
-        })
-        .then((result) => {
-          const orderCode = result.data.getOrderCodeById;
-          if (!orderCode || !orderCode.isActive) {
-            setIsValidOrderCode(false);
-          }
-        });
-    }
+    validateOrderCodeId(orderCodeId, setIsValidOrderCode);
+    validateSiteTypeAccessRight(siteType);
+
   }, [searchParams]);
 
   return (
