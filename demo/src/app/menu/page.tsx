@@ -1,7 +1,9 @@
 'use client';
 import { Amplify } from 'aws-amplify';
 import _restaurantData from '@/mockup/restaurant.json';
+import _restaurantData2 from '@/mockup/restaurant2.json';
 import { Restaurant } from '@/types/restaurant';
+import { Restaurant as Restaurant2} from '@/types/restaurant2';
 import Menu from '@/components/menu/Menu';
 import Hero from '@/components/menu/Hero';
 import CompanyLogo from '@/components/menu/CompanyLogo';
@@ -19,6 +21,7 @@ import { SiteType, SiteTypeQueryParamName } from '@/types/SiteType';
 
 //const menu = _menuItem as MenuCategory[];
 const restaurantData = _restaurantData as Restaurant;
+const restaurantData2 = _restaurantData2 as Restaurant2;
 
 Amplify.configure({
   // @ts-expect-error Parameter kann nicht zugewiesen werden
@@ -80,11 +83,11 @@ export default function Page() {
         Dein Bestellcode ist ungültig!
       </div>
 
-      <Hero imgSrc={'/images/hero-restaurants.jpeg'} heroAlt={'Unser Menü'} />
-      <CompanyLogo imgSrc={'/images/losteria.svg'} heroAlt={'Unser Menü'} />
+      <Hero imgSrc={_restaurantData2.hero.headerImageUrl} heroAlt={'Unser Menü'} />
+      <CompanyLogo imgSrc={_restaurantData2.hero.logoUrl} heroAlt={'Unser Menü'} />
       <CompanyDetails
-        companyName={'Losteria'}
-        companySlogan={'Slogan: Food that makes you say wow.'}
+        companyHero={restaurantData2.hero}
+        companyInformation={restaurantData2.information}
       />
       <NavBar menu={restaurantData.menu} />
       <div>
