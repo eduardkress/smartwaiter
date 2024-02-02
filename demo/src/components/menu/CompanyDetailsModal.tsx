@@ -16,16 +16,12 @@ function timeSlot(dayName: string, dayTimes: string[] | undefined) {
         <div className=''>{dayName}</div>
         <div className=' col-span-2'>
           {dayTimes && dayTimes.length > 0
-            ? dayTimes.map((timeslot, index) =>
-                index === dayTimes.length - 1 ? (
-                  timeslot
-                ) : (
-                  <Fragment>
-                    {timeslot}
-                    <br />
-                  </Fragment>
-                )
-              )
+            ? dayTimes.map((timeslot, index) => (
+                <Fragment key={index}>
+                  {timeslot}
+                  {index !== dayTimes.length - 1 && <br />}
+                </Fragment>
+              ))
             : '-'}
         </div>
       </Fragment>
