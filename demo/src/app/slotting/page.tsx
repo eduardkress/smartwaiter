@@ -2,28 +2,13 @@
 
 import { SiteSlot, siteTypeSignal } from '@/components/slotting/SiteSlot';
 import { SiteType } from '@/types/SiteType';
-import { useEffect } from 'react';
+import { useSignals } from "@preact/signals-react/runtime";
 
 export default function Page() {
-  useEffect(() => {
-    const unsubscribe = siteTypeSignal.subscribe((value) => {
-      console.log('Signal siteTypeSignal hat ein neuen Wert ', value);
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  });
-
+  useSignals();
+  siteTypeSignal.value = SiteType.Landing;
   return (
     <div>
-      <button
-        onClick={() => {
-          siteTypeSignal.value = SiteType.Landing;
-        }}
-      >
-        Change to Landing
-      </button>
       <SiteSlot siteType={SiteType.Landing}>
         das ist ein test und sollte angezeigt werden
         <div>mit mehreren divs</div>
@@ -42,6 +27,13 @@ export default function Page() {
       </SiteSlot>
       <SiteSlot siteType={SiteType.Waiter}>
         Das sollte nicht angezeigt werden
+        <button
+          onClick={() => {
+            siteTypeSignal.value = SiteType.Landing;
+          }}
+        >
+          Change to Landing
+        </button>
       </SiteSlot>
     </div>
   );
