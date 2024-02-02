@@ -15,11 +15,9 @@ export function SiteSlot({ children, siteType }: Props) {
   useSignals();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (siteTypeSignal.value === undefined) {
-      siteTypeSignal.value = searchParams.get(SiteTypeQueryParamName) as SiteType;
-    }
-  }, [searchParams]);
+  if (siteTypeSignal.value === undefined) {
+    siteTypeSignal.value = searchParams.get(SiteTypeQueryParamName) as SiteType;
+  }
 
   return siteType === siteTypeSignal.value && children;
 }
