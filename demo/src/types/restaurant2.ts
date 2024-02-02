@@ -44,7 +44,7 @@ export type Colophon =
   | ColophonCorporation
   | ColophonFreelancer;
 
-type ColophonOneManBusiness = ColophonCommons & {
+export type ColophonOneManBusiness = ColophonCommons & {
   //Einzelunternehmen (z.B. "Max Mustermann, Restaurantbetrieb")
   // Name und Anschrift des Restaurants (Inhaber)
   // Umsatzsteuer-Identifikationsnummer (falls vorhanden)
@@ -57,7 +57,7 @@ type ColophonOneManBusiness = ColophonCommons & {
   registerNumber?: string;
 };
 
-type ColophonPartnership = ColophonCommons & {
+export type ColophonPartnership = ColophonCommons & {
   //Personengesellschaft  (z.B. GbR, OHG)
   // Name und Anschrift der Gesellschaft (Restaurant)
   // Namen und Anschriften aller Gesellschafter
@@ -71,7 +71,7 @@ type ColophonPartnership = ColophonCommons & {
   registerNumber?: string;
 };
 
-type ColophonCorporation = ColophonCommons & {
+export type ColophonCorporation = ColophonCommons & {
   //Kapitalgesellschaft (z.B. GmbH, AG)
   // Name und Anschrift der Gesellschaft (Restaurant GmbH)
   // Vertretungsberechtigte Personen (Geschäftsführer, Vorstand)
@@ -79,14 +79,14 @@ type ColophonCorporation = ColophonCommons & {
   // Handelsregister, Registergericht und Registernummer
   // Angabe des Kapitals (bei GmbH und AG)
   // Klarer Hinweis auf die Verantwortlichkeit (z.B. "Verantwortlich im Sinne des § 55 Abs. 2 RStV")
-  businessType: 'Corporation';
+  businessType: "Corporation";
   representativeNames: string[];
   vatNumber?: string;
   registerChamber: string;
   registerNumber: string;
 };
 
-type ColophonFreelancer = ColophonCommons & {
+export type ColophonFreelancer = ColophonCommons & {
   //Freiberufler (z.B. Einzelunternehmer mit gastronomischem Beruf)
   // Name und Anschrift des Freiberuflers (Restaurantbetrieb)
   // Berufsbezeichnung, verliehen in Deutschland
