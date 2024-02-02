@@ -1,17 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, deploy a dev stage. The stage will be named using the currents user login name:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev:local1
+```
+
+After that run the local dev server and bind to the deployed dev stage:
+
+```bash
+npm run dev:local2
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -29,21 +27,30 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
 ## Deploy to AWS with SST
 
 Production:
-Deploy to AWS with "npx sst deploy --stage prod".
+Deploy to AWS with:
+
+```bash
+npm run deploy:prod
+# or
+npx sst deploy --stage prod
+```
 
 Possible errors:
 
 1. Resource handler returned message: "Resource of type 'AWS::DynamoDB::Table' with identifier 'XXXX' already exists.
    Please delete the ressource by hand in AWS Console
+2. Resource handler returned message: "Invalid request provided: AWS::CloudFront::Distribution: One or more aliases specified for the distribution includes an incorrectly configured DNS record that points to another CloudFront distribution 
+   Please remove old CNAME from your Domain provider (eg. Namecheap). After deploymend you need to set CNAME to the new correct URL.
 
-2)Resource handler returned message: "Invalid request provided: AWS::CloudFront::Distribution: One or more aliases specified for the distribution includes an incorrectly configured DNS record that points to another CloudFront distributio
-Please remove old CNAME from your Domain provider (eg. Namecheap). After deploymend you need to set CNAME to the new correct URL.
+## Currently the best way to create a new company json
+
+First create a JSON schema using typescript-json-schema. 
+
+```bash
+npx typescript-json-schema src/types/restaurant2.ts Restaurant --strictNullChecks --required --propOrder
+```
+
+Copy the schema from the console and go to [this online json schema editor](https://rjsf-team.github.io/react-jsonschema-form/), select "Blank" on the top left, paste the copied schema into JSONSchema and start creating the new company schema.
