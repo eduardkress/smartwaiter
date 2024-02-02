@@ -6,7 +6,6 @@ import { useSignals } from "@preact/signals-react/runtime";
 
 export default function Page() {
   useSignals();
-  siteTypeSignal.value = SiteType.Landing;
   return (
     <div>
       <SiteSlot siteType={SiteType.Landing}>
