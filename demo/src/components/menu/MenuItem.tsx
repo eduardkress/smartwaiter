@@ -6,6 +6,7 @@ import { useDisclosure } from '@nextui-org/react';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
 import { Menu, Product } from '@/types/restaurant2';
 import { EURO } from '@/utils/currencies';
+import { VariantUtils } from '@/utils/VariantUtils';
 
 type Props = {
   menu: Menu;
@@ -27,40 +28,24 @@ export function MenuItem({ menu, product }: Props) {
               <MenuItemTitle
                 product={product}
                 allergens={product.allergenIds!.map((id) => {
-                  return menu.allergens.find(value => value.id = id)!;
+                  return menu.allergens.find((value) => (value.id = id))!;
                 })}
               />
             </h3>
-            <div className='text-sm font-normal md:text-base'>
-              {product.description}
-            </div>
-            {product.variants.length > 1 ? (
+            <div className='text-sm font-normal md:text-base'>{product.description}</div>
+            {product.variants.length > 1 && (
               <div className='font-sans text-sm sm:font-normal'>
                 Wahl aus:{' '}
-                {product.variants.reduce(
-                  (previousValue, currentValue, currentIndex) =>
-                    previousValue +
-                    (currentIndex === 0
-                      ? currentValue.name
-                      : ', ' + currentValue.name),
-                  ''
-                )}
+                {VariantUtils.sortVariantsByPriceAsc(product.variants)
+                  .map((value) => value.name)
+                  .join(', ')}
               </div>
-            ) : (
-              <Fragment />
             )}
             <div className='flex grow flex-col-reverse pt-3 text-base font-bold sm:text-xl'>
               <div className=''>
                 {product.variants.length > 1
-                  ? 'ab ' +
-                    EURO.format(
-                      product.variants[0].prices.onsite /
-                        100
-                    )
-                  : EURO.format(
-                      product.variants[0].prices.onsite /
-                        100
-                    )}
+                  ? 'ab ' + EURO.formatCents(VariantUtils.getLowestPrice(product.variants))
+                  : EURO.formatCents(product.variants[0].prices.onsite)}
               </div>
             </div>
           </div>
@@ -68,24 +53,13 @@ export function MenuItem({ menu, product }: Props) {
           {product.imageUrl && (
             <div className='relative hidden h-20 w-20 shrink-0 rounded-lg border shadow sm:block sm:h-40 sm:w-40'>
               <div className='absolute inset-0'>
-                <Image
-                  className='rounded-lg'
-                  src={product.imageUrl}
-                  alt='Item1'
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+                <Image className='rounded-lg' src={product.imageUrl} alt='Item1' fill style={{ objectFit: 'cover' }} />
               </div>
             </div>
           )}
         </div>
       </div>
-      <MenuModal
-        menu={menu}
-        product={product}
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-      />
+      <MenuModal menu={menu} product={product} isOpen={isOpen} onOpenChange={onOpenChange} />
     </div>
   );
 }
