@@ -39,8 +39,10 @@ function deliverySlot(information: string, informationValue: string | number) {
       <div className='col-span-2 justify-self-end'>
         {(() => {
           switch (typeof informationValue) {
-            case 'number': return EURO.format(informationValue / 100);
-            case 'string': return informationValue;
+            case 'number':
+              return EURO.format(informationValue / 100);
+            case 'string':
+              return informationValue;
           }
         })()}
       </div>
@@ -92,20 +94,18 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
                 <SiteSlot siteType={SiteType.Landing}>
                   {companyInformation.delivery && (
                     <Fragment>
-
                       <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Lieferung</h2>
-                      <div className="flex flex-col space-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow">
+                      <div className='flex flex-col space-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
                         {companyInformation.delivery.map((value) => (
-                          <div className="grid grid-cols-3">
-                            {value.deliveryZone && <span className="col-span-3 font-bold">{value.deliveryZone}</span>}
+                          <div className='grid grid-cols-3'>
+                            {value.deliveryZone && <span className='col-span-3 font-bold'>{value.deliveryZone}</span>}
                             {deliverySlot('Mindestbestellwert', value.minimumOrderValue)}
                             {deliverySlot('Lieferkosten', value.deliveryCost)}
                           </div>
                         ))}
                       </div>
-
                     </Fragment>
-                    )}
+                  )}
                 </SiteSlot>
                 <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Impressum</h2>
                 <div className='flex flex-col space-y-0 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
