@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/react';
 import { Information } from '@/types/restaurant2';
 import ColophonCorporation from '@/components/menu/ColophonCorporation';
+import { SiteSlot } from '@/components/slotting/SiteSlot';
+import { SiteType } from '@/types/SiteType';
+import { EURO } from '@/utils/currencies';
 
 type Props = {
   isOpen: boolean;
@@ -14,7 +17,7 @@ function timeSlot(dayName: string, dayTimes: string[] | undefined) {
     dayName !== 'Feiertage' && (
       <Fragment>
         <div className=''>{dayName}</div>
-        <div className=' col-span-2'>
+        <div className='col-span-2 justify-self-end'>
           {dayTimes && dayTimes.length > 0
             ? dayTimes.map((timeslot, index) => (
                 <Fragment key={index}>
@@ -26,6 +29,22 @@ function timeSlot(dayName: string, dayTimes: string[] | undefined) {
         </div>
       </Fragment>
     )
+  );
+}
+
+function deliverySlot(information: string, informationValue: string | number) {
+  return (
+    <Fragment>
+      <div className=''>{information}</div>
+      <div className='col-span-2 justify-self-end'>
+        {(() => {
+          switch (typeof informationValue) {
+            case 'number': return EURO.format(informationValue / 100);
+            case 'string': return informationValue;
+          }
+        })()}
+      </div>
+    </Fragment>
   );
 }
 
@@ -60,7 +79,7 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
                   <span>12345 Mustercity</span>
                 </div>
                 <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Öffnungszeiten</h2>
-                <div className='grid grid-cols-3 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
+                <div className='grid grid-cols-3 gap-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
                   {timeSlot('Montag', companyInformation.openingHours.Monday)}
                   {timeSlot('Dienstag', companyInformation.openingHours.Tuesday)}
                   {timeSlot('Mittwoch', companyInformation.openingHours.Wednesday)}
@@ -70,6 +89,24 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
                   {timeSlot('Sonntag', companyInformation.openingHours.Sunday)}
                   {timeSlot('Feiertage', companyInformation.openingHours.Holidays)}
                 </div>
+                <SiteSlot siteType={SiteType.Landing}>
+                  {companyInformation.delivery && (
+                    <Fragment>
+
+                      <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Lieferung</h2>
+                      <div className="flex flex-col space-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow">
+                        {companyInformation.delivery.map((value) => (
+                          <div className="grid grid-cols-3">
+                            {value.deliveryZone && <span className="col-span-3 font-bold">{value.deliveryZone}</span>}
+                            {deliverySlot('Mindestbestellwert', value.minimumOrderValue)}
+                            {deliverySlot('Lieferkosten', value.deliveryCost)}
+                          </div>
+                        ))}
+                      </div>
+
+                    </Fragment>
+                    )}
+                </SiteSlot>
                 <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Impressum</h2>
                 <div className='flex flex-col space-y-0 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
                   {/*TODO: Create a colophon component for each different type*/}

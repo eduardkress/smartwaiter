@@ -10,6 +10,18 @@
         "headerImageUrl": "/images/hero-restaurants.jpeg"
     },
     "information": {
+        "delivery": [
+            {
+                "deliveryZone": "In Paderborn",
+                "minimumOrderValue": 1500,
+                "deliveryCost": "Gratis"
+            },
+            {
+                "deliveryZone": "Außerhalb Paderborn",
+                "minimumOrderValue": 1500,
+                "deliveryCost": "Auf Anfrage"
+            }
+        ],
         "location": {
             "city": "Paderborn",
             "country": "DE",
