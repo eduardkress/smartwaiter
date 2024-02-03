@@ -18,6 +18,7 @@ const VariantUtils: {
   getLowestPriceTag: function (variants, discounts) {
     // TODO: How failsafe do we want to make this?
     // TODO: Refactor this
+    // TODO: when should this be recalculated?
     const time = new Date(Date.now()).getHours() * 100 + new Date(Date.now()).getMinutes();
     const dayNumber = new Date(Date.now()).getDay() + 1;
 
