@@ -5,6 +5,7 @@ import CompanyDetailsModal from '@/components/menu/CompanyDetailsModal';
 import { Hero, Information } from '@/types/restaurant2';
 import { SiteSlot } from '@/components/slotting/SiteSlot';
 import { SiteType } from '@/types/SiteType';
+import CallWaiterModal from '@/components/menu/CallWaiterModal';
 
 interface Props {
   companyHero: Hero;
@@ -13,6 +14,7 @@ interface Props {
 
 function CompanyDetails({ companyHero, companyInformation }: Props) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen: isOpenWaiter, onOpen: onOpenWaiter, onOpenChange: onOpenChangeWaiter } = useDisclosure();
 
   return (
     <div className='w-full bg-white'>
@@ -22,8 +24,19 @@ function CompanyDetails({ companyHero, companyInformation }: Props) {
           <h1 className='text-3xl font-bold'>{companyHero.name}</h1>
           <span className='mt-2 text-sm text-gray-700'>{companyHero.name}</span>
         </div>
-
-        <SiteSlot siteType={SiteType.Landing}>
+        <div className='flex flex-col items-center space-x-0 space-y-5 sm:flex-row sm:space-x-5 sm:space-y-0'>
+          <SiteSlot siteType={SiteType.Waiter}>
+            <Button
+              variant='shadow'
+              size='lg'
+              radius='full'
+              className='border-transparent bg-[#f5f3f1] hover:bg-[#ebe9e8]'
+              onClick={onOpenWaiter}
+            >
+              Kellner rufen
+            </Button>
+            <CallWaiterModal isOpen={isOpenWaiter} onOpenChange={onOpenChangeWaiter} />
+          </SiteSlot>
           <Button
             isIconOnly
             variant='shadow'
@@ -34,24 +47,8 @@ function CompanyDetails({ companyHero, companyInformation }: Props) {
           >
             <Info />
           </Button>
-          {/*TODO: Make this modal only for Landing*/}
           <CompanyDetailsModal isOpen={isOpen} onOpenChange={onOpenChange} companyInformation={companyInformation} />
-        </SiteSlot>
-        <SiteSlot siteType={SiteType.Waiter}>
-          {/*TODO: Add button to call waiter*/}
-          <Button
-            isIconOnly
-            variant='shadow'
-            size='lg'
-            radius='full'
-            className='border-transparent bg-[#f5f3f1] hover:bg-[#ebe9e8]'
-            onClick={onOpen}
-          >
-            <Info />
-          </Button>
-          {/*TODO: Make this modal only for Waiter*/}
-          <CompanyDetailsModal isOpen={isOpen} onOpenChange={onOpenChange} companyInformation={companyInformation} />
-        </SiteSlot>
+        </div>
       </div>
     </div>
   );
