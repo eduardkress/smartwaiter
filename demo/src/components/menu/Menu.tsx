@@ -12,8 +12,7 @@ function Menu({ menu }: Props) {
       <div className='flex flex-col space-y-10'>
         {menu.categories.map((category) => {
           return (
-            <div key={category.id} id={'category' + category.id} className=''>
-              {/* <div className="categoryStartAnchor mx-auto"></div> */}
+            <div key={category.id} id={'category' + category.id}>
               <div className='container mx-auto'>
                 {category.imageUrl && (
                   <div className='container mx-auto max-w-5xl px-0 py-2'>
@@ -24,21 +23,16 @@ function Menu({ menu }: Props) {
                     />
                   </div>
                 )}
-                <h2 className='container mx-auto max-w-5xl px-0 py-4 text-2xl font-bold'>
-                  {category.name}
-                </h2>
+                <h2 className='container mx-auto max-w-5xl px-0 py-4 text-2xl font-bold'>{category.name}</h2>
               </div>
               <div className='flex flex-col space-y-5'>
-                {category.productIds.map((productId, index) =>
-                    <MenuItem
-                      key={index}
-                      menu={menu}
-                      product={menu.products.find(value => value.id === productId)!}
-                    />
-                )}
+                {category.productIds.map((productId, index) => {
+                  const product = menu.products.find((value) => value.id === productId);
+                  console.assert(product, `ProductId ${productId} not found.`);
+                  return product && <MenuItem key={index} menu={menu} product={product} />;
+                })}
               </div>
-              {/* <div className="categoryEndAnchor mx-auto"></div> */}
-              <div className='categoryAnchor mx-auto'></div>
+              <div className='categoryAnchor mx-auto'/>
             </div>
           );
         })}
