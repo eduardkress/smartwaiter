@@ -2,7 +2,7 @@ import { twMerge } from 'tailwind-merge';
 import React, { Fragment, useEffect, useState } from 'react';
 import ArrowRight from '@/components/icons/ArrowRight';
 import ArrowLeft from '@/components/icons/ArrowLeft';
-import { Menu } from '@/types/restaurant';
+import { Menu } from '@/types/restaurant2';
 import { Button } from '@nextui-org/react';
 
 interface Props {

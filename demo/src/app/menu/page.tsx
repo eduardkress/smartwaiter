@@ -83,13 +83,13 @@ export default function Page() {
         Dein Bestellcode ist ungültig!
       </div>
 
-      <Hero imgSrc={_restaurantData2.hero.headerImageUrl} heroAlt={'Unser Menü'} />
-      <CompanyLogo imgSrc={_restaurantData2.hero.logoUrl} heroAlt={'Unser Menü'} />
+      <Hero imgSrc={restaurantData2.hero.headerImageUrl} heroAlt={'Unser Menü'} />
+      <CompanyLogo imgSrc={restaurantData2.hero.logoUrl} heroAlt={'Unser Menü'} />
       <CompanyDetails
         companyHero={restaurantData2.hero}
         companyInformation={restaurantData2.information}
       />
-      <NavBar menu={restaurantData.menu} />
+      <NavBar menu={restaurantData2.menu} />
       <div>
         <Menu menu={restaurantData.menu} />
         <Footer />
