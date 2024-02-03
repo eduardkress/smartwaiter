@@ -92,12 +92,19 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
                   {timeSlot('Feiertage', companyInformation.openingHours.Holidays)}
                 </div>
                 <SiteSlot siteType={SiteType.Landing}>
+                  <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Kontakt</h2>
+                  <div className='grid grid-cols-3 gap-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
+                    {deliverySlot('Telefon', companyInformation.contact.telephone)}
+                    {companyInformation.contact.whatsapp &&
+                      deliverySlot('WhatsApp', companyInformation.contact.whatsapp)}
+                    {companyInformation.contact.mail && deliverySlot('Mail', companyInformation.contact.mail)}
+                  </div>
                   {companyInformation.delivery && (
                     <Fragment>
                       <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Lieferung</h2>
                       <div className='flex flex-col space-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
-                        {companyInformation.delivery.map((value) => (
-                          <div className='grid grid-cols-3'>
+                        {companyInformation.delivery.map((value, index) => (
+                          <div className='grid grid-cols-3' key={index}>
                             {value.deliveryZone && <span className='col-span-3 font-bold'>{value.deliveryZone}</span>}
                             {deliverySlot('Mindestbestellwert', value.minimumOrderValue)}
                             {deliverySlot('Lieferkosten', value.deliveryCost)}
