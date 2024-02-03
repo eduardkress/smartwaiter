@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Button, Tooltip } from '@nextui-org/react';
 import Info from '@/components/icons/Info';
 //import { allergens } from '@/components/ui/allergen';
-import { Product, Allergen } from '@/types/restaurant';
+import { Product, Allergen } from '@/types/restaurant2';
 
 type Props = {
   product: Product;

@@ -91,7 +91,7 @@ export default function Page() {
       />
       <NavBar menu={restaurantData2.menu} />
       <div>
-        <Menu menu={restaurantData.menu} />
+        <Menu menu={restaurantData2.menu} />
         <Footer />
         <Basket />
       </div>

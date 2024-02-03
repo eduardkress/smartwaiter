@@ -1,4 +1,4 @@
-import { Option } from '@/types/restaurant';
+import { Option } from '@/types/restaurant2';
 import React, { useState } from 'react';
 import {
   Accordion,
@@ -32,11 +32,11 @@ const MenuModalItemCheckboxGroup = ({
         return (
           <Checkbox key={index} value={option.id}>
             {option.name}
-            {option.prices.pickup > 0 ? (
+            {option.prices.onsite > 0 ? (
               <>
                 {' '}
                 (+
-                {option.prices.pickup / 100} €)
+                {option.prices.onsite / 100} €)
               </>
             ) : (
               ''

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import MenuModal from '@/components/menu/MenuModal';
 import { useDisclosure } from '@nextui-org/react';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Menu, Product } from '@/types/restaurant';
+import { Menu, Product } from '@/types/restaurant2';
 import { EURO } from '@/utils/currencies';
 
 type Props = {
@@ -26,8 +26,8 @@ export function MenuItem({ menu, product }: Props) {
             <h3 className='text-base font-bold sm:text-xl'>
               <MenuItemTitle
                 product={product}
-                allergens={product.allergenIds.map((id) => {
-                  return menu.allergens[id];
+                allergens={product.allergenIds!.map((id) => {
+                  return menu.allergens.find(value => value.id = id)!;
                 })}
               />
             </h3>
@@ -54,12 +54,12 @@ export function MenuItem({ menu, product }: Props) {
                 {product.variants.length > 1
                   ? 'ab ' +
                     EURO.format(
-                      product.variants[0].prices.pickup /
-                        menu.currency.denominator
+                      product.variants[0].prices.onsite /
+                        100
                     )
                   : EURO.format(
-                      product.variants[0].prices.pickup /
-                        menu.currency.denominator
+                      product.variants[0].prices.onsite /
+                        100
                     )}
               </div>
             </div>

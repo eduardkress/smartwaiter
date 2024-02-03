@@ -1,6 +1,6 @@
 import MenuItem from '@/components/menu/MenuItem';
 import Hero from '@/components/menu/Hero';
-import { Menu } from '@/types/restaurant';
+import { Menu } from '@/types/restaurant2';
 
 interface Props {
   menu: Menu;
@@ -29,15 +29,13 @@ function Menu({ menu }: Props) {
                 </h2>
               </div>
               <div className='flex flex-col space-y-5'>
-                {category.productIds.map((productId, index) => {
-                  return (
+                {category.productIds.map((productId, index) =>
                     <MenuItem
                       key={index}
                       menu={menu}
-                      product={menu.products[productId]}
+                      product={menu.products.find(value => value.id === productId)!}
                     />
-                  );
-                })}
+                )}
               </div>
               {/* <div className="categoryEndAnchor mx-auto"></div> */}
               <div className='categoryAnchor mx-auto'></div>

@@ -13,7 +13,7 @@ import {
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Menu, Product } from '@/types/restaurant';
+import { Menu, Product } from '@/types/restaurant2';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
@@ -36,7 +36,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
   const [selectedOptions, setSelectedOptions] = useState<OptionsDataObject>({});
 
   const [itemCounter, setItemCounter] = useState(1);
-  const [itemPrice, setItemPrice] = useState(selectedVariant.prices.pickup);
+  const [itemPrice, setItemPrice] = useState(selectedVariant.prices.onsite);
 
   //if variant is changed then reset itemCounter and seletedOptions
   useEffect(() => {
@@ -46,12 +46,12 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
 
   //Recalculate price if variant, item count or options change
   useEffect(() => {
-    let endPrice = selectedVariant.prices.pickup;
+    let endPrice = selectedVariant.prices.onsite;
     Object.values(selectedOptions).forEach((optionsIds) => {
       optionsIds.forEach((optionId) => {
-        const option = menu.options[optionId];
+        const option = menu.options.find(value => value.id === optionId);
         if (option) {
-          endPrice = endPrice + option.prices.pickup;
+          endPrice = endPrice + option.prices.onsite;
         }
       });
     });
@@ -128,9 +128,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle
                     product={product}
-                    allergens={product.allergenIds.map((id) => {
-                      return menu.allergens[id];
-                    })}
+                    allergens={product.allergenIds!.map((id) => menu.allergens.find(value => value.id === id)!
+                    )}
                   />
                 </h2>
                 <div className='flex flex-col space-y-2 pb-3 '>
@@ -142,7 +141,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                   </div>
                   <div className='pt-3 text-lg font-normal'>
                     {product.variants.length === 1 ? (
-                      <Fragment>{product.variants[0].prices.pickup} €</Fragment>
+                      <Fragment>{product.variants[0].prices.onsite} €</Fragment>
                     ) : (
                       <>
                         {/*Variant Dropdown*/}
@@ -153,8 +152,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                               {selectedVariant.name +
                                 ' (' +
                                 EURO.format(
-                                  selectedVariant.prices.pickup /
-                                    menu.currency.denominator
+                                  selectedVariant.prices.onsite/
+                                    100
                                 ) +
                                 ')'}
                             </Button>
@@ -171,8 +170,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                                 {variant.name +
                                   ' (' +
                                   EURO.format(
-                                    variant.prices.pickup /
-                                      menu.currency.denominator
+                                    variant.prices.onsite /
+                                      100
                                   ) +
                                   ')'}
                               </DropdownItem>
@@ -180,10 +179,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                           </DropdownMenu>
                         </Dropdown>
                         {/*OptionGroups*/}
-                        {selectedVariant.optionGroupIds
-                          .map((optionGroupId) => {
-                            return menu.optionGroups[optionGroupId];
-                          })
+                        {selectedVariant.optionGroupIds!
+                          .map((optionGroupId) => menu.optionGroups.find(value => value.id === optionGroupId)!)
                           .filter(
                             (optionGroup) =>
                               optionGroup !== null && optionGroup !== undefined
@@ -202,7 +199,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                                     const filteredOptions =
                                       optionGroup.optionIds
                                         .map((optionId) => {
-                                          return menu.options[optionId];
+                                          return menu.options.find(value => value.id === optionId)!;
                                         })
                                         .filter(
                                           (option) =>
@@ -255,7 +252,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     onClose();
                   }}
                 >
-                  {EURO.format(itemPrice / menu.currency.denominator)}
+                  {EURO.format(itemPrice / 100)}
                 </Button>
               </div>
             </ModalFooter>
