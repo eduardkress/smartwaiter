@@ -44,7 +44,9 @@ export function MenuItem({ menu, product }: Props) {
             <div className='flex grow flex-col-reverse pt-3 text-base font-bold sm:text-xl'>
               <div className=''>
                 {product.variants.length > 1
-                  ? 'ab ' + EURO.formatCents(VariantUtils.getLowestPrice(product.variants))
+                  ? (<Fragment>
+                    ab {VariantUtils.getLowestPriceTag(product.variants, menu.discounts)}
+                  </Fragment>)
                   : EURO.formatCents(product.variants[0].prices.onsite)}
               </div>
             </div>

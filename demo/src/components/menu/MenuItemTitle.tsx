@@ -7,7 +7,7 @@ import { Product, Allergen } from '@/types/restaurant2';
 
 type Props = {
   product: Product;
-  allergens: Allergen[];
+  allergens: Allergen[] | undefined;
 };
 
 function MenuItemTitle({ product, allergens }: Props) {
@@ -24,7 +24,7 @@ function MenuItemTitle({ product, allergens }: Props) {
   return (
     <Fragment>
       {product.name}
-      {allergens.length > 0 && (
+      {allergens && allergens.length > 0 && (
         <sup className='text-base font-light'>
           <Tooltip
             content={allergens.map((allergen, i) => (
