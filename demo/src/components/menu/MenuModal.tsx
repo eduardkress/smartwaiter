@@ -13,12 +13,15 @@ import {
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Menu, Product } from '@/types/restaurant2';
+import { Menu, Product, Option } from '@/types/restaurant2';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
 import { addToBasket } from './Basket';
 import { EURO } from '@/utils/currencies';
+import { SiteSlot } from '@/components/slotting/SiteSlot';
+import { SiteType } from '@/types/SiteType';
+import MenuModalItemExtrasSingleWaiter from '@/components/menu/MenuModalItemExtrasSingleWaiter';
 
 type Props = {
   menu: Menu;
@@ -49,7 +52,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     let endPrice = selectedVariant.prices.onsite;
     Object.values(selectedOptions).forEach((optionsIds) => {
       optionsIds.forEach((optionId) => {
-        const option = menu.options.find(value => value.id === optionId);
+        const option = menu.options.find((value) => value.id === optionId);
         if (option) {
           endPrice = endPrice + option.prices.onsite;
         }
@@ -65,10 +68,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     setSelectedVariant(variant);
   };
 
-  const handleOptionsChange = (
-    optionGroupId: string,
-    seletedOptions: string[]
-  ) => {
+  const handleOptionsChange = (optionGroupId: string, seletedOptions: string[]) => {
     if (seletedOptions.length == 0) {
       const optionGroups = { ...selectedOptions };
       delete optionGroups[optionGroupId];
@@ -93,10 +93,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
   };
 
   const handleAddToBasket = () => {
-    const optionIds = Object.values(selectedOptions).reduce(
-      (acc, values) => acc.concat(values),
-      []
-    );
+    const optionIds = Object.values(selectedOptions).reduce((acc, values) => acc.concat(values), []);
     addToBasket(product.id, selectedVariant.id, optionIds, itemCounter, '');
   };
 
@@ -117,144 +114,118 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
           <>
             <ModalBody>
               {!!product.imageUrl && (
-                <Hero
-                  imgSrc={product.imageUrl}
-                  heroAlt={''}
-                  tailwindClasses={'h-56 drop-shadow-md z-[-1]'}
-                />
+                <Hero imgSrc={product.imageUrl} heroAlt={''} tailwindClasses={'h-56 drop-shadow-md z-[-1]'} />
               )}
 
               <ScrollShadow className='container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4'>
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle
                     product={product}
-                    allergens={product.allergenIds!.map((id) => menu.allergens.find(value => value.id === id)!
-                    )}
+                    allergens={product.allergenIds!.map((id) => menu.allergens.find((value) => value.id === id)!)}
                   />
                 </h2>
                 <div className='flex flex-col space-y-2 pb-3 '>
-                  <div className='text-base font-normal'>
-                    {product.description}
-                  </div>
-                  <div className='text-sm font-normal'>
-                    Zutaten: Teig, Dies das und so
-                  </div>
+                  <div className='text-base font-normal'>{product.description}</div>
+                  <div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>
                   <div className='pt-3 text-lg font-normal'>
                     {product.variants.length === 1 ? (
-                      <Fragment>{product.variants[0].prices.onsite} €</Fragment>
+                      EURO.formatCents(product.variants[0].prices.onsite)
                     ) : (
-                      <>
+                      <Fragment>
                         {/*Variant Dropdown*/}
                         <div>{product.name}:</div>
                         <Dropdown>
                           <DropdownTrigger>
                             <Button variant='bordered' className='w-full'>
-                              {selectedVariant.name +
-                                ' (' +
-                                EURO.format(
-                                  selectedVariant.prices.onsite/
-                                    100
-                                ) +
-                                ')'}
+                              {selectedVariant.name + ' (' + EURO.format(selectedVariant.prices.onsite / 100) + ')'}
                             </Button>
                           </DropdownTrigger>
                           <DropdownMenu
                             items={product.variants}
-                            onAction={(key) =>
-                              handleVariantChange(key.toString())
-                            }
+                            onAction={(key) => handleVariantChange(key.toString())}
                             aria-label='Select Product Variation'
                           >
                             {(variant) => (
                               <DropdownItem key={variant.id}>
-                                {variant.name +
-                                  ' (' +
-                                  EURO.format(
-                                    variant.prices.onsite /
-                                      100
-                                  ) +
-                                  ')'}
+                                {variant.name + ' (' + EURO.format(variant.prices.onsite / 100) + ')'}
                               </DropdownItem>
                             )}
                           </DropdownMenu>
                         </Dropdown>
-                        {/*OptionGroups*/}
-                        {selectedVariant.optionGroupIds!
-                          .map((optionGroupId) => menu.optionGroups.find(value => value.id === optionGroupId)!)
-                          .filter(
-                            (optionGroup) =>
-                              optionGroup !== null && optionGroup !== undefined
-                          )
-                          .map((optionGroup, index) => {
-                            {
-                              /*Options*/
-                            }
-                            return (
-                              <div key={index} className='mt-4'>
-                                <div className='font-normal'>
-                                  {optionGroup.name}
-                                </div>
-                                {optionGroup.isTypeMulti &&
-                                  (() => {
-                                    const filteredOptions =
-                                      optionGroup.optionIds
-                                        .map((optionId) => {
-                                          return menu.options.find(value => value.id === optionId)!;
-                                        })
-                                        .filter(
-                                          (option) =>
-                                            option !== null &&
-                                            option !== undefined
-                                        );
+                      </Fragment>
+                    )}
 
-                                    return (
+                    {/*OptionGroupsRework*/}
+                    {selectedVariant.optionGroupIds &&
+                      selectedVariant.optionGroupIds
+                        .map((optionGroupId) =>
+                          menu.optionGroups.find((optionGroup) => optionGroup.id === optionGroupId)
+                        )
+                        .map(
+                          (optionGroup, index) =>
+                            optionGroup &&
+                            optionGroup.optionIds.length > 0 && (
+                              <div key={index} className='mt-4'>
+                                <div className='font-normal'>{optionGroup.name}</div>
+                                {(() => {
+                                  const filteredOptions = optionGroup.optionIds
+                                    .map((optionId) => menu.options.find((option) => option.id === optionId))
+                                    .filter((option): option is Option => !!option);
+                                  return <Fragment>
+                                    { optionGroup.isTypeMulti &&
                                       <MenuModalItemExtras
                                         options={filteredOptions}
-                                        handleOptionsChange={
-                                          handleOptionsChange
-                                        }
+                                        handleOptionsChange={handleOptionsChange}
                                         optionGroupId={optionGroup.id}
                                       />
-                                    );
-                                  })()}
+                                    }
+                                    { !optionGroup.isTypeMulti &&
+                                      <MenuModalItemExtrasSingleWaiter
+                                        options={filteredOptions}
+                                        handleOptionsChange={handleOptionsChange}
+                                        optionGroupId={optionGroup.id}
+                                      />
+                                    }
+                                  </Fragment>;
+                                })()}
                               </div>
-                            );
-                          })}
-                      </>
-                    )}
+                            )
+                        )}
                   </div>
                 </div>
               </ScrollShadow>
             </ModalBody>
             <ModalFooter>
-              <div className='flex w-full items-center gap-x-2'>
-                <Button
-                  isIconOnly
-                  disabled={itemCounter <= 1}
-                  className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold  shadow-sm hover:bg-gray-300 sm:cursor-pointer'
-                  onClick={() => decreaseItemCounter()}
-                >
-                  <Minus />
-                </Button>
-                <div>{itemCounter}</div>
-                <Button
-                  isIconOnly
-                  className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
-                  onClick={() => increaseItemCounter()}
-                >
-                  <Plus />
-                </Button>
-                <Button
-                  radius={'full'}
-                  className='text-md flex-grow bg-black px-8 py-7 font-bold text-white'
-                  onClick={() => {
-                    handleAddToBasket();
-                    onClose();
-                  }}
-                >
-                  {EURO.format(itemPrice / 100)}
-                </Button>
-              </div>
+              <SiteSlot siteType={SiteType.Waiter}>
+                <div className='flex w-full items-center gap-x-2'>
+                  <Button
+                    isIconOnly
+                    disabled={itemCounter <= 1}
+                    className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold  shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+                    onClick={() => decreaseItemCounter()}
+                  >
+                    <Minus />
+                  </Button>
+                  <div>{itemCounter}</div>
+                  <Button
+                    isIconOnly
+                    className='text-md cursor-default snap-center rounded-full bg-gray-200 p-3 font-bold text-black shadow-sm hover:bg-gray-300 sm:cursor-pointer'
+                    onClick={() => increaseItemCounter()}
+                  >
+                    <Plus />
+                  </Button>
+                  <Button
+                    radius={'full'}
+                    className='text-md flex-grow bg-black px-8 py-7 font-bold text-white'
+                    onClick={() => {
+                      handleAddToBasket();
+                      onClose();
+                    }}
+                  >
+                    {EURO.formatCents(itemPrice)}
+                  </Button>
+                </div>
+              </SiteSlot>
             </ModalFooter>
           </>
         )}
