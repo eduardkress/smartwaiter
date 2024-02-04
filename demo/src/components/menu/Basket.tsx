@@ -78,7 +78,7 @@ export function Basket() {
           >
             <ShoppingCart />
           </Badge>
-          Warenkorb {EURO.format(basketPrice)}
+          Warenkorb {EURO.formatCents(basketPrice)}
         </Button>
         <BasketModal
           isOpen={isOpen}

@@ -1,8 +1,6 @@
 import { BasketItem } from '@/types/basketItem';
-import { Restaurant } from '@/types/restaurant';
 import _restaurantData from '@/mockup/restaurant.json';
 
-const restaurantData = _restaurantData as Restaurant;
 
 export function calculateTotalPrice(
   basketItems: BasketItem | Array<BasketItem>
@@ -42,7 +40,7 @@ export function calculateTotalPrice(
     totalPrice = totalPrice + itemPrice;
   });
 
-  return totalPrice / restaurantData.menu.currency.denominator;
+  return totalPrice;
 }
 
 export function calculateTotalItems(basketItems: Array<BasketItem>) {

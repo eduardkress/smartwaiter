@@ -137,7 +137,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                         <Dropdown>
                           <DropdownTrigger>
                             <Button variant='bordered' className='w-full'>
-                              {selectedVariant.name + ' (' + EURO.format(selectedVariant.prices.onsite / 100) + ')'}
+                              {selectedVariant.name + ' (' + EURO.formatCents(selectedVariant.prices.onsite) + ')'}
                             </Button>
                           </DropdownTrigger>
                           <DropdownMenu
@@ -147,7 +147,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                           >
                             {(variant) => (
                               <DropdownItem key={variant.id}>
-                                {variant.name + ' (' + EURO.format(variant.prices.onsite / 100) + ')'}
+                                {variant.name + ' (' + EURO.formatCents(variant.prices.onsite) + ')'}
                               </DropdownItem>
                             )}
                           </DropdownMenu>

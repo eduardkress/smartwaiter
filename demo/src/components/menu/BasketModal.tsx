@@ -48,7 +48,7 @@ function SingleItemMockup({ item }: { item: BasketItem }) {
     <div className='container flex flex-col space-y-2 bg-white px-0'>
       <div className='flex flex-row'>
         <strong className='grow'>{item.variantId}</strong>
-        <span className='pl-5'>{EURO.format(calculateTotalPrice(item))}</span>
+        <span className='pl-5'>{EURO.formatCents(calculateTotalPrice(item))}</span>
       </div>
       {item.optionIds.length > 0 && (
         <div>
@@ -159,7 +159,7 @@ const BasketModal = ({ isOpen, onOpenChange, basketItems }: Props) => {
                   }}
                 >
                   Jetzt Bestellen (
-                  {EURO.format(calculateTotalPrice(basketItems))})
+                  {EURO.formatCents(calculateTotalPrice(basketItems))})
                 </Button>
               </ModalFooter>
             </>

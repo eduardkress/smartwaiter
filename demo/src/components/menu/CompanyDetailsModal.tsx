@@ -40,7 +40,7 @@ function deliverySlot(information: string, informationValue: string | number) {
         {(() => {
           switch (typeof informationValue) {
             case 'number':
-              return EURO.format(informationValue / 100);
+              return EURO.formatCents(informationValue);
             case 'string':
               return informationValue;
           }
