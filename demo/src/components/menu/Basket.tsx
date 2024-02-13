@@ -3,10 +3,7 @@ import ShoppingCart from '@/components/icons/ShoppingCart';
 import BasketModal from '@/components/menu/BasketModal';
 import { signal } from '@preact/signals';
 import { BasketItem } from '@/types/basketItem';
-import {
-  calculateTotalItems,
-  calculateTotalPrice,
-} from '@/services/ProductDataService';
+import { calculateTotalItems, calculateTotalPrice } from '@/services/ProductDataService';
 import { Fragment, useEffect, useState } from 'react';
 import { EURO } from '@/utils/currencies';
 import { twMerge } from 'tailwind-merge';
@@ -64,11 +61,7 @@ export function Basket() {
           basketSignal.value.length > 0 ? 'flex' : 'hidden'
         )}
       >
-        <Button
-          radius={'full'}
-          className='text-md bg-black px-8 py-7 font-bold text-white'
-          onClick={onOpen}
-        >
+        <Button radius={'full'} className='text-md bg-black px-8 py-7 font-bold text-white' onClick={onOpen}>
           <Badge
             content={itemsInBasket}
             showOutline={false}
@@ -80,12 +73,7 @@ export function Basket() {
           </Badge>
           Warenkorb {EURO.formatCents(basketPrice)}
         </Button>
-        <BasketModal
-          isOpen={isOpen}
-          onOpen={onOpen}
-          onOpenChange={onOpenChange}
-          basketItems={basketSignal.value}
-        />
+        <BasketModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} basketItems={basketSignal.value} />
       </div>
     </Fragment>
   );

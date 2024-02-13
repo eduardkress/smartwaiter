@@ -7,8 +7,8 @@ const EURO = new Intl.NumberFormat('de-DE', {
   currency: 'EUR',
 }) as ExtendedNumberFormat;
 
-EURO.formatCents = function(value: number) {
-  return this.format(value / 100)
-}
+EURO.formatCents = function (value: number) {
+  return this.format(value / 100);
+};
 
 export { EURO };

@@ -17,19 +17,14 @@ type AppSyncEvent = {
 
 export async function handler(
   event: AppSyncEvent
-): Promise<
-  Record<string, unknown>[] | Order | string | null | undefined | boolean
-> {
+): Promise<Record<string, unknown>[] | Order | string | null | undefined | boolean> {
   switch (event.info.fieldName) {
     case 'listOrders':
       return await listOrders();
     case 'createOrder':
       return await createOrder(event.arguments.orderInput);
     case 'updateOrder':
-      return await updateOrder(
-        event.arguments.orderId,
-        event.arguments.orderInput
-      );
+      return await updateOrder(event.arguments.orderId, event.arguments.orderInput);
     case 'deleteOrder':
       return await deleteOrder(event.arguments.orderId);
     default:

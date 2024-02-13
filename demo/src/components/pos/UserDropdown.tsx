@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-  User,
-} from '@nextui-org/react';
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User } from '@nextui-org/react';
 import { signOut } from 'next-auth/react';
 import { useSession } from 'next-auth/react';
 

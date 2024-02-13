@@ -5,9 +5,7 @@ import { Table } from 'sst/node/table';
 
 const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
-export default async function deleteOrder(
-  orderId: string
-): Promise<Order | null> {
+export default async function deleteOrder(orderId: string): Promise<Order | null> {
   try {
     const command = new DeleteCommand({
       TableName: Table.Orders.tableName,

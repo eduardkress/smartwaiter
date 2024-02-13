@@ -1,6 +1,6 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { signal } from '@preact/signals';
-import { useSignals } from "@preact/signals-react/runtime";
+import { useSignals } from '@preact/signals-react/runtime';
 import { SiteType, SiteTypeQueryParamName } from '@/types/SiteType';
 import { useSearchParams } from 'next/navigation';
 

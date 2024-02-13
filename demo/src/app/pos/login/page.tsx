@@ -48,11 +48,7 @@ export default function Page() {
         <div className='container mx-auto flex h-full items-center justify-center px-6 py-12'>
           <div className='bg-white px-8 py-10 md:w-8/12 lg:w-5/12'>
             <form onSubmit={onSubmit}>
-              {error && (
-                <p className='mb-6 rounded bg-red-300 py-4 text-center'>
-                  {error}
-                </p>
-              )}
+              {error && <p className='mb-6 rounded bg-red-300 py-4 text-center'>{error}</p>}
               <div className='mb-6'>
                 <input
                   required

@@ -5,18 +5,14 @@ import { Order, OrderInput } from '@/API';
 
 const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
-export default async function updateOrder(
-  orderId: string,
-  orderInput: OrderInput
-): Promise<Order | null> {
+export default async function updateOrder(orderId: string, orderInput: OrderInput): Promise<Order | null> {
   try {
     const command = new UpdateCommand({
       TableName: Table.Orders.tableName,
       Key: {
         id: orderId,
       },
-      UpdateExpression:
-        'set orderItems = :orderItems, orderStatus = :orderStatus',
+      UpdateExpression: 'set orderItems = :orderItems, orderStatus = :orderStatus',
       ExpressionAttributeValues: {
         ':orderItems': orderInput.orderItems,
         ':orderStatus': orderInput.orderStatus,

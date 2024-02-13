@@ -1,10 +1,7 @@
 import { BasketItem } from '@/types/basketItem';
 import _restaurantData from '@/mockup/restaurant.json';
 
-
-export function calculateTotalPrice(
-  basketItems: BasketItem | Array<BasketItem>
-) {
+export function calculateTotalPrice(basketItems: BasketItem | Array<BasketItem>) {
   let totalPrice = 0;
 
   let array = new Array<BasketItem>();
@@ -12,16 +9,12 @@ export function calculateTotalPrice(
 
   array.forEach((basketItem) => {
     let itemPrice = 0;
-    const product = Object.values(_restaurantData.menu.products).find(
-      (product) => product.id == basketItem.productId
-    );
+    const product = Object.values(_restaurantData.menu.products).find((product) => product.id == basketItem.productId);
     if (!product) {
       throw new Error('Could not find product in menu data');
     }
 
-    const variant = product.variants.find(
-      (variant) => variant.id == basketItem.variantId
-    );
+    const variant = product.variants.find((variant) => variant.id == basketItem.variantId);
     if (!variant) {
       throw new Error('Could not find variant in menu data');
     }
@@ -29,9 +22,7 @@ export function calculateTotalPrice(
     itemPrice = itemPrice + variant.prices.pickup;
 
     basketItem.optionIds.forEach((optionId) => {
-      const option = Object.values(_restaurantData.menu.options).find(
-        (option) => option.id == optionId
-      );
+      const option = Object.values(_restaurantData.menu.options).find((option) => option.id == optionId);
       if (option) {
         itemPrice = itemPrice + option.prices.pickup;
       }

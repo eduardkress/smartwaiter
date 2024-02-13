@@ -11,9 +11,7 @@ interface Props {
 
 function NavBar({ menu }: Props) {
   /* Use States */
-  const [menuActive, setMenuActive] = useState(
-    'navBarCategory-' + menu.categories[0].id
-  );
+  const [menuActive, setMenuActive] = useState('navBarCategory-' + menu.categories[0].id);
   const [navMove, setNavMove] = useState(false);
   const [scrollButtonActive, setScrollButtonActive] = useState({
     left: false,
@@ -71,8 +69,7 @@ function NavBar({ menu }: Props) {
     if (category == null) return;
     if (slider == null) return;
     const categoryPosition = category.getBoundingClientRect().top;
-    const offsetPosition =
-      categoryPosition + window.pageYOffset - slider.offsetHeight;
+    const offsetPosition = categoryPosition + window.pageYOffset - slider.offsetHeight;
 
     setMenuActive('navBarCategory-' + id);
 
@@ -143,26 +140,16 @@ function NavBar({ menu }: Props) {
         if (entry.rootBounds == null) return;
 
         // If element scrolls inside view from top then select the parent category
-        if (
-          entry.isIntersecting &&
-          entry.target.getBoundingClientRect().y < entry.rootBounds.height / 2
-        ) {
+        if (entry.isIntersecting && entry.target.getBoundingClientRect().y < entry.rootBounds.height / 2) {
           if (entry.target.parentElement) {
             const categoryId = entry.target.parentElement.id ?? '';
             setMenuActive(categoryId.replace('category', 'navBarCategory-'));
           }
         }
         // Else if element scrolls outside view from top then select the parents next sibling category
-        else if (
-          !entry.isIntersecting &&
-          entry.target.getBoundingClientRect().y < entry.rootBounds.height / 2
-        ) {
-          if (
-            entry.target.parentElement &&
-            entry.target.parentElement.nextElementSibling
-          ) {
-            const categoryId =
-              entry.target.parentElement.nextElementSibling.id ?? '';
+        else if (!entry.isIntersecting && entry.target.getBoundingClientRect().y < entry.rootBounds.height / 2) {
+          if (entry.target.parentElement && entry.target.parentElement.nextElementSibling) {
+            const categoryId = entry.target.parentElement.nextElementSibling.id ?? '';
             setMenuActive(categoryId.replace('category', 'navBarCategory-'));
           }
         }
@@ -195,12 +182,7 @@ function NavBar({ menu }: Props) {
       <div className='sticky top-0 z-10 h-14 w-full bg-white'>
         <div className='container flex max-w-5xl items-center justify-between px-0'>
           {/* < */}
-          <div
-            className={twMerge(
-              'hidden p-2',
-              scrollButtonActive.left ? 'md:block' : 'hidden'
-            )}
-          >
+          <div className={twMerge('hidden p-2', scrollButtonActive.left ? 'md:block' : 'hidden')}>
             <Button
               isIconOnly
               onClick={() => {
@@ -228,9 +210,7 @@ function NavBar({ menu }: Props) {
                   id={'navBarCategory-' + category.id}
                   className={twMerge(
                     `text-md shrink-0 cursor-default snap-center rounded-full bg-white px-4 py-2 font-bold sm:cursor-pointer`,
-                    menuActive == 'navBarCategory-' + category.id
-                      ? 'bg-black text-white'
-                      : '',
+                    menuActive == 'navBarCategory-' + category.id ? 'bg-black text-white' : '',
                     index === 0 ? 'ml-4 lg:ml-0' : ''
                   )}
                 >
@@ -240,12 +220,7 @@ function NavBar({ menu }: Props) {
             })}
           </div>
           {/* > */}
-          <div
-            className={twMerge(
-              'hidden p-2 md:block',
-              scrollButtonActive.right ? 'visible' : 'invisible'
-            )}
-          >
+          <div className={twMerge('hidden p-2 md:block', scrollButtonActive.right ? 'visible' : 'invisible')}>
             <Button
               isIconOnly
               onClick={() => {

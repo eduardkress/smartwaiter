@@ -1,26 +1,14 @@
 import { Option } from '@/types/restaurant2';
 import React, { useState } from 'react';
-import {
-  Accordion,
-  AccordionItem,
-  Checkbox,
-  CheckboxGroup,
-} from '@nextui-org/react';
+import { Accordion, AccordionItem, Checkbox, CheckboxGroup } from '@nextui-org/react';
 
 interface Props {
   options: Array<Option>;
-  handleOptionsChange: (
-    optionGroupId: string,
-    selectedOptions: string[]
-  ) => void;
+  handleOptionsChange: (optionGroupId: string, selectedOptions: string[]) => void;
   optionGroupId: string;
 }
 
-const MenuModalItemCheckboxGroup = ({
-  options,
-  handleOptionsChange,
-  optionGroupId,
-}: Props) => {
+const MenuModalItemCheckboxGroup = ({ options, handleOptionsChange, optionGroupId }: Props) => {
   return (
     <CheckboxGroup
       //value={selectedOptions[optionGroupId] || { '': [] }}
@@ -48,14 +36,8 @@ const MenuModalItemCheckboxGroup = ({
   );
 };
 
-const MenuModalItemCheckboxGroupWithAccordion = ({
-  options,
-  handleOptionsChange,
-  optionGroupId,
-}: Props) => {
-  const [selectedKeys, setSelectedKeys] = useState<Set<string> | undefined>(
-    undefined
-  );
+const MenuModalItemCheckboxGroupWithAccordion = ({ options, handleOptionsChange, optionGroupId }: Props) => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string> | undefined>(undefined);
 
   return (
     <div>
@@ -79,17 +61,11 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
         </AccordionItem>
       </Accordion>
       {selectedKeys === undefined ? (
-        <div
-          className='mt-2 cursor-pointer text-base underline'
-          onClick={() => setSelectedKeys(new Set(['1']))}
-        >
+        <div className='mt-2 cursor-pointer text-base underline' onClick={() => setSelectedKeys(new Set(['1']))}>
           Zeige mehr...
         </div>
       ) : (
-        <div
-          className='mt-2 cursor-pointer text-base underline'
-          onClick={() => setSelectedKeys(undefined)}
-        >
+        <div className='mt-2 cursor-pointer text-base underline' onClick={() => setSelectedKeys(undefined)}>
           Zeige weniger...
         </div>
       )}
@@ -97,11 +73,7 @@ const MenuModalItemCheckboxGroupWithAccordion = ({
   );
 };
 
-const MenuModalItemExtras = ({
-  options,
-  handleOptionsChange,
-  optionGroupId,
-}: Props) => {
+const MenuModalItemExtras = ({ options, handleOptionsChange, optionGroupId }: Props) => {
   return (
     <div className='flex flex-col gap-2'>
       <MenuModalItemCheckboxGroup

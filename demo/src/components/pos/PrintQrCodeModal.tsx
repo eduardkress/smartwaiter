@@ -1,12 +1,5 @@
 import React, { useRef } from 'react';
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-} from '@nextui-org/react';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from '@nextui-org/react';
 import { useReactToPrint } from 'react-to-print';
 import { ComponentToPrint } from './ComponentToPrint';
 import { OrderCode } from '@/API';
@@ -30,16 +23,10 @@ const PrintQrCodeModal = ({ isOpen, onOpenChange, orderCode }: Props) => {
       <ModalContent>
         {() => (
           <>
-            <ModalHeader className='flex flex-col gap-1'>
-              QR-Code drucken
-            </ModalHeader>
+            <ModalHeader className='flex flex-col gap-1'>QR-Code drucken</ModalHeader>
             <ModalBody>
               <div className='border-1 p-4'>
-                <ComponentToPrint
-                  appUrl={appUrl}
-                  qrCode={orderCode.id}
-                  ref={componentRef}
-                />
+                <ComponentToPrint appUrl={appUrl} qrCode={orderCode.id} ref={componentRef} />
               </div>
               <Button color='primary' onClick={handlePrint}>
                 QR-Code drucken

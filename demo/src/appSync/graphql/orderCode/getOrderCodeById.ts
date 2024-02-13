@@ -5,9 +5,7 @@ import { Table } from 'sst/node/table';
 
 const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
-export default async function getOrderCodeById(
-  orderCodeId: string
-): Promise<OrderCode | null> {
+export default async function getOrderCodeById(orderCodeId: string): Promise<OrderCode | null> {
   try {
     const command = new GetCommand({
       TableName: Table.OrderCodes.tableName,

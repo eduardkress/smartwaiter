@@ -140,13 +140,7 @@
         "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/header_dominos_box",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "QPO5OPOQ1N",
-          "QRO5OPOQ1N",
-          "QN55OPOQ1N",
-          "Q555OPOQ1N",
-          "QQ55OPOQ1N"
-        ]
+        "productIds": ["QPO5OPOQ1N", "QRO5OPOQ1N", "QN55OPOQ1N", "Q555OPOQ1N", "QQ55OPOQ1N"]
       },
       {
         "id": "R13O5PQ51",
@@ -180,15 +174,7 @@
         "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "QRQR75Q5R1",
-          "QNRR75Q5R1",
-          "RQ5ONNR3Q1",
-          "R1PONNR3Q1",
-          "RROONNR3Q1",
-          "ROPONNR3Q1",
-          "R37ONNR3Q1"
-        ]
+        "productIds": ["QRQR75Q5R1", "QNRR75Q5R1", "RQ5ONNR3Q1", "R1PONNR3Q1", "RROONNR3Q1", "ROPONNR3Q1", "R37ONNR3Q1"]
       },
       {
         "id": "R73O5PQ51",
@@ -199,15 +185,7 @@
         "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "R515NNR3Q1",
-          "RQ15NNR3Q1",
-          "R1N5NNR3Q1",
-          "RON5NNR3Q1",
-          "R7N5NNR3Q1",
-          "R035NNR3Q1",
-          "R335NNR3Q1"
-        ]
+        "productIds": ["R515NNR3Q1", "RQ15NNR3Q1", "R1N5NNR3Q1", "RON5NNR3Q1", "R7N5NNR3Q1", "R035NNR3Q1", "R335NNR3Q1"]
       },
       {
         "id": "R0OO5PQ51",
@@ -218,13 +196,7 @@
         "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "RQ75NNR3Q1",
-          "R1Q5NNR3Q1",
-          "ROQ5NNR3Q1",
-          "Q5P00PQ5R1",
-          "QQO3Q7NR0N"
-        ]
+        "productIds": ["RQ75NNR3Q1", "R1Q5NNR3Q1", "ROQ5NNR3Q1", "Q5P00PQ5R1", "QQO3Q7NR0N"]
       },
       {
         "id": "R3OO5PQ51",
@@ -255,15 +227,7 @@
         "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "QNRN7PQ5R1",
-          "Q0O11RNR0N",
-          "RQ1QNNR3Q1",
-          "R1NQNNR3Q1",
-          "R75337P7NN",
-          "R0P337P7NN",
-          "R3P337P7NN"
-        ]
+        "productIds": ["QNRN7PQ5R1", "Q0O11RNR0N", "RQ1QNNR3Q1", "R1NQNNR3Q1", "R75337P7NN", "R0P337P7NN", "R3P337P7NN"]
       },
       {
         "id": "R07O5PQ51",
@@ -356,15 +320,7 @@
         "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
-        "productIds": [
-          "R5N03NR3Q1",
-          "RQN03NR3Q1",
-          "R1303NR3Q1",
-          "RO303NR3Q1",
-          "R7303NR3Q1",
-          "R0O03NR3Q1",
-          "R50557P7NN"
-        ]
+        "productIds": ["R5N03NR3Q1", "RQN03NR3Q1", "R1303NR3Q1", "RO303NR3Q1", "R7303NR3Q1", "R0O03NR3Q1", "R50557P7NN"]
       },
       {
         "id": "RR7O5PQ51",
@@ -528,13 +484,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RQP3P1O1703",
-          "R173P1O1703",
-          "QP1Q1NOO053",
-          "Q55O7751753",
-          "RN3530R1NQ3"
-        ]
+        "optionIds": ["RQP3P1O1703", "R173P1O1703", "QP1Q1NOO053", "Q55O7751753", "RN3530R1NQ3"]
       },
       "960d9bb2454a6730b6e88aa32a485dd9": {
         "id": "960d9bb2454a6730b6e88aa32a485dd9",
@@ -543,12 +493,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RPQ3P1O1703",
-          "R3Q3P1O1703",
-          "R5R3P1O1703",
-          "RNR3P1O1703"
-        ]
+        "optionIds": ["RPQ3P1O1703", "R3Q3P1O1703", "R5R3P1O1703", "RNR3P1O1703"]
       },
       "045be56c340d2a57901fcadf134cbd09": {
         "id": "045be56c340d2a57901fcadf134cbd09",
@@ -645,13 +590,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RRO1P1O1703",
-          "RN51P1O1703",
-          "Q31Q1NOO053",
-          "QRN37751753",
-          "R0O030R1NQ3"
-        ]
+        "optionIds": ["RRO1P1O1703", "RN51P1O1703", "Q31Q1NOO053", "QRN37751753", "R0O030R1NQ3"]
       },
       "f9c1bc26f9985ec2f959f67aa1c6ada6": {
         "id": "f9c1bc26f9985ec2f959f67aa1c6ada6",
@@ -748,13 +687,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RRR5P1O1703",
-          "RN0PP1O1703",
-          "QR1Q1NOO053",
-          "Q0057751753",
-          "R53Q30R1NQ3"
-        ]
+        "optionIds": ["RRR5P1O1703", "RN0PP1O1703", "QR1Q1NOO053", "Q0057751753", "R53Q30R1NQ3"]
       },
       "e03f80f3575c7e06b3869e79ca04ba92": {
         "id": "e03f80f3575c7e06b3869e79ca04ba92",
@@ -763,12 +696,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R71PP1O1703",
-          "RO1PP1O1703",
-          "RPNPP1O1703",
-          "R3NPP1O1703"
-        ]
+        "optionIds": ["R71PP1O1703", "RO1PP1O1703", "RPNPP1O1703", "R3NPP1O1703"]
       },
       "c509414306cbcdf85a2d43c85c84399f": {
         "id": "c509414306cbcdf85a2d43c85c84399f",
@@ -777,13 +705,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "Q5NR751R5P3",
-          "QQNR751R5P3",
-          "Q13R751R5P3",
-          "QO3R751R5P3",
-          "R515RNR1NQ3"
-        ]
+        "optionIds": ["Q5NR751R5P3", "QQNR751R5P3", "Q13R751R5P3", "QO3R751R5P3", "R515RNR1NQ3"]
       },
       "4df78b3c5fcf3571ff8a9aade54ec82b": {
         "id": "4df78b3c5fcf3571ff8a9aade54ec82b",
@@ -792,13 +714,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "QN5R151R5P3",
-          "Q55R151R5P3",
-          "QQ5R151R5P3",
-          "Q1PR151R5P3",
-          "R5OP70R1NQ3"
-        ]
+        "optionIds": ["QN5R151R5P3", "Q55R151R5P3", "QQ5R151R5P3", "Q1PR151R5P3", "R5OP70R1NQ3"]
       },
       "973122ad38e58240423993f16917a0c7": {
         "id": "973122ad38e58240423993f16917a0c7",
@@ -807,13 +723,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "Q50N0P1R5P3",
-          "QQ0N0P1R5P3",
-          "Q11N0P1R5P3",
-          "QO1N0P1R5P3",
-          "R5N01NR1NQ3"
-        ]
+        "optionIds": ["Q50N0P1R5P3", "QQ0N0P1R5P3", "Q11N0P1R5P3", "QO1N0P1R5P3", "R5N01NR1NQ3"]
       },
       "944a5b50809229ef26f40266084a23db": {
         "id": "944a5b50809229ef26f40266084a23db",
@@ -822,13 +732,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RRNPP1O1703",
-          "RN3PP1O1703",
-          "R53PP1O1703",
-          "RQ3PP1O1703",
-          "R1OPP1O1703"
-        ]
+        "optionIds": ["RRNPP1O1703", "RN3PP1O1703", "R53PP1O1703", "RQ3PP1O1703", "R1OPP1O1703"]
       },
       "ed67bca840fa1aa9c2d555f5be007800": {
         "id": "ed67bca840fa1aa9c2d555f5be007800",
@@ -855,13 +759,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R11O0RRNNQ3",
-          "RRR30RRNNQ3",
-          "RN0O0RRNNQ3",
-          "R50O0RRNNQ3",
-          "RQ0O0RRNNQ3"
-        ]
+        "optionIds": ["R11O0RRNNQ3", "RRR30RRNNQ3", "RN0O0RRNNQ3", "R50O0RRNNQ3", "RQ0O0RRNNQ3"]
       },
       "8e93ae36357b6c5b0a34ea8a9cfe89ce": {
         "id": "8e93ae36357b6c5b0a34ea8a9cfe89ce",
@@ -944,12 +842,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RNN50RRNNQ3",
-          "R5N50RRNNQ3",
-          "R1350RRNNQ3",
-          "RQN50RRNNQ3"
-        ]
+        "optionIds": ["RNN50RRNNQ3", "R5N50RRNNQ3", "R1350RRNNQ3", "RQN50RRNNQ3"]
       },
       "8a9a79a726634fc9a762a5dd23748b65": {
         "id": "8a9a79a726634fc9a762a5dd23748b65",
@@ -967,13 +860,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R5550RRNNQ3",
-          "R3O50RRNNQ3",
-          "RPO50RRNNQ3",
-          "RRO50RRNNQ3",
-          "RN550RRNNQ3"
-        ]
+        "optionIds": ["R5550RRNNQ3", "R3O50RRNNQ3", "RPO50RRNNQ3", "RRO50RRNNQ3", "RN550RRNNQ3"]
       },
       "9596cd56f8d12c2600051f5f387ac1c6": {
         "id": "9596cd56f8d12c2600051f5f387ac1c6",
@@ -1065,13 +952,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R7QP0RRNNQ3",
-          "R57P0RRNNQ3",
-          "RQ7P0RRNNQ3",
-          "R1QP0RRNNQ3",
-          "ROQP0RRNNQ3"
-        ]
+        "optionIds": ["R7QP0RRNNQ3", "R57P0RRNNQ3", "RQ7P0RRNNQ3", "R1QP0RRNNQ3", "ROQP0RRNNQ3"]
       },
       "e87dc312ade9b61440f4e712c3ee1301": {
         "id": "e87dc312ade9b61440f4e712c3ee1301",
@@ -1154,12 +1035,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RQR70RRNNQ3",
-          "R10Q0RRNNQ3",
-          "R70Q0RRNNQ3",
-          "RO0Q0RRNNQ3"
-        ]
+        "optionIds": ["RQR70RRNNQ3", "R10Q0RRNNQ3", "R70Q0RRNNQ3", "RO0Q0RRNNQ3"]
       },
       "6549337ad337afec5de795523a77972f": {
         "id": "6549337ad337afec5de795523a77972f",
@@ -1177,13 +1053,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R7PR71O1703",
-          "R07R71O1703",
-          "R37R71O1703",
-          "Q5P1R751753",
-          "RRQR57Q1NQ3"
-        ]
+        "optionIds": ["R7PR71O1703", "R07R71O1703", "R37R71O1703", "Q5P1R751753", "RRQR57Q1NQ3"]
       },
       "590d1d609486ca43be19fd4b976a0a44": {
         "id": "590d1d609486ca43be19fd4b976a0a44",
@@ -1266,12 +1136,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R1RR71O1703",
-          "RQQR71O1703",
-          "R000Q1O1703",
-          "R7RR71O1703"
-        ]
+        "optionIds": ["R1RR71O1703", "RQQR71O1703", "R000Q1O1703", "R7RR71O1703"]
       },
       "a00e5978cc1070c263b007091a35fea1": {
         "id": "a00e5978cc1070c263b007091a35fea1",
@@ -1289,13 +1154,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RQQNQ1O1703",
-          "R1RNQ1O1703",
-          "RORNQ1O1703",
-          "Q5577751753",
-          "R5OR77Q1NQ3"
-        ]
+        "optionIds": ["RQQNQ1O1703", "R1RNQ1O1703", "RORNQ1O1703", "Q5577751753", "R5OR77Q1NQ3"]
       },
       "7e518d3d0b5a3c7ea923dfc34e8594d9": {
         "id": "7e518d3d0b5a3c7ea923dfc34e8594d9",
@@ -1387,13 +1246,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RQ01Q1O1703",
-          "R111Q1O1703",
-          "RO11Q1O1703",
-          "Q70NR751753",
-          "R57R77Q1NQ3"
-        ]
+        "optionIds": ["RQ01Q1O1703", "R111Q1O1703", "RO11Q1O1703", "Q70NR751753", "R57R77Q1NQ3"]
       },
       "7ccda645174d51116f94e5a23e310a37": {
         "id": "7ccda645174d51116f94e5a23e310a37",
@@ -1476,12 +1329,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RN31Q1O1703",
-          "RRN1Q1O1703",
-          "R1O1Q1O1703",
-          "RQ31Q1O1703"
-        ]
+        "optionIds": ["RN31Q1O1703", "RRN1Q1O1703", "R1O1Q1O1703", "RQ31Q1O1703"]
       },
       "f1dfcdf2798502ee9d70d807c1121ce9": {
         "id": "f1dfcdf2798502ee9d70d807c1121ce9",
@@ -1499,13 +1347,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "QNN0QR01753",
-          "QO557R01753",
-          "Q7557R01753",
-          "Q0P57R01753",
-          "R170Q7Q1NQ3"
-        ]
+        "optionIds": ["QNN0QR01753", "QO557R01753", "Q7557R01753", "Q0P57R01753", "R170Q7Q1NQ3"]
       },
       "464d574ed84e4549ebc85108b3bdcdcf": {
         "id": "464d574ed84e4549ebc85108b3bdcdcf",
@@ -1587,12 +1429,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "QO7P7R01753",
-          "Q77P7R01753",
-          "Q3QP7R01753",
-          "Q0QP7R01753"
-        ]
+        "optionIds": ["QO7P7R01753", "Q77P7R01753", "Q3QP7R01753", "Q0QP7R01753"]
       },
       "98b3987eb79e4ab98cf27dfc4b4567fd": {
         "id": "98b3987eb79e4ab98cf27dfc4b4567fd",
@@ -1610,13 +1447,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "Q730QR01753",
-          "QN577R01753",
-          "Q5577R01753",
-          "QQ577R01753",
-          "R57NQ7Q1NQ3"
-        ]
+        "optionIds": ["Q730QR01753", "QN577R01753", "Q5577R01753", "QQ577R01753", "R57NQ7Q1NQ3"]
       },
       "802c94e41e50fa4d0fd7c43603f80536": {
         "id": "802c94e41e50fa4d0fd7c43603f80536",
@@ -1707,13 +1538,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "Q0O0QR01753",
-          "Q1QQ7R01753",
-          "QOQQ7R01753",
-          "Q7QQ7R01753",
-          "R05PQ7Q1NQ3"
-        ]
+        "optionIds": ["Q0O0QR01753", "Q1QQ7R01753", "QOQQ7R01753", "Q7QQ7R01753", "R05PQ7Q1NQ3"]
       },
       "06f909cb6b8105dd90344c267ef07452": {
         "id": "06f909cb6b8105dd90344c267ef07452",
@@ -1795,12 +1620,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "Q100QR01753",
-          "QO00QR01753",
-          "Q010QR01753",
-          "Q700QR01753"
-        ]
+        "optionIds": ["Q100QR01753", "QO00QR01753", "Q010QR01753", "Q700QR01753"]
       },
       "5c408cdc68e83c581182524100e19ad4": {
         "id": "5c408cdc68e83c581182524100e19ad4",
@@ -1818,13 +1638,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "ROP071O1703",
-          "R1P071O1703",
-          "R7P071O1703",
-          "Q5OPP751753",
-          "ROR7Q7Q1NQ3"
-        ]
+        "optionIds": ["ROP071O1703", "R1P071O1703", "R7P071O1703", "Q5OPP751753", "ROR7Q7Q1NQ3"]
       },
       "97ebdd010670426a747cdadf1e06dd9a": {
         "id": "97ebdd010670426a747cdadf1e06dd9a",
@@ -1907,12 +1721,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R57171O1703",
-          "RQ7171O1703",
-          "RPR171O1703",
-          "R3R171O1703"
-        ]
+        "optionIds": ["R57171O1703", "RQ7171O1703", "RPR171O1703", "R3R171O1703"]
       },
       "20c45ea0a9533172fb7050383532691a": {
         "id": "20c45ea0a9533172fb7050383532691a",
@@ -1930,13 +1739,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RN0N71O1703",
-          "RRR171O1703",
-          "R50N71O1703",
-          "QP1QP751753",
-          "R0QRQ7Q1NQ3"
-        ]
+        "optionIds": ["RN0N71O1703", "RRR171O1703", "R50N71O1703", "QP1QP751753", "R0QRQ7Q1NQ3"]
       },
       "52e1f2c196d8df0e192c14b700a0db9b": {
         "id": "52e1f2c196d8df0e192c14b700a0db9b",
@@ -2028,13 +1831,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RQN371O1703",
-          "R5N371O1703",
-          "R13371O1703",
-          "QQ1RP751753",
-          "RQR73QQ1NQ3"
-        ]
+        "optionIds": ["RQN371O1703", "R5N371O1703", "R13371O1703", "QQ1RP751753", "RQR73QQ1NQ3"]
       },
       "fbd4951271b22e1acf439cf129f3defe": {
         "id": "fbd4951271b22e1acf439cf129f3defe",
@@ -2117,12 +1914,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RR3O71O1703",
-          "RNOO71O1703",
-          "R0PO71O1703",
-          "R75O71O1703"
-        ]
+        "optionIds": ["RR3O71O1703", "RNOO71O1703", "R0PO71O1703", "R75O71O1703"]
       },
       "bbcd145a7b5edfba69a6627cf8817fa9": {
         "id": "bbcd145a7b5edfba69a6627cf8817fa9",
@@ -2140,13 +1932,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RRPO71O1703",
-          "R3PO71O1703",
-          "RPPO71O1703",
-          "Q1NRR751753",
-          "R7755QQ1NQ3"
-        ]
+        "optionIds": ["RRPO71O1703", "R3PO71O1703", "RPPO71O1703", "Q1NRR751753", "R7755QQ1NQ3"]
       },
       "20b17979497366f43571e95996ee94c5": {
         "id": "20b17979497366f43571e95996ee94c5",
@@ -2228,12 +2014,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R77571O1703",
-          "R0Q571O1703",
-          "RQR571O1703",
-          "R5R571O1703"
-        ]
+        "optionIds": ["R77571O1703", "R0Q571O1703", "RQR571O1703", "R5R571O1703"]
       },
       "eed98cb88920c8277971025391f21f90": {
         "id": "eed98cb88920c8277971025391f21f90",
@@ -2251,13 +2032,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R7OQ71O1703",
-          "R1OQ71O1703",
-          "ROOQ71O1703",
-          "Q1QN0Q51753",
-          "ROQ0PQQ1NQ3"
-        ]
+        "optionIds": ["R7OQ71O1703", "R1OQ71O1703", "ROOQ71O1703", "Q1QN0Q51753", "ROQ0PQQ1NQ3"]
       },
       "af054e9327b544fff48c296ed5fbd429": {
         "id": "af054e9327b544fff48c296ed5fbd429",
@@ -2348,13 +2123,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R70P71O1703",
-          "R10P71O1703",
-          "RO0P71O1703",
-          "QN351Q51753",
-          "RRNR7QQ1NQ3"
-        ]
+        "optionIds": ["R70P71O1703", "R10P71O1703", "RO0P71O1703", "QN351Q51753", "RRNR7QQ1NQ3"]
       },
       "fdfdb6053b3b8e55ab8a199faa378604": {
         "id": "fdfdb6053b3b8e55ab8a199faa378604",
@@ -2436,12 +2205,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "R51771O1703",
-          "RQ1771O1703",
-          "RP3771O1703",
-          "R33771O1703"
-        ]
+        "optionIds": ["R51771O1703", "RQ1771O1703", "RP3771O1703", "R33771O1703"]
       },
       "a1b6487f5ca819d7ba1c973e0f12ea20": {
         "id": "a1b6487f5ca819d7ba1c973e0f12ea20",
@@ -2705,13 +2469,7 @@
         "isRequired": true,
         "minChoices": 1,
         "maxChoices": 1,
-        "optionIds": [
-          "RNN51NO1703",
-          "R5N51NO1703",
-          "RQN51NO1703",
-          "R1351NO1703",
-          "RO351NO1703"
-        ]
+        "optionIds": ["RNN51NO1703", "R5N51NO1703", "RQN51NO1703", "R1351NO1703", "RO351NO1703"]
       }
     },
     "options": {
@@ -25553,9 +25311,7 @@
       "Q0PQO33Q0N": {
         "id": "Q0PQO33Q0N",
         "name": "Pizza Hähnchenbrust und rote Zwiebeln",
-        "description": [
-          "Teig und Mozzarella mit Hähnchenbrust-Streifen (flüssig gewürzt) und roten Zwiebeln"
-        ],
+        "description": ["Teig und Mozzarella mit Hähnchenbrust-Streifen (flüssig gewürzt) und roten Zwiebeln"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/pizza_lunch_haehnchenbrustrotezwiebeln.png?timestamp=1700242289",
         "variants": [
           {
@@ -25705,9 +25461,7 @@
       "QQRRO33Q0N": {
         "id": "QQRRO33Q0N",
         "name": "Pizza Champignons und rote Zwiebeln",
-        "description": [
-          "Teig und Mozzarella mit Champignons und rote Zwiebeln"
-        ],
+        "description": ["Teig und Mozzarella mit Champignons und rote Zwiebeln"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/pizza_lunch_champignonsrotezwiebeln.png?timestamp=1700242289",
         "variants": [
           {
@@ -25823,10 +25577,7 @@
           {
             "id": "QN5NPNR7R1",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 799,
@@ -25951,11 +25702,7 @@
       "QPO5OPOQ1N": {
         "id": "QPO5OPOQ1N",
         "name": "Premium Pizza Caprese + Chicken Strippers + Cho Cho Churros",
-        "description": [
-          "• Mini-Pizza Caprese, Ø 18cm",
-          "• 3 Chicken Strippers",
-          "• 2 Cho Cho Churros"
-        ],
+        "description": ["• Mini-Pizza Caprese, Ø 18cm", "• 3 Chicken Strippers", "• 2 Cho Cho Churros"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_09_dominosbox_caprese.png?timestamp=1700242289",
         "variants": [
           {
@@ -25986,11 +25733,7 @@
       "QRO5OPOQ1N": {
         "id": "QRO5OPOQ1N",
         "name": "Premium Pizza Boston + Chicken Kickers + Lava Cake",
-        "description": [
-          "• Mini-Pizza Boston, Ø 18cm",
-          "• 3 Chicken Kickers",
-          "• Lava Cake"
-        ],
+        "description": ["• Mini-Pizza Boston, Ø 18cm", "• 3 Chicken Kickers", "• Lava Cake"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_09_dominosbox_boston.png?timestamp=1700242289",
         "variants": [
           {
@@ -26021,11 +25764,7 @@
       "QN55OPOQ1N": {
         "id": "QN55OPOQ1N",
         "name": "Premium Pizza Tuna + Chicken Kickers + Cho Cho Churros",
-        "description": [
-          "• Mini-Pizza Tuna, Ø 18cm",
-          "• 3 Chicken Kickers",
-          "• 2 Cho Cho Churros"
-        ],
+        "description": ["• Mini-Pizza Tuna, Ø 18cm", "• 3 Chicken Kickers", "• 2 Cho Cho Churros"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_09_dominosboxtuna2.png?timestamp=1700242289",
         "variants": [
           {
@@ -26056,11 +25795,7 @@
       "Q555OPOQ1N": {
         "id": "Q555OPOQ1N",
         "name": "Premium Pizza Waikiki + Chicken Kickers + Lava Cake",
-        "description": [
-          "• Mini-Pizza Waikiki, Ø 18cm",
-          "• 3 Chicken Kickers",
-          "• Lava Cake"
-        ],
+        "description": ["• Mini-Pizza Waikiki, Ø 18cm", "• 3 Chicken Kickers", "• Lava Cake"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_09_dominosbox_waikiki.png?timestamp=1700242289",
         "variants": [
           {
@@ -26091,11 +25826,7 @@
       "QQ55OPOQ1N": {
         "id": "QQ55OPOQ1N",
         "name": "Premium Pizza Lucca + Chicken Strippers + Cho Cho Churros",
-        "description": [
-          "• Mini-Pizza Luca, Ø 18cm",
-          "• 3 Chicken Strippers",
-          "• 2 Cho Cho Churros"
-        ],
+        "description": ["• Mini-Pizza Luca, Ø 18cm", "• 3 Chicken Strippers", "• 2 Cho Cho Churros"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_09_dominosbox_lucca2.png?timestamp=1700242289",
         "variants": [
           {
@@ -26426,9 +26157,7 @@
       "R10ONNR3Q1": {
         "id": "R10ONNR3Q1",
         "name": "Pizza Crazy Dog",
-        "description": [
-          "mit Würstchen, dänischen Gurken, Tomatenketchup, dänischer Remoulade und Röstzwiebeln"
-        ],
+        "description": ["mit Würstchen, dänischen Gurken, Tomatenketchup, dänischer Remoulade und Röstzwiebeln"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/bestseller_crazydog.png?timestamp=1700242289",
         "variants": [
           {
@@ -26526,9 +26255,7 @@
       "RO0ONNR3Q1": {
         "id": "RO0ONNR3Q1",
         "name": "Pizza Sucuk Hollandaise",
-        "description": [
-          "mit Mozzarella, würziger Sucuk, roten Zwiebeln, Tomaten und Sauce Hollandaise"
-        ],
+        "description": ["mit Mozzarella, würziger Sucuk, roten Zwiebeln, Tomaten und Sauce Hollandaise"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_07_sucuk-hollandaise.png?timestamp=1700242289",
         "variants": [
           {
@@ -26626,9 +26353,7 @@
       "R70ONNR3Q1": {
         "id": "R70ONNR3Q1",
         "name": "Pizza Bombay",
-        "description": [
-          "mit Hähnchenbrust-Streifen (flüssig gewürzt), Ananas, Broccoli und Currysauce"
-        ],
+        "description": ["mit Hähnchenbrust-Streifen (flüssig gewürzt), Ananas, Broccoli und Currysauce"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_01_bombay.png?timestamp=1700242289",
         "variants": [
           {
@@ -27026,9 +26751,7 @@
       "QOQQ1NR51N": {
         "id": "QOQQ1NR51N",
         "name": "Pizza Chicken & Broccoli",
-        "description": [
-          "Teig und Mozzarella mit leckerem Broccoli und Sauce Hollandaise gebacken"
-        ],
+        "description": ["Teig und Mozzarella mit leckerem Broccoli und Sauce Hollandaise gebacken"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_08_chickenbroccoli.png?timestamp=1700242289",
         "variants": [
           {
@@ -27226,9 +26949,7 @@
       "QRQR75Q5R1": {
         "id": "QRQR75Q5R1",
         "name": "Pizza Prosciutto Supreme",
-        "description": [
-          "mit extra viel saftigem Kochhinterschinken (zerkleinert)"
-        ],
+        "description": ["mit extra viel saftigem Kochhinterschinken (zerkleinert)"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_04_lieferando_pizza_proscuittosupreme_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -27524,9 +27245,7 @@
       "R1PONNR3Q1": {
         "id": "R1PONNR3Q1",
         "name": "Pizza Lucifer",
-        "description": [
-          "mit Chilisalami, frischen Champignons und feurigen rot-grünen Jalapeños"
-        ],
+        "description": ["mit Chilisalami, frischen Champignons und feurigen rot-grünen Jalapeños"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_05_pizza_lucifer_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -27624,9 +27343,7 @@
       "RROONNR3Q1": {
         "id": "RROONNR3Q1",
         "name": "Pizza Conchita",
-        "description": [
-          "mit BBQ-Sauce, Rinderhack, Bacon, roten Zwiebeln und Mozzarella-Kugeln"
-        ],
+        "description": ["mit BBQ-Sauce, Rinderhack, Bacon, roten Zwiebeln und Mozzarella-Kugeln"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/feinschmecker_conchita.png?timestamp=1700242289",
         "variants": [
           {
@@ -27724,9 +27441,7 @@
       "ROPONNR3Q1": {
         "id": "ROPONNR3Q1",
         "name": "Pizza Lucca",
-        "description": [
-          "mit Prosciutto Cotto (Kochhinterschinken (zerkleinert)) , Salami und frischen Champignons"
-        ],
+        "description": ["mit Prosciutto Cotto (Kochhinterschinken (zerkleinert)) , Salami und frischen Champignons"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/bestseller_lucca.png?timestamp=1700242289",
         "variants": [
           {
@@ -28120,9 +27835,7 @@
       "R1N5NNR3Q1": {
         "id": "R1N5NNR3Q1",
         "name": "Pizza Funghi",
-        "description": [
-          "mit frischen Champignons, Basilikum-Pesto und extra Mozzarella"
-        ],
+        "description": ["mit frischen Champignons, Basilikum-Pesto und extra Mozzarella"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/traditionell_funghi.png?timestamp=1700242289",
         "variants": [
           {
@@ -28220,9 +27933,7 @@
       "RON5NNR3Q1": {
         "id": "RON5NNR3Q1",
         "name": "Pizza Caprese",
-        "description": [
-          "mit frischen Tomaten, Mozzarella-Kugeln und Basilikum-Pesto"
-        ],
+        "description": ["mit frischen Tomaten, Mozzarella-Kugeln und Basilikum-Pesto"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/traditionell_caprese.png?timestamp=1700242289",
         "variants": [
           {
@@ -28716,9 +28427,7 @@
       "R1Q5NNR3Q1": {
         "id": "R1Q5NNR3Q1",
         "name": "Pizza Funghi",
-        "description": [
-          "mit frischen Champignons, Basilikum-Pesto und extra Mozzarella"
-        ],
+        "description": ["mit frischen Champignons, Basilikum-Pesto und extra Mozzarella"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/traditionell_funghi.png?timestamp=1700242289",
         "variants": [
           {
@@ -28816,9 +28525,7 @@
       "ROQ5NNR3Q1": {
         "id": "ROQ5NNR3Q1",
         "name": "Pizza Caprese",
-        "description": [
-          "mit frischen Tomaten, Mozzarella-Kugeln und Basilikum-Pesto"
-        ],
+        "description": ["mit frischen Tomaten, Mozzarella-Kugeln und Basilikum-Pesto"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/traditionell_caprese.png?timestamp=1700242289",
         "variants": [
           {
@@ -29317,9 +29024,7 @@
       "R0NPNNR3Q1": {
         "id": "R0NPNNR3Q1",
         "name": "Pizza Las Vega",
-        "description": [
-          "mit veganem Sojaaufschnitt Typ Salami, veganem Reibeschmelz und Knoblauch in Öl"
-        ],
+        "description": ["mit veganem Sojaaufschnitt Typ Salami, veganem Reibeschmelz und Knoblauch in Öl"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_01_lasvega.png?timestamp=1700242289",
         "variants": [
           {
@@ -29517,9 +29222,7 @@
       "RR5PNNR3Q1": {
         "id": "RR5PNNR3Q1",
         "name": "Pizza Individuell - Basis",
-        "description": [
-          "Basispizza wahlweise mit leckerer Sauce und herzhaftem Käse (Mozzarella)"
-        ],
+        "description": ["Basispizza wahlweise mit leckerer Sauce und herzhaftem Käse (Mozzarella)"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
         "variants": [
           {
@@ -29723,10 +29426,7 @@
           {
             "id": "QNRN7PQ5R1",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 999,
@@ -29759,10 +29459,7 @@
           {
             "id": "Q0O11RNR0N",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 1149,
@@ -29793,10 +29490,7 @@
           {
             "id": "RQ1QNNR3Q1",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 1099,
@@ -29829,10 +29523,7 @@
           {
             "id": "R1NQNNR3Q1",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 999,
@@ -29863,10 +29554,7 @@
           {
             "id": "R75337P7NN",
             "name": null,
-            "optionGroupIds": [
-              "887aeda5f6a1fe874bf7f525befb8cbe",
-              "fec19e7b26b9eb613cdc4fe1c7539e2d"
-            ],
+            "optionGroupIds": ["887aeda5f6a1fe874bf7f525befb8cbe", "fec19e7b26b9eb613cdc4fe1c7539e2d"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 1099,
@@ -29891,18 +29579,13 @@
       "R0P337P7NN": {
         "id": "R0P337P7NN",
         "name": "Pasta Cheesyo",
-        "description": [
-          "Pasta in Käse-Sahnesauce mit Mozzarella und Frühlingszwiebeln verfeinert."
-        ],
+        "description": ["Pasta in Käse-Sahnesauce mit Mozzarella und Frühlingszwiebeln verfeinert."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_pasta-cheesyo.png?timestamp=1700242289",
         "variants": [
           {
             "id": "R0P337P7NN",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 1099,
@@ -29927,18 +29610,13 @@
       "R3P337P7NN": {
         "id": "R3P337P7NN",
         "name": "Pasta Chicken Döner",
-        "description": [
-          "Pasta in cremiger Cocktail-Sahnesauce mit roten Zwiebeln und würzigem Hähnchen-Dönerfleisch."
-        ],
+        "description": ["Pasta in cremiger Cocktail-Sahnesauce mit roten Zwiebeln und würzigem Hähnchen-Dönerfleisch."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_pasta_chickendoener.png?timestamp=1700242289",
         "variants": [
           {
             "id": "R3P337P7NN",
             "name": null,
-            "optionGroupIds": [
-              "ed67bca840fa1aa9c2d555f5be007800",
-              "9febe2525f4559277ea181633ed81a62"
-            ],
+            "optionGroupIds": ["ed67bca840fa1aa9c2d555f5be007800", "9febe2525f4559277ea181633ed81a62"],
             "shippingTypes": ["DELIVERY", "PICKUP"],
             "prices": {
               "delivery": 1249,
@@ -30407,9 +30085,7 @@
       "RQ7QNNR3Q1": {
         "id": "RQ7QNNR3Q1",
         "name": "Teriyaki Wings",
-        "description": [
-          "7 knusprige Chicken Wings in Teriyaki Sauce und Sesam"
-        ],
+        "description": ["7 knusprige Chicken Wings in Teriyaki Sauce und Sesam"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020_12_sd_chickenteriyakiwings.png?timestamp=1700242289",
         "variants": [
           {
@@ -30440,9 +30116,7 @@
       "R1QQNNR3Q1": {
         "id": "R1QQNNR3Q1",
         "name": "Chicken Box",
-        "description": [
-          "4x Chicken Wings, 5x Chicken Stripper und 5x Chicken Kickers"
-        ],
+        "description": ["4x Chicken Wings, 5x Chicken Stripper und 5x Chicken Kickers"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_07_chickenbox.png?timestamp=1700242289",
         "variants": [
           {
@@ -30473,9 +30147,7 @@
       "RN1O57P7NN": {
         "id": "RN1O57P7NN",
         "name": "BBQ Wings",
-        "description": [
-          "7 knusprige Chicken Wings in BBQ-Sauce und mit Röstzwiebeln verfeinert."
-        ],
+        "description": ["7 knusprige Chicken Wings in BBQ-Sauce und mit Röstzwiebeln verfeinert."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_chicken_bbqwings.png?timestamp=1700242289",
         "variants": [
           {
@@ -30506,9 +30178,7 @@
       "R51O57P7NN": {
         "id": "R51O57P7NN",
         "name": "Golden Vegan Chicken (6 Stück)",
-        "description": [
-          "6 goldene, pikant panierte Nuggets auf Basis von Soja."
-        ],
+        "description": ["6 goldene, pikant panierte Nuggets auf Basis von Soja."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_chicken_veganchicken6er.png?timestamp=1700242289",
         "variants": [
           {
@@ -30575,9 +30245,7 @@
       "R0RQNNR3Q1": {
         "id": "R0RQNNR3Q1",
         "name": "Calzini Salami",
-        "description": [
-          "Teigtasche mit Tomatensauce, geriebenem Mozzarella und Salami"
-        ],
+        "description": ["Teigtasche mit Tomatensauce, geriebenem Mozzarella und Salami"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/calzini-salami.png?timestamp=1700242289",
         "variants": [
           {
@@ -30608,9 +30276,7 @@
       "R3RQNNR3Q1": {
         "id": "R3RQNNR3Q1",
         "name": "Calzini Schinken und Paprika",
-        "description": [
-          "Teigtasche mit Tomatensauce, geriebenem Mozzarella, Hinterschinken und Paprika"
-        ],
+        "description": ["Teigtasche mit Tomatensauce, geriebenem Mozzarella, Hinterschinken und Paprika"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/calzini-schinken.png?timestamp=1700242289",
         "variants": [
           {
@@ -30641,9 +30307,7 @@
       "RRRQNNR3Q1": {
         "id": "RRRQNNR3Q1",
         "name": "Röstisticks (vegan) ca. 120g",
-        "description": [
-          "Lecker knusprige Kartoffelrösti-Sticks. Wähle Sour-Cream gegen Aufpreis dazu"
-        ],
+        "description": ["Lecker knusprige Kartoffelrösti-Sticks. Wähle Sour-Cream gegen Aufpreis dazu"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022-01-rstisticks.png?timestamp=1700242289",
         "variants": [
           {
@@ -30860,9 +30524,7 @@
       "R0NRNNR3Q1": {
         "id": "R0NRNNR3Q1",
         "name": "Pizza-Brötchen Prosciutto Cotto und Käse",
-        "description": [
-          "mit Prosciutto Cotto (Kochhinterschinken (zerkleinert)) und Käse gefüllt (8 Stück)"
-        ],
+        "description": ["mit Prosciutto Cotto (Kochhinterschinken (zerkleinert)) und Käse gefüllt (8 Stück)"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_05_pizzabrtchen_proscuittomozarella_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -30893,9 +30555,7 @@
       "RPNRNNR3Q1": {
         "id": "RPNRNNR3Q1",
         "name": "Pizza-Brötchen Chilisalami, Jalapeños und Käse",
-        "description": [
-          "mit Chilisalami, rot-grünen Jalapeños (scharf) und Käse (8 Stück)"
-        ],
+        "description": ["mit Chilisalami, rot-grünen Jalapeños (scharf) und Käse (8 Stück)"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_05_pizzabrtchen_chilisalamijalapeno_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -30957,9 +30617,7 @@
       "R53RNNR3Q1": {
         "id": "R53RNNR3Q1",
         "name": "Pizza-Brötchen Las Vega",
-        "description": [
-          "mit veganem Sojaaufschnitt Typ Salami und veganem Reibeschmelz"
-        ],
+        "description": ["mit veganem Sojaaufschnitt Typ Salami und veganem Reibeschmelz"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2022_04_pb_las-vega.png?timestamp=1700242289",
         "variants": [
           {
@@ -31116,10 +30774,7 @@
       "R7ORNNR3Q1": {
         "id": "R7ORNNR3Q1",
         "name": "Wrap Heißer Schlitten",
-        "description": [
-          "Weizentortilla mit Römersalat, Chicken Kickers und Kräuterremoulade",
-          "kalt serviert"
-        ],
+        "description": ["Weizentortilla mit Römersalat, Chicken Kickers und Kräuterremoulade", "kalt serviert"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020_12_sides_wraps_wrap-heisser_schlitten.png?timestamp=1700242289",
         "variants": [
           {
@@ -31436,9 +31091,7 @@
       "R5N03NR3Q1": {
         "id": "R5N03NR3Q1",
         "name": "Thick Shake - Schokolade 0,235l",
-        "description": [
-          "Domino's Eis-Shake mit dunkler Schokolade, bei -16°C zubereitet"
-        ],
+        "description": ["Domino's Eis-Shake mit dunkler Schokolade, bei -16°C zubereitet"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/thickshake_choco.png?timestamp=1700242289",
         "variants": [
           {
@@ -31469,9 +31122,7 @@
       "RQN03NR3Q1": {
         "id": "RQN03NR3Q1",
         "name": "Thick Shake - Erdbeer 0,235l",
-        "description": [
-          "Domino's Eis-Shake mit pürierten Erdbeeren, bei -16°C zubereitet"
-        ],
+        "description": ["Domino's Eis-Shake mit pürierten Erdbeeren, bei -16°C zubereitet"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/thickshake_erdbeer.png?timestamp=1700242289",
         "variants": [
           {
@@ -31502,9 +31153,7 @@
       "R1303NR3Q1": {
         "id": "R1303NR3Q1",
         "name": "Thick Shake - Vanille 0,235l",
-        "description": [
-          "Domino's Eis-Shake mit gemahlenen Vanilleschoten, bei -16°C zubereitet"
-        ],
+        "description": ["Domino's Eis-Shake mit gemahlenen Vanilleschoten, bei -16°C zubereitet"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/thickshake_vanille.png?timestamp=1700242289",
         "variants": [
           {
@@ -31634,9 +31283,7 @@
       "R50557P7NN": {
         "id": "R50557P7NN",
         "name": "Thick Shake Cinnamon Star 0,285l",
-        "description": [
-          "Domino's Vanille Eis-Shake mit köstlichem Zimt und geschlagener Sahne, bei -16°C zubereitet."
-        ],
+        "description": ["Domino's Vanille Eis-Shake mit köstlichem Zimt und geschlagener Sahne, bei -16°C zubereitet."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_thickshake_cinnamonstar.png?timestamp=1700242289",
         "variants": [
           {
@@ -31698,9 +31345,7 @@
       "RO7RNNR3Q1": {
         "id": "RO7RNNR3Q1",
         "name": "Cinnamon Bread (vegan)",
-        "description": [
-          "mit Zimt und Zucker und Sweet Icing Dip mit Karamellgeschmack"
-        ],
+        "description": ["mit Zimt und Zucker und Sweet Icing Dip mit Karamellgeschmack"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020_12_dessert_cinnamonbrea_neu.png?timestamp=1700242289",
         "variants": [
           {
@@ -31824,9 +31469,7 @@
       "RPQRNNR3Q1": {
         "id": "RPQRNNR3Q1",
         "name": "Chocolate Chip Cookie",
-        "description": [
-          "Cookie mit zwei verschiedenen, belgischen Schokoladen"
-        ],
+        "description": ["Cookie mit zwei verschiedenen, belgischen Schokoladen"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020_12_dessert_cookie.png?timestamp=1700242289",
         "variants": [
           {
@@ -31890,9 +31533,7 @@
       "RNRRNNR3Q1": {
         "id": "RNRRNNR3Q1",
         "name": "Triple Chocolate Muffin",
-        "description": [
-          "Muffin mit Schokostückchen und leckerer Schokofüllung aus drei verschiedenen Schokoladen"
-        ],
+        "description": ["Muffin mit Schokostückchen und leckerer Schokofüllung aus drei verschiedenen Schokoladen"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020_12_dessert_tripplechocmuffin.png?timestamp=1700242289",
         "variants": [
           {
@@ -31923,9 +31564,7 @@
       "Q5P7N5NRR1": {
         "id": "Q5P7N5NRR1",
         "name": "Cho Cho Churros (4 Stück)",
-        "description": [
-          "4 leckere Churros mit warmer Kakaocremefüllung und Knuspermantel"
-        ],
+        "description": ["4 leckere Churros mit warmer Kakaocremefüllung und Knuspermantel"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_05_desserts_churros_4er_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -31956,9 +31595,7 @@
       "QQP7N5NRR1": {
         "id": "QQP7N5NRR1",
         "name": "Cho Cho Churros (8 Stück)",
-        "description": [
-          "8 leckere Churros mit warmer Kakaocremefüllung und Knuspermantel"
-        ],
+        "description": ["8 leckere Churros mit warmer Kakaocremefüllung und Knuspermantel"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_05_desserts_churros_8er_500x500.png?timestamp=1700242289",
         "variants": [
           {
@@ -32095,9 +31732,7 @@
       "R3103NR3Q1": {
         "id": "R3103NR3Q1",
         "name": "Ben & Jerrys Strawberry Cheesecake",
-        "description": [
-          "Erdbeer- & Käsekuchen-Eiscreme mit Erdbeerstückchen und einem Keksstrudel"
-        ],
+        "description": ["Erdbeer- & Käsekuchen-Eiscreme mit Erdbeerstückchen und einem Keksstrudel"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/d_bj_strawberry_cheesecake.png?timestamp=1700242289",
         "variants": [
           {
@@ -32249,9 +31884,7 @@
       "RP7QNRNONN": {
         "id": "RP7QNRNONN",
         "name": "Ben & Jerry's Dulce-De-Lish 100ml",
-        "description": [
-          "Gesalzenes Karamelleis in 100ml mit Karamellstückchen."
-        ],
+        "description": ["Gesalzenes Karamelleis in 100ml mit Karamellstückchen."],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2023_10_bj_dulce_de-lish.png?timestamp=1700242289",
         "variants": [
           {
@@ -32282,9 +31915,7 @@
       "RPO03NR3Q1": {
         "id": "RPO03NR3Q1",
         "name": "Fuze Tea Schwarzer Tee Pfirsich 0,4l (EINWEG)",
-        "description": [
-          "Erfrischungsgetränk mit Tee-Extrakt und Pfirsichgeschmack"
-        ],
+        "description": ["Erfrischungsgetränk mit Tee-Extrakt und Pfirsichgeschmack"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_fuzetea_pfirsich-klein.png?timestamp=1700242289",
         "variants": [
           {
@@ -32315,9 +31946,7 @@
       "RRO03NR3Q1": {
         "id": "RRO03NR3Q1",
         "name": "Fuze Tea Schwarzer Tee Zitrone 0,4l (EINWEG)",
-        "description": [
-          "Erfrischungsgetränk mit Tee-Extrakt und Zitronengeschmack"
-        ],
+        "description": ["Erfrischungsgetränk mit Tee-Extrakt und Zitronengeschmack"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_fuzetea_zitrone-klein.png?timestamp=1700242289",
         "variants": [
           {
@@ -32379,9 +32008,7 @@
       "RQ503NR3Q1": {
         "id": "RQ503NR3Q1",
         "name": "Coca Cola (EINWEG)",
-        "description": [
-          "koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten"
-        ],
+        "description": ["koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_coca-cola-beide.png?timestamp=1700242289",
         "variants": [
           {
@@ -32434,9 +32061,7 @@
       "ROP03NR3Q1": {
         "id": "ROP03NR3Q1",
         "name": "Coca Cola Zero (EINWEG)",
-        "description": [
-          "kalorienfreies, koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten und Süßungsmitteln"
-        ],
+        "description": ["kalorienfreies, koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten und Süßungsmitteln"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_coca-cola_zero-beide.png?timestamp=1700242289",
         "variants": [
           {
@@ -32542,9 +32167,7 @@
       "RP703NR3Q1": {
         "id": "RP703NR3Q1",
         "name": "Sprite (EINWEG)",
-        "description": [
-          "Erfrischungsgetränk mit Zitronen- und Limettengeschmack"
-        ],
+        "description": ["Erfrischungsgetränk mit Zitronen- und Limettengeschmack"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_sprite-beide.png?timestamp=1700242289",
         "variants": [
           {
@@ -32597,9 +32220,7 @@
       "RNQ03NR3Q1": {
         "id": "RNQ03NR3Q1",
         "name": "Mezzo Mix (EINWEG)",
-        "description": [
-          "koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten und Orangengeschmack"
-        ],
+        "description": ["koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten und Orangengeschmack"],
         "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/2020-drinks_mezzo-mix-beide.png?timestamp=1700242289",
         "variants": [
           {

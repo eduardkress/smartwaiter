@@ -6,9 +6,7 @@ import crypto from 'crypto';
 
 const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
-export default async function createOrder(
-  orderInput: OrderInput
-): Promise<Order | null> {
+export default async function createOrder(orderInput: OrderInput): Promise<Order | null> {
   try {
     const order = { ...orderInput, id: crypto.randomUUID() };
 

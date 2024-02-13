@@ -38,11 +38,7 @@ export type OpeningHours = {
   Holidays?: string[];
 };
 
-export type Colophon =
-  | ColophonOneManBusiness
-  | ColophonPartnership
-  | ColophonCorporation
-  | ColophonFreelancer;
+export type Colophon = ColophonOneManBusiness | ColophonPartnership | ColophonCorporation | ColophonFreelancer;
 
 export type ColophonOneManBusiness = ColophonCommons & {
   //Einzelunternehmen (z.B. "Max Mustermann, Restaurantbetrieb")
@@ -79,7 +75,7 @@ export type ColophonCorporation = ColophonCommons & {
   // Handelsregister, Registergericht und Registernummer
   // Angabe des Kapitals (bei GmbH und AG)
   // Klarer Hinweis auf die Verantwortlichkeit (z.B. "Verantwortlich im Sinne des § 55 Abs. 2 RStV")
-  businessType: "Corporation";
+  businessType: 'Corporation';
   representativeNames: string[];
   vatNumber?: string;
   registerChamber: string;
@@ -205,4 +201,4 @@ export type Discount = {
   until: number;
   discount?: number;
   discountedOptionGroupId?: string[];
-}
+};

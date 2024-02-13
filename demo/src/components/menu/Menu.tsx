@@ -32,7 +32,7 @@ function Menu({ menu }: Props) {
                   return product && <MenuItem key={index} menu={menu} product={product} />;
                 })}
               </div>
-              <div className='categoryAnchor mx-auto'/>
+              <div className='categoryAnchor mx-auto' />
             </div>
           );
         })}

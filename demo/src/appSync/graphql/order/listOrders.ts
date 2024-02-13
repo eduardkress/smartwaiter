@@ -16,9 +16,7 @@ export default async function listOrders(): Promise<Array<Order>> {
     if (response.$metadata.httpStatusCode !== 200) {
       throw new Error('HTTP Status Code ' + response.$metadata.httpStatusCode);
     }
-    return response.Items
-      ? (response.Items as Array<Order>)
-      : new Array<Order>();
+    return response.Items ? (response.Items as Array<Order>) : new Array<Order>();
   } catch (error) {
     console.error('Fehler aufgetreten Funktion deleteOrder', error);
     return new Array<Order>();

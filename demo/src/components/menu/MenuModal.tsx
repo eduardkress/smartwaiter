@@ -171,22 +171,24 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                                   const filteredOptions = optionGroup.optionIds
                                     .map((optionId) => menu.options.find((option) => option.id === optionId))
                                     .filter((option): option is Option => !!option);
-                                  return <Fragment>
-                                    { optionGroup.isTypeMulti &&
-                                      <MenuModalItemExtras
-                                        options={filteredOptions}
-                                        handleOptionsChange={handleOptionsChange}
-                                        optionGroupId={optionGroup.id}
-                                      />
-                                    }
-                                    { !optionGroup.isTypeMulti &&
-                                      <MenuModalItemExtrasSingleWaiter
-                                        options={filteredOptions}
-                                        handleOptionsChange={handleOptionsChange}
-                                        optionGroupId={optionGroup.id}
-                                      />
-                                    }
-                                  </Fragment>;
+                                  return (
+                                    <Fragment>
+                                      {optionGroup.isTypeMulti && (
+                                        <MenuModalItemExtras
+                                          options={filteredOptions}
+                                          handleOptionsChange={handleOptionsChange}
+                                          optionGroupId={optionGroup.id}
+                                        />
+                                      )}
+                                      {!optionGroup.isTypeMulti && (
+                                        <MenuModalItemExtrasSingleWaiter
+                                          options={filteredOptions}
+                                          handleOptionsChange={handleOptionsChange}
+                                          optionGroupId={optionGroup.id}
+                                        />
+                                      )}
+                                    </Fragment>
+                                  );
                                 })()}
                               </div>
                             )

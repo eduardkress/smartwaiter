@@ -8,11 +8,10 @@ import { OrderInput, OrderItemInput, OrderStatus } from '@/API';
 
 Amplify.configure({
   // @ts-expect-error Parameter kann nicht zugewiesen werden
-  aws_appsync_graphqlEndpoint:
-    'https://hrdurbet4zhuhhsv6l6h3waa6y.appsync-api.eu-central-1.amazonaws.com/graphql',
+  aws_appsync_graphqlEndpoint: 'https://hadwdiehg5gepkw7uzg7fd6dya.appsync-api.eu-central-1.amazonaws.com/graphql',
   aws_appsync_region: 'eu-central-1',
   aws_appsync_authenticationType: 'API_KEY',
-  aws_appsync_apiKey: 'da2-kbr4bvydx5gitc24biosqxunbq',
+  aws_appsync_apiKey: 'da2-zwrw5p7o4bg6lmofaw6fwodfye',
 });
 
 const client = generateClient();
@@ -25,10 +24,7 @@ export async function POST(request: NextRequest) {
 
   // Überprüfe ob orderCode und orderItems in der Anfrage gesetzt wurden (Achtung: Noch keine echte Validierung)
   if (!orderCode || !orderItems) {
-    return NextResponse.json(
-      { message: 'Die Anfrage enthält ungültige Daten!' },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: 'Die Anfrage enthält ungültige Daten!' }, { status: 400 });
   }
 
   // Überprüfe ob ein gültiger OrderCode in der Datenbank existiert und dieser aktiv ist
@@ -40,10 +36,7 @@ export async function POST(request: NextRequest) {
   });
 
   if (!result.data.getOrderCodeById || !result.data.getOrderCodeById.isActive) {
-    return NextResponse.json(
-      { message: 'Der angegebene Bestellcode ist unfültig!' },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: 'Der angegebene Bestellcode ist unfültig!' }, { status: 400 });
   }
 
   await client.graphql({
@@ -57,8 +50,5 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  return NextResponse.json(
-    { message: 'Die Bestellung ist erfolgreich eingegangen!' },
-    { status: 200 }
-  );
+  return NextResponse.json({ message: 'Die Bestellung ist erfolgreich eingegangen!' }, { status: 200 });
 }

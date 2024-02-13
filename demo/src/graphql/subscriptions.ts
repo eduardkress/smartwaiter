@@ -24,10 +24,7 @@ export const onCreateOrder = /* GraphQL */ `subscription OnCreateOrder {
     __typename
   }
 }
-` as GeneratedSubscription<
-  APITypes.OnCreateOrderSubscriptionVariables,
-  APITypes.OnCreateOrderSubscription
->;
+` as GeneratedSubscription<APITypes.OnCreateOrderSubscriptionVariables, APITypes.OnCreateOrderSubscription>;
 export const onCreateOrderCode = /* GraphQL */ `subscription OnCreateOrderCode {
   onCreateOrderCode {
     id
@@ -36,10 +33,7 @@ export const onCreateOrderCode = /* GraphQL */ `subscription OnCreateOrderCode {
     __typename
   }
 }
-` as GeneratedSubscription<
-  APITypes.OnCreateOrderCodeSubscriptionVariables,
-  APITypes.OnCreateOrderCodeSubscription
->;
+` as GeneratedSubscription<APITypes.OnCreateOrderCodeSubscriptionVariables, APITypes.OnCreateOrderCodeSubscription>;
 export const onUpdateOrder = /* GraphQL */ `subscription OnUpdateOrder {
   onUpdateOrder {
     id
@@ -56,10 +50,7 @@ export const onUpdateOrder = /* GraphQL */ `subscription OnUpdateOrder {
     __typename
   }
 }
-` as GeneratedSubscription<
-  APITypes.OnUpdateOrderSubscriptionVariables,
-  APITypes.OnUpdateOrderSubscription
->;
+` as GeneratedSubscription<APITypes.OnUpdateOrderSubscriptionVariables, APITypes.OnUpdateOrderSubscription>;
 export const onDeleteOrder = /* GraphQL */ `subscription OnDeleteOrder {
   onDeleteOrder {
     id
@@ -76,7 +67,4 @@ export const onDeleteOrder = /* GraphQL */ `subscription OnDeleteOrder {
     __typename
   }
 }
-` as GeneratedSubscription<
-  APITypes.OnDeleteOrderSubscriptionVariables,
-  APITypes.OnDeleteOrderSubscription
->;
+` as GeneratedSubscription<APITypes.OnDeleteOrderSubscriptionVariables, APITypes.OnDeleteOrderSubscription>;

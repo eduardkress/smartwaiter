@@ -92,12 +92,7 @@ function SingleItemMockup({ item }: { item: BasketItem }) {
           }}
           className={twMerge('hidden', showTextArea ? 'block' : 'hidden')}
         />
-        <div
-          className={twMerge(
-            ' mr-2 mt-1 hidden justify-end gap-x-2',
-            showTextArea ? 'flex' : 'hidden'
-          )}
-        >
+        <div className={twMerge(' mr-2 mt-1 hidden justify-end gap-x-2', showTextArea ? 'flex' : 'hidden')}>
           <div
             className='text-sm underline hover:cursor-pointer'
             onClick={() => {
@@ -158,8 +153,7 @@ const BasketModal = ({ isOpen, onOpenChange, basketItems }: Props) => {
                     });
                   }}
                 >
-                  Jetzt Bestellen (
-                  {EURO.formatCents(calculateTotalPrice(basketItems))})
+                  Jetzt Bestellen ({EURO.formatCents(calculateTotalPrice(basketItems))})
                 </Button>
               </ModalFooter>
             </>

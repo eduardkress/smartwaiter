@@ -23,12 +23,7 @@ const Menu = ({ items }: { items: MenuItem[] }) => {
             <div>
               <header className='flex justify-between border-b-[0.5px] border-dotted border-b-[hsl(210,22%,49%)]'>
                 <h4 className='mb-2 text-sm font-bold capitalize leading-tight tracking-[0.1rem]'>
-                  {title}{' '}
-                  {allergens ? (
-                    <sup className='font-light'>{allergens}</sup>
-                  ) : (
-                    ''
-                  )}
+                  {title} {allergens ? <sup className='font-light'>{allergens}</sup> : ''}
                 </h4>
                 <h4 className='mb-2 text-sm font-bold capitalize leading-tight tracking-[0.1rem] text-[#c59d5f]'>
                   ${price}

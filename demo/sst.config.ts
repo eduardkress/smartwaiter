@@ -8,8 +8,7 @@ import * as appsync from 'aws-cdk-lib/aws-appsync';
 import { ConfigOptions } from 'sst/project';
 
 const appName = 'demo';
-const domainCertArn =
-  'arn:aws:acm:us-east-1:984009409855:certificate/0fe9ca89-945d-427b-8b38-7f81060092d6';
+const domainCertArn = 'arn:aws:acm:us-east-1:984009409855:certificate/0fe9ca89-945d-427b-8b38-7f81060092d6';
 
 export default {
   config(_input) {
@@ -18,7 +17,7 @@ export default {
       region: 'eu-central-1',
     };
 
-    if (require("os").userInfo().username === "user") {
+    if (require('os').userInfo().username === 'user') {
       config.profile = 'smartkellner';
     }
 
@@ -109,26 +108,17 @@ export default {
 
       const site = new NextjsSite(stack, 'site', {
         environment: {
-          NEXTAUTH_URL:
-            app.stage === 'dev'
-              ? 'http://localhost:3000'
-              : 'https://' + appName + '.smartwaiter.app',
+          NEXTAUTH_URL: app.stage === 'dev' ? 'http://localhost:3000' : 'https://' + appName + '.smartwaiter.app',
           NEXTAUTH_SECRET: '33jr9jfH5CLwSqsArC2uugxFXFW7vZhF',
           SALT: 'EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw',
           NEXT_PUBLIC_APP_URL:
-            app.stage === 'dev'
-              ? 'http://localhost:3000'
-              : 'https://' + appName + '.smartwaiter.app',
+            app.stage === 'dev' ? 'http://localhost:3000' : 'https://' + appName + '.smartwaiter.app',
         },
         customDomain: {
           isExternalDomain: true,
           domainName: appName + '.smartwaiter.app',
           cdk: {
-            certificate: Certificate.fromCertificateArn(
-              stack,
-              appName + '-certificate',
-              domainCertArn
-            ),
+            certificate: Certificate.fromCertificateArn(stack, appName + '-certificate', domainCertArn),
           },
         },
         bind: [usersTable, desksTable, api],

@@ -5,9 +5,7 @@ import { Table } from 'sst/node/table';
 
 const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
-export default async function listActiveOrderCodes(): Promise<
-  Array<OrderCode>
-> {
+export default async function listActiveOrderCodes(): Promise<Array<OrderCode>> {
   try {
     const command = new ScanCommand({
       TableName: Table.OrderCodes.tableName,
@@ -23,9 +21,7 @@ export default async function listActiveOrderCodes(): Promise<
       throw new Error('HTTP Status Code ' + response.$metadata.httpStatusCode);
     }
 
-    return response.Items
-      ? (response.Items as Array<OrderCode>)
-      : new Array<OrderCode>();
+    return response.Items ? (response.Items as Array<OrderCode>) : new Array<OrderCode>();
   } catch (error) {
     console.error('Fehler aufgetreten Funktion listActiveOrderCodes', error);
     return new Array<OrderCode>();

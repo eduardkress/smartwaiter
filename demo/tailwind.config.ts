@@ -21,11 +21,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide'),
-    require('autoprefixer'),
-    nextui(),
-  ],
+  plugins: [require('tailwind-scrollbar-hide'), require('autoprefixer'), nextui()],
 };
 
 export default config;

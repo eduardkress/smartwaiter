@@ -24,10 +24,7 @@ export const listOrders = /* GraphQL */ `query ListOrders {
     __typename
   }
 }
-` as GeneratedQuery<
-  APITypes.ListOrdersQueryVariables,
-  APITypes.ListOrdersQuery
->;
+` as GeneratedQuery<APITypes.ListOrdersQueryVariables, APITypes.ListOrdersQuery>;
 export const listActiveOrderCodes = /* GraphQL */ `query ListActiveOrderCodes {
   listActiveOrderCodes {
     id
@@ -36,12 +33,8 @@ export const listActiveOrderCodes = /* GraphQL */ `query ListActiveOrderCodes {
     __typename
   }
 }
-` as GeneratedQuery<
-  APITypes.ListActiveOrderCodesQueryVariables,
-  APITypes.ListActiveOrderCodesQuery
->;
-export const getOrderCodeById =
-  /* GraphQL */ `query GetOrderCodeById($orderCodeId: String!) {
+` as GeneratedQuery<APITypes.ListActiveOrderCodesQueryVariables, APITypes.ListActiveOrderCodesQuery>;
+export const getOrderCodeById = /* GraphQL */ `query GetOrderCodeById($orderCodeId: String!) {
   getOrderCodeById(orderCodeId: $orderCodeId) {
     id
     deskId
@@ -49,7 +42,4 @@ export const getOrderCodeById =
     __typename
   }
 }
-` as GeneratedQuery<
-    APITypes.GetOrderCodeByIdQueryVariables,
-    APITypes.GetOrderCodeByIdQuery
-  >;
+` as GeneratedQuery<APITypes.GetOrderCodeByIdQueryVariables, APITypes.GetOrderCodeByIdQuery>;

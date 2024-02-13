@@ -20,8 +20,7 @@ function Footer() {
           <span>Registernummer: HRB 1233123</span>
           <span className='mt-4'>MwSt-Nummer: DE311435310</span>
           <span className='mt-4'>
-            Plattform der EU-Kommission zur Online-Streitbeilegung:
-            https://ec.europa.eu/consumers/odr
+            Plattform der EU-Kommission zur Online-Streitbeilegung: https://ec.europa.eu/consumers/odr
           </span>
         </div>
       </div>

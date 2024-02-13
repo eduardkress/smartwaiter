@@ -8,8 +8,7 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createOrder =
-  /* GraphQL */ `mutation CreateOrder($orderInput: OrderInput!) {
+export const createOrder = /* GraphQL */ `mutation CreateOrder($orderInput: OrderInput!) {
   createOrder(orderInput: $orderInput) {
     id
     orderCodeId
@@ -25,12 +24,8 @@ export const createOrder =
     __typename
   }
 }
-` as GeneratedMutation<
-    APITypes.CreateOrderMutationVariables,
-    APITypes.CreateOrderMutation
-  >;
-export const createOrderCode =
-  /* GraphQL */ `mutation CreateOrderCode($orderCodeInput: OrderCodeInput!) {
+` as GeneratedMutation<APITypes.CreateOrderMutationVariables, APITypes.CreateOrderMutation>;
+export const createOrderCode = /* GraphQL */ `mutation CreateOrderCode($orderCodeInput: OrderCodeInput!) {
   createOrderCode(orderCodeInput: $orderCodeInput) {
     id
     deskId
@@ -38,12 +33,8 @@ export const createOrderCode =
     __typename
   }
 }
-` as GeneratedMutation<
-    APITypes.CreateOrderCodeMutationVariables,
-    APITypes.CreateOrderCodeMutation
-  >;
-export const updateOrder =
-  /* GraphQL */ `mutation UpdateOrder($orderId: String!, $orderInput: OrderInput!) {
+` as GeneratedMutation<APITypes.CreateOrderCodeMutationVariables, APITypes.CreateOrderCodeMutation>;
+export const updateOrder = /* GraphQL */ `mutation UpdateOrder($orderId: String!, $orderInput: OrderInput!) {
   updateOrder(orderId: $orderId, orderInput: $orderInput) {
     id
     orderCodeId
@@ -59,12 +50,8 @@ export const updateOrder =
     __typename
   }
 }
-` as GeneratedMutation<
-    APITypes.UpdateOrderMutationVariables,
-    APITypes.UpdateOrderMutation
-  >;
-export const deleteOrder =
-  /* GraphQL */ `mutation DeleteOrder($orderId: String!) {
+` as GeneratedMutation<APITypes.UpdateOrderMutationVariables, APITypes.UpdateOrderMutation>;
+export const deleteOrder = /* GraphQL */ `mutation DeleteOrder($orderId: String!) {
   deleteOrder(orderId: $orderId) {
     id
     orderCodeId
@@ -80,7 +67,4 @@ export const deleteOrder =
     __typename
   }
 }
-` as GeneratedMutation<
-    APITypes.DeleteOrderMutationVariables,
-    APITypes.DeleteOrderMutation
-  >;
+` as GeneratedMutation<APITypes.DeleteOrderMutationVariables, APITypes.DeleteOrderMutation>;

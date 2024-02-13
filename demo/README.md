@@ -42,12 +42,12 @@ Possible errors:
 
 1. Resource handler returned message: "Resource of type 'AWS::DynamoDB::Table' with identifier 'XXXX' already exists.
    Please delete the ressource by hand in AWS Console
-2. Resource handler returned message: "Invalid request provided: AWS::CloudFront::Distribution: One or more aliases specified for the distribution includes an incorrectly configured DNS record that points to another CloudFront distribution 
+2. Resource handler returned message: "Invalid request provided: AWS::CloudFront::Distribution: One or more aliases specified for the distribution includes an incorrectly configured DNS record that points to another CloudFront distribution
    Please remove old CNAME from your Domain provider (eg. Namecheap). After deploymend you need to set CNAME to the new correct URL.
 
 ## Currently the best way to create a new company json
 
-First create a JSON schema using typescript-json-schema. 
+First create a JSON schema using typescript-json-schema.
 
 ```bash
 npx typescript-json-schema src/types/restaurant2.ts Restaurant --strictNullChecks --required --propOrder

@@ -38,10 +38,7 @@ export const authOptions: NextAuthOptions = {
         const user = result.Item;
         console.log('Result from DB:', user);
 
-        if (
-          user &&
-          (await bcrypt.compare(credentials?.password ?? '', user.password))
-        ) {
+        if (user && (await bcrypt.compare(credentials?.password ?? '', user.password))) {
           // Any object returned will be saved in `user` property of the JWT
           console.log('Login successful', credentials);
           return {
