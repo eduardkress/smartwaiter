@@ -17915,7 +17915,8 @@
           "QQRRO33Q0N",
           "RR53NNR3Q1",
           "QN5NPNR7R1"
-        ]
+        ],
+        "discountId": ["1234", "1234"]
       },
       {
         "id": "R15PROR71",
@@ -18185,8 +18186,8 @@
     "discounts": [
       {
         "id": "1234",
-        "name": "DISCOUNT TEST",
-        "description": "TEST DESCRIPTION",
+        "name": "Discount Test",
+        "description": "Test Description: Pizza Individuell - Lunch günstiger",
         "daysOfWeek": [1, 2, 3, 4, 5, 6, 7],
         "from": 0,
         "until": 2400,
