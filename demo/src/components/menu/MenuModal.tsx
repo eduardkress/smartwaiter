@@ -13,7 +13,7 @@ import {
 } from '@nextui-org/react';
 import Hero from '@/components/menu/Hero';
 import MenuItemTitle from '@/components/menu/MenuItemTitle';
-import { Menu, Product, Option } from '@/types/restaurant2';
+import { Menu, Option, Product } from '@/types/restaurant2';
 import Minus from '../icons/Minus';
 import Plus from '../icons/Plus';
 import MenuModalItemExtras from '@/components/menu/MenuModalItemExtras';
@@ -22,6 +22,7 @@ import { EURO } from '@/utils/currencies';
 import { SiteSlot } from '@/components/slotting/SiteSlot';
 import { SiteType } from '@/types/SiteType';
 import MenuModalItemExtrasSingleWaiter from '@/components/menu/MenuModalItemExtrasSingleWaiter';
+import { VariantUtils } from '@/utils/VariantUtils';
 
 type Props = {
   menu: Menu;
@@ -126,35 +127,26 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 </h2>
                 <div className='flex flex-col space-y-2 pb-3 '>
                   <div className='text-base font-normal'>{product.description}</div>
-                  <div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>
-                  <div className='pt-3 text-lg font-normal'>
-                    {product.variants.length === 1 ? (
-                      EURO.formatCents(product.variants[0].prices.onsite)
-                    ) : (
-                      <Fragment>
-                        {/*Variant Dropdown*/}
-                        <div>{product.name}:</div>
-                        <Dropdown>
-                          <DropdownTrigger>
-                            <Button variant='bordered' className='w-full'>
-                              {selectedVariant.name + ' (' + EURO.formatCents(selectedVariant.prices.onsite) + ')'}
-                            </Button>
-                          </DropdownTrigger>
-                          <DropdownMenu
-                            items={product.variants}
-                            onAction={(key) => handleVariantChange(key.toString())}
-                            aria-label='Select Product Variation'
-                          >
-                            {(variant) => (
-                              <DropdownItem key={variant.id}>
-                                {variant.name + ' (' + EURO.formatCents(variant.prices.onsite) + ')'}
-                              </DropdownItem>
-                            )}
-                          </DropdownMenu>
-                        </Dropdown>
-                      </Fragment>
-                    )}
-
+                  {/*<div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>*/}
+                  <SiteSlot siteType={SiteType.Landing}>
+                    <div className="pt-3 pb-2 text-lg font-bold">
+                      {product.variants.length === 1 ? (
+                        EURO.formatCents(product.variants[0].prices.onsite)
+                      ) : (
+                        <table className='table-auto border-spacing-x-2'>
+                          { VariantUtils.sortVariantsByPriceAsc(product.variants).map((value, i) => {
+                            return (
+                              <tr key={'variation' + i}>
+                                <th className='pr-4 text-left'>{value.name}</th>
+                                <th className='text-right'>
+                                  {EURO.formatCents(value.prices.onsite)}
+                                </th>
+                              </tr>
+                            );
+                          })}
+                        </table>
+                      )}
+                    </div>
                     {/*OptionGroupsRework*/}
                     {selectedVariant.optionGroupIds &&
                       selectedVariant.optionGroupIds
@@ -165,35 +157,91 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                           (optionGroup, index) =>
                             optionGroup &&
                             optionGroup.optionIds.length > 0 && (
-                              <div key={index} className='mt-4'>
-                                <div className='font-normal'>{optionGroup.name}</div>
+                              <div key={index} className='pt-2'>
+                                <div className='font-bold'>{optionGroup.name}{!optionGroup.isTypeMulti && " (Auswahl aus einer Option)"}</div>
                                 {(() => {
                                   const filteredOptions = optionGroup.optionIds
                                     .map((optionId) => menu.options.find((option) => option.id === optionId))
                                     .filter((option): option is Option => !!option);
                                   return (
                                     <Fragment>
-                                      {optionGroup.isTypeMulti && (
-                                        <MenuModalItemExtras
-                                          options={filteredOptions}
-                                          handleOptionsChange={handleOptionsChange}
-                                          optionGroupId={optionGroup.id}
-                                        />
-                                      )}
-                                      {!optionGroup.isTypeMulti && (
-                                        <MenuModalItemExtrasSingleWaiter
-                                          options={filteredOptions}
-                                          handleOptionsChange={handleOptionsChange}
-                                          optionGroupId={optionGroup.id}
-                                        />
-                                      )}
+                                      {filteredOptions.map(value => value.name + (value.prices.onsite > 0 ? ` (+${EURO.formatCents(value.prices.onsite)})` : "")).join(", ")}
                                     </Fragment>
                                   );
                                 })()}
                               </div>
                             )
                         )}
-                  </div>
+                  </SiteSlot>
+                  <SiteSlot siteType={SiteType.Waiter}>
+                    <div className='pt-3 text-lg font-normal'>
+                      {product.variants.length === 1 ? (
+                        EURO.formatCents(product.variants[0].prices.onsite)
+                      ) : (
+                        <Fragment>
+                          {/*Variant Dropdown*/}
+                          <div>{product.name}:</div>
+                          <Dropdown>
+                            <DropdownTrigger>
+                              <Button variant='bordered' className='w-full'>
+                                {selectedVariant.name + ' (' + EURO.formatCents(selectedVariant.prices.onsite) + ')'}
+                              </Button>
+                            </DropdownTrigger>
+                            <DropdownMenu
+                              items={product.variants}
+                              onAction={(key) => handleVariantChange(key.toString())}
+                              aria-label='Select Product Variation'
+                            >
+                              {(variant) => (
+                                <DropdownItem key={variant.id}>
+                                  {variant.name + ' (' + EURO.formatCents(variant.prices.onsite) + ')'}
+                                </DropdownItem>
+                              )}
+                            </DropdownMenu>
+                          </Dropdown>
+                        </Fragment>
+                      )}
+
+                      {/*OptionGroupsRework*/}
+                      {selectedVariant.optionGroupIds &&
+                        selectedVariant.optionGroupIds
+                          .map((optionGroupId) =>
+                            menu.optionGroups.find((optionGroup) => optionGroup.id === optionGroupId)
+                          )
+                          .map(
+                            (optionGroup, index) =>
+                              optionGroup &&
+                              optionGroup.optionIds.length > 0 && (
+                                <div key={index} className='mt-4'>
+                                  <div className='font-normal'>{optionGroup.name}</div>
+                                  {(() => {
+                                    const filteredOptions = optionGroup.optionIds
+                                      .map((optionId) => menu.options.find((option) => option.id === optionId))
+                                      .filter((option): option is Option => !!option);
+                                    return (
+                                      <Fragment>
+                                        {optionGroup.isTypeMulti && (
+                                          <MenuModalItemExtras
+                                            options={filteredOptions}
+                                            handleOptionsChange={handleOptionsChange}
+                                            optionGroupId={optionGroup.id}
+                                          />
+                                        )}
+                                        {!optionGroup.isTypeMulti && (
+                                          <MenuModalItemExtrasSingleWaiter
+                                            options={filteredOptions}
+                                            handleOptionsChange={handleOptionsChange}
+                                            optionGroupId={optionGroup.id}
+                                          />
+                                        )}
+                                      </Fragment>
+                                    );
+                                  })()}
+                                </div>
+                              )
+                          )}
+                    </div>
+                  </SiteSlot>
                 </div>
               </ScrollShadow>
             </ModalBody>
