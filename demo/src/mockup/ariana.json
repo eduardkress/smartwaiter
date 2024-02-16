@@ -14,7 +14,7 @@
     "delivery": [
       {
         "deliveryZone": "Schloß Neuhaus & Elsen",
-        "minimumOrderValue": 15,
+        "minimumOrderValue": 1500,
         "deliveryCost": "Auf Anfrage"
       },
       {
@@ -239,7 +239,8 @@
           "R355NNR316",
           "R355NNR317",
           "R355NNR318"
-        ]
+        ],
+        "discountId": ["9c70affdb9f0"]
       },
       {
         "id": "R356NNR3",
@@ -268,7 +269,8 @@
           "R357NNR303",
           "R357NNR304",
           "R357NNR305"
-        ]
+        ],
+        "discountId": ["9c70affdb9f2"]
       },
       {
         "id": "R358NNR3",
@@ -281,7 +283,8 @@
           "R358NNR301",
           "R358NNR302",
           "R358NNR303"
-        ]
+        ],
+        "discountId": ["9c70affdb9f4"]
       },
       {
         "id": "R359NNR3",
@@ -294,7 +297,8 @@
           "R359NNR301",
           "R359NNR302",
           "R359NNR303"
-        ]
+        ],
+        "discountId": ["9c70affdb9f3"]
       },
       {
         "id": "R360NNR3",
@@ -336,7 +340,8 @@
           "R361NNR310",
           "R361NNR311",
           "R361NNR312"
-        ]
+        ],
+        "discountId": ["9c70affdb9f1"]
       },
       {
         "id": "R362NNR3",
@@ -450,7 +455,7 @@
         "id": "9c70affdb9f2",
         "name": "Mittagstisch",
         "until": 1500,
-        "from": 1202,
+        "from": 1200,
         "discount": 100,
         "description": "Jedes Dönergericht 1€ günstiger"
       },
@@ -853,7 +858,8 @@
             "name": "26er",
             "prices": {
               "onsite": 700
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR301-1",
@@ -883,7 +889,8 @@
             "name": "26er",
             "prices": {
               "onsite": 750
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR302-1",
@@ -913,7 +920,8 @@
             "name": "26er",
             "prices": {
               "onsite": 850
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR303-1",
@@ -943,7 +951,8 @@
             "name": "26er",
             "prices": {
               "onsite": 850
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR304-1",
@@ -973,7 +982,8 @@
             "name": "26er",
             "prices": {
               "onsite": 850
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR305-1",
@@ -1003,7 +1013,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR306-1",
@@ -1033,7 +1044,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR307-1",
@@ -1063,7 +1075,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR308-1",
@@ -1093,7 +1106,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR309-1",
@@ -1123,7 +1137,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR310-1",
@@ -1153,7 +1168,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR311-1",
@@ -1183,7 +1199,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR312-1",
@@ -1213,7 +1230,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR313-1",
@@ -1243,7 +1261,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1050
-            }
+            },
+            "discountId": "9c70affdb9f0"
           },
           {
             "id": "R355NNR314-1",
@@ -1273,7 +1292,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1050
-            }
+            },
+            "discountId": "9c70affdb9f0"
           }
         ]
       },
@@ -1289,7 +1309,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1150
-            }
+            },
+            "discountId": "9c70affdb9f0"
           }
         ]
       },
@@ -1305,7 +1326,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1150
-            }
+            },
+            "discountId": "9c70affdb9f0"
           }
         ]
       },
@@ -1321,7 +1343,8 @@
             "name": "26er",
             "prices": {
               "onsite": 1150
-            }
+            },
+            "discountId": "9c70affdb9f0"
           }
         ]
       },
@@ -1396,7 +1419,8 @@
             "id": "R357NNR301-0",
             "prices": {
               "onsite": 600
-            }
+            },
+            "discountId": "9c70affdb9f2"
           }
         ]
       },
@@ -1411,7 +1435,8 @@
             "id": "R357NNR302-0",
             "prices": {
               "onsite": 550
-            }
+            },
+            "discountId": "9c70affdb9f2"
           }
         ]
       },
@@ -1426,7 +1451,8 @@
             "id": "R357NNR303-0",
             "prices": {
               "onsite": 750
-            }
+            },
+            "discountId": "9c70affdb9f2"
           }
         ]
       },
@@ -1441,7 +1467,8 @@
             "id": "R357NNR304-0",
             "prices": {
               "onsite": 1000
-            }
+            },
+            "discountId": "9c70affdb9f2"
           }
         ]
       },
@@ -1456,7 +1483,8 @@
             "id": "R357NNR305-0",
             "prices": {
               "onsite": 1150
-            }
+            },
+            "discountId": "9c70affdb9f2"
           }
         ]
       },
@@ -1471,7 +1499,8 @@
             "id": "R358NNR301-0",
             "prices": {
               "onsite": 550
-            }
+            },
+            "discountId": "9c70affdb9f4"
           }
         ]
       },
@@ -1486,7 +1515,8 @@
             "id": "R358NNR302-0",
             "prices": {
               "onsite": 800
-            }
+            },
+            "discountId": "9c70affdb9f4"
           }
         ]
       },
@@ -1501,7 +1531,8 @@
             "id": "R358NNR303-0",
             "prices": {
               "onsite": 1150
-            }
+            },
+            "discountId": "9c70affdb9f4"
           }
         ]
       },
@@ -1516,7 +1547,8 @@
             "id": "R359NNR301-0",
             "prices": {
               "onsite": 550
-            }
+            },
+            "discountId": "9c70affdb9f3"
           }
         ]
       },
@@ -1531,7 +1563,8 @@
             "id": "R359NNR302-0",
             "prices": {
               "onsite": 750
-            }
+            },
+            "discountId": "9c70affdb9f3"
           }
         ]
       },
@@ -1546,7 +1579,8 @@
             "id": "R359NNR303-0",
             "prices": {
               "onsite": 1050
-            }
+            },
+            "discountId": "9c70affdb9f3"
           }
         ]
       },
@@ -1778,7 +1812,8 @@
             "id": "R361NNR301-0",
             "prices": {
               "onsite": 950
-            }
+            },
+            "discountId": "9c70affdb9f1"
           }
         ]
       },
@@ -1808,7 +1843,8 @@
             "id": "R361NNR303-0",
             "prices": {
               "onsite": 990
-            }
+            },
+            "discountId": "9c70affdb9f1"
           }
         ]
       },
@@ -1838,7 +1874,8 @@
             "id": "R361NNR305-0",
             "prices": {
               "onsite": 1190
-            }
+            },
+            "discountId": "9c70affdb9f1"
           }
         ]
       },
@@ -1867,7 +1904,8 @@
             "id": "R361NNR307-0",
             "prices": {
               "onsite": 1090
-            }
+            },
+            "discountId": "9c70affdb9f1"
           }
         ]
       },
@@ -1896,7 +1934,8 @@
             "id": "R361NNR309-0",
             "prices": {
               "onsite": 1050
-            }
+            },
+            "discountId": "9c70affdb9f1"
           }
         ]
       },
