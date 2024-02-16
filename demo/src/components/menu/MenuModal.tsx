@@ -122,7 +122,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                 <h2 className='text-2xl font-bold leading-6 text-gray-900'>
                   <MenuItemTitle
                     product={product}
-                    allergens={product.allergenIds!.map((id) => menu.allergens.find((value) => value.id === id)!)}
+                    allergens={product.allergenIds?.map((id) => menu.allergens.find((value) => value.id === id)!)}
                   />
                 </h2>
                 <div className='flex flex-col space-y-2 pb-3 '>

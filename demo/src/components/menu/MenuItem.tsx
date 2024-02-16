@@ -28,7 +28,7 @@ export function MenuItem({ menu, product }: Props) {
               <MenuItemTitle
                 product={product}
                 allergens={product.allergenIds?.map((id) => {
-                  return menu.allergens.find((value) => (value.id = id))!;
+                  return menu.allergens.find((value) => (value.id === id))!;
                 })}
               />
             </h3>
