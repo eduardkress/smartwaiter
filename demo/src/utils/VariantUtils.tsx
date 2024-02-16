@@ -20,7 +20,11 @@ const VariantUtils: {
     // TODO: Refactor this
     // TODO: when should this be recalculated?
     const time = new Date(Date.now()).getHours() * 100 + new Date(Date.now()).getMinutes();
-    const dayNumber = new Date(Date.now()).getDay() + 1;
+    let dayNumber = new Date(Date.now()).getDay();
+    if (dayNumber === 0) {
+      //json => Monday = 1 // Sunday = 7
+      dayNumber = 7;
+    }
 
     const lowestPriceWithDiscounts = variants.reduce((previousValue, currentValue) =>
       previousValue.prices.onsite -
