@@ -46,7 +46,7 @@ export function MenuItem({ menu, product }: Props) {
                 {product.variants.length > 1 ? (
                   <Fragment>ab {VariantUtils.getLowestPriceTag(product.variants, menu.discounts)}</Fragment>
                 ) : (
-                  EURO.formatCents(product.variants[0].prices.onsite)
+                  VariantUtils.getLowestPriceTag(product.variants, menu.discounts)
                 )}
               </div>
             </div>
