@@ -1,17 +1,16 @@
-import { ColophonCorporation } from '@/types/restaurant2';
+import { ColophonPartnership } from '@/types/restaurant2';
 import React, { Fragment } from 'react';
 
 type Props = {
-  colophon: ColophonCorporation;
+  colophon: ColophonPartnership;
 };
 
-const ColophonCorporation = ({ colophon }: Props) => {
-  //Kapitalgesellschaft (z.B. GmbH, AG)
-  // Name und Anschrift der Gesellschaft (Restaurant GmbH)
-  // Vertretungsberechtigte Personen (Geschäftsführer, Vorstand)
+const ColophonPartnership = ({ colophon }: Props) => {
+  //Personengesellschaft  (z.B. GbR, OHG)
+  // Name und Anschrift der Gesellschaft (Restaurant)
+  // Namen und Anschriften aller Gesellschafter
   // Umsatzsteuer-Identifikationsnummer (falls vorhanden)
-  // Handelsregister, Registergericht und Registernummer
-  // Angabe des Kapitals (bei GmbH und AG)
+  // Handelsregister, falls eingetragen
   // Klarer Hinweis auf die Verantwortlichkeit (z.B. "Verantwortlich im Sinne des § 55 Abs. 2 RStV")
   return (
     <Fragment>
@@ -27,8 +26,8 @@ const ColophonCorporation = ({ colophon }: Props) => {
       <span>Telefon: {colophon.telephone}</span>
       <span>Fax: {colophon.fax}</span>
       <span className='pb-2'>Email: {colophon.email}</span>
-      <span>Handelsregister: {colophon.registerNumber}</span>
-      <span>Registergericht: {colophon.registerChamber}</span>
+      {colophon.registerNumber && <span>Handelsregister: {colophon.registerNumber}</span>}
+      {colophon.registerChamber && <span>Registergericht: {colophon.registerChamber}</span>}
       {colophon.vatNumber && <span>Umsatzsteuer-Identifikationsnummer gem. §27a UStG: {colophon.vatNumber}</span>}
       <span className='pt-4'>
         Plattform der EU-Kommission zur Online-Streitbeilegung: https://ec.europa.eu/consumers/odr
@@ -37,4 +36,4 @@ const ColophonCorporation = ({ colophon }: Props) => {
   );
 };
 
-export default ColophonCorporation;
+export default ColophonPartnership;
