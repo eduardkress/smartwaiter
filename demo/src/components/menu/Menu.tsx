@@ -52,7 +52,7 @@ function Menu({ menu }: Props) {
                 <h2 className='container mx-auto max-w-5xl px-0 text-2xl font-bold'>{category.name}</h2>
                 {(category.description && category.description.length > 0) && (
                   <div className='container mx-auto max-w-5xl px-0 text-sm font-sans'>
-                    {category.description.map((description, index) => index === category.description!.length-1 ? <Fragment key={index}>description</Fragment> : <Fragment key={index}>{description}<br/></Fragment>)}
+                    {category.description.map((description, index) => index === category.description!.length-1 ? <Fragment key={index}>{description}</Fragment> : <Fragment key={index}>{description}<br/></Fragment>)}
                   </div>
                 )}
                 {(category.discountId && category.discountId.length > 0) && (
