@@ -1,28 +1,26 @@
 import AddressBook from '@/components/icons/AddressBook';
+import { Fragment } from 'react';
+import { Divider } from '@nextui-org/react';
+import { Hero, Information } from '@/types/restaurant2';
 
-function Footer() {
+interface Props {
+  companyInformation: Information;
+}
+
+function Footer({ companyInformation }: Props) {
   return (
-    <div className='container mx-auto my-8'>
-      {/*Impressum*/}
-      <div className='flex flex-col justify-center gap-y-2'>
-        <div className='flex flex-row flex-nowrap items-center gap-x-1'>
-          <div className='h-6 w-6 fill-black'>
-            <AddressBook />
-          </div>
-          <span className='font-bold'>Impressum</span>
-        </div>
-        <div className='flex flex-col flex-nowrap text-sm text-gray-400'>
-          <span>Losteria GmbH</span>
-          <span>Sesamstraße 123</span>
-          <span>Vertretungsberechtigt: Max Mustermann</span>
-          <span>Fax: 012123123123</span>
-          <span className='mt-4'>Registergericht: Amtsgericht Paderborn</span>
-          <span>Registernummer: HRB 1233123</span>
-          <span className='mt-4'>MwSt-Nummer: DE311435310</span>
-          <span className='mt-4'>
-            Plattform der EU-Kommission zur Online-Streitbeilegung: https://ec.europa.eu/consumers/odr
-          </span>
-        </div>
+    <div className='flex flex-col space-y-8 py-8 shadow-inner'>
+      <div className='flex flex-col justify-center space-x-0 space-y-2 text-center text-medium font-bold text-gray-600 sm:flex-row sm:space-x-10 sm:space-y-0'>
+        <div>AGB</div>
+        <div>Datenschutzerklärung</div>
+        <div>Impressum</div>
+      </div>
+      <div className='flex justify-center'>
+        <Divider className='max-w-xs sm:max-w-xl md:max-w-3xl' />
+      </div>
+      <div className='flex flex-col justify-center space-x-0 space-y-2 text-center text-sm text-gray-400 sm:flex-row sm:space-x-10 sm:space-y-0'>
+        <div>&copy; 2024 {companyInformation.colophon.companyName}</div>
+        <div>Powered by Smartwaiter</div>
       </div>
     </div>
   );

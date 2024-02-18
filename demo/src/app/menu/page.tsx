@@ -83,7 +83,7 @@ export default function Page() {
       <NavBar menu={restaurantData2.menu} />
       <div>
         <Menu menu={restaurantData2.menu} />
-        <Footer />
+        <Footer companyInformation={restaurantData2.information} />
         <Basket />
       </div>
     </NextUIProvider>
