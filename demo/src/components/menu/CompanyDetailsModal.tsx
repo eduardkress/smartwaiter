@@ -65,7 +65,7 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
       <ModalContent>
         {() => (
           <>
-            <ModalHeader>Über Losteria</ModalHeader>
+            <ModalHeader>Über {companyInformation.colophon.companyName}</ModalHeader>
             <ModalBody>
               <iframe
                 src={`https://maps.google.com/maps?q=${companyInformation.location.streetName}+${companyInformation.location.streetNumber},+${companyInformation.location.postalCode}+${companyInformation.location.city}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
@@ -115,23 +115,6 @@ const CompanyDetailsModal = ({ isOpen, onOpenChange, companyInformation }: Props
                     </Fragment>
                   )}
                 </SiteSlot>
-                <h2 className='pt-4 text-xl font-bold leading-6 text-gray-900'>Impressum</h2>
-                <div className='flex flex-col space-y-0 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow'>
-                  {/*TODO: Create a colophon component for each different type*/}
-                  {(() => {
-                    console.log(companyInformation.colophon);
-                    switch (companyInformation.colophon.businessType) {
-                      case 'Corporation':
-                        return <ColophonCorporation colophon={companyInformation.colophon} />;
-                      case 'Freelancer':
-                        return <Fragment />;
-                      case 'OneManBusiness':
-                        return <Fragment />;
-                      case 'Partnership':
-                        return <ColophonPartnership colophon={companyInformation.colophon} />;
-                    }
-                  })()}
-                </div>
               </div>
             </ModalBody>
             <ModalFooter />

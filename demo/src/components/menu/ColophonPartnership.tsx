@@ -14,7 +14,7 @@ const ColophonPartnership = ({ colophon }: Props) => {
   // Klarer Hinweis auf die Verantwortlichkeit (z.B. "Verantwortlich im Sinne des § 55 Abs. 2 RStV")
   return (
     <Fragment>
-      <span className='pb-2'>{colophon.companyName}</span>
+      <span className='pb-2 font-bold'>{colophon.companyName}</span>
       <span>
         {colophon.location.streetName} {colophon.location.streetNumber}
       </span>
