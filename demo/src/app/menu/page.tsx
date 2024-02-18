@@ -16,6 +16,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 import { SiteType, SiteTypeQueryParamName } from '@/types/SiteType';
+import { SiteSlot } from '@/components/slotting/SiteSlot';
 
 //const menu = _menuItem as MenuCategory[];
 const restaurantData2 = _restaurantData2 as Restaurant2;
@@ -70,9 +71,11 @@ export default function Page() {
 
   return (
     <NextUIProvider id='mainArea'>
-      <div className={twMerge('justify-center bg-red-500 text-xl', isValidOrderCode ? 'hidden' : 'flex')}>
-        Dein Bestellcode ist ungültig!
-      </div>
+      <SiteSlot siteType={SiteType.Waiter}>
+        <div className={twMerge('justify-center bg-red-500 text-xl', isValidOrderCode ? 'hidden' : 'flex')}>
+          Dein Bestellcode ist ungültig!
+        </div>
+      </SiteSlot>
 
       <Hero imgSrc={restaurantData2.hero.headerImageUrl} heroAlt={'Unser Menü'} />
       <CompanyLogo imgSrc={restaurantData2.hero.logoUrl} heroAlt={'Unser Menü'} />
