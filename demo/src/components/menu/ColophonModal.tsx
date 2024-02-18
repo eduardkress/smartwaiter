@@ -16,9 +16,9 @@ const ColophonModal = ({ isOpen, onOpenChange, companyInformation }: Props) => {
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       size={'xl'}
-      scrollBehavior={'inside'}
+      scrollBehavior={'normal'}
       classNames={{
-        body: 'px-0 py-0',
+        body: 'px-0 py-0 max-h-[60vh]',
         footer: 'bg-[#f5f3f1]',
         closeButton: 'bg-white',
       }}
@@ -28,7 +28,7 @@ const ColophonModal = ({ isOpen, onOpenChange, companyInformation }: Props) => {
           <>
             <ModalHeader>Impressum</ModalHeader>
             <ModalBody>
-              <div className='container flex max-h-[60vh] flex-col space-y-3 overflow-auto bg-white pb-10 pt-4'>
+              <div className='container flex flex-col space-y-3 overflow-auto bg-white pb-10 pt-4'>
                 <div className='flex flex-col'>
                   {/*TODO: Create a colophon component for each different type*/}
                   {(() => {
