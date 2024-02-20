@@ -27,7 +27,7 @@ export default {
   stacks(app) {
     app.stack(function Site({ stack }) {
       // Remove all resources on dev stages (otherwise s3 buckets, databases etc. are not deleted)
-      if (app.stage === "dev") {
+      if (app.stage !== "prod") {
         app.setDefaultRemovalPolicy("destroy");
       }
       //Add Secrets. Be sure to add them to AWS with: npx sst secrets set --stage prod SECRET_KEY value
@@ -110,15 +110,15 @@ export default {
       const site = new NextjsSite(stack, "site", {
         environment: {
           NEXTAUTH_URL:
-            app.stage === "dev"
-              ? "http://localhost:3000"
-              : "https://" + appName + ".smartwaiter.app",
+            app.stage === "prod"
+              ? "https://" + appName + ".smartwaiter.app"
+              : "http://localhost:3000",
           NEXTAUTH_SECRET: "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
           SALT: "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
           NEXT_PUBLIC_APP_URL:
-            app.stage === "dev"
-              ? "http://localhost:3000"
-              : "https://" + appName + ".smartwaiter.app",
+            app.stage === "prod"
+              ? "https://" + appName + ".smartwaiter.app"
+              : "http://localhost:3000",
         },
         customDomain: {
           isExternalDomain: true,
