@@ -1,0 +1,1584 @@
+{
+ "Resources": {
+  "CustomResourceHandlerServiceRole41AEC181": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "CustomResourceHandlerE8FB56BA": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+     "S3Key": "e5d348de89eec13fe36fe68de5d8d33f625307274febf782c9fa3064d5bfd0d7.zip"
+    },
+    "Handler": "index.handler",
+    "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomResourceHandlerServiceRole41AEC181",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs16.x",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ],
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "CustomResourceHandlerServiceRole41AEC181"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "UsersTable6D91A5EE": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "email",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "email",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "dev-demo-smartwaiter-Users",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "UsersParametertableNameBE329B3D": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/Table/Users/tableName",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": {
+     "Ref": "UsersTable6D91A5EE"
+    }
+   }
+  },
+  "DesksTable21E5A6E8": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "id",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "dev-demo-smartwaiter-Desks",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "DesksParametertableName228A9E3A": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/Table/Desks/tableName",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": {
+     "Ref": "DesksTable21E5A6E8"
+    }
+   }
+  },
+  "OrderCodesTableB2D149EC": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "id",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "dev-demo-smartwaiter-OrderCodes",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "OrderCodesParametertableNameDA4F4530": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/Table/OrderCodes/tableName",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": {
+     "Ref": "OrderCodesTableB2D149EC"
+    }
+   }
+  },
+  "OrdersTable1F8332C7": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "id",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "dev-demo-smartwaiter-Orders",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "OrdersParametertableNameB21B7F2B": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/Table/Orders/tableName",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": {
+     "Ref": "OrdersTable1F8332C7"
+    }
+   }
+  },
+  "AppSyncApiEBDAEC17": {
+   "Type": "AWS::AppSync::GraphQLApi",
+   "Properties": {
+    "AuthenticationType": "API_KEY",
+    "Name": "dev-demo-smartwaiter-AppSyncApi",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ],
+    "XrayEnabled": true
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiSchemaD3A1C979": {
+   "Type": "AWS::AppSync::GraphQLSchema",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "Definition": "enum OrderStatus {\n  NEW\n  DONE\n  CANCELED\n}\n\ntype Order {\n  id: String!\n  orderCodeId: String!\n  orderItems: [OrderItem!]!\n  orderStatus: OrderStatus!\n}\n\ninput OrderInput {\n  orderCodeId: String!\n  orderItems: [OrderItemInput!]!\n  orderStatus: OrderStatus!\n}\n\ntype OrderItem {\n  productId: String!\n  variantId: String!\n  optionIds: [String!]!\n  amount: Int!\n  extraText: String!\n}\n\ninput OrderItemInput {\n  productId: String!\n  variantId: String!\n  optionIds: [String!]!\n  amount: Int!\n  extraText: String!\n}\n\ntype OrderCode {\n  id: String!\n  deskId: String!\n  isActive: Boolean!\n}\n\ninput OrderCodeInput {\n  deskId: String!\n  isActive: Boolean!\n}\n\ntype Mutation {\n  createOrder(orderInput: OrderInput!): Order\n  createOrderCode(orderCodeInput: OrderCodeInput!): OrderCode\n  updateOrder(orderId: String!, orderInput: OrderInput!): Order\n  deleteOrder(orderId: String!): Order\n}\n\ntype Query {\n  listOrders: [Order!]!\n  listActiveOrderCodes: [OrderCode!]!\n  getOrderCodeById(orderCodeId: String!): OrderCode\n}\n\ntype Subscription {\n  onCreateOrder: Order @aws_subscribe(mutations: [\"createOrder\"])\n  onCreateOrderCode: OrderCode @aws_subscribe(mutations: [\"createOrderCode\"])\n  onUpdateOrder: Order @aws_subscribe(mutations: [\"updateOrder\"])\n  onDeleteOrder: Order @aws_subscribe(mutations: [\"deleteOrder\"])\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiDefaultApiKey4C5F84B8": {
+   "Type": "AWS::AppSync::ApiKey",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "Expires": 1739992483
+   },
+   "DependsOn": [
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorderServiceRole268FAB57": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorderServiceRoleDefaultPolicy22E6A9FF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "AppSyncApiLambdaorder08234242",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "AppSyncApiLambdaorder08234242",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AppSyncApiorderServiceRoleDefaultPolicy22E6A9FF",
+    "Roles": [
+     {
+      "Ref": "AppSyncApiorderServiceRole268FAB57"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorder3D006EA2": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "LambdaConfig": {
+     "LambdaFunctionArn": {
+      "Fn::GetAtt": [
+       "AppSyncApiLambdaorder08234242",
+       "Arn"
+      ]
+     }
+    },
+    "Name": "order",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "AppSyncApiorderServiceRole268FAB57",
+      "Arn"
+     ]
+    },
+    "Type": "AWS_LAMBDA"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorderCodeServiceRole3BD11DEB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorderCodeServiceRoleDefaultPolicyE8F7185F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "AppSyncApiLambdaorderCode36A43FE8",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "AppSyncApiLambdaorderCode36A43FE8",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AppSyncApiorderCodeServiceRoleDefaultPolicyE8F7185F",
+    "Roles": [
+     {
+      "Ref": "AppSyncApiorderCodeServiceRole3BD11DEB"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiorderCode1555513B": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "LambdaConfig": {
+     "LambdaFunctionArn": {
+      "Fn::GetAtt": [
+       "AppSyncApiLambdaorderCode36A43FE8",
+       "Arn"
+      ]
+     }
+    },
+    "Name": "orderCode",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "AppSyncApiorderCodeServiceRole3BD11DEB",
+      "Arn"
+     ]
+    },
+    "Type": "AWS_LAMBDA"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiQuerylistOrdersResolver73DDF726": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "order",
+    "FieldName": "listOrders",
+    "Kind": "UNIT",
+    "TypeName": "Query"
+   },
+   "DependsOn": [
+    "AppSyncApiorder3D006EA2",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiMutationcreateOrderResolver7EF1370B": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "order",
+    "FieldName": "createOrder",
+    "Kind": "UNIT",
+    "TypeName": "Mutation"
+   },
+   "DependsOn": [
+    "AppSyncApiorder3D006EA2",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiMutationupdateOrderResolver70DF8B52": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "order",
+    "FieldName": "updateOrder",
+    "Kind": "UNIT",
+    "TypeName": "Mutation"
+   },
+   "DependsOn": [
+    "AppSyncApiorder3D006EA2",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiMutationdeleteOrderResolverA9AF11E1": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "order",
+    "FieldName": "deleteOrder",
+    "Kind": "UNIT",
+    "TypeName": "Mutation"
+   },
+   "DependsOn": [
+    "AppSyncApiorder3D006EA2",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiQuerylistActiveOrderCodesResolverBF71B017": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "orderCode",
+    "FieldName": "listActiveOrderCodes",
+    "Kind": "UNIT",
+    "TypeName": "Query"
+   },
+   "DependsOn": [
+    "AppSyncApiorderCode1555513B",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiQuerygetOrderCodeByIdResolver71E37CAB": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "orderCode",
+    "FieldName": "getOrderCodeById",
+    "Kind": "UNIT",
+    "TypeName": "Query"
+   },
+   "DependsOn": [
+    "AppSyncApiorderCode1555513B",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiMutationcreateOrderCodeResolverCDA6BD6D": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "ApiId"
+     ]
+    },
+    "DataSourceName": "orderCode",
+    "FieldName": "createOrderCode",
+    "Kind": "UNIT",
+    "TypeName": "Mutation"
+   },
+   "DependsOn": [
+    "AppSyncApiorderCode1555513B",
+    "AppSyncApiSchemaD3A1C979"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorderServiceRoleE950FBEE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorderServiceRoleDefaultPolicy1E48AE48": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "OrdersTable1F8332C7",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "OrdersTable1F8332C7",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "OrderCodesTableB2D149EC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "OrderCodesTableB2D149EC",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AppSyncApiLambdaorderServiceRoleDefaultPolicy1E48AE48",
+    "Roles": [
+     {
+      "Ref": "AppSyncApiLambdaorderServiceRoleE950FBEE"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorder08234242": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "x86_64"
+    ],
+    "Code": {
+     "ZipFile": "export function placeholder() {}"
+    },
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "SST_APP": "demo-smartwaiter",
+      "SST_STAGE": "dev",
+      "SST_SSM_PREFIX": "/sst/demo-smartwaiter/dev/",
+      "SST_Table_tableName_Orders": {
+       "Ref": "OrdersTable1F8332C7"
+      },
+      "SST_Table_tableName_OrderCodes": {
+       "Ref": "OrderCodesTableB2D149EC"
+      }
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 512
+    },
+    "Handler": "index.placeholder",
+    "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "AppSyncApiLambdaorderServiceRoleE950FBEE",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs16.x",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ],
+    "Timeout": 10,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "AppSyncApiLambdaorderServiceRoleDefaultPolicy1E48AE48",
+    "AppSyncApiLambdaorderServiceRoleE950FBEE"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorderCodeServiceRoleDD59943A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorderCodeServiceRoleDefaultPolicy7584427C": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "OrdersTable1F8332C7",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "OrdersTable1F8332C7",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "OrderCodesTableB2D149EC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "OrderCodesTableB2D149EC",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AppSyncApiLambdaorderCodeServiceRoleDefaultPolicy7584427C",
+    "Roles": [
+     {
+      "Ref": "AppSyncApiLambdaorderCodeServiceRoleDD59943A"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiLambdaorderCode36A43FE8": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "x86_64"
+    ],
+    "Code": {
+     "ZipFile": "export function placeholder() {}"
+    },
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "SST_APP": "demo-smartwaiter",
+      "SST_STAGE": "dev",
+      "SST_SSM_PREFIX": "/sst/demo-smartwaiter/dev/",
+      "SST_Table_tableName_Orders": {
+       "Ref": "OrdersTable1F8332C7"
+      },
+      "SST_Table_tableName_OrderCodes": {
+       "Ref": "OrderCodesTableB2D149EC"
+      }
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 512
+    },
+    "Handler": "index.placeholder",
+    "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "AppSyncApiLambdaorderCodeServiceRoleDD59943A",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs16.x",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ],
+    "Timeout": 10,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "AppSyncApiLambdaorderCodeServiceRoleDefaultPolicy7584427C",
+    "AppSyncApiLambdaorderCodeServiceRoleDD59943A"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "AppSyncApiParameterurlE61B9935": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/AppSyncApi/AppSyncApi/url",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": {
+     "Fn::GetAtt": [
+      "AppSyncApiEBDAEC17",
+      "GraphQLUrl"
+     ]
+    }
+   }
+  },
+  "siteServerFunctionRole1F8F4FAC": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":iam::984009409855:root"
+          ]
+         ]
+        }
+       }
+      },
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "MaxSessionDuration": 43200,
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteServerFunctionRoleDefaultPolicy213DB8A5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "UsersTable6D91A5EE",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "UsersTable6D91A5EE",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DesksTable21E5A6E8",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DesksTable21E5A6E8",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "siteServerFunctionRoleDefaultPolicy213DB8A5",
+    "Roles": [
+     {
+      "Ref": "siteServerFunctionRole1F8F4FAC"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteServerFunctionAssetReplacerPolicy304BF125": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":s3:::cdk-hnb659fds-assets-984009409855-eu-central-1/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "siteServerFunctionAssetReplacerPolicy304BF125",
+    "Roles": [
+     {
+      "Ref": "CustomResourceHandlerServiceRole41AEC181"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteServerFunctionAssetReplacer9A11D516": {
+   "Type": "Custom::AssetReplacer",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomResourceHandlerE8FB56BA",
+      "Arn"
+     ]
+    },
+    "bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+    "key": "25ae0483be9f35c1459edc6cd776d840328cfd451f29bcdf67d80b0561c2609f.zip",
+    "replacements": [
+     {
+      "files": "**/*.@(*js|json|html)",
+      "search": "{{ NEXTAUTH_URL }}",
+      "replace": "http://localhost:3000"
+     },
+     {
+      "files": "**/*.@(*js|json|html)",
+      "search": "{{ NEXTAUTH_SECRET }}",
+      "replace": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF"
+     },
+     {
+      "files": "**/*.@(*js|json|html)",
+      "search": "{{ SALT }}",
+      "replace": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw"
+     },
+     {
+      "files": "**/*.@(*js|json|html)",
+      "search": "{{ NEXT_PUBLIC_APP_URL }}",
+      "replace": "http://localhost:3000"
+     }
+    ]
+   },
+   "DependsOn": [
+    "siteServerFunctionAssetReplacerPolicy304BF125"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteServerFunction6DFA6F1B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+     "S3Key": "25ae0483be9f35c1459edc6cd776d840328cfd451f29bcdf67d80b0561c2609f.zip"
+    },
+    "Description": "Server handler placeholder",
+    "Environment": {
+     "Variables": {
+      "NEXTAUTH_URL": "http://localhost:3000",
+      "NEXTAUTH_SECRET": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
+      "SALT": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
+      "NEXT_PUBLIC_APP_URL": "http://localhost:3000",
+      "SST_APP": "demo-smartwaiter",
+      "SST_STAGE": "dev",
+      "SST_SSM_PREFIX": "/sst/demo-smartwaiter/dev/",
+      "SST_Table_tableName_Users": {
+       "Ref": "UsersTable6D91A5EE"
+      },
+      "SST_Table_tableName_Desks": {
+       "Ref": "DesksTable21E5A6E8"
+      },
+      "SST_AppSyncApi_url_AppSyncApi": {
+       "Fn::GetAtt": [
+        "AppSyncApiEBDAEC17",
+        "GraphQLUrl"
+       ]
+      }
+     }
+    },
+    "Handler": "index.handler",
+    "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "siteServerFunctionRole1F8F4FAC",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ],
+    "Timeout": 10
+   },
+   "DependsOn": [
+    "siteServerFunctionAssetReplacer9A11D516",
+    "siteServerFunctionRoleDefaultPolicy213DB8A5",
+    "siteServerFunctionRole1F8F4FAC"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteServerFunctionLogRetention7123678D": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "siteServerFunction6DFA6F1B"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 3
+   },
+   "DependsOn": [
+    "siteServerFunctionAssetReplacer9A11D516"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "siteParameterurl3D1716BC": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Name": "/sst/demo-smartwaiter/dev/NextjsSite/site/url",
+    "Tags": {
+     "sst:app": "demo-smartwaiter",
+     "sst:stage": "dev"
+    },
+    "Type": "String",
+    "Value": "localhost"
+   }
+  },
+  "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:PutRetentionPolicy",
+        "logs:DeleteRetentionPolicy"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+    "Roles": [
+     {
+      "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Handler": "index.handler",
+    "Runtime": "nodejs18.x",
+    "Timeout": 900,
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+     "S3Key": "5bc602ecde93c947efe5899ae355f999986a1acbe610b1c0b9c468d738857555.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "demo-smartwaiter"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "dev"
+     }
+    ]
+   },
+   "DependsOn": [
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  }
+ },
+ "Outputs": {
+  "ApiId": {
+   "Value": {
+    "Fn::GetAtt": [
+     "AppSyncApiEBDAEC17",
+     "ApiId"
+    ]
+   }
+  },
+  "APiUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "AppSyncApiEBDAEC17",
+     "GraphQLUrl"
+    ]
+   }
+  },
+  "ApiKey": {
+   "Value": {
+    "Fn::GetAtt": [
+     "AppSyncApiDefaultApiKey4C5F84B8",
+     "ApiKey"
+    ]
+   }
+  },
+  "SSTMetadata": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "{\"app\":\"demo-smartwaiter\",\"stage\":\"dev\",\"version\":\"2.32.2\",\"metadata\":[{\"id\":\"Users\",\"addr\":\"c870fb02dd6730522e02ef6f5c1077c40d6dfa62e4\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Table\",\"data\":{\"tableName\":\"",
+      {
+       "Ref": "UsersTable6D91A5EE"
+      },
+      "\",\"consumers\":[]}},{\"id\":\"Desks\",\"addr\":\"c8f9fcd3c66d090a02494edcc076ee78d5ba843c8d\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Table\",\"data\":{\"tableName\":\"",
+      {
+       "Ref": "DesksTable21E5A6E8"
+      },
+      "\",\"consumers\":[]}},{\"id\":\"OrderCodes\",\"addr\":\"c8b317a896646e9af67a89a6e1012e3109267dbf0d\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Table\",\"data\":{\"tableName\":\"",
+      {
+       "Ref": "OrderCodesTableB2D149EC"
+      },
+      "\",\"consumers\":[]}},{\"id\":\"Orders\",\"addr\":\"c88c7a27ad314fe33511c65d89c07574011d8bcd91\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Table\",\"data\":{\"tableName\":\"",
+      {
+       "Ref": "OrdersTable1F8332C7"
+      },
+      "\",\"consumers\":[]}},{\"id\":\"AppSyncApi\",\"addr\":\"c8b60dca1f2660618f35e6349b9926d5e1aec8d51f\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"AppSync\",\"data\":{\"url\":\"",
+      {
+       "Fn::GetAtt": [
+        "AppSyncApiEBDAEC17",
+        "GraphQLUrl"
+       ]
+      },
+      "\",\"appSyncApiId\":\"",
+      {
+       "Fn::GetAtt": [
+        "AppSyncApiEBDAEC17",
+        "ApiId"
+       ]
+      },
+      "\",\"appSyncApiKey\":\"",
+      {
+       "Fn::GetAtt": [
+        "AppSyncApiDefaultApiKey4C5F84B8",
+        "ApiKey"
+       ]
+      },
+      "\",\"dataSources\":[{\"name\":\"order\",\"fn\":{\"node\":\"c8dcdd302e04b62ba61bd5109d052cd55ebc4784eb\",\"stack\":\"dev-demo-smartwaiter-Site\"}},{\"name\":\"orderCode\",\"fn\":{\"node\":\"c84155ca93a2699c4573daf3ff8fc4c6b5d5687027\",\"stack\":\"dev-demo-smartwaiter-Site\"}}]}},{\"id\":\"Lambda_order\",\"addr\":\"c8dcdd302e04b62ba61bd5109d052cd55ebc4784eb\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Function\",\"data\":{\"arn\":\"",
+      {
+       "Fn::GetAtt": [
+        "AppSyncApiLambdaorder08234242",
+        "Arn"
+       ]
+      },
+      "\",\"runtime\":\"nodejs16.x\",\"handler\":\"src/appSync/graphql/order/main.handler\",\"localId\":\"c8dcdd302e04b62ba61bd5109d052cd55ebc4784eb\",\"secrets\":[]}},{\"id\":\"Lambda_orderCode\",\"addr\":\"c84155ca93a2699c4573daf3ff8fc4c6b5d5687027\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Function\",\"data\":{\"arn\":\"",
+      {
+       "Fn::GetAtt": [
+        "AppSyncApiLambdaorderCode36A43FE8",
+        "Arn"
+       ]
+      },
+      "\",\"runtime\":\"nodejs16.x\",\"handler\":\"src/appSync/graphql/orderCode/main.handler\",\"localId\":\"c84155ca93a2699c4573daf3ff8fc4c6b5d5687027\",\"secrets\":[]}},{\"id\":\"site\",\"addr\":\"c86a3b7f9c8fee4783986bc1d9232208dbf8e1d630\",\"stack\":\"dev-demo-smartwaiter-Site\",\"data\":{\"mode\":\"placeholder\",\"path\":\".\",\"runtime\":\"nodejs18.x\",\"server\":\"",
+      {
+       "Fn::GetAtt": [
+        "siteServerFunction6DFA6F1B",
+        "Arn"
+       ]
+      },
+      "\",\"secrets\":[]},\"type\":\"NextjsSite\"},{\"id\":\"ServerFunction\",\"addr\":\"c8e5090c5fb170206b749c3e779d25b9a9b1aca281\",\"stack\":\"dev-demo-smartwaiter-Site\",\"type\":\"Function\",\"data\":{\"arn\":\"",
+      {
+       "Fn::GetAtt": [
+        "siteServerFunction6DFA6F1B",
+        "Arn"
+       ]
+      },
+      "\",\"runtime\":\"nodejs18.x\",\"handler\":\"index.handler\",\"localId\":\"c8e5090c5fb170206b749c3e779d25b9a9b1aca281\",\"secrets\":[]}}]}"
+     ]
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

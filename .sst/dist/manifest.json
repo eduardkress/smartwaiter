@@ -1,0 +1,404 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "rene-demo-smartwaiter-Site.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "rene-demo-smartwaiter-Site.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "rene-demo-smartwaiter-Site": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://984009409855/eu-central-1",
+      "properties": {
+        "templateFile": "rene-demo-smartwaiter-Site.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "sst:app": "demo-smartwaiter",
+          "sst:stage": "rene"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::984009409855:role/cdk-hnb659fds-deploy-role-984009409855-eu-central-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::984009409855:role/cdk-hnb659fds-cfn-exec-role-984009409855-eu-central-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-984009409855-eu-central-1/962809911cbea25eccf9732d2536f58d0123ff49eba2902fde5d1d8dea9d5610.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "rene-demo-smartwaiter-Site.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::984009409855:role/cdk-hnb659fds-lookup-role-984009409855-eu-central-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "rene-demo-smartwaiter-Site.assets"
+      ],
+      "metadata": {
+        "/rene-demo-smartwaiter-Site": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "demo-smartwaiter"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "rene"
+              }
+            ]
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerServiceRole41AEC181"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/CustomResourceHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerE8FB56BA"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Users/Table": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "UsersTable6D91A5EE"
+            }
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Users/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsersTable6D91A5EE"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Users/Parameter_tableName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsersParametertableNameBE329B3D"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Desks/Table": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "DesksTable21E5A6E8"
+            }
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Desks/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DesksTable21E5A6E8"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Desks/Parameter_tableName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DesksParametertableName228A9E3A"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/OrderCodes/Table": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "OrderCodesTableB2D149EC"
+            }
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/OrderCodes/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OrderCodesTableB2D149EC"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/OrderCodes/Parameter_tableName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OrderCodesParametertableNameDA4F4530"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Orders/Table": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "OrdersTable1F8332C7"
+            }
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Orders/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OrdersTable1F8332C7"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/Orders/Parameter_tableName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OrdersParametertableNameB21B7F2B"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiEBDAEC17"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/Schema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiSchemaD3A1C979"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/DefaultApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiDefaultApiKey4C5F84B8"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorderServiceRole268FAB57"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorderServiceRoleDefaultPolicy22E6A9FF"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/order/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorder3D006EA2"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorderCodeServiceRole3BD11DEB"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorderCodeServiceRoleDefaultPolicyE8F7185F"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiorderCode1555513B"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistOrdersResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiQuerylistOrdersResolver73DDF726"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiMutationcreateOrderResolver7EF1370B"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationupdateOrderResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiMutationupdateOrderResolver70DF8B52"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationdeleteOrderResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiMutationdeleteOrderResolverA9AF11E1"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistActiveOrderCodesResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiQuerylistActiveOrderCodesResolverBF71B017"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerygetOrderCodeByIdResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiQuerygetOrderCodeByIdResolver71E37CAB"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderCodeResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiMutationcreateOrderCodeResolverCDA6BD6D"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderServiceRoleE950FBEE"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderServiceRoleDefaultPolicy1E48AE48"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorder08234242"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/EventInvokeConfig/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderEventInvokeConfig049F6F4A"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderCodeServiceRoleDD59943A"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderCodeServiceRoleDefaultPolicy7584427C"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderCode36A43FE8"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/EventInvokeConfig/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiLambdaorderCodeEventInvokeConfig0AE36A8E"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/AppSyncApi/Parameter_url/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppSyncApiParameterurlE61B9935"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunctionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionRole1F8F4FAC"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunctionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionRoleDefaultPolicy213DB8A5"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacerPolicy304BF125"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacer/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacer9A11D516"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunction6DFA6F1B"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionLogRetention7123678D"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/site/Parameter_url/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteParameterurl3D1716BC"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/SSTStackOutputApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiId"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/SSTStackOutputAPiUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APiUrl"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/SSTStackOutputApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiKey"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/SSTStackOutputSSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/rene-demo-smartwaiter-Site/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "rene-demo-smartwaiter-Site"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

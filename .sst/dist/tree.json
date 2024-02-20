@@ -1,0 +1,2511 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "rene-demo-smartwaiter-Site": {
+        "id": "rene-demo-smartwaiter-Site",
+        "path": "rene-demo-smartwaiter-Site",
+        "children": {
+          "CustomResourceHandler": {
+            "id": "CustomResourceHandler",
+            "path": "rene-demo-smartwaiter-Site/CustomResourceHandler",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.101.1"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.101.1"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "rene-demo-smartwaiter-Site/CustomResourceHandler/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+                      "s3Key": "14a054cbcbf61bd5e06a848a372f78a820e7f9d68589f43c4bd7fab413e519f1.zip"
+                    },
+                    "handler": "index.handler",
+                    "memorySize": 1024,
+                    "role": {
+                      "Fn::GetAtt": [
+                        "CustomResourceHandlerServiceRole41AEC181",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs16.x",
+                    "tags": [
+                      {
+                        "key": "sst:app",
+                        "value": "demo-smartwaiter"
+                      },
+                      {
+                        "key": "sst:stage",
+                        "value": "rene"
+                      }
+                    ],
+                    "timeout": 900
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.101.1"
+            }
+          },
+          "Users": {
+            "id": "Users",
+            "path": "rene-demo-smartwaiter-Site/Users",
+            "children": {
+              "Table": {
+                "id": "Table",
+                "path": "rene-demo-smartwaiter-Site/Users/Table",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Users/Table/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "email",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "keySchema": [
+                          {
+                            "attributeName": "email",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "pointInTimeRecoverySpecification": {
+                          "pointInTimeRecoveryEnabled": true
+                        },
+                        "tableName": "rene-demo-smartwaiter-Users",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "rene-demo-smartwaiter-Site/Users/Table/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.101.1"
+                }
+              },
+              "Parameter_tableName": {
+                "id": "Parameter_tableName",
+                "path": "rene-demo-smartwaiter-Site/Users/Parameter_tableName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Users/Parameter_tableName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/Table/Users/tableName",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Ref": "UsersTable6D91A5EE"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "Desks": {
+            "id": "Desks",
+            "path": "rene-demo-smartwaiter-Site/Desks",
+            "children": {
+              "Table": {
+                "id": "Table",
+                "path": "rene-demo-smartwaiter-Site/Desks/Table",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Desks/Table/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "pointInTimeRecoverySpecification": {
+                          "pointInTimeRecoveryEnabled": true
+                        },
+                        "tableName": "rene-demo-smartwaiter-Desks",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "rene-demo-smartwaiter-Site/Desks/Table/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.101.1"
+                }
+              },
+              "Parameter_tableName": {
+                "id": "Parameter_tableName",
+                "path": "rene-demo-smartwaiter-Site/Desks/Parameter_tableName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Desks/Parameter_tableName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/Table/Desks/tableName",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Ref": "DesksTable21E5A6E8"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "OrderCodes": {
+            "id": "OrderCodes",
+            "path": "rene-demo-smartwaiter-Site/OrderCodes",
+            "children": {
+              "Table": {
+                "id": "Table",
+                "path": "rene-demo-smartwaiter-Site/OrderCodes/Table",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/OrderCodes/Table/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "pointInTimeRecoverySpecification": {
+                          "pointInTimeRecoveryEnabled": true
+                        },
+                        "tableName": "rene-demo-smartwaiter-OrderCodes",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "rene-demo-smartwaiter-Site/OrderCodes/Table/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.101.1"
+                }
+              },
+              "Parameter_tableName": {
+                "id": "Parameter_tableName",
+                "path": "rene-demo-smartwaiter-Site/OrderCodes/Parameter_tableName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/OrderCodes/Parameter_tableName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/Table/OrderCodes/tableName",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Ref": "OrderCodesTableB2D149EC"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "Orders": {
+            "id": "Orders",
+            "path": "rene-demo-smartwaiter-Site/Orders",
+            "children": {
+              "Table": {
+                "id": "Table",
+                "path": "rene-demo-smartwaiter-Site/Orders/Table",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Orders/Table/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "pointInTimeRecoverySpecification": {
+                          "pointInTimeRecoveryEnabled": true
+                        },
+                        "tableName": "rene-demo-smartwaiter-Orders",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "rene-demo-smartwaiter-Site/Orders/Table/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.101.1"
+                }
+              },
+              "Parameter_tableName": {
+                "id": "Parameter_tableName",
+                "path": "rene-demo-smartwaiter-Site/Orders/Parameter_tableName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/Orders/Parameter_tableName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/Table/Orders/tableName",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Ref": "OrdersTable1F8332C7"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "AppSyncApi": {
+            "id": "AppSyncApi",
+            "path": "rene-demo-smartwaiter-Site/AppSyncApi",
+            "children": {
+              "Api": {
+                "id": "Api",
+                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AppSync::GraphQLApi",
+                      "aws:cdk:cloudformation:props": {
+                        "authenticationType": "API_KEY",
+                        "name": "rene-demo-smartwaiter-AppSyncApi",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ],
+                        "xrayEnabled": true
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.CfnGraphQLApi",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Schema": {
+                    "id": "Schema",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/Schema",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AppSync::GraphQLSchema",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Fn::GetAtt": [
+                            "AppSyncApiEBDAEC17",
+                            "ApiId"
+                          ]
+                        },
+                        "definition": "enum OrderStatus {\n  NEW\n  DONE\n  CANCELED\n}\n\ntype Order {\n  id: String!\n  orderCodeId: String!\n  orderItems: [OrderItem!]!\n  orderStatus: OrderStatus!\n}\n\ninput OrderInput {\n  orderCodeId: String!\n  orderItems: [OrderItemInput!]!\n  orderStatus: OrderStatus!\n}\n\ntype OrderItem {\n  productId: String!\n  variantId: String!\n  optionIds: [String!]!\n  amount: Int!\n  extraText: String!\n}\n\ninput OrderItemInput {\n  productId: String!\n  variantId: String!\n  optionIds: [String!]!\n  amount: Int!\n  extraText: String!\n}\n\ntype OrderCode {\n  id: String!\n  deskId: String!\n  isActive: Boolean!\n}\n\ninput OrderCodeInput {\n  deskId: String!\n  isActive: Boolean!\n}\n\ntype Mutation {\n  createOrder(orderInput: OrderInput!): Order\n  createOrderCode(orderCodeInput: OrderCodeInput!): OrderCode\n  updateOrder(orderId: String!, orderInput: OrderInput!): Order\n  deleteOrder(orderId: String!): Order\n}\n\ntype Query {\n  listOrders: [Order!]!\n  listActiveOrderCodes: [OrderCode!]!\n  getOrderCodeById(orderCodeId: String!): OrderCode\n}\n\ntype Subscription {\n  onCreateOrder: Order @aws_subscribe(mutations: [\"createOrder\"])\n  onCreateOrderCode: OrderCode @aws_subscribe(mutations: [\"createOrderCode\"])\n  onUpdateOrder: Order @aws_subscribe(mutations: [\"updateOrder\"])\n  onDeleteOrder: Order @aws_subscribe(mutations: [\"deleteOrder\"])\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.CfnGraphQLSchema",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "DefaultApiKey": {
+                    "id": "DefaultApiKey",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/DefaultApiKey",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AppSync::ApiKey",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Fn::GetAtt": [
+                            "AppSyncApiEBDAEC17",
+                            "ApiId"
+                          ]
+                        },
+                        "expires": 1739992488
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.CfnApiKey",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "order": {
+                    "id": "order",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order",
+                    "children": {
+                      "ServiceRole": {
+                        "id": "ServiceRole",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole",
+                        "children": {
+                          "ImportServiceRole": {
+                            "id": "ImportServiceRole",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/ImportServiceRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.101.1"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "appsync.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "tags": [
+                                  {
+                                    "key": "sst:app",
+                                    "value": "demo-smartwaiter"
+                                  },
+                                  {
+                                    "key": "sst:stage",
+                                    "value": "rene"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.101.1"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/ServiceRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": "lambda:InvokeFunction",
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::GetAtt": [
+                                                "AppSyncApiLambdaorder08234242",
+                                                "Arn"
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  {
+                                                    "Fn::GetAtt": [
+                                                      "AppSyncApiLambdaorder08234242",
+                                                      "Arn"
+                                                    ]
+                                                  },
+                                                  ":*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "AppSyncApiorderServiceRoleDefaultPolicy22E6A9FF",
+                                    "roles": [
+                                      {
+                                        "Ref": "AppSyncApiorderServiceRole268FAB57"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.101.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/order/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::DataSource",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "lambdaConfig": {
+                              "lambdaFunctionArn": {
+                                "Fn::GetAtt": [
+                                  "AppSyncApiLambdaorder08234242",
+                                  "Arn"
+                                ]
+                              }
+                            },
+                            "name": "order",
+                            "serviceRoleArn": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiorderServiceRole268FAB57",
+                                "Arn"
+                              ]
+                            },
+                            "type": "AWS_LAMBDA"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnDataSource",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.LambdaDataSource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "orderCode": {
+                    "id": "orderCode",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode",
+                    "children": {
+                      "ServiceRole": {
+                        "id": "ServiceRole",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole",
+                        "children": {
+                          "ImportServiceRole": {
+                            "id": "ImportServiceRole",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/ImportServiceRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.101.1"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "appsync.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "tags": [
+                                  {
+                                    "key": "sst:app",
+                                    "value": "demo-smartwaiter"
+                                  },
+                                  {
+                                    "key": "sst:stage",
+                                    "value": "rene"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.101.1"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/ServiceRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": "lambda:InvokeFunction",
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::GetAtt": [
+                                                "AppSyncApiLambdaorderCode36A43FE8",
+                                                "Arn"
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  {
+                                                    "Fn::GetAtt": [
+                                                      "AppSyncApiLambdaorderCode36A43FE8",
+                                                      "Arn"
+                                                    ]
+                                                  },
+                                                  ":*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "AppSyncApiorderCodeServiceRoleDefaultPolicyE8F7185F",
+                                    "roles": [
+                                      {
+                                        "Ref": "AppSyncApiorderCodeServiceRole3BD11DEB"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.101.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/orderCode/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::DataSource",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "lambdaConfig": {
+                              "lambdaFunctionArn": {
+                                "Fn::GetAtt": [
+                                  "AppSyncApiLambdaorderCode36A43FE8",
+                                  "Arn"
+                                ]
+                              }
+                            },
+                            "name": "orderCode",
+                            "serviceRoleArn": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiorderCodeServiceRole3BD11DEB",
+                                "Arn"
+                              ]
+                            },
+                            "type": "AWS_LAMBDA"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnDataSource",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.LambdaDataSource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "QuerylistOrdersResolver": {
+                    "id": "QuerylistOrdersResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistOrdersResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistOrdersResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "order",
+                            "fieldName": "listOrders",
+                            "kind": "UNIT",
+                            "typeName": "Query"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "MutationcreateOrderResolver": {
+                    "id": "MutationcreateOrderResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "order",
+                            "fieldName": "createOrder",
+                            "kind": "UNIT",
+                            "typeName": "Mutation"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "MutationupdateOrderResolver": {
+                    "id": "MutationupdateOrderResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationupdateOrderResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationupdateOrderResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "order",
+                            "fieldName": "updateOrder",
+                            "kind": "UNIT",
+                            "typeName": "Mutation"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "MutationdeleteOrderResolver": {
+                    "id": "MutationdeleteOrderResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationdeleteOrderResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationdeleteOrderResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "order",
+                            "fieldName": "deleteOrder",
+                            "kind": "UNIT",
+                            "typeName": "Mutation"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "QuerylistActiveOrderCodesResolver": {
+                    "id": "QuerylistActiveOrderCodesResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistActiveOrderCodesResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerylistActiveOrderCodesResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "orderCode",
+                            "fieldName": "listActiveOrderCodes",
+                            "kind": "UNIT",
+                            "typeName": "Query"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "QuerygetOrderCodeByIdResolver": {
+                    "id": "QuerygetOrderCodeByIdResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerygetOrderCodeByIdResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/QuerygetOrderCodeByIdResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "orderCode",
+                            "fieldName": "getOrderCodeById",
+                            "kind": "UNIT",
+                            "typeName": "Query"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "MutationcreateOrderCodeResolver": {
+                    "id": "MutationcreateOrderCodeResolver",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderCodeResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Api/MutationcreateOrderCodeResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "AppSyncApiEBDAEC17",
+                                "ApiId"
+                              ]
+                            },
+                            "dataSourceName": "orderCode",
+                            "fieldName": "createOrderCode",
+                            "kind": "UNIT",
+                            "typeName": "Mutation"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_appsync.Resolver",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_appsync.GraphqlApi",
+                  "version": "2.101.1"
+                }
+              },
+              "Lambda_order": {
+                "id": "Lambda_order",
+                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "demo-smartwaiter"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "rene"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "xray:PutTraceSegments",
+                                        "xray:PutTelemetryRecords"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "OrdersTable1F8332C7",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "OrdersTable1F8332C7",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "OrderCodesTableB2D149EC",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "OrderCodesTableB2D149EC",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "iot:*",
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "s3:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::sstbootstrap-eucentral134f82fae-135m5hl5m95vh"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::sstbootstrap-eucentral134f82fae-135m5hl5m95vh/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "AppSyncApiLambdaorderServiceRoleDefaultPolicy1E48AE48",
+                                "roles": [
+                                  {
+                                    "Ref": "AppSyncApiLambdaorderServiceRoleE950FBEE"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "architectures": [
+                          "x86_64"
+                        ],
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+                          "s3Key": "2a4963c186c9bb22fec628e444a50d1219ed3dac4ee81fcf7662ba64f5155c90.zip"
+                        },
+                        "environment": {
+                          "variables": {
+                            "SST_FUNCTION_ID": "c8c5f9338c91584638ad31631ad8a033edd9e0f40d",
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                            "SST_APP": "demo-smartwaiter",
+                            "SST_STAGE": "rene",
+                            "SST_SSM_PREFIX": "/sst/demo-smartwaiter/rene/",
+                            "SST_Table_tableName_Orders": {
+                              "Ref": "OrdersTable1F8332C7"
+                            },
+                            "SST_Table_tableName_OrderCodes": {
+                              "Ref": "OrderCodesTableB2D149EC"
+                            }
+                          }
+                        },
+                        "ephemeralStorage": {
+                          "size": 512
+                        },
+                        "handler": "bridge.handler",
+                        "memorySize": 1024,
+                        "role": {
+                          "Fn::GetAtt": [
+                            "AppSyncApiLambdaorderServiceRoleE950FBEE",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs18.x",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ],
+                        "timeout": 10,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "EventInvokeConfig": {
+                    "id": "EventInvokeConfig",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/EventInvokeConfig",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_order/EventInvokeConfig/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::EventInvokeConfig",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "AppSyncApiLambdaorder08234242"
+                            },
+                            "maximumRetryAttempts": 0,
+                            "qualifier": "$LATEST"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnEventInvokeConfig",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.EventInvokeConfig",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.101.1"
+                }
+              },
+              "Lambda_orderCode": {
+                "id": "Lambda_orderCode",
+                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "demo-smartwaiter"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "rene"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "xray:PutTraceSegments",
+                                        "xray:PutTelemetryRecords"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "OrdersTable1F8332C7",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "OrdersTable1F8332C7",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "OrderCodesTableB2D149EC",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "OrderCodesTableB2D149EC",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "iot:*",
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "s3:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::sstbootstrap-eucentral134f82fae-135m5hl5m95vh"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::sstbootstrap-eucentral134f82fae-135m5hl5m95vh/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "AppSyncApiLambdaorderCodeServiceRoleDefaultPolicy7584427C",
+                                "roles": [
+                                  {
+                                    "Ref": "AppSyncApiLambdaorderCodeServiceRoleDD59943A"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "architectures": [
+                          "x86_64"
+                        ],
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+                          "s3Key": "2a4963c186c9bb22fec628e444a50d1219ed3dac4ee81fcf7662ba64f5155c90.zip"
+                        },
+                        "environment": {
+                          "variables": {
+                            "SST_FUNCTION_ID": "c88628848861fd331ec14f728f81f90693a82772bc",
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                            "SST_APP": "demo-smartwaiter",
+                            "SST_STAGE": "rene",
+                            "SST_SSM_PREFIX": "/sst/demo-smartwaiter/rene/",
+                            "SST_Table_tableName_Orders": {
+                              "Ref": "OrdersTable1F8332C7"
+                            },
+                            "SST_Table_tableName_OrderCodes": {
+                              "Ref": "OrderCodesTableB2D149EC"
+                            }
+                          }
+                        },
+                        "ephemeralStorage": {
+                          "size": 512
+                        },
+                        "handler": "bridge.handler",
+                        "memorySize": 1024,
+                        "role": {
+                          "Fn::GetAtt": [
+                            "AppSyncApiLambdaorderCodeServiceRoleDD59943A",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs18.x",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ],
+                        "timeout": 10,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "EventInvokeConfig": {
+                    "id": "EventInvokeConfig",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/EventInvokeConfig",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/AppSyncApi/Lambda_orderCode/EventInvokeConfig/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::EventInvokeConfig",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "AppSyncApiLambdaorderCode36A43FE8"
+                            },
+                            "maximumRetryAttempts": 0,
+                            "qualifier": "$LATEST"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnEventInvokeConfig",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.EventInvokeConfig",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.101.1"
+                }
+              },
+              "Parameter_url": {
+                "id": "Parameter_url",
+                "path": "rene-demo-smartwaiter-Site/AppSyncApi/Parameter_url",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/AppSyncApi/Parameter_url/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/AppSyncApi/AppSyncApi/url",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Fn::GetAtt": [
+                            "AppSyncApiEBDAEC17",
+                            "GraphQLUrl"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "demo-certificate": {
+            "id": "demo-certificate",
+            "path": "rene-demo-smartwaiter-Site/demo-certificate",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.101.1"
+            }
+          },
+          "site": {
+            "id": "site",
+            "path": "rene-demo-smartwaiter-Site/site",
+            "children": {
+              "ServerFunctionRole": {
+                "id": "ServerFunctionRole",
+                "path": "rene-demo-smartwaiter-Site/site/ServerFunctionRole",
+                "children": {
+                  "ImportServerFunctionRole": {
+                    "id": "ImportServerFunctionRole",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunctionRole/ImportServerFunctionRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunctionRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "AWS": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":iam::984009409855:root"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "maxSessionDuration": 43200,
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunctionRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunctionRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "dynamodb:*",
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "UsersTable6D91A5EE",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "UsersTable6D91A5EE",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": "dynamodb:*",
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "DesksTable21E5A6E8",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "DesksTable21E5A6E8",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "siteServerFunctionRoleDefaultPolicy213DB8A5",
+                            "roles": [
+                              {
+                                "Ref": "siteServerFunctionRole1F8F4FAC"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.101.1"
+                }
+              },
+              "ServerFunction": {
+                "id": "ServerFunction",
+                "path": "rene-demo-smartwaiter-Site/site/ServerFunction",
+                "children": {
+                  "AssetReplacerPolicy": {
+                    "id": "AssetReplacerPolicy",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacerPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject",
+                                    "s3:PutObject"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":s3:::placeholder/*"
+                                      ]
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "siteServerFunctionAssetReplacerPolicy304BF125",
+                            "roles": [
+                              {
+                                "Ref": "CustomResourceHandlerServiceRole41AEC181"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "AssetReplacer": {
+                    "id": "AssetReplacer",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacer",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/AssetReplacer/Default",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CustomResource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "IServerFunctionBucket": {
+                    "id": "IServerFunctionBucket",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunction/IServerFunctionBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "ServerFunction": {
+                    "id": "ServerFunction",
+                    "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                          "aws:cdk:cloudformation:props": {
+                            "architectures": [
+                              "arm64"
+                            ],
+                            "code": {
+                              "s3Bucket": "cdk-hnb659fds-assets-984009409855-eu-central-1",
+                              "s3Key": "25ae0483be9f35c1459edc6cd776d840328cfd451f29bcdf67d80b0561c2609f.zip"
+                            },
+                            "description": "Server handler placeholder",
+                            "environment": {
+                              "variables": {
+                                "NEXTAUTH_URL": "https://demo.smartwaiter.app",
+                                "NEXTAUTH_SECRET": "33jr9jfH5CLwSqsArC2uugxFXFW7vZhF",
+                                "SALT": "EjW8grHa5Ohg7xGVpxVDxq08wSZZxJiw",
+                                "NEXT_PUBLIC_APP_URL": "https://demo.smartwaiter.app",
+                                "SST_APP": "demo-smartwaiter",
+                                "SST_STAGE": "rene",
+                                "SST_SSM_PREFIX": "/sst/demo-smartwaiter/rene/",
+                                "SST_Table_tableName_Users": {
+                                  "Ref": "UsersTable6D91A5EE"
+                                },
+                                "SST_Table_tableName_Desks": {
+                                  "Ref": "DesksTable21E5A6E8"
+                                },
+                                "SST_AppSyncApi_url_AppSyncApi": {
+                                  "Fn::GetAtt": [
+                                    "AppSyncApiEBDAEC17",
+                                    "GraphQLUrl"
+                                  ]
+                                }
+                              }
+                            },
+                            "handler": "index.handler",
+                            "memorySize": 1024,
+                            "role": {
+                              "Fn::GetAtt": [
+                                "siteServerFunctionRole1F8F4FAC",
+                                "Arn"
+                              ]
+                            },
+                            "runtime": "nodejs18.x",
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "demo-smartwaiter"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "rene"
+                              }
+                            ],
+                            "timeout": 10
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "LogRetention": {
+                        "id": "LogRetention",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogRetention",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/LogGroup",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.101.1"
+                        }
+                      },
+                      "Code": {
+                        "id": "Code",
+                        "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.101.1"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "rene-demo-smartwaiter-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.101.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Function",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.2.69"
+                }
+              },
+              "Parameter_url": {
+                "id": "Parameter_url",
+                "path": "rene-demo-smartwaiter-Site/site/Parameter_url",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/site/Parameter_url/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/demo-smartwaiter/rene/NextjsSite/site/url",
+                        "tags": {
+                          "sst:app": "demo-smartwaiter",
+                          "sst:stage": "rene"
+                        },
+                        "type": "String",
+                        "value": "localhost"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
+            "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "children": {
+              "Code": {
+                "id": "Code",
+                "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.101.1"
+                }
+              },
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "demo-smartwaiter"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "rene"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.101.1"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "logs:PutRetentionPolicy",
+                                    "logs:DeleteRetentionPolicy"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+                            "roles": [
+                              {
+                                "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.101.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.101.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.101.1"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "rene-demo-smartwaiter-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.101.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.69"
+            }
+          },
+          "SSTStackOutputApiId": {
+            "id": "SSTStackOutputApiId",
+            "path": "rene-demo-smartwaiter-Site/SSTStackOutputApiId",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.101.1"
+            }
+          },
+          "SSTStackOutputAPiUrl": {
+            "id": "SSTStackOutputAPiUrl",
+            "path": "rene-demo-smartwaiter-Site/SSTStackOutputAPiUrl",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.101.1"
+            }
+          },
+          "SSTStackOutputApiKey": {
+            "id": "SSTStackOutputApiKey",
+            "path": "rene-demo-smartwaiter-Site/SSTStackOutputApiKey",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.101.1"
+            }
+          },
+          "SSTStackOutputSSTMetadata": {
+            "id": "SSTStackOutputSSTMetadata",
+            "path": "rene-demo-smartwaiter-Site/SSTStackOutputSSTMetadata",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.101.1"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "rene-demo-smartwaiter-Site/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.101.1"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "rene-demo-smartwaiter-Site/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.101.1"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.101.1"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.2.69"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.101.1"
+    }
+  }
+}
