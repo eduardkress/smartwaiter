@@ -4,9 +4,9 @@ import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
 import * as cdk from "aws-cdk-lib";
 import * as appsync from "aws-cdk-lib/aws-appsync";
 
-const appName = "demo";
+const appName = "ariana";
 const domainCertArn =
-  "arn:aws:acm:us-east-1:984009409855:certificate/0fe9ca89-945d-427b-8b38-7f81060092d6";
+  "arn:aws:acm:us-east-1:984009409855:certificate/41a6b51b-8f7d-4935-af78-b03f06eff2bf";
 
 export default {
   config(_input) {

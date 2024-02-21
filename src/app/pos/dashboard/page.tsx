@@ -41,10 +41,10 @@ Amplify.configure({
   API: {
     GraphQL: {
       endpoint:
-        "https://uoodv74rgzggdhfxhugoyloeq4.appsync-api.eu-central-1.amazonaws.com/graphql",
+        "https://xquan5g45fgnvasw7u7c6jmzdi.appsync-api.eu-central-1.amazonaws.com/graphql",
       region: "eu-central-1",
       defaultAuthMode: "apiKey",
-      apiKey: "da2-5ojq2i57kvg4jbq2wqaewdmooa",
+      apiKey: "da2-udvjaxql4jfura4u64l2lbgdvi",
     },
   },
 });

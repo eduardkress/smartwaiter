@@ -1,5 +1,5 @@
 "use client";
-import _restaurantData from "@/data/restaurant.json";
+import _restaurantData from "@/data/ariana.json";
 import { Restaurant } from "@/types/restaurant";
 import Menu from "@/components/menu/Menu";
 import Hero from "@/components/menu/Hero";

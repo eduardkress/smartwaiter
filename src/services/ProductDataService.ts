@@ -1,5 +1,5 @@
 import { BasketItem } from "@/types/basketItem";
-import _restaurantData from "@/data/restaurant.json";
+import _restaurantData from "@/data/ariana.json";
 
 export function calculateTotalPrice(
   basketItems: BasketItem | Array<BasketItem>

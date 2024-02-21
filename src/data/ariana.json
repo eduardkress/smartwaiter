@@ -1,0 +1,2595 @@
+{
+  "hero": {
+    "name": "Ariana Grill & Restaurant",
+    "slogan": "Wir sind das erste Restaurant in Paderborn das afghanische Küche anbietet, natürlich gibt es auch aber noch Grillgerichte, Pizza und vieles mehr.",
+    "description": [],
+    "logoUrl": "/images/ariana_logo.png",
+    "headerImageUrl": "/images/hero-restaurants.jpeg"
+  },
+  "information": {
+    "contact": {
+      "telephone": "05254 921 36 14",
+      "whatsapp": "0176 215 427 19"
+    },
+    "delivery": [
+      {
+        "deliveryZone": "Schloß Neuhaus & Elsen",
+        "minimumOrderValue": 1500,
+        "deliveryCost": "Auf Anfrage"
+      },
+      {
+        "deliveryZone": "Außerhalb Schloss Neuhaus",
+        "minimumOrderValue": 1337,
+        "deliveryCost": "Auf Anfrage"
+      }
+    ],
+    "location": {
+      "streetName": "Residenzstraße",
+      "streetNumber": "17",
+      "postalCode": "33104",
+      "city": "Paderborn",
+      "country": "Deutschland"
+    },
+    "openingHours": {
+      "Friday": ["12:00 - 15:00", "17:00 - 23:00"],
+      "Holidays": ["12:00 - 23:00"],
+      "Monday": [],
+      "Saturday": ["12:00 - 23:00"],
+      "Sunday": ["12:00 - 23:00"],
+      "Thursday": ["12:00 - 15:00", "17:00 - 23:00"],
+      "Tuesday": ["12:00 - 15:00", "17:00 - 23:00"],
+      "Wednesday": ["12:00 - 15:00", "17:00 - 23:00"]
+    },
+    "colophon": {
+      "companyName": "Ariana Restaurant Paderborn",
+      "contentResponsible": "Zarghuna Ahmadi",
+      "email": "service@ordersmart.de",
+      "fax": "-",
+      "location": {
+        "streetName": "Residenzstraße",
+        "streetNumber": "17",
+        "postalCode": "33104",
+        "country": "Deutschland",
+        "city": "Paderborn"
+      },
+      "telephone": "05254 921 36 14",
+      "businessType": "Partnership",
+      "representativeNames": ["Zarghuna Ahmadi"],
+      "vatNumber": "017085077"
+    }
+  },
+  "menu": {
+    "allergens": [
+      {
+        "id": "1",
+        "description": "mit Konservierungsstoff"
+      },
+      {
+        "description": "mit Farbstoff",
+        "id": "2"
+      },
+      {
+        "description": "mit Antioxidationsmittel",
+        "id": "3"
+      },
+      {
+        "id": "4",
+        "description": "mit Süßungsmittel Saccharin"
+      },
+      {
+        "description": "mit Süßungsmittel Cyclamat",
+        "id": "5"
+      },
+      {
+        "id": "6",
+        "description": "mit Süßungsmittel Aspartam, enthält Phenylanunquelle"
+      },
+      {
+        "id": "7",
+        "description": "mit Süßungsmittel Acesulfam"
+      },
+      {
+        "id": "8",
+        "description": "mit Phosphat"
+      },
+      {
+        "id": "9",
+        "description": "geschwefelt"
+      },
+      {
+        "id": "10",
+        "description": "chininhaltig"
+      },
+      {
+        "id": "11",
+        "description": "coffeinhaltig"
+      },
+      {
+        "id": "12",
+        "description": "mit Geschmacksverstärker"
+      },
+      {
+        "id": "13",
+        "description": "geschwärzt"
+      },
+      {
+        "id": "14",
+        "description": "gewachst"
+      },
+      {
+        "id": "15",
+        "description": "gentechnisch verändert"
+      },
+      {
+        "id": "a",
+        "description": "Glutenhaltiges Getreide"
+      },
+      {
+        "id": "b",
+        "description": "Krebstiere und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "c",
+        "description": "Eier und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "d",
+        "description": "Fische und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "e",
+        "description": "Erdnüsse und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "f",
+        "description": "Sojabohnen und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "g",
+        "description": "Milch und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "h",
+        "description": "Schalenfrüchte"
+      },
+      {
+        "id": "i",
+        "description": "Sellerie und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "j",
+        "description": "Senf und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "k",
+        "description": "Sesamsamen und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "l",
+        "description": "Schwefeldioxid und Sulphite"
+      },
+      {
+        "id": "m",
+        "description": "Lupinen und daraus gewonnene Erzeugnisse"
+      },
+      {
+        "id": "n",
+        "description": "Weichtiere und daraus gewonnene Erzeugnisse"
+      }
+    ],
+    "categories": [
+      {
+        "id": "R353NNR3Q",
+        "name": "Vorspeisen & Beilagen",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R353NNR3Q1",
+          "R353NNR3Q2",
+          "R353NNR3Q3",
+          "R353NNR3Q4",
+          "R353NNR3Q5",
+          "R353NNR3Q6",
+          "R353NNR3Q7",
+          "R353NNR3Q8",
+          "R353NNR3Q9"
+        ]
+      },
+      {
+        "id": "R354NNR3Q",
+        "name": "Salate",
+        "description": ["mit Essig/Öl, Cocktail- oder Joghurtdressing"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R354NNR3Q1",
+          "R354NNR3Q2",
+          "R354NNR3Q3",
+          "R354NNR3Q4",
+          "R354NNR3Q5",
+          "R354NNR3Q6"
+        ]
+      },
+      {
+        "id": "R355NNR3",
+        "name": "Pizza",
+        "description": [
+          "mit Tomatensauce, Käse & Oregano",
+          "Extra Beläge müssen wir zusätzlich berechnen."
+        ],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R355NNR301",
+          "R355NNR302",
+          "R355NNR303",
+          "R355NNR304",
+          "R355NNR305",
+          "R355NNR306",
+          "R355NNR307",
+          "R355NNR308",
+          "R355NNR309",
+          "R355NNR310",
+          "R355NNR311",
+          "R355NNR312",
+          "R355NNR313",
+          "R355NNR314",
+          "R355NNR315",
+          "R355NNR316",
+          "R355NNR317",
+          "R355NNR318"
+        ],
+        "discountId": ["9c70affdb9f0"]
+      },
+      {
+        "id": "R356NNR3",
+        "name": "Pizzabrötchen",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R356NNR301", "R356NNR302", "R356NNR303", "R356NNR304"]
+      },
+      {
+        "id": "R357NNR3",
+        "name": "Döner Kebab",
+        "description": ["Geflügel-Drehspieß nach Döner Art"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R357NNR301",
+          "R357NNR302",
+          "R357NNR303",
+          "R357NNR304",
+          "R357NNR305"
+        ],
+        "discountId": ["9c70affdb9f2"]
+      },
+      {
+        "id": "R358NNR3",
+        "name": "Lahmacun",
+        "description": ["Hausgemacht & Ofenfrisch"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R358NNR301", "R358NNR302", "R358NNR303"],
+        "discountId": ["9c70affdb9f4"]
+      },
+      {
+        "id": "R359NNR3",
+        "name": "Falafel",
+        "description": ["Authentische Gemüsebällchen"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R359NNR301", "R359NNR302", "R359NNR303"],
+        "discountId": ["9c70affdb9f3"]
+      },
+      {
+        "id": "R360NNR3",
+        "name": "Saucen zur Auswahl",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R360NNR301",
+          "R360NNR302",
+          "R360NNR303",
+          "R360NNR304",
+          "R360NNR305",
+          "R360NNR306",
+          "R360NNR307",
+          "R360NNR308",
+          "R360NNR309",
+          "R360NNR310"
+        ]
+      },
+      {
+        "id": "R361NNR3",
+        "name": "Hamburger",
+        "description": ["100% American Style im Menü oder Einzeln"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R361NNR301",
+          "R361NNR302",
+          "R361NNR303",
+          "R361NNR304",
+          "R361NNR305",
+          "R361NNR306",
+          "R361NNR307",
+          "R361NNR308",
+          "R361NNR309",
+          "R361NNR310",
+          "R361NNR311",
+          "R361NNR312"
+        ],
+        "discountId": ["9c70affdb9f1"]
+      },
+      {
+        "id": "R362NNR3",
+        "name": "Schnitzelgerichte",
+        "description": ["Hausgemachte Hähnchenschnitzel"],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R362NNR301", "R362NNR301"]
+      },
+      {
+        "id": "R363NNR3",
+        "name": "Vegetarische Gerichte",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R363NNR301", "R363NNR302", "R363NNR303", "R363NNR304"]
+      },
+      {
+        "id": "R364NNR3",
+        "name": "Afghanische Gerichte",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": ["R364NNR301", "R364NNR302", "R364NNR303", "R364NNR304"]
+      },
+      {
+        "id": "R365NNR3",
+        "name": "Grill-Gerichte",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R365NNR301",
+          "R365NNR302",
+          "R365NNR303",
+          "R365NNR304",
+          "R365NNR305",
+          "R365NNR306",
+          "R365NNR307"
+        ]
+      },
+      {
+        "id": "R366NNR3",
+        "name": "Getränke",
+        "description": [],
+        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "overviewImageUrl": null,
+        "timeRestrictions": {},
+        "productIds": [
+          "R366NNR301",
+          "R366NNR302",
+          "R366NNR303",
+          "R366NNR304",
+          "R366NNR305",
+          "R366NNR306",
+          "R366NNR307",
+          "R366NNR308",
+          "R366NNR309",
+          "R366NNR310",
+          "R366NNR311",
+          "R366NNR312",
+          "R366NNR313",
+          "R366NNR314",
+          "R366NNR315",
+          "R366NNR316",
+          "R366NNR317"
+        ]
+      }
+    ],
+    "discounts": [
+      {
+        "daysOfWeek": [2, 3, 4, 5],
+        "discountedOptionGroupId": ["9c70affdb9f07d31e52efd1098112402"],
+        "name": "Mittagstisch",
+        "from": 1200,
+        "id": "9c70affdb9f0",
+        "description": "Zu jeder 26er Pizza ein 0,33l Softdrink Gratis",
+        "until": 1500
+      },
+      {
+        "daysOfWeek": [2, 3, 4, 5],
+        "discountedOptionGroupId": [],
+        "id": "9c70affdb9f1",
+        "name": "Mittagstisch",
+        "from": 1200,
+        "until": 1500,
+        "discount": 100,
+        "description": "Jedes Hamburger Menü 1€ günstiger"
+      },
+      {
+        "daysOfWeek": [2, 3, 4, 5],
+        "discountedOptionGroupId": [],
+        "id": "9c70affdb9f2",
+        "name": "Mittagstisch",
+        "until": 1500,
+        "from": 1200,
+        "discount": 100,
+        "description": "Jedes Dönergericht 1€ günstiger"
+      },
+      {
+        "daysOfWeek": [2, 3, 4, 5],
+        "discountedOptionGroupId": [],
+        "id": "9c70affdb9f3",
+        "name": "Mittagstisch",
+        "from": 1200,
+        "until": 1500,
+        "discount": 100,
+        "description": "Jedes Falafelgericht 1€ günstiger"
+      },
+      {
+        "daysOfWeek": [2, 3, 4, 5],
+        "discountedOptionGroupId": [],
+        "description": "Hausgemachte Lahmacun 1€ günstiger",
+        "discount": 100,
+        "from": 1200,
+        "id": "9c70affdb9f4",
+        "name": "Mittagstisch",
+        "until": 1500
+      }
+    ],
+    "optionGroups": [
+      {
+        "optionIds": [
+          "R7P1P1O1701",
+          "R7P1P1O1702",
+          "R7P1P1O1703",
+          "R7P1P1O1704"
+        ],
+        "id": "9c70affdb9f07d31e52efd1098112401",
+        "isRequired": true,
+        "isTypeMulti": false,
+        "name": "Dips zur Auswahl",
+        "maxChoices": 1,
+        "minChoices": 1
+      },
+      {
+        "optionIds": [
+          "R7P1P1O1705",
+          "R7P1P1O1706",
+          "R7P1P1O1707",
+          "R7P1P1O1708",
+          "R7P1P1O1709"
+        ],
+        "isRequired": true,
+        "isTypeMulti": false,
+        "maxChoices": 1,
+        "minChoices": 1,
+        "id": "9c70affdb9f07d31e52efd1098112402",
+        "name": "Ein Softdrink deiner Wahl Gratis"
+      }
+    ],
+    "options": [
+      {
+        "allergenIds": [],
+        "prices": {
+          "onsite": 50
+        },
+        "name": "Knoblauch Dip",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "id": "R7P1P1O1701"
+      },
+      {
+        "allergenIds": [],
+        "prices": {
+          "onsite": 50
+        },
+        "id": "R7P1P1O1702",
+        "name": "Curry Dip",
+        "minAmount": 0,
+        "maxAmount": 1
+      },
+      {
+        "allergenIds": ["5", "6", "g"],
+        "prices": {
+          "onsite": 50
+        },
+        "name": "Cocktail Dip",
+        "id": "R7P1P1O1703",
+        "maxAmount": 1,
+        "minAmount": 0
+      },
+      {
+        "allergenIds": ["g"],
+        "prices": {
+          "onsite": 50
+        },
+        "name": "Scharfer Dip",
+        "minAmount": 0,
+        "maxAmount": 1,
+        "id": "R7P1P1O1704"
+      },
+      {
+        "allergenIds": ["10", "11"],
+        "prices": {
+          "onsite": 0
+        },
+        "id": "R7P1P1O1705",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "name": "Coca-Cola 0,33l"
+      },
+      {
+        "allergenIds": ["10", "11", "12", "13"],
+        "prices": {
+          "onsite": 0
+        },
+        "id": "R7P1P1O1706",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "name": "Coca-Cola Zero 0,33l"
+      },
+      {
+        "allergenIds": ["11", "15"],
+        "prices": {
+          "onsite": 0
+        },
+        "id": "R7P1P1O1707",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "name": "Fanta 0,33l"
+      },
+      {
+        "allergenIds": ["10", "11", "15"],
+        "prices": {
+          "onsite": 0
+        },
+        "id": "R7P1P1O1708",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "name": "Mezzo Mix 0,33l"
+      },
+      {
+        "allergenIds": ["10", "11", "15"],
+        "prices": {
+          "onsite": 0
+        },
+        "id": "R7P1P1O1709",
+        "maxAmount": 1,
+        "minAmount": 0,
+        "name": "Sprite 0,33l"
+      }
+    ],
+    "products": [
+      {
+        "id": "R353NNR3Q1",
+        "name": "01. Linsensuppe",
+        "description": ["Hausgemacht & mit Brotbeilage"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R353NNR3Q1-0",
+            "prices": {
+              "onsite": 500
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q2",
+        "name": "02. Ariana Vorspeisenteller",
+        "description": ["mit Salat, Tzatziki & Chatni"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R353NNR3Q2-0",
+            "prices": {
+              "onsite": 650
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q3",
+        "name": "03. Sambosa",
+        "description": [
+          "4 gefüllte Teigtaschen mit Kartoffeln & Erbsen, dazu Kräuterjoghurt"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R353NNR3Q3-0",
+            "prices": {
+              "onsite": 850
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q4",
+        "name": "04. Tzatziki",
+        "description": ["Portion mit Brotbeilage (Hausgemacht)"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R353NNR3Q4-0",
+            "prices": {
+              "onsite": 350
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q5",
+        "name": "05. Chatni",
+        "description": ["Portion mit Brotbeilage (Hausgemacht)"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R353NNR3Q5-0",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q6",
+        "name": "06. Steakhouse Pommes",
+        "description": ["normale Portion"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R353NNR3Q6-0",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q7",
+        "name": "07. Steakhouse Pommes",
+        "description": ["große Portion"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R353NNR3Q7-0",
+            "prices": {
+              "onsite": 600
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q8",
+        "name": "08. Reis",
+        "description": ["Portion (Hausgemacht)"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R353NNR3Q8-0",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R353NNR3Q9",
+        "name": "09. Ketchup oder Salatmayonnaise",
+        "description": ["Portion (Hausgemacht)"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["c", "5", "6"],
+        "variants": [
+          {
+            "id": "R353NNR3Q9-0",
+            "prices": {
+              "onsite": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q1",
+        "name": "10. Tomatensalat",
+        "description": ["Eisbergsalat mit Tomaten & Zwiebeln"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R354NNR3Q1-0",
+            "name": "klein",
+            "prices": {
+              "onsite": 600
+            }
+          },
+          {
+            "id": "R354NNR3Q1-1",
+            "name": "gross",
+            "prices": {
+              "onsite": 750
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q2",
+        "name": "11. Gemischter Salat",
+        "description": ["Eisbergsalat mit Tomaten, Gurken, Zwiebeln & Möhren"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R354NNR3Q2-0",
+            "name": "klein",
+            "prices": {
+              "onsite": 650
+            }
+          },
+          {
+            "id": "R354NNR3Q2-1",
+            "name": "gross",
+            "prices": {
+              "onsite": 850
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q3",
+        "name": "12. Bauernsalat",
+        "description": [
+          "Eisbergsalat mit Tomaten, Gurken, Peperoni, Weißkäse & Oliven"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g", "7"],
+        "variants": [
+          {
+            "id": "R354NNR3Q3-0",
+            "name": "klein",
+            "prices": {
+              "onsite": 750
+            }
+          },
+          {
+            "id": "R354NNR3Q3-1",
+            "name": "gross",
+            "prices": {
+              "onsite": 950
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q4",
+        "name": "13. Insalata Tonno",
+        "description": [
+          "Eisbergsalat mit Tomaten, Gurken, Zwiebeln, Mais & Thunfisch"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["d", "g"],
+        "variants": [
+          {
+            "id": "R354NNR3Q4-0",
+            "name": "klein",
+            "prices": {
+              "onsite": 750
+            }
+          },
+          {
+            "id": "R354NNR3Q4-1",
+            "name": "gross",
+            "prices": {
+              "onsite": 950
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q5",
+        "name": "14. Kebab Salat",
+        "description": [
+          "Eisbergsalat mit Tomaten, Gurken, Zwiebeln & Drehspießfleisch"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R354NNR3Q5-0",
+            "name": "gross",
+            "prices": {
+              "onsite": 1050
+            }
+          }
+        ]
+      },
+      {
+        "id": "R354NNR3Q6",
+        "name": "15. Ariana Salat",
+        "description": [
+          "Eisbergsalat mit Tomaten, Gurken, Zwiebeln & Hähnchenbruststreifen"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R354NNR3Q6-0",
+            "name": "gross",
+            "prices": {
+              "onsite": 1050
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR301",
+        "name": "20. Margherita",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R355NNR301-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 700
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR301-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1400
+            }
+          },
+          {
+            "id": "R355NNR301-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR302",
+        "name": "21. Cipolla",
+        "description": ["mit Zwiebeln"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R355NNR302-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 750
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR302-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1500
+            }
+          },
+          {
+            "id": "R355NNR302-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2500
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR303",
+        "name": "22. Salami",
+        "description": ["Truthahnsalami"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "2"],
+        "variants": [
+          {
+            "id": "R355NNR303-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 850
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR303-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1800
+            }
+          },
+          {
+            "id": "R355NNR303-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2800
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR304",
+        "name": "23. Schinken",
+        "description": ["Putenschinken"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R355NNR304-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 850
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR304-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1800
+            }
+          },
+          {
+            "id": "R355NNR304-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2800
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR305",
+        "name": "24. Funghi",
+        "description": ["mit Champignons"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "2"],
+        "variants": [
+          {
+            "id": "R355NNR305-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 850
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR305-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1800
+            }
+          },
+          {
+            "id": "R355NNR305-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2800
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR306",
+        "name": "25. Tonno",
+        "description": ["Thunfisch (Auf Wunsch mit Zwiebeln)"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "d"],
+        "variants": [
+          {
+            "id": "R355NNR306-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR306-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR306-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR307",
+        "name": "26. Hawaii",
+        "description": ["Putenschinken & Ananas"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1"],
+        "variants": [
+          {
+            "id": "R355NNR307-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR307-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR307-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR308",
+        "name": "27. Pizza Döner",
+        "description": ["mit Drehspießfleisch & Zwiebeln"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R355NNR308-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR308-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR308-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR309",
+        "name": "28. Pizza Vegetaria",
+        "description": ["mit frisch gebratenem Gemüse"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R355NNR309-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR309-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR309-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR310",
+        "name": "29. Pizza Spinat",
+        "description": ["mit Spinat & Knoblauch"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "c", "g"],
+        "variants": [
+          {
+            "id": "R355NNR310-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR310-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR310-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR311",
+        "name": "30. Pizza Mozzarella",
+        "description": ["mit Mozzarella, frischen Tomaten & Basilikum"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "c", "g"],
+        "variants": [
+          {
+            "id": "R355NNR311-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR311-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR311-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR312",
+        "name": "31. Pizza Holland",
+        "description": [
+          "mit Hähnchenbruststreifen, Broccoli & Sauce Hollandaise"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R355NNR312-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR312-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR312-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR313",
+        "name": "32. Pizza Sucuk",
+        "description": ["mit Knoblauchwurst"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "4"],
+        "variants": [
+          {
+            "id": "R355NNR313-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR313-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 1900
+            }
+          },
+          {
+            "id": "R355NNR313-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 2900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR314",
+        "name": "33. Pizza Ariana",
+        "description": [
+          "mit Drehspießfleisch, Champignons, & Sauce Hollandaise"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R355NNR314-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1050
+            },
+            "discountId": "9c70affdb9f0"
+          },
+          {
+            "id": "R355NNR314-1",
+            "name": "40er",
+            "prices": {
+              "onsite": 2000
+            }
+          },
+          {
+            "id": "R355NNR314-2",
+            "name": "60er",
+            "prices": {
+              "onsite": 3200
+            }
+          }
+        ]
+      },
+      {
+        "id": "R355NNR315",
+        "name": "34. Calzone Vegetaria",
+        "description": ["Pizzatasche mit frisch gebratenem Gemüse"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R355NNR315-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1050
+            },
+            "discountId": "9c70affdb9f0"
+          }
+        ]
+      },
+      {
+        "id": "R355NNR316",
+        "name": "35. Calzone Döner",
+        "description": [
+          "Pizzatasche mit Drehspießfleisch, Peperoni & Zwiebeln"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R355NNR316-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1150
+            },
+            "discountId": "9c70affdb9f0"
+          }
+        ]
+      },
+      {
+        "id": "R355NNR317",
+        "name": "36. Calzone Tonno",
+        "description": ["Pizzatasche mit Thunfisch"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "d"],
+        "variants": [
+          {
+            "id": "R355NNR317-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1150
+            },
+            "discountId": "9c70affdb9f0"
+          }
+        ]
+      },
+      {
+        "id": "R355NNR318",
+        "name": "37. Calzone Mista",
+        "description": [
+          "Pizzatasche mit Truthahnsalami, Putenschinken & Champignons"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "1", "2"],
+        "variants": [
+          {
+            "id": "R355NNR318-0",
+            "name": "26er",
+            "prices": {
+              "onsite": 1150
+            },
+            "discountId": "9c70affdb9f0"
+          }
+        ]
+      },
+      {
+        "id": "R356NNR301",
+        "name": "40. Pizzabrötchen mit Kräuterbutter",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R356NNR301-0",
+            "optionGroupIds": ["9c70affdb9f07d31e52efd1098112401"],
+            "prices": {
+              "onsite": 750
+            }
+          }
+        ]
+      },
+      {
+        "id": "R356NNR302",
+        "name": "41. Pizzabrötchen mit Goudakäse",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R356NNR302-0",
+            "optionGroupIds": ["9c70affdb9f07d31e52efd1098112401"],
+            "prices": {
+              "onsite": 800
+            }
+          }
+        ]
+      },
+      {
+        "id": "R356NNR303",
+        "name": "42. Pizzabrötchen mit Drehspießfleisch",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R356NNR303-0",
+            "optionGroupIds": ["9c70affdb9f07d31e52efd1098112401"],
+            "prices": {
+              "onsite": 900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R356NNR304",
+        "name": "43. Pizzabrötchen mit Thunfisch",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "d"],
+        "variants": [
+          {
+            "id": "R356NNR304-0",
+            "optionGroupIds": ["9c70affdb9f07d31e52efd1098112401"],
+            "prices": {
+              "onsite": 900
+            }
+          }
+        ]
+      },
+      {
+        "id": "R357NNR301",
+        "name": "50. Dönertasche",
+        "description": ["mit Salat"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "3"],
+        "variants": [
+          {
+            "id": "R357NNR301-0",
+            "prices": {
+              "onsite": 600
+            },
+            "discountId": "9c70affdb9f2"
+          }
+        ]
+      },
+      {
+        "id": "R357NNR302",
+        "name": "51. Döner Box",
+        "description": ["mit Drehspießfleisch & Pommes"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R357NNR302-0",
+            "prices": {
+              "onsite": 550
+            },
+            "discountId": "9c70affdb9f2"
+          }
+        ]
+      },
+      {
+        "id": "R357NNR303",
+        "name": "52. Döner Dürüm",
+        "description": ["(Wrap) mit Drehspießfleisch & Salat"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R357NNR303-0",
+            "prices": {
+              "onsite": 750
+            },
+            "discountId": "9c70affdb9f2"
+          }
+        ]
+      },
+      {
+        "id": "R357NNR304",
+        "name": "53. Döner Teller",
+        "description": ["mit Salat & Pommes oder Reis"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "3"],
+        "variants": [
+          {
+            "id": "R357NNR304-0",
+            "prices": {
+              "onsite": 1000
+            },
+            "discountId": "9c70affdb9f2"
+          }
+        ]
+      },
+      {
+        "id": "R357NNR305",
+        "name": "54. Döner überbacken",
+        "description": [
+          "mit Metaxasauce & Käse überbacken,  dazu Salat & Pommes oder Reis"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R357NNR305-0",
+            "prices": {
+              "onsite": 1150
+            },
+            "discountId": "9c70affdb9f2"
+          }
+        ]
+      },
+      {
+        "id": "R358NNR301",
+        "name": "60. Lahmacun",
+        "description": ["mit Salat & Sauce nach Wahl"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R358NNR301-0",
+            "prices": {
+              "onsite": 550
+            },
+            "discountId": "9c70affdb9f4"
+          }
+        ]
+      },
+      {
+        "id": "R358NNR302",
+        "name": "61. Lahmacun Spezial",
+        "description": ["mit Drehspießfleisch, Salat & Sauce nach Wahl"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R358NNR302-0",
+            "prices": {
+              "onsite": 800
+            },
+            "discountId": "9c70affdb9f4"
+          }
+        ]
+      },
+      {
+        "id": "R358NNR303",
+        "name": "62. Lahmacun überbacken",
+        "description": [
+          "mit Metaxasauce & Käse überbacken, dazu Salat & Pommes oder Reis"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "3"],
+        "variants": [
+          {
+            "id": "R358NNR303-0",
+            "prices": {
+              "onsite": 1150
+            },
+            "discountId": "9c70affdb9f4"
+          }
+        ]
+      },
+      {
+        "id": "R359NNR301",
+        "name": "65. Falafeltasche",
+        "description": ["mit Salat & Sauce nach Wahl"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "k"],
+        "variants": [
+          {
+            "id": "R359NNR301-0",
+            "prices": {
+              "onsite": 550
+            },
+            "discountId": "9c70affdb9f3"
+          }
+        ]
+      },
+      {
+        "id": "R359NNR302",
+        "name": "66. Falafel Dürüm",
+        "description": ["(Wrap) mit Salat & Sauce nach Wahl"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "k"],
+        "variants": [
+          {
+            "id": "R359NNR302-0",
+            "prices": {
+              "onsite": 750
+            },
+            "discountId": "9c70affdb9f3"
+          }
+        ]
+      },
+      {
+        "id": "R359NNR303",
+        "name": "67. Falafel Teller",
+        "description": ["mit Pommes oder Reis, dazu Tzatziki & Salat"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "k"],
+        "variants": [
+          {
+            "id": "R359NNR303-0",
+            "prices": {
+              "onsite": 1050
+            },
+            "discountId": "9c70affdb9f3"
+          }
+        ]
+      },
+      {
+        "id": "R360NNR301",
+        "name": "Ketchup",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["5"],
+        "variants": [
+          {
+            "id": "R360NNR301-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR301-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR302",
+        "name": "Salatmayonnaise",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["6"],
+        "variants": [
+          {
+            "id": "R360NNR302-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR302-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR303",
+        "name": "Tzatziki",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R360NNR303-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR303-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR304",
+        "name": "Cocktailsauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["5", "6", "g"],
+        "variants": [
+          {
+            "id": "R360NNR304-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR304-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR305",
+        "name": "Knoblauchsauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R360NNR305-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR305-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR306",
+        "name": "Sauce Hollandaise",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R360NNR306-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR306-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR307",
+        "name": "Scharfe Sauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R360NNR307-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR307-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR308",
+        "name": "Süß-Sauer Sauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R360NNR308-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR308-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR309",
+        "name": "Currysauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R360NNR309-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR309-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R360NNR310",
+        "name": "Metaxasauce",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["5", "6", "g"],
+        "variants": [
+          {
+            "id": "R360NNR310-0",
+            "name": "Extraschlag Sauce",
+            "prices": {
+              "onsite": 50
+            }
+          },
+          {
+            "id": "R360NNR310-1",
+            "name": "Dip Schale (ca. 100ml)",
+            "prices": {
+              "onsite": 100
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR301",
+        "name": "70. Hamburger Menü",
+        "description": ["mit 180g Patty dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR301-0",
+            "prices": {
+              "onsite": 950
+            },
+            "discountId": "9c70affdb9f1"
+          }
+        ]
+      },
+      {
+        "id": "R361NNR302",
+        "name": "70a. Einzelner Hamburger",
+        "description": ["mit 180g Patty"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR302-0",
+            "prices": {
+              "onsite": 590
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR303",
+        "name": "71. Cheeseburger Menü",
+        "description": ["mit 180g Patty dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR303-0",
+            "prices": {
+              "onsite": 990
+            },
+            "discountId": "9c70affdb9f1"
+          }
+        ]
+      },
+      {
+        "id": "R361NNR304",
+        "name": "71a. Einzelner Cheeseburger",
+        "description": ["mit 180g Patty"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR304-0",
+            "prices": {
+              "onsite": 650
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR305",
+        "name": "72. Big Chickenburger Menü",
+        "description": ["dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR305-0",
+            "prices": {
+              "onsite": 1190
+            },
+            "discountId": "9c70affdb9f1"
+          }
+        ]
+      },
+      {
+        "id": "R361NNR306",
+        "name": "72a. Einzelner Big Chickenburger",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR306-0",
+            "prices": {
+              "onsite": 690
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR307",
+        "name": "73. Hawaiiburger Menü",
+        "description": ["dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR307-0",
+            "prices": {
+              "onsite": 1090
+            },
+            "discountId": "9c70affdb9f1"
+          }
+        ]
+      },
+      {
+        "id": "R361NNR308",
+        "name": "73a. Einzelner Hawaiiburger",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR308-0",
+            "prices": {
+              "onsite": 690
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR309",
+        "name": "74. Chili Cheese Burger Menü",
+        "description": ["dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR309-0",
+            "prices": {
+              "onsite": 1050
+            },
+            "discountId": "9c70affdb9f1"
+          }
+        ]
+      },
+      {
+        "id": "R361NNR310",
+        "name": "74a. Einzelner Chili Cheese Burger",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR310-0",
+            "prices": {
+              "onsite": 650
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR311",
+        "name": "76. Chicken Nuggets Menü",
+        "description": ["dazu Pommes und ein Softdrink 0,33l"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR311-0",
+            "name": "6 Stück",
+            "prices": {
+              "onsite": 750
+            }
+          },
+          {
+            "id": "R361NNR311-1",
+            "name": "9 Stück",
+            "prices": {
+              "onsite": 1000
+            }
+          },
+          {
+            "id": "R361NNR311-2",
+            "name": "12 Stück",
+            "prices": {
+              "onsite": 1250
+            }
+          }
+        ]
+      },
+      {
+        "id": "R361NNR312",
+        "name": "77. 5 Chicken Tenders",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R361NNR312-0",
+            "prices": {
+              "onsite": 590
+            }
+          }
+        ]
+      },
+      {
+        "id": "R362NNR301",
+        "name": "80. Paprika Schnitzel",
+        "description": ["mit Pommes"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R362NNR301-0",
+            "prices": {
+              "onsite": 1290
+            }
+          }
+        ]
+      },
+      {
+        "id": "R362NNR302",
+        "name": "81. Jäger Schnitzel",
+        "description": ["mit Pommes"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R362NNR302-0",
+            "prices": {
+              "onsite": 1290
+            }
+          }
+        ]
+      },
+      {
+        "id": "R363NNR301",
+        "name": "90. Gemüsepfanne",
+        "description": ["Gebratenes Gemüse mit Weißkäse"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R363NNR301-0",
+            "prices": {
+              "onsite": 1090
+            }
+          }
+        ]
+      },
+      {
+        "id": "R363NNR302",
+        "name": "91. Auberginenauflauf",
+        "description": ["mit Gouda Käse"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R363NNR302-0",
+            "prices": {
+              "onsite": 1090
+            }
+          }
+        ]
+      },
+      {
+        "id": "R363NNR303",
+        "name": "92. Kashke Bademjan",
+        "description": [
+          "Auberginenpaste mit pers. Minz-Quark, geröstete Zwiebeln & Walnüssen"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "h"],
+        "variants": [
+          {
+            "id": "R363NNR303-0",
+            "prices": {
+              "onsite": 950
+            }
+          }
+        ]
+      },
+      {
+        "id": "R363NNR304",
+        "name": "93. Qabeli",
+        "description": ["Basmatireis mit Karotten & Rosinen, dazu Spinat"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "h"],
+        "variants": [
+          {
+            "id": "R363NNR304-0",
+            "prices": {
+              "onsite": 1190
+            }
+          }
+        ]
+      },
+      {
+        "id": "R364NNR301",
+        "name": "100. Sambosa",
+        "description": ["mit Hackfleischfüllung"],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R364NNR301-0",
+            "prices": {
+              "onsite": 950
+            }
+          }
+        ]
+      },
+      {
+        "id": "R364NNR302",
+        "name": "101. Mantu",
+        "description": [
+          "Afghan. Teigtaschen mit Hackfleischfüllung & Kräuterjoghurt in Schälerbsen-Tomatensauce"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g"],
+        "variants": [
+          {
+            "id": "R364NNR302-0",
+            "prices": {
+              "onsite": 1390
+            }
+          }
+        ]
+      },
+      {
+        "id": "R364NNR303",
+        "name": "102. Ghormeh Sabzi",
+        "description": [
+          "Lammgulasch mit Limetten & versch. Kräutern in grüner Spezialsauce, dazu Basmatireis"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "k"],
+        "variants": [
+          {
+            "id": "R364NNR303-0",
+            "prices": {
+              "onsite": 1390
+            }
+          }
+        ]
+      },
+      {
+        "id": "R364NNR304",
+        "name": "103. Qabeli Palaw",
+        "description": [
+          "Basmatireis mit Kalbfleisch, Karotten & Rosinen, dazu Spinat & Salatbeilage"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["a", "g", "k"],
+        "variants": [
+          {
+            "id": "R364NNR304-0",
+            "prices": {
+              "onsite": 1690
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR301",
+        "name": "110. 2 Hähnchenspieße",
+        "description": [
+          "mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR301-0",
+            "prices": {
+              "onsite": 1390
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR302",
+        "name": "111. Überbackenes Hähnchenfilet",
+        "description": [
+          "mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR302-0",
+            "prices": {
+              "onsite": 1490
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR303",
+        "name": "112. Kubideh Kebab",
+        "description": [
+          "2 Rinder-Lammhackspieße mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR303-0",
+            "prices": {
+              "onsite": 1490
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR304",
+        "name": "113. Teka Kebab",
+        "description": [
+          "2 Lammfleisch-Spieße mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR304-0",
+            "prices": {
+              "onsite": 1790
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR305",
+        "name": "114. Lammkoteletts",
+        "description": [
+          "3 Lammkoteletts mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR305-0",
+            "prices": {
+              "onsite": 1890
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR306",
+        "name": "115. Bakhtiari Kebab",
+        "description": [
+          "1 Rinder-Lammhackspieß, 1 Lammfleisch-Spieß, 1 Hähnchenspieß mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR306-0",
+            "prices": {
+              "onsite": 2190
+            }
+          }
+        ]
+      },
+      {
+        "id": "R365NNR307",
+        "name": "116. Ariana Platte",
+        "description": [
+          "1 Rinder-Lammhackspieß, 1 Lammfleisch-Spieß, 1 Lammkotelett, 1 Hähnchenspieß mit Basmatireis oder Pommes & Salat, Brot & 2 Saucen (Chatni & Tzatziki)"
+        ],
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["g"],
+        "variants": [
+          {
+            "id": "R365NNR307-0",
+            "prices": {
+              "onsite": 2490
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR301",
+        "name": "Coca-Cola",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["10", "11"],
+        "variants": [
+          {
+            "id": "R366NNR301-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          },
+          {
+            "id": "R366NNR301-1",
+            "name": "1Liter",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR302",
+        "name": "Coca-Cola Zero",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["10", "11", "12", "13"],
+        "variants": [
+          {
+            "id": "R366NNR302-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          },
+          {
+            "id": "R366NNR302-1",
+            "name": "1Liter",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR303",
+        "name": "Fanta",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["11", "15"],
+        "variants": [
+          {
+            "id": "R366NNR303-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          },
+          {
+            "id": "R366NNR303-1",
+            "name": "1Liter",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR304",
+        "name": "Mezzo Mix",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["10", "11", "15"],
+        "variants": [
+          {
+            "id": "R366NNR304-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          },
+          {
+            "id": "R366NNR304-1",
+            "name": "1Liter",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR305",
+        "name": "Sprite",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "allergenIds": ["10", "11", "15"],
+        "variants": [
+          {
+            "id": "R366NNR305-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          },
+          {
+            "id": "R366NNR305-1",
+            "name": "1Liter",
+            "prices": {
+              "onsite": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR306",
+        "name": "Vio Stilles Wasser",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR306-0",
+            "name": "0,25l",
+            "prices": {
+              "onsite": 240
+            }
+          },
+          {
+            "id": "R366NNR306-1",
+            "name": "0,75l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR307",
+        "name": "Apollinaris Selection",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR307-0",
+            "name": "0,25l",
+            "prices": {
+              "onsite": 240
+            }
+          },
+          {
+            "id": "R366NNR307-1",
+            "name": "0,75l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR308",
+        "name": "Vio Apfelschorle",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR308-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR309",
+        "name": "Fanta Exotic",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR309-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR310",
+        "name": "Uludag",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR310-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 250
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR311",
+        "name": "Ayran",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR311-0",
+            "name": "0,25l",
+            "prices": {
+              "onsite": 200
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR312",
+        "name": "Warsteiner Pils",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR312-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 300
+            }
+          },
+          {
+            "id": "R366NNR312-0",
+            "name": "0,5l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR313",
+        "name": "Warsteiner Pils alkoholfrei",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR313-0",
+            "name": "0,33l",
+            "prices": {
+              "onsite": 300
+            }
+          },
+          {
+            "id": "R366NNR313-0",
+            "name": "0,5l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR314",
+        "name": "König Ludwig Weizen Kristall",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR314-0",
+            "name": "0,5l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR315",
+        "name": "König Ludwig Weizen alkoholfrei",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR315-0",
+            "name": "0,5l",
+            "prices": {
+              "onsite": 450
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR316",
+        "name": "Qualitäts-Rotwein",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR316-0",
+            "name": "0,7l",
+            "prices": {
+              "onsite": 1500
+            }
+          }
+        ]
+      },
+      {
+        "id": "R366NNR317",
+        "name": "Qualitäts-Weißwein",
+        "imageUrl": "https://static.takeaway.com/images/chains/de/dominos_neu/products/p_individuell.png?timestamp=1700242289",
+        "variants": [
+          {
+            "id": "R366NNR317-0",
+            "name": "0,7l",
+            "prices": {
+              "onsite": 1500
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "restaurantId": "15685559166032959"
+}
