@@ -21,10 +21,7 @@ export default function Page() {
           imgSrc={restaurantData.hero.headerImageUrl}
           heroAlt={"Unser Menü"}
         />
-        <CompanyLogo
-          imgSrc={restaurantData.hero.logoUrl}
-          heroAlt={"Unser Menü"}
-        />
+        <CompanyLogo imgSrc={restaurantData.hero.logoUrl} heroAlt={"Logo"} />
         <CompanyDetails
           companyHero={restaurantData.hero}
           companyInformation={restaurantData.information}

@@ -1,33 +1,33 @@
 {
   "hero": {
-    "name": "Domino's Pizza",
-    "slogan": "Best pizza in Paderborn",
-    "description": ["Best pizza", "In Paderborn"],
-    "logoUrl": "/images/losteria.svg",
+    "name": "Demo's Pizza",
+    "slogan": "Best pizza in Musterstadt",
+    "description": ["Best pizza", "In Musterstadt"],
+    "logoUrl": "/images/demo_pizza_logo.jpeg",
     "headerImageUrl": "/images/hero-restaurants.jpeg"
   },
   "information": {
     "delivery": [
       {
-        "deliveryZone": "In Paderborn",
+        "deliveryZone": "In Musterstadt",
         "minimumOrderValue": 1500,
         "deliveryCost": "Gratis"
       },
       {
-        "deliveryZone": "Außerhalb Paderborn",
+        "deliveryZone": "Außerhalb Musterstadt",
         "minimumOrderValue": 1500,
         "deliveryCost": "Auf Anfrage"
       }
     ],
     "location": {
-      "city": "Paderborn",
+      "city": "Musterstadt",
       "country": "DE",
-      "postalCode": "33098",
-      "streetName": "Liboristraße",
+      "postalCode": "33669",
+      "streetName": "Musterstraße",
       "streetNumber": "5"
     },
     "contact": {
-      "whatsapp": "0171 123456789",
+      "whatsapp": "0171 183746253",
       "telephone": "01234 56789"
     },
     "openingHours": {
@@ -42,22 +42,22 @@
     },
     "colophon": {
       "businessType": "Corporation",
-      "representativeNames": ["Matthias Struck"],
-      "vatNumber": "DE19273TEST",
+      "representativeNames": ["Max Mustermann"],
+      "vatNumber": "DE103388776",
       "registerChamber": "TODO",
       "registerNumber": "TODO",
-      "companyName": "Domino's Pizza",
+      "companyName": "Demo's Pizza",
       "location": {
         "streetName": "Liboristraße",
         "streetNumber": "5",
         "postalCode": "33098",
-        "city": "Paderborn",
+        "city": "Musterstadt",
         "country": "Deutschland"
       },
       "telephone": "4952511425052",
       "fax": "4952511425052",
-      "email": "info@lieferando.de",
-      "contentResponsible": "Matthias Struck"
+      "email": "info@demopizza.de",
+      "contentResponsible": "Max Mustermann"
     }
   },
   "menu": {
