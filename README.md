@@ -50,7 +50,7 @@ Possible errors:
 First create a JSON schema using typescript-json-schema.
 
 ```bash
-npx typescript-json-schema src/types/restaurant2.ts Restaurant --strictNullChecks --required --propOrder
+npx typescript-json-schema src/types/restaurant.d.ts Restaurant --strictNullChecks --required --propOrder
 ```
 
 Copy the schema from the console and go to [this online json schema editor](https://rjsf-team.github.io/react-jsonschema-form/), select "Blank" on the top left, paste the copied schema into JSONSchema and start creating the new company schema.
