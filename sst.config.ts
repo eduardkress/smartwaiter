@@ -1,11 +1,8 @@
 import { SSTConfig } from "sst";
-import { Table, Config, NextjsSite, AppSyncApi } from "sst/constructs";
+import { Table, NextjsSite, AppSyncApi } from "sst/constructs";
 import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
-import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import * as cdk from "aws-cdk-lib";
 import * as appsync from "aws-cdk-lib/aws-appsync";
-// @ts-ignore
-import { ConfigOptions } from "sst/project";
 
 const appName = "demo";
 const domainCertArn =
@@ -13,16 +10,11 @@ const domainCertArn =
 
 export default {
   config(_input) {
-    const config: ConfigOptions = {
+    return {
       name: appName + "-smartwaiter",
       region: "eu-central-1",
+      profile: "smartwaiter",
     };
-
-    if (require("os").userInfo().username === "user") {
-      config.profile = "smartkellner";
-    }
-
-    return config;
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
