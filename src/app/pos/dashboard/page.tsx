@@ -1,11 +1,16 @@
-'use client';
-import { Amplify } from 'aws-amplify';
-import { useEffect, useState } from 'react';
-import { generateClient } from 'aws-amplify/api';
-import { onCreateOrder, onCreateOrderCode, onDeleteOrder, onUpdateOrder } from '@/graphql/subscriptions';
-import { createOrderCode, deleteOrder, updateOrder } from '@/graphql/mutations';
-import { listOrders, listActiveOrderCodes } from '@/graphql/queries';
-import { toast, Toaster } from 'sonner';
+"use client";
+import { Amplify } from "aws-amplify";
+import { useEffect, useState } from "react";
+import { generateClient } from "aws-amplify/api";
+import {
+  onCreateOrder,
+  onCreateOrderCode,
+  onDeleteOrder,
+  onUpdateOrder,
+} from "@/graphql/subscriptions";
+import { createOrderCode, deleteOrder, updateOrder } from "@/graphql/mutations";
+import { listOrders, listActiveOrderCodes } from "@/graphql/queries";
+import { toast, Toaster } from "sonner";
 import {
   NextUIProvider,
   Card,
@@ -16,21 +21,32 @@ import {
   Image,
   Button,
   useDisclosure,
-} from '@nextui-org/react';
-import NewOrderCodeModal from '@/components/pos/NewOrderCodeModal';
-import UserDropdown from '@/components/pos/UserDropdown';
-import Plus from '@/components/icons/Plus';
-import PrintQrCodeModal from '@/components/pos/PrintQrCodeModal';
-import { Order, OrderCode, OrderCodeInput, OrderInput, OrderItemInput, OrderStatus } from '@/API';
-import { omitDeep } from '@/utils/omitDeep';
-import { twMerge } from 'tailwind-merge';
+} from "@nextui-org/react";
+import NewOrderCodeModal from "@/components/pos/NewOrderCodeModal";
+import UserDropdown from "@/components/pos/UserDropdown";
+import Plus from "@/components/icons/Plus";
+import PrintQrCodeModal from "@/components/pos/PrintQrCodeModal";
+import {
+  Order,
+  OrderCode,
+  OrderCodeInput,
+  OrderInput,
+  OrderItemInput,
+  OrderStatus,
+} from "@/API";
+import { omitDeep } from "@/utils/omitDeep";
+import { twMerge } from "tailwind-merge";
 
 Amplify.configure({
-  // @ts-expect-error Parameter kann nicht zugewiesen werden
-  aws_appsync_graphqlEndpoint: 'https://hadwdiehg5gepkw7uzg7fd6dya.appsync-api.eu-central-1.amazonaws.com/graphql',
-  aws_appsync_region: 'eu-central-1',
-  aws_appsync_authenticationType: 'API_KEY',
-  aws_appsync_apiKey: 'da2-zwrw5p7o4bg6lmofaw6fwodfye',
+  API: {
+    GraphQL: {
+      endpoint:
+        "https://uoodv74rgzggdhfxhugoyloeq4.appsync-api.eu-central-1.amazonaws.com/graphql",
+      region: "eu-central-1",
+      defaultAuthMode: "apiKey",
+      apiKey: "da2-5ojq2i57kvg4jbq2wqaewdmooa",
+    },
+  },
 });
 
 const client = generateClient();
@@ -58,7 +74,7 @@ const deleteOrderFn = async (orderId: string) => {
 };
 
 const updateOrderFn = async (orderId: string, orderInput: OrderInput) => {
-  orderInput = omitDeep(orderInput, '__typename'); //Deep omit __typename field from all objects, otherwise Graphql can't format Input Types correctly
+  orderInput = omitDeep(orderInput, "__typename"); //Deep omit __typename field from all objects, otherwise Graphql can't format Input Types correctly
   const response = await client.graphql({
     query: updateOrder,
     variables: {
@@ -72,8 +88,12 @@ const updateOrderFn = async (orderId: string, orderInput: OrderInput) => {
 
 export default function Page() {
   const [allOrders, setAllOrders] = useState<Array<Order>>([]);
-  const [activeOrderCodes, setActiveOrderCodes] = useState<Array<OrderCode>>([]);
-  const [selectedOrderCode, setSelectedOrderCode] = useState<OrderCode | null>(null);
+  const [activeOrderCodes, setActiveOrderCodes] = useState<Array<OrderCode>>(
+    []
+  );
+  const [selectedOrderCode, setSelectedOrderCode] = useState<OrderCode | null>(
+    null
+  );
   const newOrderCodeModal = useDisclosure();
   const printQrCodeModal = useDisclosure();
 
@@ -104,7 +124,7 @@ export default function Page() {
         next: ({ data }) => {
           const order = data.onCreateOrder;
           setAllOrders((prevState) => [...prevState, order]);
-          toast.success('Neue Bestellung eingetroffen!');
+          toast.success("Neue Bestellung eingetroffen!");
         },
         error: (error) => console.warn(error),
       });
@@ -160,44 +180,56 @@ export default function Page() {
   }, []);
 
   return (
-    <NextUIProvider id='mainArea' className='flex h-[100dvh] flex-col items-center bg-gray-800'>
-      <Toaster richColors position='top-right' />
+    <NextUIProvider
+      id="mainArea"
+      className="flex h-[100dvh] flex-col items-center bg-gray-800"
+    >
+      <Toaster richColors position="top-right" />
 
-      <div className='flex w-full max-w-screen-2xl flex-col gap-y-2'>
-        <div className='mt-2 flex h-36 items-center justify-between rounded-2xl bg-gray-100 p-4'>
-          <div className='text-2xl'>Bestellsystem powered by Smartwaiter</div>
+      <div className="flex w-full max-w-screen-2xl flex-col gap-y-2">
+        <div className="mt-2 flex h-36 items-center justify-between rounded-2xl bg-gray-100 p-4">
+          <div className="text-2xl">Bestellsystem powered by Smartwaiter</div>
           <UserDropdown />
         </div>
-        <div className='flex h-full gap-x-2'>
-          <div className='flex max-h-[700px] flex-col gap-y-1 rounded-2xl bg-gray-100'>
-            <div className='flex items-center justify-center p-4'>
+        <div className="flex h-full gap-x-2">
+          <div className="flex max-h-[700px] flex-col gap-y-1 rounded-2xl bg-gray-100">
+            <div className="flex items-center justify-center p-4">
               <NewOrderCodeModal
                 isOpen={newOrderCodeModal.isOpen}
                 onOpen={newOrderCodeModal.onOpen}
                 onOpenChange={newOrderCodeModal.onOpenChange}
                 createOrderCodeFn={createOrderCodeFn}
               />
-              <Button color='success' variant='solid' onClick={newOrderCodeModal.onOpen} startContent={<Plus />}>
+              <Button
+                color="success"
+                variant="solid"
+                onClick={newOrderCodeModal.onOpen}
+                startContent={<Plus />}
+              >
                 Bestellcode anlegen
               </Button>
             </div>
             <Divider />
-            <div className='flex flex-col gap-y-2 overflow-hidden overflow-y-scroll p-4 scrollbar-hide'>
+            <div className="flex flex-col gap-y-2 overflow-hidden overflow-y-scroll p-4 scrollbar-hide">
               {activeOrderCodes.length > 0 &&
                 activeOrderCodes.toReversed().map((activeOrderCode, index) => (
                   <Card
-                    key={index + '_' + activeOrderCode.id}
+                    key={index + "_" + activeOrderCode.id}
                     isPressable
                     onPress={() => {
                       setSelectedOrderCode(activeOrderCode);
                     }}
                     className={twMerge(
-                      'flex-shrink-0',
-                      selectedOrderCode?.id == activeOrderCode.id ? 'border-1 border-black' : ''
+                      "flex-shrink-0",
+                      selectedOrderCode?.id == activeOrderCode.id
+                        ? "border-1 border-black"
+                        : ""
                     )}
                   >
-                    <CardHeader className='flex'>
-                      <span className='text-small text-default-500'>Bestellcode: {activeOrderCode.id}</span>
+                    <CardHeader className="flex">
+                      <span className="text-small text-default-500">
+                        Bestellcode: {activeOrderCode.id}
+                      </span>
                     </CardHeader>
                     <CardBody>
                       <span>{activeOrderCode.deskId}</span>
@@ -208,55 +240,63 @@ export default function Page() {
             </div>
           </div>
 
-          <div className='flex max-h-[700px] flex-grow flex-col gap-y-1 rounded-2xl bg-gray-100'>
+          <div className="flex max-h-[700px] flex-grow flex-col gap-y-1 rounded-2xl bg-gray-100">
             {selectedOrderCode && (
-              <div className='flex items-center justify-between p-4'>
-                <div className='flex flex-col'>
-                  <span className='font-bold'>{'Bestellungen für ' + selectedOrderCode.deskId}</span>
-                  <span className='text-xs text-gray-400'>{'ID: ' + selectedOrderCode.id}</span>
+              <div className="flex items-center justify-between p-4">
+                <div className="flex flex-col">
+                  <span className="font-bold">
+                    {"Bestellungen für " + selectedOrderCode.deskId}
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    {"ID: " + selectedOrderCode.id}
+                  </span>
                 </div>
-                <div className='flex gap-x-2'>
+                <div className="flex gap-x-2">
                   <PrintQrCodeModal
                     isOpen={printQrCodeModal.isOpen}
                     onOpen={printQrCodeModal.onOpen}
                     onOpenChange={printQrCodeModal.onOpenChange}
                     orderCode={selectedOrderCode}
                   />
-                  <Button color='primary' onClick={printQrCodeModal.onOpen}>
+                  <Button color="primary" onClick={printQrCodeModal.onOpen}>
                     QR Ducken
                   </Button>
-                  <Button color='success' variant='solid'>
+                  <Button color="success" variant="solid">
                     Bezahlen
                   </Button>
                 </div>
               </div>
             )}
             <Divider />
-            <div className='flex flex-col gap-y-2 overflow-hidden overflow-y-scroll p-4 scrollbar-hide'>
+            <div className="flex flex-col gap-y-2 overflow-hidden overflow-y-scroll p-4 scrollbar-hide">
               {allOrders.length > 0 &&
                 allOrders
                   .filter((order) => order.orderCodeId == selectedOrderCode?.id)
                   .toReversed()
                   .map((order, index) => (
                     <Card
-                      key={index + '_' + order.id}
+                      key={index + "_" + order.id}
                       className={twMerge(
-                        'flex-shrink-0',
-                        order.orderStatus == OrderStatus.DONE ? 'border-1 border-green-500 bg-green-100 opacity-75' : ''
+                        "flex-shrink-0",
+                        order.orderStatus == OrderStatus.DONE
+                          ? "border-1 border-green-500 bg-green-100 opacity-75"
+                          : ""
                       )}
                     >
-                      <CardHeader className='flex gap-3'>
+                      <CardHeader className="flex gap-3">
                         <Image
-                          alt='nextui logo'
+                          alt="nextui logo"
                           height={40}
-                          radius='sm'
-                          src='https://avatars.githubusercontent.com/u/86160567?s=200&v=4'
+                          radius="sm"
+                          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
                           width={40}
                         />
-                        <Divider orientation='vertical' />
-                        <div className='flex flex-col'>
-                          <p className='text-md'>Bestellung</p>
-                          <p className='text-sm text-default-500'>ID {order.id}</p>
+                        <Divider orientation="vertical" />
+                        <div className="flex flex-col">
+                          <p className="text-md">Bestellung</p>
+                          <p className="text-sm text-default-500">
+                            ID {order.id}
+                          </p>
                         </div>
                       </CardHeader>
 
@@ -264,36 +304,52 @@ export default function Page() {
                         {order.orderItems.map((orderItem, index) => (
                           <div key={index}>
                             <div>
-                              {orderItem.amount}x {orderItem.productId} ({orderItem.variantId})
+                              {orderItem.amount}x {orderItem.productId} (
+                              {orderItem.variantId})
                             </div>
                             <div></div>
-                            {orderItem.optionIds.length > 0 && <div>mit {orderItem.optionIds.join(',')}</div>}
-                            {orderItem.extraText != '' && <div>Anmerkung vom Kunden: {orderItem.extraText}</div>}
+                            {orderItem.optionIds.length > 0 && (
+                              <div>mit {orderItem.optionIds.join(",")}</div>
+                            )}
+                            {orderItem.extraText != "" && (
+                              <div>
+                                Anmerkung vom Kunden: {orderItem.extraText}
+                              </div>
+                            )}
                           </div>
                         ))}
                       </CardBody>
 
                       <CardFooter>
-                        <div className='flex w-full justify-end gap-x-2'>
-                          <Button color='primary' isDisabled={order.orderStatus == OrderStatus.DONE}>
+                        <div className="flex w-full justify-end gap-x-2">
+                          <Button
+                            color="primary"
+                            isDisabled={order.orderStatus == OrderStatus.DONE}
+                          >
                             Erledigt
                           </Button>
-                          <Button color='primary' isDisabled={order.orderStatus == OrderStatus.DONE}>
+                          <Button
+                            color="primary"
+                            isDisabled={order.orderStatus == OrderStatus.DONE}
+                          >
                             Drucken
                           </Button>
-                          <Button color='primary' isDisabled={order.orderStatus == OrderStatus.DONE}>
+                          <Button
+                            color="primary"
+                            isDisabled={order.orderStatus == OrderStatus.DONE}
+                          >
                             Bearbeiten
                           </Button>
                           <Button
-                            color='primary'
+                            color="primary"
                             isDisabled={order.orderStatus == OrderStatus.DONE}
                             onClick={() => {
                               const orderItem = {
-                                productId: 'Test',
-                                variantId: 'Test',
-                                optionIds: ['Op1', 'Op2'],
+                                productId: "Test",
+                                variantId: "Test",
+                                optionIds: ["Op1", "Op2"],
                                 amount: 2,
-                                extraText: 'Super Text',
+                                extraText: "Super Text",
                               } as OrderItemInput;
                               const orderItems = new Array<OrderItemInput>();
                               orderItems.push(orderItem);
@@ -307,20 +363,20 @@ export default function Page() {
                             Update (Test)
                           </Button>
                           <Button
-                            color='danger'
-                            variant='ghost'
+                            color="danger"
+                            variant="ghost"
                             onClick={() => {
                               deleteOrderFn(order.id)
                                 .then((data) => {
                                   if (!data) {
                                     toast.error(
-                                      'Die Bestellung konnte nicht gelöscht werden. Bitte versuche es später erneut!'
+                                      "Die Bestellung konnte nicht gelöscht werden. Bitte versuche es später erneut!"
                                     );
                                   }
                                 })
                                 .catch(() => {
                                   toast.error(
-                                    'Die Bestellung konnte nicht gelöscht werden. Bitte versuche es später erneut!'
+                                    "Die Bestellung konnte nicht gelöscht werden. Bitte versuche es später erneut!"
                                   );
                                 })
                                 .finally(() => {});
