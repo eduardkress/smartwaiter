@@ -182,7 +182,7 @@
         "id": "R353NNR3Q",
         "name": "Vorspeisen & Beilagen",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/vorspeisen_beilagen.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -201,7 +201,7 @@
         "id": "R354NNR3Q",
         "name": "Salate",
         "description": ["mit Essig/Öl, Cocktail- oder Joghurtdressing"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -220,7 +220,7 @@
           "mit Tomatensauce, Käse & Oregano",
           "Extra Beläge müssen wir zusätzlich berechnen."
         ],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/pizza.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -249,7 +249,7 @@
         "id": "R356NNR3",
         "name": "Pizzabrötchen",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/pizzabroetchen.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R356NNR301", "R356NNR302", "R356NNR303", "R356NNR304"]
@@ -258,7 +258,7 @@
         "id": "R357NNR3",
         "name": "Döner Kebab",
         "description": ["Geflügel-Drehspieß nach Döner Art"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/doener_kebab.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -274,7 +274,7 @@
         "id": "R358NNR3",
         "name": "Lahmacun",
         "description": ["Hausgemacht & Ofenfrisch"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R358NNR301", "R358NNR302", "R358NNR303"],
@@ -284,7 +284,7 @@
         "id": "R359NNR3",
         "name": "Falafel",
         "description": ["Authentische Gemüsebällchen"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/falafel.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R359NNR301", "R359NNR302", "R359NNR303"],
@@ -294,7 +294,7 @@
         "id": "R360NNR3",
         "name": "Saucen zur Auswahl",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/saucen.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -314,7 +314,7 @@
         "id": "R361NNR3",
         "name": "Hamburger",
         "description": ["100% American Style im Menü oder Einzeln"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/hamburger.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -337,7 +337,7 @@
         "id": "R362NNR3",
         "name": "Schnitzelgerichte",
         "description": ["Hausgemachte Hähnchenschnitzel"],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/schnitzel_gerichte.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R362NNR301", "R362NNR301"]
@@ -346,7 +346,7 @@
         "id": "R363NNR3",
         "name": "Vegetarische Gerichte",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/vegetarische_gerichte.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R363NNR301", "R363NNR302", "R363NNR303", "R363NNR304"]
@@ -355,7 +355,7 @@
         "id": "R364NNR3",
         "name": "Afghanische Gerichte",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/afghanische_gerichte.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R364NNR301", "R364NNR302", "R364NNR303", "R364NNR304"]
@@ -364,7 +364,7 @@
         "id": "R365NNR3",
         "name": "Grill-Gerichte",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/grill_gerichte.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -381,7 +381,7 @@
         "id": "R366NNR3",
         "name": "Getränke",
         "description": [],
-        "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/c_thumb,w_1984/f_auto/q_auto/v1700410933/static-takeaway-com/images/chains/de/dominos_neu/categories/2023_11_header_udaischickencream",
+        "imageUrl": "/images/category/getraenke.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
