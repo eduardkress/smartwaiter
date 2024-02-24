@@ -2,12 +2,36 @@ import { Discount, Variant } from "@/types/restaurant";
 import { Fragment, ReactElement } from "react";
 import { EURO } from "@/utils/currencies";
 
+function getCurrentValidPrice(
+  variant: Variant,
+  discounts: Discount[] | undefined,
+  dayNumber: number,
+  time: number,
+): number {
+  const currentDiscount =
+    variant.discountId && discounts
+      ? discounts.find(
+          (discount) =>
+            discount.id === variant.discountId &&
+            discount.daysOfWeek.includes(dayNumber) &&
+            discount.from <= time &&
+            discount.until >= time,
+        )?.discount ?? 0
+      : 0;
+
+  return variant.prices.onsite - currentDiscount;
+}
+
 const VariantUtils: {
   sortVariantsByPriceAsc: (variants: Variant[]) => Variant[];
   getLowestPrice: (variants: Variant[]) => number;
   getLowestPriceTag: (
     variants: Variant[],
-    discounts: Discount[] | undefined
+    discounts: Discount[] | undefined,
+  ) => ReactElement;
+  getCurrentPriceTag: (
+    variant: Variant,
+    discounts: Discount[] | undefined,
   ) => ReactElement;
 } = {
   sortVariantsByPriceAsc: function (variants) {
@@ -17,13 +41,19 @@ const VariantUtils: {
     return variants.reduce((previousValue, currentValue) =>
       previousValue.prices.onsite > currentValue.prices.onsite
         ? currentValue
-        : previousValue
+        : previousValue,
     ).prices.onsite;
   },
   getLowestPriceTag: function (variants, discounts) {
-    // TODO: How failsafe do we want to make this?
-    // TODO: Refactor this
-    // TODO: when should this be recalculated?
+    const variantWithLowestPrice = variants
+      .reduce((previousValue, currentValue) =>
+        previousValue.prices.onsite < currentValue.prices.onsite
+          ? previousValue
+          : currentValue,
+      );
+    return this.getCurrentPriceTag(variantWithLowestPrice, discounts)
+  },
+  getCurrentPriceTag: function (variant, discounts) {
     const time =
       new Date(Date.now()).getHours() * 100 + new Date(Date.now()).getMinutes();
     let dayNumber = new Date(Date.now()).getDay();
@@ -32,59 +62,22 @@ const VariantUtils: {
       dayNumber = 7;
     }
 
-    const lowestPriceWithDiscounts = variants.reduce(
-      (previousValue, currentValue) =>
-        previousValue.prices.onsite -
-          (previousValue.discountId && discounts
-            ? discounts.find(
-                (value) =>
-                  value.id === previousValue.discountId &&
-                  value.daysOfWeek.includes(dayNumber) &&
-                  value.from <= time &&
-                  value.until >= time
-              )?.discount ?? 0
-            : 0) >
-        currentValue.prices.onsite -
-          (currentValue.discountId && discounts
-            ? discounts.find(
-                (value) =>
-                  value.id === currentValue.discountId &&
-                  value.daysOfWeek.includes(dayNumber) &&
-                  value.from <= time &&
-                  value.until >= time
-              )?.discount ?? 0
-            : 0)
-          ? currentValue
-          : previousValue
-    );
-    return lowestPriceWithDiscounts.discountId &&
-      discounts &&
-      discounts.find(
-        (value) =>
-          value.id === lowestPriceWithDiscounts.discountId &&
-          value.daysOfWeek.includes(dayNumber) &&
-          value.from <= time &&
-          value.until >= time
-      ) ? (
+    const currentValidPrice = getCurrentValidPrice(variant, discounts, dayNumber, time);
+
+    return variant.prices.onsite !==
+    currentValidPrice ? (
       <Fragment>
-        {EURO.formatCents(
-          lowestPriceWithDiscounts.prices.onsite -
-            (lowestPriceWithDiscounts.discountId
-              ? discounts.find(
-                  (value) => value.id === lowestPriceWithDiscounts.discountId
-                )?.discount ?? 0
-              : 0)
-        )}
+        {EURO.formatCents(currentValidPrice)}
         <span className="inline pl-1.5 text-sm text-red-600 line-through">
-          {EURO.formatCents(lowestPriceWithDiscounts.prices.onsite)}
+          {EURO.formatCents(variant.prices.onsite)}
         </span>
       </Fragment>
     ) : (
       <Fragment>
-        {EURO.formatCents(lowestPriceWithDiscounts.prices.onsite)}
+        {EURO.formatCents(variant.prices.onsite)}
       </Fragment>
     );
-  },
+  }
 };
 
 export { VariantUtils };

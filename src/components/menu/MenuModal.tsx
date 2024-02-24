@@ -155,7 +155,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                               <tr key={"variation" + i}>
                                 <th className="pr-4 text-left">{value.name}</th>
                                 <th className="text-right">
-                                  {EURO.formatCents(value.prices.onsite)}
+                                  {VariantUtils.getCurrentPriceTag(value, menu.discounts)}
                                 </th>
                               </tr>
                             );
