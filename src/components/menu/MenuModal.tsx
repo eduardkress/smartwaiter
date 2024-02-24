@@ -148,18 +148,20 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                         EURO.formatCents(product.variants[0].prices.onsite)
                       ) : (
                         <table className="table-auto border-spacing-x-2">
-                          {VariantUtils.sortVariantsByPriceAsc(
-                            product.variants
-                          ).map((value, i) => {
-                            return (
-                              <tr key={"variation" + i}>
-                                <th className="pr-4 text-left">{value.name}</th>
-                                <th className="text-right">
-                                  {VariantUtils.getCurrentPriceTag(value, menu.discounts)}
-                                </th>
-                              </tr>
-                            );
-                          })}
+                          <tbody>
+                            {VariantUtils.sortVariantsByPriceAsc(
+                              product.variants
+                            ).map((value, i) => {
+                              return (
+                                <tr key={"variation" + i}>
+                                  <th className="pr-4 text-left">{value.name}</th>
+                                  <th className="text-right">
+                                    {VariantUtils.getCurrentPriceTag(value, menu.discounts)}
+                                  </th>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
                         </table>
                       )}
                     </div>
