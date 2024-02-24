@@ -16,7 +16,7 @@ export function SiteSlot({ children, siteType }: Props) {
   const searchParams = useSearchParams();
 
   if (siteTypeSignal.value === undefined) {
-    siteTypeSignal.value = searchParams.get(SiteTypeQueryParamName) as SiteType;
+    siteTypeSignal.value = searchParams.get(SiteTypeQueryParamName) as SiteType|null ?? SiteType.Landing;
   }
 
   return siteType === siteTypeSignal.value && children;
