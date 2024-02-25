@@ -201,7 +201,7 @@
         "id": "R354NNR3Q",
         "name": "Salate",
         "description": ["mit Essig/Öl, Cocktail- oder Joghurtdressing"],
-        "imageUrl": "",
+        "imageUrl": "/images/category/salate.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": [
@@ -274,7 +274,7 @@
         "id": "R358NNR3",
         "name": "Lahmacun",
         "description": ["Hausgemacht & Ofenfrisch"],
-        "imageUrl": "",
+        "imageUrl": "/images/category/lahmacun.jpg",
         "overviewImageUrl": null,
         "timeRestrictions": {},
         "productIds": ["R358NNR301", "R358NNR302", "R358NNR303"],
