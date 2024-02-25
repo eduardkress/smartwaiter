@@ -11,7 +11,6 @@ export async function middleware(request: NextRequest) {
 
   //Redirect to /menu if path is /
   if (request.nextUrl.pathname == "/") {
-    console.log("test");
     return NextResponse.redirect(new URL("/menu", request.url));
   }
 
