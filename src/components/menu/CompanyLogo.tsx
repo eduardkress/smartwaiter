@@ -22,6 +22,7 @@ function CompanyLogo({ imgSrc, heroAlt }: Props) {
             sizes={"160px"}
             style={{ objectFit: "contain" }}
             onLoad={() => setIsLoaded(true)}
+            priority={true}
           />
         </div>
       </div>

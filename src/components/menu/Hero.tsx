@@ -9,9 +9,10 @@ interface Props {
   heroAlt: string;
   tailwindClasses?: string;
   imageSizes: string;
+  priority?: boolean;
 }
 
-function Hero({ imgSrc, heroAlt, tailwindClasses, imageSizes }: Props) {
+function Hero({ imgSrc, heroAlt, tailwindClasses, imageSizes, priority = false }: Props) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
@@ -25,6 +26,7 @@ function Hero({ imgSrc, heroAlt, tailwindClasses, imageSizes }: Props) {
           sizes={imageSizes}
           style={{ objectFit: "cover" }}
           onLoad={() => setIsLoaded(true)}
+          priority={priority}
         />
       </div>
     </div>
