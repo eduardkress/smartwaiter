@@ -20,6 +20,7 @@ export default function Page() {
         <Hero
           imgSrc={restaurantData.hero.headerImageUrl}
           heroAlt={"Unser Menü"}
+          imageSizes={"100vw"}
         />
         <CompanyLogo imgSrc={restaurantData.hero.logoUrl} heroAlt={"Logo"} />
         <CompanyDetails

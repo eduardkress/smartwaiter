@@ -22,6 +22,7 @@ function Menu({ menu }: Props) {
                       imgSrc={category.imageUrl}
                       heroAlt={category.name}
                       tailwindClasses={"h-44 rounded-xl overflow-hidden"}
+                      imageSizes={"100vw"}
                     />
                   </div>
                 )}

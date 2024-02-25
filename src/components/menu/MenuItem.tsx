@@ -69,12 +69,12 @@ export function MenuItem({ menu, product }: Props) {
                   const [isLoaded, setIsLoaded] = useState(false);
                   return (
                     <Fragment>
-                      <Skeleton className="h-full w-full" isLoaded={isLoaded} />
+                      <Skeleton className="h-full w-full rounded-lg" isLoaded={isLoaded} />
                       <Image
                         className="rounded-lg"
                         src={product.imageUrl}
                         alt="Item1"
-                        sizes="158px"
+                        sizes="160px"
                         fill
                         style={{ objectFit: "cover" }}
                         onLoad={() => setIsLoaded(true)}

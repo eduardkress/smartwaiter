@@ -125,6 +125,7 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                   imgSrc={product.imageUrl}
                   heroAlt={""}
                   tailwindClasses={"h-56 drop-shadow-md z-[-1]"}
+                  imageSizes={"(min-width: 576px) 576px, 100vw"}
                 />
               )}
 
