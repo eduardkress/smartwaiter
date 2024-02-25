@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Fragment } from "react";
+import { Fragment, useState } from 'react';
 import Image from "next/image";
 import MenuModal from "@/components/menu/MenuModal";
-import { useDisclosure } from "@nextui-org/react";
+import { Skeleton, useDisclosure } from '@nextui-org/react';
 import MenuItemTitle from "@/components/menu/MenuItemTitle";
 import { Menu, Product } from "@/types/restaurant";
-import { EURO } from "@/utils/currencies";
 import { VariantUtils } from "@/utils/VariantUtils";
 
 type Props = {
@@ -64,15 +63,26 @@ export function MenuItem({ menu, product }: Props) {
           </div>
           {/*TODO: Bild beim Mobile vllt einfach weg? Man sieht iwie eh nicht viel dann lieber in dem Modal*/}
           {product.imageUrl && (
-            <div className="relative hidden h-20 w-20 shrink-0 rounded-lg border shadow sm:block sm:h-40 sm:w-40">
+            <div className="relative hidden size-40 shrink-0 rounded-lg border shadow sm:block">
               <div className="absolute inset-0">
-                <Image
-                  className="rounded-lg"
-                  src={product.imageUrl}
-                  alt="Item1"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
+                {(() => {
+                  const [isLoaded, setIsLoaded] = useState(false);
+                  return (
+                    <Fragment>
+                      <Skeleton className="h-full w-full" isLoaded={isLoaded} />
+                      <Image
+                        className="rounded-lg"
+                        src={product.imageUrl}
+                        alt="Item1"
+                        sizes="158px"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        onLoad={() => setIsLoaded(true)}
+                      />
+                    </Fragment>
+                  );
+                })()}
+
               </div>
             </div>
           )}
