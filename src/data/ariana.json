@@ -1,8 +1,10 @@
 {
   "hero": {
     "name": "Ariana Grill & Restaurant",
-    "slogan": "Entdecken Sie Paderborns erstes afghanisches Restaurant, das auch für seine hervorragenden Döner, Burger und Pizza bekannt ist. Hier treffen exotische Aromen auf Fast-Food-Favoriten – mit einem besonderen Fokus auf unseren beliebten Döner. ",
-    "description": [],
+    "slogan": "Entdecken Sie Paderborns erstes afghanisches Restaurant, das auch für seine hervorragenden Döner, Burger und Pizza bekannt ist. Hier treffen exotische Aromen auf Fast-Food-Favoriten – mit einem besonderen Fokus auf unseren beliebten Döner.",
+    "description": [
+      "Entdecken Sie Paderborns erstes afghanisches Restaurant, das auch für seine hervorragenden Döner, Burger und Pizza bekannt ist. Hier treffen exotische Aromen auf Fast-Food-Favoriten – mit einem besonderen Fokus auf unseren beliebten Döner."
+    ],
     "logoUrl": "/images/ariana_logo.png",
     "headerImageUrl": "/images/hero-restaurants.jpeg"
   },

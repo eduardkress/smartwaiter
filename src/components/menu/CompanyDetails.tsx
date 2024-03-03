@@ -26,7 +26,9 @@ function CompanyDetails({ companyHero, companyInformation }: Props) {
       <div className="px-2 xl:px-0 mx-auto flex max-w-5xl flex-col items-center justify-between space-y-5 bg-transparent pb-10 pt-5 sm:flex-row sm:items-stretch sm:space-y-0">
         <div className="flex flex-col items-center text-center sm:items-stretch sm:text-start">
           <h1 className="text-3xl font-bold">{companyHero.name}</h1>
-          <span className="mt-2 text-sm text-gray-700">{companyHero.name}</span>
+          <span className="mt-2 text-sm text-gray-700">
+            {companyHero.description}
+          </span>
         </div>
         <div className="flex flex-col items-center space-x-0 space-y-5 sm:flex-row sm:space-x-5 sm:space-y-0">
           <SiteSlot siteType={SiteType.Waiter}>
