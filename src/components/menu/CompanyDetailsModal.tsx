@@ -1,11 +1,12 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState } from "react";
 import {
   Modal,
   ModalBody,
   ModalContent,
   ModalFooter,
-  ModalHeader, Skeleton,
-} from '@nextui-org/react';
+  ModalHeader,
+  Skeleton,
+} from "@nextui-org/react";
 import { Information } from "@/types/restaurant";
 import { SiteSlot } from "@/components/slotting/SiteSlot";
 import { SiteType } from "@/types/siteType";
@@ -60,7 +61,6 @@ const CompanyDetailsModal = ({
   onOpenChange,
   companyInformation,
 }: Props) => {
-
   const [isMapsLoaded, setIsMapsLoaded] = useState(false);
 
   return (
@@ -92,7 +92,7 @@ const CompanyDetailsModal = ({
                 </Skeleton>
               </div>
 
-              <div className="container flex flex-col space-y-3 bg-white pt-4">
+              <div className="mx-auto px-2 xl:px-0 flex flex-col space-y-3 bg-white pt-4">
                 <h2 className="text-xl font-bold leading-6 text-gray-900">
                   Adresse
                 </h2>
@@ -114,25 +114,25 @@ const CompanyDetailsModal = ({
                   {timeSlot("Montag", companyInformation.openingHours.Monday)}
                   {timeSlot(
                     "Dienstag",
-                    companyInformation.openingHours.Tuesday,
+                    companyInformation.openingHours.Tuesday
                   )}
                   {timeSlot(
                     "Mittwoch",
-                    companyInformation.openingHours.Wednesday,
+                    companyInformation.openingHours.Wednesday
                   )}
                   {timeSlot(
                     "Donnerstag",
-                    companyInformation.openingHours.Thursday,
+                    companyInformation.openingHours.Thursday
                   )}
                   {timeSlot("Freitag", companyInformation.openingHours.Friday)}
                   {timeSlot(
                     "Samstag",
-                    companyInformation.openingHours.Saturday,
+                    companyInformation.openingHours.Saturday
                   )}
                   {timeSlot("Sonntag", companyInformation.openingHours.Sunday)}
                   {timeSlot(
                     "Feiertage",
-                    companyInformation.openingHours.Holidays,
+                    companyInformation.openingHours.Holidays
                   )}
                 </div>
                 <SiteSlot siteType={SiteType.Landing}>
@@ -142,12 +142,12 @@ const CompanyDetailsModal = ({
                   <div className="grid grid-cols-3 gap-y-1.5 rounded-lg border border-gray-300 bg-[#f9fafb] p-3 shadow">
                     {deliverySlot(
                       "Telefon",
-                      companyInformation.contact.telephone,
+                      companyInformation.contact.telephone
                     )}
                     {companyInformation.contact.whatsapp &&
                       deliverySlot(
                         "WhatsApp",
-                        companyInformation.contact.whatsapp,
+                        companyInformation.contact.whatsapp
                       )}
                     {companyInformation.contact.mail &&
                       deliverySlot("Mail", companyInformation.contact.mail)}
@@ -167,7 +167,7 @@ const CompanyDetailsModal = ({
                             )}
                             {deliverySlot(
                               "Mindestbestellwert",
-                              value.minimumOrderValue,
+                              value.minimumOrderValue
                             )}
                             {deliverySlot("Lieferkosten", value.deliveryCost)}
                           </div>

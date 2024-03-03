@@ -9,7 +9,7 @@ function MenuCategoryDescription({ category }: Props) {
   return (
     category.description &&
     category.description.length > 0 && (
-      <div className="container mx-auto max-w-5xl px-0 text-sm font-sans">
+      <div className="max-w-5xl px-2 xl:px-0 text-base">
         {category.description
           .map((description, index) => (
             <Fragment key={index}>{description}</Fragment>

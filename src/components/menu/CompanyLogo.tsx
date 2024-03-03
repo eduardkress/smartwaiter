@@ -10,7 +10,7 @@ interface Props {
 function CompanyLogo({ imgSrc, heroAlt }: Props) {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <div className="container mx-auto flex h-20 max-w-2xl justify-center bg-green-200 bg-transparent">
+    <div className="px-2 sm:px-2 mx-auto flex h-20 max-w-2xl justify-center bg-green-200 bg-transparent">
       <div className="relative size-40 -translate-y-20 rounded-lg border bg-white shadow">
         <div className="absolute inset-0">
           <Skeleton className="h-full w-full rounded-lg" isLoaded={isLoaded} />

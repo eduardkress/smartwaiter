@@ -193,7 +193,7 @@ function NavBar({ menu }: Props) {
   return (
     <Fragment>
       <div className="sticky top-0 z-10 h-14 w-full bg-white">
-        <div className="container flex max-w-5xl items-center justify-between px-0">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-0">
           {/* < */}
           <div
             className={twMerge(

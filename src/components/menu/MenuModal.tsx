@@ -138,26 +138,34 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     )}
                   />
                 </h2>
-                <div className="flex flex-col space-y-2 pb-3 ">
-                  <div className="text-base font-normal">
+                <div className="flex flex-col gap-y-2">
+                  <div className="text-sm font-normal md:text-base">
                     {product.description}
                   </div>
                   {/*<div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>*/}
                   <SiteSlot siteType={SiteType.Landing}>
-                    <div className="pt-3 pb-2 text-lg font-bold">
+                    <div className="text-base">
                       {product.variants.length === 1 ? (
-                        EURO.formatCents(product.variants[0].prices.onsite)
+                        <span className="font-bold">
+                          {EURO.formatCents(product.variants[0].prices.onsite)}
+                        </span>
                       ) : (
                         <table className="table-auto border-spacing-x-2">
+                          <thead>Wahl aus</thead>
                           <tbody>
                             {VariantUtils.sortVariantsByPriceAsc(
                               product.variants
                             ).map((value, i) => {
                               return (
                                 <tr key={"variation" + i}>
-                                  <th className="pr-4 text-left">{value.name}</th>
-                                  <th className="text-right">
-                                    {VariantUtils.getCurrentPriceTag(value, menu.discounts)}
+                                  <th className="pr-4 text-left font-bold">
+                                    {value.name}
+                                  </th>
+                                  <th className="text-right font-bold">
+                                    {VariantUtils.getCurrentPriceTag(
+                                      value,
+                                      menu.discounts
+                                    )}
                                   </th>
                                 </tr>
                               );

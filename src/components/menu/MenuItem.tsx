@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Fragment, useState } from 'react';
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import MenuModal from "@/components/menu/MenuModal";
-import { Skeleton, useDisclosure } from '@nextui-org/react';
+import { Skeleton, useDisclosure } from "@nextui-org/react";
 import MenuItemTitle from "@/components/menu/MenuItemTitle";
 import { Menu, Product } from "@/types/restaurant";
 import { VariantUtils } from "@/utils/VariantUtils";
@@ -17,13 +17,13 @@ export function MenuItem({ menu, product }: Props) {
 
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto px-2 xl:px-0">
         <div
-          className="container flex max-w-5xl cursor-pointer flex-row justify-between gap-x-6 rounded-lg border border-gray-300 bg-white p-4 shadow hover:bg-[#f5f5f5]"
+          className="mx-auto flex max-w-5xl cursor-pointer flex-row justify-between gap-x-6 rounded-lg border border-gray-300 bg-white p-4 shadow hover:bg-[#f5f5f5]"
           onClick={onOpen}
         >
           <div className="flex flex-col gap-y-2">
-            <h3 className="text-base font-bold sm:text-xl">
+            <h3 className="text-base font-bold sm:text-lg">
               <MenuItemTitle
                 product={product}
                 allergens={product.allergenIds?.map((id) => {
@@ -31,34 +31,31 @@ export function MenuItem({ menu, product }: Props) {
                 })}
               />
             </h3>
-            <div className="text-sm font-normal md:text-base">
-              {product.description}
-            </div>
+            {!!product.description && (
+              <div className="text-sm font-normal md:text-base">
+                {product.description}
+              </div>
+            )}
             {product.variants.length > 1 && (
-              <div className="font-sans text-sm sm:font-normal">
+              <div className="text-sm">
                 Wahl aus:{" "}
                 {VariantUtils.sortVariantsByPriceAsc(product.variants)
                   .map((value) => value.name)
                   .join(", ")}
               </div>
             )}
-            <div className="flex grow flex-col-reverse pt-3 text-base font-bold sm:text-xl">
-              <div className="">
-                {product.variants.length > 1 ? (
-                  <Fragment>
-                    ab{" "}
-                    {VariantUtils.getLowestPriceTag(
-                      product.variants,
-                      menu.discounts
-                    )}
-                  </Fragment>
-                ) : (
-                  VariantUtils.getLowestPriceTag(
+            <div className="flex flex-grow flex-col-reverse text-base font-bold">
+              {product.variants.length > 1 ? (
+                <Fragment>
+                  ab{" "}
+                  {VariantUtils.getLowestPriceTag(
                     product.variants,
                     menu.discounts
-                  )
-                )}
-              </div>
+                  )}
+                </Fragment>
+              ) : (
+                VariantUtils.getLowestPriceTag(product.variants, menu.discounts)
+              )}
             </div>
           </div>
           {/*TODO: Bild beim Mobile vllt einfach weg? Man sieht iwie eh nicht viel dann lieber in dem Modal*/}
@@ -69,7 +66,10 @@ export function MenuItem({ menu, product }: Props) {
                   const [isLoaded, setIsLoaded] = useState(false);
                   return (
                     <Fragment>
-                      <Skeleton className="h-full w-full rounded-lg" isLoaded={isLoaded} />
+                      <Skeleton
+                        className="h-full w-full rounded-lg"
+                        isLoaded={isLoaded}
+                      />
                       <Image
                         className="rounded-lg"
                         src={product.imageUrl}
@@ -82,7 +82,6 @@ export function MenuItem({ menu, product }: Props) {
                     </Fragment>
                   );
                 })()}
-
               </div>
             </div>
           )}

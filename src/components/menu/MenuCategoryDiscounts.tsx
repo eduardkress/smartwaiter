@@ -1,4 +1,5 @@
 import { Category, Menu } from "@/types/restaurant";
+import Offer from "../icons/Offer";
 
 interface Props {
   category: Category;
@@ -42,23 +43,30 @@ function MenuCategoryDiscounts({ category, menu }: Props) {
   return (
     category.discountId &&
     category.discountId.length > 0 && (
-      <div className="container flex max-w-5xl flex-col justify-between gap-y-3 rounded-lg border border-gray-300 bg-white p-4 shadow">
+      <div className="px-2 xl:px-0 mt-5 flex max-w-5xl flex-col justify-between gap-y-1">
         {category.discountId.map((value, index) => {
           const discount = menu.discounts!.find((val) => val.id === value)!;
           return (
-            <div key={index}>
-              <div className="text-base font-bold sm:text-xl">
+            <div className="flex items-center gap-x-3">
+              <div className="w-12 h-12 fill-orange-400">
+                <Offer />
+              </div>
+              <div key={index} className="flex flex-col">
+                {/* <div className="text-base font-bold sm:text-lg">
                 {discount.name}
+              </div> */}
+                <div className="text-base font-bold">
+                  Angebot: {discount.description}
+                </div>
+                <div className="text-base">
+                  Gültig von {getDayOfWeekName(discount.daysOfWeek[0])} -{" "}
+                  {getDayOfWeekName(
+                    discount.daysOfWeek[discount.daysOfWeek.length - 1]
+                  )}{" "}
+                  von {getFormattedTimeByNumber(discount.from)} -{" "}
+                  {getFormattedTimeByNumber(discount.until)} Uhr.
+                </div>
               </div>
-              <div className="text-sm">
-                Gültig von {getDayOfWeekName(discount.daysOfWeek[0])} -{" "}
-                {getDayOfWeekName(
-                  discount.daysOfWeek[discount.daysOfWeek.length - 1],
-                )}{" "}
-                von {getFormattedTimeByNumber(discount.from)} -{" "}
-                {getFormattedTimeByNumber(discount.until)} Uhr.
-              </div>
-              <div>{discount.description}</div>
             </div>
           );
         })}

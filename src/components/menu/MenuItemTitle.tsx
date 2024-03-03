@@ -23,16 +23,19 @@ function MenuItemTitle({ product, allergens }: Props) {
 
   return (
     <Fragment>
-      {product.name}
+      <span className="text-base font-bold sm:text-lg">{product.name}</span>
       {allergens && allergens.length > 0 && (
         <sup className="text-base font-light">
           <Tooltip
-            content={allergens.map((allergen, i) => (
-              <React.Fragment key={i}>
-                {allergen.description}
-                <br />
-              </React.Fragment>
-            ))}
+            content={
+              <ul className="list-disc p-5">
+                {allergens.map((allergen, i) => (
+                  <React.Fragment key={i}>
+                    <li>{allergen.description}</li>
+                  </React.Fragment>
+                ))}
+              </ul>
+            }
             isOpen={isTooltipOpen}
             onOpenChange={(open) => setIsTooltipOpen(open)}
           >
@@ -41,7 +44,7 @@ function MenuItemTitle({ product, allergens }: Props) {
               variant="faded"
               size="sm"
               radius="full"
-              className="translate-x-[-4px] translate-y-[-0px] border-transparent bg-transparent"
+              className="translate-x-[-3px] translate-y-[4px] border-transparent bg-transparent"
               onClick={() => setIsTooltipOpen((prevState) => !prevState)}
             >
               <Info />

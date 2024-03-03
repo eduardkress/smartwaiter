@@ -1,8 +1,8 @@
 import MenuItem from "@/components/menu/MenuItem";
 import Hero from "@/components/menu/Hero";
 import { Menu } from "@/types/restaurant";
-import MenuCategoryDescription from '@/components/menu/MenuCategoryDescription';
-import MenuCategoryDiscounts from '@/components/menu/MenuCategoryDiscounts';
+import MenuCategoryDescription from "@/components/menu/MenuCategoryDescription";
+import MenuCategoryDiscounts from "@/components/menu/MenuCategoryDiscounts";
 
 interface Props {
   menu: Menu;
@@ -15,18 +15,16 @@ function Menu({ menu }: Props) {
         {menu.categories.map((category) => {
           return (
             <div key={category.id} id={"category" + category.id}>
-              <div className="container mx-auto flex flex-col space-y-2 py-4">
+              <div className="max-w-5xl px-2 xl:px-0 mx-auto flex flex-col py-8">
                 {category.imageUrl && (
-                  <div className="container mx-auto max-w-5xl px-0 pb-2">
-                    <Hero
-                      imgSrc={category.imageUrl}
-                      heroAlt={category.name}
-                      tailwindClasses={"h-44 rounded-xl overflow-hidden"}
-                      imageSizes={"100vw"}
-                    />
-                  </div>
+                  <Hero
+                    imgSrc={category.imageUrl}
+                    heroAlt={category.name}
+                    tailwindClasses={"h-44 rounded-xl overflow-hidden"}
+                    imageSizes={"100vw"}
+                  />
                 )}
-                <h2 className="container mx-auto max-w-5xl px-0 text-2xl font-bold">
+                <h2 className="max-w-5xl px-2 xl:px-0 mt-5 text-2xl font-bold">
                   {category.name}
                 </h2>
                 <MenuCategoryDescription category={category} />
