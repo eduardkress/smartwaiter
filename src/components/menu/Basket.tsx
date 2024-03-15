@@ -5,7 +5,7 @@ import BasketModal from '@/components/menu/BasketModal';
 import { signal } from '@preact/signals';
 import { BasketItem } from '@/types/basketItem';
 import { calculateTotalItems, calculateTotalPrice } from '@/services/ProductDataService';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, Suspense, useEffect, useState } from 'react';
 import { EURO } from '@/utils/currencies';
 import { twMerge } from 'tailwind-merge';
 import { Toaster } from 'sonner';
@@ -74,7 +74,9 @@ export function Basket() {
           </Badge>
           Warenkorb {EURO.formatCents(basketPrice)}
         </Button>
-        <BasketModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} basketItems={basketSignal.value} />
+        <Suspense>
+          <BasketModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} basketItems={basketSignal.value} />
+        </Suspense>
       </div>
     </Fragment>
   );

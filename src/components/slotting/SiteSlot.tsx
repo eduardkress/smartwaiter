@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+"use client";
+import { ReactNode, Suspense } from 'react';
 import { signal } from "@preact/signals";
 import { useSignals } from "@preact/signals-react/runtime";
 import { SiteType, SiteTypeQueryParamName } from "@/types/siteType";
@@ -11,7 +12,7 @@ type Props = {
   readonly siteType: SiteType;
 };
 
-export function SiteSlot({ children, siteType }: Props) {
+function SiteSlotInternal({ children, siteType }: Props) {
   useSignals();
   const searchParams = useSearchParams();
 
@@ -20,4 +21,12 @@ export function SiteSlot({ children, siteType }: Props) {
   }
 
   return siteType === siteTypeSignal.value && children;
+}
+
+export function SiteSlot({ children, siteType }: Props) {
+  return (
+    <Suspense>
+      <SiteSlotInternal children={children} siteType={siteType}/>
+    </Suspense>
+  )
 }

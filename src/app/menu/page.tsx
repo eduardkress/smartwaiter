@@ -8,6 +8,7 @@ import Footer from "@/components/menu/Footer";
 import NavBar from "@/components/menu/NavBar";
 import { Basket } from "@/components/menu/Basket";
 import { Providers } from '@/app/providers';
+import { Suspense } from 'react';
 
 const restaurantData = _restaurantData as Restaurant;
 
