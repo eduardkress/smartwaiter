@@ -1,3 +1,4 @@
+"use client";
 import { twMerge } from "tailwind-merge";
 import React, { Fragment, useEffect, useState } from "react";
 import ArrowRight from "@/components/icons/ArrowRight";

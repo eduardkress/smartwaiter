@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { Fragment, useState } from 'react';
 import Image from "next/image";

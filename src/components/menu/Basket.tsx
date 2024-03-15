@@ -1,3 +1,4 @@
+"use client";
 import { Badge, Button, useDisclosure } from '@nextui-org/react';
 import ShoppingCart from '@/components/icons/ShoppingCart';
 import BasketModal from '@/components/menu/BasketModal';

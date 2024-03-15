@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { Button, useDisclosure } from "@nextui-org/react";
 import Info from "@/components/icons/Info";

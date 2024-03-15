@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { Fragment, useEffect, useState } from "react";
 import { Button, Tooltip } from "@nextui-org/react";

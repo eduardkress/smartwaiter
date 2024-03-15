@@ -1,3 +1,4 @@
+"use client";
 import { Divider, useDisclosure } from "@nextui-org/react";
 import { Information } from "@/types/restaurant";
 import ColophonModal from "@/components/menu/ColophonModal";

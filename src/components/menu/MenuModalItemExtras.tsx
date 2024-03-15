@@ -1,3 +1,4 @@
+"use client";
 import { Option } from "@/types/restaurant";
 import React, { useState } from "react";
 import {
