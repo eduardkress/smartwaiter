@@ -54,3 +54,9 @@ npx typescript-json-schema src/types/restaurant.d.ts Restaurant --strictNullChec
 ```
 
 Copy the schema from the console and go to [this online json schema editor](https://rjsf-team.github.io/react-jsonschema-form/), select "Blank" on the top left, paste the copied schema into JSONSchema and start creating the new company schema.
+
+
+## Scrollbar
+
+- https://www.thisdot.co/blog/creating-custom-scrollbars-with-react
+- https://stackblitz.com/edit/react-ts-frji5h?file=components%2Fscrollbar%2Findex.tsx

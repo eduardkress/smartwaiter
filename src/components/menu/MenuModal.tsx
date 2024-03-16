@@ -10,7 +10,6 @@ import {
   ModalBody,
   ModalContent,
   ModalFooter,
-  ScrollShadow,
 } from "@nextui-org/react";
 import Hero from "@/components/menu/Hero";
 import MenuItemTitle from "@/components/menu/MenuItemTitle";
@@ -24,6 +23,7 @@ import { SiteSlot } from "@/components/slotting/SiteSlot";
 import { SiteType } from "@/types/siteType";
 import MenuModalItemExtrasSingleWaiter from "@/components/menu/MenuModalItemExtrasSingleWaiter";
 import { VariantUtils } from "@/utils/VariantUtils";
+import Scrollbar from "@/components/menu/Scrollbar";
 
 type Props = {
   menu: Menu;
@@ -109,211 +109,226 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     <Modal
       isOpen={isOpen}
       onOpenChange={onOpenChange}
-      placement={"center"}
-      size={"xl"}
+      placement={"bottom-center"}
+      size={"lg"}
       classNames={{
-        body: "px-0 py-0",
+        body: "px-0 py-0 max-h-[80vh]",
         footer: "bg-[#f5f3f1]",
-        closeButton: "bg-white",
+        closeButton: "bg-white z-50 border border-[#f4f4f5]",
       }}
     >
       <ModalContent>
         {(onClose) => (
           <>
             <ModalBody>
-              {!!product.imageUrl && (
-                <Hero
-                  imgSrc={product.imageUrl}
-                  heroAlt={""}
-                  tailwindClasses={"h-56 drop-shadow-md z-[-1]"}
-                  imageSizes={"(min-width: 576px) 576px, 100vw"}
-                />
-              )}
-
-              <ScrollShadow className="container flex max-h-[50vh] flex-col space-y-3 overflow-y-auto bg-white py-4">
-                <h2 className="text-2xl font-bold leading-6 text-gray-900">
-                  <MenuItemTitle
-                    product={product}
-                    allergens={product.allergenIds?.map(
-                      (id) => menu.allergens.find((value) => value.id === id)!
-                    )}
-                  />
-                </h2>
-                <div className="flex flex-col space-y-2 pb-3 ">
-                  <div className="text-base font-normal">
-                    {product.description}
+              <Scrollbar>
+                {!!product.imageUrl && (
+                  <div>
+                    <Hero
+                      imgSrc={product.imageUrl}
+                      heroAlt={""}
+                      tailwindClasses={"h-80 drop-shadow-md z-[-1]"}
+                      imageSizes={"(min-width: 576px) 576px, 100vw"}
+                    />
                   </div>
-                  {/*<div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>*/}
-                  <SiteSlot siteType={SiteType.Landing}>
-                    <div className="pt-3 pb-2 text-lg font-bold">
-                      {product.variants.length === 1 ? (
-                        EURO.formatCents(product.variants[0].prices.onsite)
-                      ) : (
-                        <table className="table-auto border-spacing-x-2">
-                          <tbody>
-                            {VariantUtils.sortVariantsByPriceAsc(
-                              product.variants
-                            ).map((value, i) => {
-                              return (
-                                <tr key={"variation" + i}>
-                                  <th className="pr-4 text-left">{value.name}</th>
-                                  <th className="text-right">
-                                    {VariantUtils.getCurrentPriceTag(value, menu.discounts)}
-                                  </th>
-                                </tr>
-                              );
-                            })}
-                          </tbody>
-                        </table>
-                      )}
-                    </div>
-                    {/*OptionGroupsRework*/}
-                    {selectedVariant.optionGroupIds &&
-                      selectedVariant.optionGroupIds
-                        .map((optionGroupId) =>
-                          menu.optionGroups.find(
-                            (optionGroup) => optionGroup.id === optionGroupId
-                          )
-                        )
-                        .map(
-                          (optionGroup, index) =>
-                            optionGroup &&
-                            optionGroup.optionIds.length > 0 && (
-                              <div key={index} className="pt-2">
-                                <div className="font-bold">
-                                  {optionGroup.name}
-                                  {!optionGroup.isTypeMulti &&
-                                    " (Auswahl aus einer Option)"}
-                                </div>
-                                {(() => {
-                                  const filteredOptions = optionGroup.optionIds
-                                    .map((optionId) =>
-                                      menu.options.find(
-                                        (option) => option.id === optionId
-                                      )
-                                    )
-                                    .filter(
-                                      (option): option is Option => !!option
-                                    );
-                                  return (
-                                    <Fragment>
-                                      {filteredOptions
-                                        .map(
-                                          (value) =>
-                                            value.name +
-                                            (value.prices.onsite > 0
-                                              ? ` (+${EURO.formatCents(
-                                                  value.prices.onsite
-                                                )})`
-                                              : "")
-                                        )
-                                        .join(", ")}
-                                    </Fragment>
-                                  );
-                                })()}
-                              </div>
-                            )
-                        )}
-                  </SiteSlot>
-                  <SiteSlot siteType={SiteType.Waiter}>
-                    <div className="pt-3 text-lg font-normal">
-                      {product.variants.length === 1 ? (
-                        EURO.formatCents(product.variants[0].prices.onsite)
-                      ) : (
-                        <Fragment>
-                          {/*Variant Dropdown*/}
-                          <div>{product.name}:</div>
-                          <Dropdown>
-                            <DropdownTrigger>
-                              <Button variant="bordered" className="w-full">
-                                {selectedVariant.name +
-                                  " (" +
-                                  EURO.formatCents(
-                                    selectedVariant.prices.onsite
-                                  ) +
-                                  ")"}
-                              </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu
-                              items={product.variants}
-                              onAction={(key) =>
-                                handleVariantChange(key.toString())
-                              }
-                              aria-label="Select Product Variation"
-                            >
-                              {(variant) => (
-                                <DropdownItem key={variant.id}>
-                                  {variant.name +
-                                    " (" +
-                                    EURO.formatCents(variant.prices.onsite) +
-                                    ")"}
-                                </DropdownItem>
-                              )}
-                            </DropdownMenu>
-                          </Dropdown>
-                        </Fragment>
-                      )}
+                )}
 
+                <div className="container flex flex-col space-y-3 bg-white py-4">
+                  <h2 className="text-2xl font-bold leading-6 text-gray-900">
+                    <MenuItemTitle
+                      product={product}
+                      allergens={product.allergenIds?.map(
+                        (id) =>
+                          menu.allergens.find((value) => value.id === id)!,
+                      )}
+                    />
+                  </h2>
+                  <div className="flex flex-col space-y-2 pb-3 ">
+                    <div className="text-base font-normal">
+                      {product.description}
+                    </div>
+                    {/*<div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>*/}
+                    <SiteSlot siteType={SiteType.Landing}>
+                      <div className="pt-3 pb-2 text-lg font-bold">
+                        {product.variants.length === 1 ? (
+                          EURO.formatCents(product.variants[0].prices.onsite)
+                        ) : (
+                          <table className="table-auto border-spacing-x-2">
+                            <tbody>
+                              {VariantUtils.sortVariantsByPriceAsc(
+                                product.variants,
+                              ).map((value, i) => {
+                                return (
+                                  <tr key={"variation" + i}>
+                                    <th className="pr-4 text-left">
+                                      {value.name}
+                                    </th>
+                                    <th className="text-right">
+                                      {VariantUtils.getCurrentPriceTag(
+                                        value,
+                                        menu.discounts,
+                                      )}
+                                    </th>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        )}
+                      </div>
                       {/*OptionGroupsRework*/}
                       {selectedVariant.optionGroupIds &&
                         selectedVariant.optionGroupIds
                           .map((optionGroupId) =>
                             menu.optionGroups.find(
-                              (optionGroup) => optionGroup.id === optionGroupId
-                            )
+                              (optionGroup) => optionGroup.id === optionGroupId,
+                            ),
                           )
                           .map(
                             (optionGroup, index) =>
                               optionGroup &&
                               optionGroup.optionIds.length > 0 && (
-                                <div key={index} className="mt-4">
-                                  <div className="font-normal">
+                                <div key={index} className="pt-2">
+                                  <div className="font-bold">
                                     {optionGroup.name}
+                                    {!optionGroup.isTypeMulti &&
+                                      " (Auswahl aus einer Option)"}
                                   </div>
                                   {(() => {
                                     const filteredOptions =
                                       optionGroup.optionIds
                                         .map((optionId) =>
                                           menu.options.find(
-                                            (option) => option.id === optionId
-                                          )
+                                            (option) => option.id === optionId,
+                                          ),
                                         )
                                         .filter(
-                                          (option): option is Option => !!option
+                                          (option): option is Option =>
+                                            !!option,
                                         );
                                     return (
                                       <Fragment>
-                                        {optionGroup.isTypeMulti && (
-                                          <MenuModalItemExtras
-                                            options={filteredOptions}
-                                            handleOptionsChange={
-                                              handleOptionsChange
-                                            }
-                                            optionGroupId={optionGroup.id}
-                                          />
-                                        )}
-                                        {!optionGroup.isTypeMulti && (
-                                          <MenuModalItemExtrasSingleWaiter
-                                            options={filteredOptions}
-                                            handleOptionsChange={
-                                              handleOptionsChange
-                                            }
-                                            optionGroupId={optionGroup.id}
-                                          />
-                                        )}
+                                        {filteredOptions
+                                          .map(
+                                            (value) =>
+                                              value.name +
+                                              (value.prices.onsite > 0
+                                                ? ` (+${EURO.formatCents(
+                                                    value.prices.onsite,
+                                                  )})`
+                                                : ""),
+                                          )
+                                          .join(", ")}
                                       </Fragment>
                                     );
                                   })()}
                                 </div>
-                              )
+                              ),
                           )}
-                    </div>
-                  </SiteSlot>
+                    </SiteSlot>
+                    <SiteSlot siteType={SiteType.Waiter}>
+                      <div className="pt-3 text-lg font-normal">
+                        {product.variants.length === 1 ? (
+                          EURO.formatCents(product.variants[0].prices.onsite)
+                        ) : (
+                          <Fragment>
+                            {/*Variant Dropdown*/}
+                            <div>{product.name}:</div>
+                            <Dropdown>
+                              <DropdownTrigger>
+                                <Button variant="bordered" className="w-full">
+                                  {selectedVariant.name +
+                                    " (" +
+                                    EURO.formatCents(
+                                      selectedVariant.prices.onsite,
+                                    ) +
+                                    ")"}
+                                </Button>
+                              </DropdownTrigger>
+                              <DropdownMenu
+                                items={product.variants}
+                                onAction={(key) =>
+                                  handleVariantChange(key.toString())
+                                }
+                                aria-label="Select Product Variation"
+                              >
+                                {(variant) => (
+                                  <DropdownItem key={variant.id}>
+                                    {variant.name +
+                                      " (" +
+                                      EURO.formatCents(variant.prices.onsite) +
+                                      ")"}
+                                  </DropdownItem>
+                                )}
+                              </DropdownMenu>
+                            </Dropdown>
+                          </Fragment>
+                        )}
+
+                        {/*OptionGroupsRework*/}
+                        {selectedVariant.optionGroupIds &&
+                          selectedVariant.optionGroupIds
+                            .map((optionGroupId) =>
+                              menu.optionGroups.find(
+                                (optionGroup) =>
+                                  optionGroup.id === optionGroupId,
+                              ),
+                            )
+                            .map(
+                              (optionGroup, index) =>
+                                optionGroup &&
+                                optionGroup.optionIds.length > 0 && (
+                                  <div key={index} className="mt-4">
+                                    <div className="font-normal">
+                                      {optionGroup.name}
+                                    </div>
+                                    {(() => {
+                                      const filteredOptions =
+                                        optionGroup.optionIds
+                                          .map((optionId) =>
+                                            menu.options.find(
+                                              (option) =>
+                                                option.id === optionId,
+                                            ),
+                                          )
+                                          .filter(
+                                            (option): option is Option =>
+                                              !!option,
+                                          );
+                                      return (
+                                        <Fragment>
+                                          {optionGroup.isTypeMulti && (
+                                            <MenuModalItemExtras
+                                              options={filteredOptions}
+                                              handleOptionsChange={
+                                                handleOptionsChange
+                                              }
+                                              optionGroupId={optionGroup.id}
+                                            />
+                                          )}
+                                          {!optionGroup.isTypeMulti && (
+                                            <MenuModalItemExtrasSingleWaiter
+                                              options={filteredOptions}
+                                              handleOptionsChange={
+                                                handleOptionsChange
+                                              }
+                                              optionGroupId={optionGroup.id}
+                                            />
+                                          )}
+                                        </Fragment>
+                                      );
+                                    })()}
+                                  </div>
+                                ),
+                            )}
+                      </div>
+                    </SiteSlot>
+                  </div>
                 </div>
-              </ScrollShadow>
+              </Scrollbar>
             </ModalBody>
-            <ModalFooter>
-              <SiteSlot siteType={SiteType.Waiter}>
+            <SiteSlot siteType={SiteType.Waiter}>
+              <ModalFooter>
                 <div className="flex w-full items-center gap-x-2">
                   <Button
                     isIconOnly
@@ -342,8 +357,8 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     {EURO.formatCents(itemPrice)}
                   </Button>
                 </div>
-              </SiteSlot>
-            </ModalFooter>
+              </ModalFooter>
+            </SiteSlot>
           </>
         )}
       </ModalContent>
