@@ -2,6 +2,7 @@
 import { Divider, useDisclosure } from "@nextui-org/react";
 import { Information } from "@/types/restaurant";
 import ColophonModal from "@/components/menu/ColophonModal";
+import PrivacyPolicyModal from "@/components/menu/PrivacyPolicyModal";
 
 interface Props {
   companyInformation: Information;
@@ -28,7 +29,9 @@ function Footer({ companyInformation }: Props) {
     <div className="flex flex-col space-y-8 py-8 shadow-inner">
       <div className="flex flex-col justify-center space-x-0 space-y-2 text-center text-medium font-bold text-gray-600 sm:flex-row sm:space-x-10 sm:space-y-0">
         <div>AGB</div>
-        <div>Datenschutzerklärung</div>
+        <div className="cursor-pointer" onClick={onOpenDataProt}>
+          Datenschutzerklärung
+        </div>
         <div className="cursor-pointer" onClick={onOpenColophon}>
           Impressum
         </div>
@@ -40,6 +43,11 @@ function Footer({ companyInformation }: Props) {
         <div>&copy; 2024 {companyInformation.colophon.companyName}</div>
         <div>Powered by Smartwaiter</div>
       </div>
+      <PrivacyPolicyModal
+        isOpen={isOpenDataProt}
+        onOpenChange={onOpenChangeDataProt}
+        companyInformation={companyInformation}
+      />
       <ColophonModal
         isOpen={isOpenColophon}
         onOpenChange={onOpenChangeColophon}
