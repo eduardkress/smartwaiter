@@ -62,7 +62,11 @@
 
 .custom-scrollbars__thumb {
     border-radius: 12px;
-    background-color: #d1d5db;
+    background-color: #c0c0c0;
     position: absolute;
     width: 8px;
+}
+
+.custom-scrollbars__thumb:hover {
+    background-color: #d1d5db;
 }

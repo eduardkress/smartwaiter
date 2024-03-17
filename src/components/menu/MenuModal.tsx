@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useRef, useState} from "react";
 import {
   Button,
   Dropdown,
@@ -37,6 +37,11 @@ interface OptionsDataObject {
 }
 
 const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const headerTextRef = useRef<HTMLDivElement | null>(null);
+
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
   const [selectedOptions, setSelectedOptions] = useState<OptionsDataObject>({});
 
@@ -105,8 +110,55 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
     addToBasket(product.id, selectedVariant.id, optionIds, itemCounter, "");
   };
 
+  const handleScroll = (event: any) => {
+    if (
+      !modalRef.current ||
+      !imageRef.current ||
+      !headerRef.current ||
+      !headerTextRef.current
+    )
+      return;
+    //Set Opacity of Image based on scroll
+    const modalTop = modalRef.current.getBoundingClientRect().top;
+    const imageBottom = imageRef.current.getBoundingClientRect().bottom;
+    const imageHeight = imageRef.current.getBoundingClientRect().height;
+    const headerHeight = headerRef.current.getBoundingClientRect().height;
+
+    const distanceFromTopToBottom = imageBottom - headerHeight - modalTop;
+
+    let visiblePercent = (distanceFromTopToBottom / imageHeight) * 100;
+    if (visiblePercent > 100) visiblePercent = 100;
+    if (visiblePercent < 0) visiblePercent = 0;
+
+    // Reduce Opacity from Image on scroll
+    const threshold = 40;
+    if (visiblePercent < threshold) {
+      imageRef.current.style.opacity =
+        100 - (threshold - visiblePercent) * 2 + "%";
+    } else {
+      imageRef.current.style.opacity = "100%";
+    }
+
+    // Animate Header
+    const newThreshold = 20;
+    if (visiblePercent < newThreshold) {
+      const step = 100 / newThreshold;
+
+      headerRef.current.style.opacity =
+        step * (newThreshold - visiblePercent) + "%";
+      headerTextRef.current.style.opacity =
+        step * (newThreshold - visiblePercent) + "%";
+      headerTextRef.current.style.transform = `translateY(-${visiblePercent / 100}rem)`;
+    } else {
+      headerRef.current.style.opacity = "0%";
+      headerTextRef.current.style.opacity = "0%";
+      headerTextRef.current.style.transform = "translateY(-0.75rem)";
+    }
+  };
+
   return (
     <Modal
+      ref={modalRef}
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       placement={"bottom-center"}
@@ -114,16 +166,29 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
       classNames={{
         body: "px-0 py-0 max-h-[80vh]",
         footer: "bg-[#f5f3f1]",
-        closeButton: "bg-white z-50 border border-[#f4f4f5]",
+        closeButton: "bg-white z-50 border mt-2.5 mr-2 border-[#f4f4f5]",
       }}
     >
       <ModalContent>
         {(onClose) => (
           <>
             <ModalBody>
-              <Scrollbar>
+              <Fragment>
+                <div className="absolute top-0 h-16 w-full z-20 flex items-center justify-between px-8">
+                  <div ref={headerTextRef} className="font-bold text-xl opacity-0">
+                    {product.name}
+                  </div>
+                </div>
+                <div
+                    ref={headerRef}
+                    className="absolute top-0 h-16 w-full z-10 flex items-center justify-between px-8 shadow-xl bg-white opacity-0"
+                />
+              </Fragment>
+              <Scrollbar onScroll={(event) => {
+                handleScroll(event);
+              }}>
                 {!!product.imageUrl && (
-                  <div>
+                  <div ref={imageRef}>
                     <Hero
                       imgSrc={product.imageUrl}
                       heroAlt={""}
@@ -149,21 +214,21 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
                     </div>
                     {/*<div className='text-sm font-normal'>Zutaten: Teig, Dies das und so TODO</div>*/}
                     <SiteSlot siteType={SiteType.Landing}>
-                      <div className="pt-3 pb-2 text-lg font-bold">
+                      <div className="pt-3 pb-2 text-md font-medium">
                         {product.variants.length === 1 ? (
                           EURO.formatCents(product.variants[0].prices.onsite)
                         ) : (
-                          <table className="table-auto border-spacing-x-2">
+                          <table className="table-auto w-full border-spacing-x-2">
                             <tbody>
                               {VariantUtils.sortVariantsByPriceAsc(
                                 product.variants,
                               ).map((value, i) => {
                                 return (
                                   <tr key={"variation" + i}>
-                                    <th className="pr-4 text-left">
+                                    <th className="pr-4 text-left font-medium">
                                       {value.name}
                                     </th>
-                                    <th className="text-right">
+                                    <th className="text-right font-medium">
                                       {VariantUtils.getCurrentPriceTag(
                                         value,
                                         menu.discounts,
