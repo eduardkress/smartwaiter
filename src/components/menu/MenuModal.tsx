@@ -174,14 +174,14 @@ const MenuModal = ({ menu, product, isOpen, onOpenChange }: Props) => {
           <>
             <ModalBody>
               <Fragment>
-                <div className="absolute top-0 h-16 w-full z-20 flex items-center justify-between px-8">
+                <div className="absolute top-0 h-16 w-full z-30 flex items-center justify-between px-8">
                   <div ref={headerTextRef} className="font-bold text-xl opacity-0">
                     {product.name}
                   </div>
                 </div>
                 <div
                     ref={headerRef}
-                    className="absolute top-0 h-16 w-full z-10 flex items-center justify-between px-8 shadow-xl bg-white opacity-0"
+                    className="absolute top-0 h-16 w-full z-20 flex items-center justify-between px-8 shadow-xl bg-white opacity-0"
                 />
               </Fragment>
               <Scrollbar onScroll={(event) => {
